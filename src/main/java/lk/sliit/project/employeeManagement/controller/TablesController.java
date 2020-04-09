@@ -4,6 +4,7 @@ import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +31,8 @@ public class TablesController {
         ModelAndView mav = new ModelAndView ( "tables" );
         mav.addObject ( "listAttendance", attendanceBO.findtodayAttendence ( )  );
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ()  );
-        long totalCount =  dashboardBO.getEmployeeAttCount ( );
-        if (totalCount > 0) model.addAttribute ( "genAttendanceId", (totalCount+1) );
+        Attendance totalCount =  attendanceBO.getEmployeeAttCount ( );
+        if (totalCount.getPid () > 0) model.addAttribute ( "genAttendanceId", (totalCount.getPid ()+1) );
         else model.addAttribute ( "genAttendanceId", 0 );
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return mav;

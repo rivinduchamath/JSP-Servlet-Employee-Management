@@ -8,4 +8,6 @@ import org.springframework.data.repository.CrudRepository;
  * Date: 22-Mar-20
  */
 public interface AttendanceDAO extends CrudRepository<Attendance, String> {
+    Attendance findTopByOrderByAttendanceIdDesc();
+
 }

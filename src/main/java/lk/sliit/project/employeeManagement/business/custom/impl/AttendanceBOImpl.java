@@ -20,11 +20,11 @@ import java.util.List;
 @Transactional
 public class AttendanceBOImpl implements AttendanceBO {
     @Autowired
-    AttendanceDAO atendance;
+    AttendanceDAO attendanceDAO;
     @Override
     public List<AttendanceDTO> findtodayAttendence() {
 
-        Iterable <Attendance> attendances = atendance.findAll ( );
+        Iterable <Attendance> attendances = attendanceDAO.findAll ( );
         List <AttendanceDTO> dtos = new ArrayList <> ( );
         for (Attendance attendance : attendances) {
             dtos.add ( new AttendanceDTO (
@@ -38,5 +38,9 @@ public class AttendanceBOImpl implements AttendanceBO {
             ) );
         }
         return dtos;
+    }
+    @Override
+    public Attendance getEmployeeAttCount() {
+        return attendanceDAO.findTopByOrderByAttendanceIdDesc();
     }
 }

@@ -36,6 +36,8 @@ public class DashboardBOImpl implements DashboardBO {
 
     @Override
     public long getEmployeeAttCount() {
-        return attendanceDAO.count();
+        return 0;
     }
+
+
 }
