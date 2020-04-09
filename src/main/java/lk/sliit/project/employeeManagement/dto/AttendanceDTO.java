@@ -3,6 +3,7 @@ package lk.sliit.project.employeeManagement.dto;
 import lk.sliit.project.employeeManagement.entity.Employee;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -14,14 +15,14 @@ public class AttendanceDTO {
     private int attendanceId;
     private double salary;
     private Date date;
-    private Date inTime;
-    private Date outTime;
+    private String inTime;
+    private String outTime;
     private double overtimeHours;
     private Employee employee;
 
     public AttendanceDTO(){}
 
-    public AttendanceDTO(int attendanceId, double salary, Date date, Date inTime, Date outTime, double overtimeHours, Employee employee) {
+    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employee) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -71,19 +72,19 @@ public class AttendanceDTO {
         this.date = date;
     }
 
-    public Date getInTime() {
+    public String getInTime() {
         return inTime;
     }
 
-    public void setInTime(Date inTime) {
+    public void setInTime(String inTime) {
         this.inTime = inTime;
     }
 
-    public Date getOutTime() {
+    public String getOutTime() {
         return outTime;
     }
 
-    public void setOutTime(Date outTime) {
+    public void setOutTime(String outTime) {
         this.outTime = outTime;
     }
 

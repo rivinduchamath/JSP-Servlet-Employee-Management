@@ -1,6 +1,7 @@
 package lk.sliit.project.employeeManagement.entity;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -16,10 +17,8 @@ public class Attendance implements SuperEntity {
     private double salary;
     @Temporal(TemporalType.DATE)
     private Date date;
-    @Temporal(TemporalType.TIME)
-    private Date inTime;
-    @Temporal(TemporalType.TIME)
-    private Date outTime;
+    private String inTime;
+    private String outTime;
     @Column(nullable = true)
     private double overtimeHours;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
@@ -28,7 +27,7 @@ public class Attendance implements SuperEntity {
 
     public Attendance() {}
 
-    public Attendance(int attendanceId, double salary, Date date, Date inTime, Date outTime, double overtimeHours, Employee employee) {
+    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employee) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -62,19 +61,19 @@ public class Attendance implements SuperEntity {
         this.date = date;
     }
 
-    public Date getInTime() {
+    public String getInTime() {
         return inTime;
     }
 
-    public void setInTime(Date inTime) {
+    public void setInTime(String inTime) {
         this.inTime = inTime;
     }
 
-    public Date getOutTime() {
+    public String getOutTime() {
         return outTime;
     }
 
-    public void setOutTime(Date outTime) {
+    public void setOutTime(String outTime) {
         this.outTime = outTime;
     }
 

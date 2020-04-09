@@ -413,7 +413,7 @@
 
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
-                    <div method="POST" action="tables">
+                    <form method="POST" action="tables">
                     <div class="col-md-6 col-sm-6 " style="float: left">
                         <label>Search ID</label>
                         <input type="text" style="cursor: pointer" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">
@@ -425,7 +425,7 @@
                         <div class="form-group">
                             <label for="itemCode">Employee Id</label>
                             <input type="number" class="form-control" name="attendanceId"
-                                   data-validate-words="1"required="required"
+                                   required="required"
                                    value="${attendance.attendanceId }"
                                    id="itemCode" readonly="readonly" placeholder="ID">
 
@@ -444,7 +444,7 @@
                                        IN
                                 </span>
                             </div>
-                            <input type="text" class="form-control" id="itemTime" aria-label="Dollar amount (with dot and two decimal places)">
+                            <input type="text" class="form-control" name="inTime" id="itemTime" value="${attendance.inTime }" aria-label="Dollar amount (with dot and two decimal places)">
 
                         </div>
                         </div>
@@ -456,7 +456,7 @@
                                        OUT
                                 </span>
                             </div>
-                            <input type="text" class="form-control" id="itemTime2" name="employeeId"  aria-label="Dollar amount (with dot and two decimal places)"/>
+                            <input type="text" class="form-control" id="itemTime2"  name="outTime" value="${attendance.outTime }"  aria-label="Dollar amount (with dot and two decimal places)"/>
 
                         </div>
                         </div>
@@ -468,7 +468,7 @@
                                        OT
                                 </span>
                             </div>
-                            <input type="text" class="form-control" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+                            <input type="number" class="form-control" name="overtimeHours" value="${attendance.overtimeHours }" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
 
                         </div>
                     </div>
@@ -479,7 +479,7 @@
                         <button type='reset' class="btn btn-outline-primary" value="Register">Reset</button>
                     </div>
                     </div>
-                    </div></div>
+                    </div></form>
 
 
                     <div class="col-md-6 col-sm-6 " style="float: left">
