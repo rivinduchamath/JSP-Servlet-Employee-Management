@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author: Rivindu-Wijayarathna
  * Date: 22-Mar-20
  */
-public interface AttendanceDAO extends CrudRepository<Attendance, Integer> {
+public interface AttendanceDAO extends CrudRepository<Attendance, String> {
 }

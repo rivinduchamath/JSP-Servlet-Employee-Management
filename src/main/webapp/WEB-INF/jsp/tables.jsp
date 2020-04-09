@@ -455,8 +455,25 @@
 
                         </div>
                         </div>
+                        <div class="col-md-6 col-sm-6 ">
+                        <label for="itemDesc">&nbsp;</label>
+                        <div class="input-group mb-3" style="float: right">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                       OT
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+
+                        </div>
+                    </div>
+                        <div class="col-md-6 col-sm-6 ">
+                            <label for="itemDesc">&nbsp;</label>
+                            <div class="input-group mb-3" style="float: right">
                         <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
                         <button type='reset' class="btn btn-outline-primary" value="Register">Reset</button>
+                    </div>
+                    </div>
                     </div>
 
 
