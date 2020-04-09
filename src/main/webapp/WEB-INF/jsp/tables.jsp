@@ -424,7 +424,10 @@
 
                         <div class="form-group">
                             <label for="itemCode">Employee Id</label>
-                            <input type="text" class="form-control" id="itemCode" readonly="readonly" placeholder="ID">
+                            <input type="number" class="form-control" name="attendanceId"
+                                   data-validate-words="1"required="required"
+                                   value="${attendance.attendanceId }"
+                                   id="itemCode" readonly="readonly" placeholder="ID">
 
                         </div>
                         <div class="form-group">
@@ -453,7 +456,7 @@
                                        OUT
                                 </span>
                             </div>
-                            <input type="text" class="form-control" id="itemTime2" name="date"  aria-label="Dollar amount (with dot and two decimal places)">
+                            <input type="text" class="form-control" id="itemTime2" name="employeeId"  aria-label="Dollar amount (with dot and two decimal places)"/>
 
                         </div>
                         </div>

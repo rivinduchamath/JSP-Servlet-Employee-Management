@@ -3,6 +3,8 @@ package lk.sliit.project.employeeManagement.controller;
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
+import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,7 @@ public class TablesController {
 
 
     @RequestMapping("tables")
-    public ModelAndView index(Model model,@ModelAttribute EmployeeDTO employee) {
+    public ModelAndView index(Model model,@ModelAttribute AttendanceDTO attendance) {
         ModelAndView mav = new ModelAndView ( "tables" );
         mav.addObject ( "listAttendance", attendanceBO.findtodayAttendence ( )  );
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ()  );
