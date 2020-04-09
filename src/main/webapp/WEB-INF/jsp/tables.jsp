@@ -413,11 +413,13 @@
 
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
+                    <div method="POST" action="tables">
                     <div class="col-md-6 col-sm-6 " style="float: left">
                         <label>Search ID</label>
                         <input type="text" style="cursor: pointer" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">
 
                     </div>
+
                     <div class="col-md-6 col-sm-6 " style="float: right">
 
                         <div class="form-group">
@@ -451,7 +453,7 @@
                                        OUT
                                 </span>
                             </div>
-                            <input type="text" class="form-control" id="itemTime2" aria-label="Dollar amount (with dot and two decimal places)">
+                            <input type="text" class="form-control" id="itemTime2" name="date"  aria-label="Dollar amount (with dot and two decimal places)">
 
                         </div>
                         </div>
@@ -474,7 +476,7 @@
                         <button type='reset' class="btn btn-outline-primary" value="Register">Reset</button>
                     </div>
                     </div>
-                    </div>
+                    </div></div>
 
 
                     <div class="col-md-6 col-sm-6 " style="float: left">
