@@ -475,10 +475,6 @@
                     </div>
                     </div>
                     </div>
-                    <p>ssssss</p>
-
-
-
 
 
                     <div class="col-md-6 col-sm-6 " style="float: left">
@@ -587,19 +583,18 @@
 
                                                 </thead>
                                                 <tbody>
-                                                <c:forEach items="${listEmployeesTable}" var="e">
+                                                <c:forEach items="${listAttendance}" var="e">
                                                     <tr>
-                                                        <td>${e.idNo}</td>
-                                                        <td>${e.name}</td>
-                                                        <td>${e.mobileNumber}</td>
-                                                        <td>${e.email}</td>
-                                                        <td>${e.address}</td>
-                                                        <td>${e.salary}</td>
-                                                        <td>${e.occupation}</td>
-
-                                                        <td><a href="/delete?idNo=${e.idNo}"><span
+                                                        <td>${e.pid}</td>
+                                                        <td>${e.employee.idNo}</td>
+                                                        <td>${e.employee.name}</td>
+                                                        <td>${e.employee.occupation}</td>
+                                                        <td>${e.inTime}</td>
+                                                        <td>${e.outTime}</td>
+                                                        <td>${e.overtimeHours}</td>
+                                                        <td><a href="/delete?pid=${e.pid}"><span
                                                                 class="glyphicon glyphicon-trash"></span></a></td>
-                                                        <td><a href="/edit-employee?idNo=${e.idNo }"><span
+                                                        <td><a href="/edit-employee?pid=${e.pid }"><span
                                                                 class="glyphicon glyphicon-pencil"></span></a></td>
                                                     </tr>
                                                 </c:forEach>

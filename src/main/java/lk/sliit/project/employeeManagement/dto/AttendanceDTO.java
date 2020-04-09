@@ -1,40 +1,49 @@
-package lk.sliit.project.employeeManagement.entity;
+package lk.sliit.project.employeeManagement.dto;
+
+import lk.sliit.project.employeeManagement.entity.Employee;
 
 import javax.persistence.*;
 import java.util.Date;
 
 /**
  * @author: Rivindu-Wijayarathna
- * Date: 19-Mar-20
+ * Date: 09-Apr-20
  */
-@Entity
-public class Attendance implements SuperEntity {
+public class AttendanceDTO {
 
-    @Id
     private int attendanceId;
-    @Column(nullable = true)
     private double salary;
-    @Temporal(TemporalType.DATE)
     private Date date;
-    @Temporal(TemporalType.TIME)
     private Date inTime;
-    @Temporal(TemporalType.TIME)
     private Date outTime;
-    @Column(nullable = true)
     private double overtimeHours;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
-    @JoinColumn(name = "employeeId", referencedColumnName = "idNo", nullable = true)
     private Employee employee;
 
-    public Attendance() {}
+    public AttendanceDTO(){}
 
-    public Attendance(int attendanceId, double salary, Date date, Date inTime, Date outTime, double overtimeHours, Employee employee) {
+    public AttendanceDTO(int attendanceId, double salary, Date date, Date inTime, Date outTime, double overtimeHours, Employee employee) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
         this.inTime = inTime;
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
+        this.employee = employee;
+    }
+
+    public int getAttendanceId() {
+        return attendanceId;
+    }
+
+    public void setAttendanceId(int attendanceId) {
+        this.attendanceId = attendanceId;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
@@ -86,17 +95,10 @@ public class Attendance implements SuperEntity {
         this.overtimeHours = overtimeHours;
     }
 
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
 
     @Override
     public String toString() {
-        return "AttendanceBOImpl{" +
+        return "AttendanceDTO{" +
                 "attendanceId=" + attendanceId +
                 ", salary=" + salary +
                 ", date=" + date +
@@ -107,3 +109,4 @@ public class Attendance implements SuperEntity {
                 '}';
     }
 }
+

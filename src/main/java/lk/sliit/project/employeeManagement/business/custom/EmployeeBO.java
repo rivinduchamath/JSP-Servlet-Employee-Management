@@ -15,4 +15,6 @@ public interface EmployeeBO extends CrudBO {
     public Employee findByIdNoAndPassword(String idNo, String password);
 
     Employee getEmployeeByIdNo(String idNo);
+
+
 }
