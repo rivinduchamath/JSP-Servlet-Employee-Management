@@ -413,10 +413,10 @@
 
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
-                    <form method="POST" action="tables">
+                    <form  method="POST" action="tables">
                     <div class="col-md-6 col-sm-6 " style="float: left">
-                        <label>Search ID</label>
-                        <input type="text" style="cursor: pointer" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">
+                        <label>Search aID</label>
+                        <input type="text" style="cursor: pointer;" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">
 
                     </div>
 
@@ -479,7 +479,7 @@
                         <button type='reset' class="btn btn-outline-primary" value="Register">Reset</button>
                     </div>
                     </div>
-                    </div></form>
+                    </div>
 
 
                     <div class="col-md-6 col-sm-6 " style="float: left">
@@ -611,6 +611,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
