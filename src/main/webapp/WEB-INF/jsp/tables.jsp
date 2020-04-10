@@ -414,6 +414,7 @@
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
                     <form  method="POST" action="tablesAdd">
+                        <div style="display: none"><input name="attendanceId" value="${(attendance.attendanceId)+1}"></div>
                     <div class="col-md-6 col-sm-6 " style="float: left">
                         <label>Search aID</label>
                         <input type="text" style="cursor: pointer;" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">

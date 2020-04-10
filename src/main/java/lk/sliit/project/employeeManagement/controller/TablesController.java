@@ -44,7 +44,7 @@ public class TablesController {
     @RequestMapping("tablesAdd")
     public String index2(Model model,@ModelAttribute AttendanceDTO attendance) {
       attendanceBO.save ( attendance );
-        return "redirect:/Dashboard";
+        return "redirect:/tables";
     }
 
 }
