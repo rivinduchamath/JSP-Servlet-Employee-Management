@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.business.custom.impl;
 
+import lk.sliit.project.employeeManagement.business.SuperBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
@@ -60,6 +61,8 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employee.getPic (),
                 employee.isAdmin ());
     }
+
+
 
     //Delete Method
     @Override

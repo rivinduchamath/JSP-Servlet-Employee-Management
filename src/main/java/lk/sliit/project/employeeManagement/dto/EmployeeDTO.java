@@ -1,11 +1,13 @@
 package lk.sliit.project.employeeManagement.dto;
 
+import lk.sliit.project.employeeManagement.business.SuperBO;
+
 import java.sql.Date;
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 08-Mar-20
  */
-public class EmployeeDTO {
+public class EmployeeDTO{
 
     private String idNo;
     private String name;

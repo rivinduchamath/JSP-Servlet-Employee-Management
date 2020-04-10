@@ -30,6 +30,7 @@ public class TablesController {
 
     @RequestMapping("tables")
     public ModelAndView index(Model model,@ModelAttribute AttendanceDTO attendance) {
+
         ModelAndView mav = new ModelAndView ( "tables" );
         mav.addObject ( "listAttendance", attendanceBO.findtodayAttendence ( )  );
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ()  );
@@ -37,6 +38,7 @@ public class TablesController {
         if (totalCount.getPid () > 0) model.addAttribute ( "genAttendanceId", (totalCount.getPid ()+1) );
         else model.addAttribute ( "genAttendanceId", 0 );
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+
         return mav;
     }
 

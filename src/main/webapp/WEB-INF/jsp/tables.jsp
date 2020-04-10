@@ -476,7 +476,7 @@
                             <label for="itemDesc">&nbsp;</label>
                             <div class="input-group mb-3" style="float: right">
                         <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
-                        <button type='reset' class="btn btn-outline-primary" value="Register">Reset</button>
+                        <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
                     </div>
                     </div>
                     </div>

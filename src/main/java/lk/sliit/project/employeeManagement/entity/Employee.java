@@ -55,6 +55,8 @@ public class Employee implements SuperEntity {
 
     }
 
+
+
     public String getIdNo() {
         return idNo;
     }

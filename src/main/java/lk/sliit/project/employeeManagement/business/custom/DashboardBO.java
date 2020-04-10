@@ -1,18 +1,32 @@
 package lk.sliit.project.employeeManagement.business.custom;
 
+import lk.sliit.project.employeeManagement.business.CrudBO;
 import lk.sliit.project.employeeManagement.business.SuperBO;
+import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.entity.Attendance;
+
+import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 16-Mar-20
  */
-public interface DashboardBO extends SuperBO {
+public interface DashboardBO extends CrudBO {
     long getAllEmployeeCount();
 
     long getMaleCount();
 
     long getFemaleCount();
 
-    long getEmployeeAttCount();
+    Attendance getEmployeeAttCount();
 
+    void save(EmployeeDTO employee);
+
+    EmployeeDTO updateUser(String user) ;
+
+    void deleteUser(String id) ;
+
+    List<EmployeeDTO> findAllEmployees() ;
+
+    EmployeeDTO findUser(String userCode) ;
 }

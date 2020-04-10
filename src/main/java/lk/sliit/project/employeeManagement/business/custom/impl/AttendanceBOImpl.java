@@ -5,6 +5,7 @@ import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
+import lk.sliit.project.employeeManagement.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,5 +43,40 @@ public class AttendanceBOImpl implements AttendanceBO {
     @Override
     public Attendance getEmployeeAttCount() {
         return attendanceDAO.findTopByOrderByAttendanceIdDesc();
+    }
+
+    @Override
+    public void save(AttendanceDTO attendanceDTO) {
+        attendanceDAO.save(new Attendance (
+                attendanceDTO.getAttendanceId (),
+                attendanceDTO.getSalary (),
+                attendanceDTO.getDate (),
+                attendanceDTO.getInTime (),
+                attendanceDTO.getOutTime (),
+                attendanceDTO.getOvertimeHours (),
+                attendanceDTO.getEmployee ()
+
+        ));
+    }
+
+
+    @Override
+    public AttendanceDTO updateUser(String user) {
+        return null;
+    }
+
+    @Override
+    public void deleteUser(String id) {
+
+    }
+
+    @Override
+    public List <AttendanceDTO> findAllEmployees() {
+        return null;
+    }
+
+    @Override
+    public AttendanceDTO findUser(String userCode) {
+        return null;
     }
 }
