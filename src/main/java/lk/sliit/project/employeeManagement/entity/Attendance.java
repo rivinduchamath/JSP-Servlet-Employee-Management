@@ -23,19 +23,22 @@ public class Attendance implements SuperEntity {
     private double overtimeHours;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "employeeId", referencedColumnName = "idNo", nullable = true)
-    private Employee employee;
+    private Employee employeeID;
 
     public Attendance() {}
 
-    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employee) {
+    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
         this.inTime = inTime;
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
-        this.employee = employee;
+        this.employeeID = employeeID;
     }
+
+
+
 
     public int getPid() {
         return attendanceId;
@@ -86,11 +89,11 @@ public class Attendance implements SuperEntity {
     }
 
     public Employee getEmployee() {
-        return employee;
+        return employeeID;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployee(Employee employeeID) {
+        this.employeeID = employeeID;
     }
 
     @Override
@@ -102,7 +105,7 @@ public class Attendance implements SuperEntity {
                 ", inTime=" + inTime +
                 ", outTime=" + outTime +
                 ", overtimeHours=" + overtimeHours +
-                ", employee=" + employee +
+                ", employeeID=" + employeeID +
                 '}';
     }
 }

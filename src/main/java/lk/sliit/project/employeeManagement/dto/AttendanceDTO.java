@@ -18,18 +18,18 @@ public class AttendanceDTO {
     private String inTime;
     private String outTime;
     private double overtimeHours;
-    private Employee employee;
+    private Employee employeeID;
 
     public AttendanceDTO(){}
 
-    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employee) {
+    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
         this.inTime = inTime;
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
-        this.employee = employee;
+        this.employeeID = employeeID;
     }
 
     public int getAttendanceId() {
@@ -41,11 +41,11 @@ public class AttendanceDTO {
     }
 
     public Employee getEmployee() {
-        return employee;
+        return employeeID;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployee(Employee employeeID) {
+        this.employeeID = employeeID;
     }
 
     public int getPid() {
@@ -106,7 +106,7 @@ public class AttendanceDTO {
                 ", inTime=" + inTime +
                 ", outTime=" + outTime +
                 ", overtimeHours=" + overtimeHours +
-                ", employee=" + employee +
+                ", employeeID=" + employeeID +
                 '}';
     }
 }

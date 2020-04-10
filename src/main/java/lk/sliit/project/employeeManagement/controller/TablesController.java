@@ -32,13 +32,20 @@ public class TablesController {
     public ModelAndView index(Model model,@ModelAttribute AttendanceDTO attendance) {
 
         ModelAndView mav = new ModelAndView ( "tables" );
+        //Get All In Attendance
         mav.addObject ( "listAttendance", attendanceBO.findtodayAttendence ( )  );
+       //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ()  );
+       //Top Employee
         Attendance totalCount =  attendanceBO.getEmployeeAttCount ( );
-        if (totalCount.getPid () > 0) model.addAttribute ( "genAttendanceId", (totalCount.getPid ()+1) );
-        else model.addAttribute ( "genAttendanceId", 0 );
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+ try {
+     model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
+ }catch (NullPointerException e){
+     model.addAttribute ( "genAttendanceId", 1 );
+ }
 
+        //For get Logger Name and Picture
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return mav;
     }
     @RequestMapping("tablesAdd")

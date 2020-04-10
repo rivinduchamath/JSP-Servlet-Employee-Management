@@ -55,7 +55,6 @@ public class AttendanceBOImpl implements AttendanceBO {
                 attendanceDTO.getOutTime (),
                 attendanceDTO.getOvertimeHours (),
                 attendanceDTO.getEmployee ()
-
         ));
     }
 

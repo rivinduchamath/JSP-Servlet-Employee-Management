@@ -28,7 +28,7 @@ public class Employee implements SuperEntity {
     private boolean admin;
     @Column(nullable = true)
     private int paymentDueTo;
-    @OneToMany(mappedBy = "employee", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+    @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List <Attendance> attendance = new ArrayList <> ( );
 
 
@@ -174,18 +174,7 @@ public class Employee implements SuperEntity {
         return attendance;
     }
 
-    public void addAttendance(Attendance attendance){
-        attendance.setEmployee (this);
-        this.attendance.add(attendance);
-    }
 
-    public void removeOrder(Attendance attendance){
-        if (attendance.getEmployee () != this){
-            throw new RuntimeException("Invalid order");
-        }
-        attendance.setEmployee (null);
-        this.attendance.remove(attendance);
-    }
     /////////////////////////////////////////////////////////
     @Override
     public String toString() {
