@@ -424,9 +424,9 @@
 
                         <div class="form-group">
                             <label for="itemCode">Employee Id</label>
-                            <input type="number" class="form-control" name="attendanceId"
+                            <input type="number" class="form-control" name="idNo"
                                    required="required"
-                                   value="${attendance.attendanceId }"
+                                   value="${attendance.employee.idNo}"
                                    id="itemCode" readonly="readonly" placeholder="ID">
 
                         </div>
@@ -460,15 +460,17 @@
 
                         </div>
                         </div>
+
                         <div class="col-md-6 col-sm-6 ">
                         <label for="itemDesc">&nbsp;</label>
+
                         <div class="input-group mb-3" style="float: right">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                        OT
                                 </span>
                             </div>
-                            <input type="number" class="form-control" name="overtimeHours" value="${attendance.overtimeHours }" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+                            <input type="text" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
 
                         </div>
                     </div>

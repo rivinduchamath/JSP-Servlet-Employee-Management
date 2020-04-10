@@ -19,7 +19,7 @@ public class Attendance implements SuperEntity {
     private Date date;
     private String inTime;
     private String outTime;
-    @Column(nullable = true)
+    @Column(columnDefinition = "double default 0")
     private double overtimeHours;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "employeeId", referencedColumnName = "idNo", nullable = true)
