@@ -2,6 +2,7 @@ package lk.sliit.project.employeeManagement;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 08-Mar-20

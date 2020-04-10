@@ -1,13 +1,9 @@
 package lk.sliit.project.employeeManagement.controller;
 
-import jdk.nashorn.internal.runtime.PrototypeObject;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
-import lk.sliit.project.employeeManagement.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

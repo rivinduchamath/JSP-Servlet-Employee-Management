@@ -3,9 +3,7 @@ package lk.sliit.project.employeeManagement.business.custom.impl;
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
-import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
-import lk.sliit.project.employeeManagement.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +27,7 @@ public class AttendanceBOImpl implements AttendanceBO {
         List <AttendanceDTO> dtos = new ArrayList <> ( );
         for (Attendance attendance : attendances) {
             dtos.add ( new AttendanceDTO (
-                    attendance.getAttendanceId (),
+                attendance.getPid (),
                     attendance.getSalary (),
                     attendance.getDate (),
                     attendance.getInTime (),

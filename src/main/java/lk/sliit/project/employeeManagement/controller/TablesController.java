@@ -3,9 +3,7 @@ package lk.sliit.project.employeeManagement.controller;
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
-import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
-import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,7 +37,7 @@ public class TablesController {
        //Top Employee
         Attendance totalCount =  attendanceBO.getEmployeeAttCount ( );
  try {
-     model.addAttribute ( "genAttendanceId",( totalCount.getAttendanceId ( )) + 1 );
+     model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
  }catch (NullPointerException e){
      model.addAttribute ( "genAttendanceId", 1 );
  }

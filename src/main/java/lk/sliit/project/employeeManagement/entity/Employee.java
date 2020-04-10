@@ -28,7 +28,7 @@ public class Employee implements SuperEntity {
     private boolean admin;
     @Column(nullable = true)
     private int paymentDueTo;
-    @OneToMany(mappedBy = "employeeId", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+    @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List <Attendance> attendance = new ArrayList <> ( );
 
 

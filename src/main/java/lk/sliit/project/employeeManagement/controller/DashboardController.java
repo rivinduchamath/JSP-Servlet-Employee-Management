@@ -3,7 +3,6 @@ package lk.sliit.project.employeeManagement.controller;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -31,7 +29,6 @@ public class DashboardController extends HttpServlet {
     private DashboardBO dashboardBO;
     @Autowired
     private EmployeeBO employeeBO;
-
 
     //Find Total Employee Count For DashBoard
     @RequestMapping("/Dashboard")

@@ -2,8 +2,6 @@ package lk.sliit.project.employeeManagement.dto;
 
 import lk.sliit.project.employeeManagement.entity.Employee;
 
-import javax.persistence.*;
-import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -31,7 +29,6 @@ public class AttendanceDTO {
         this.overtimeHours = overtimeHours;
         this.employeeID = employeeID;
     }
-
 
     public int getAttendanceId() {
         return attendanceId;
