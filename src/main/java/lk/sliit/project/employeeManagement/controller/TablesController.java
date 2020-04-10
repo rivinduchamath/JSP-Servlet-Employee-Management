@@ -41,6 +41,10 @@ public class TablesController {
 
         return mav;
     }
+    @RequestMapping("tablesAdd")
+    public String index2(Model model,@ModelAttribute AttendanceDTO attendance) {
 
+        return "redirect:/Dashboard";
+    }
 
 }
