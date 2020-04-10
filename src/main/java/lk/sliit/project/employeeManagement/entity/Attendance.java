@@ -1,7 +1,6 @@
 package lk.sliit.project.employeeManagement.entity;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -23,28 +22,28 @@ public class Attendance implements SuperEntity {
     private double overtimeHours;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "employeeId", referencedColumnName = "idNo", nullable = true)
-    private Employee employeeID;
+    private Employee employee;
+//    @Transient
+//    private String a;
 
-    public Attendance() {}
+    public Attendance() {
+    }
 
-    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
+    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employee) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
         this.inTime = inTime;
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
-        this.employeeID = employeeID;
+        this.employee = employee;
     }
 
-
-
-
-    public int getPid() {
+    public int getAttendanceId() {
         return attendanceId;
     }
 
-    public void setPid(int attendanceId) {
+    public void setAttendanceId(int attendanceId) {
         this.attendanceId = attendanceId;
     }
 
@@ -89,23 +88,23 @@ public class Attendance implements SuperEntity {
     }
 
     public Employee getEmployee() {
-        return employeeID;
+        return employee;
     }
 
-    public void setEmployee(Employee employeeID) {
-        this.employeeID = employeeID;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     @Override
     public String toString() {
-        return "AttendanceBOImpl{" +
+        return "Attendance{" +
                 "attendanceId=" + attendanceId +
                 ", salary=" + salary +
                 ", date=" + date +
-                ", inTime=" + inTime +
-                ", outTime=" + outTime +
+                ", inTime='" + inTime + '\'' +
+                ", outTime='" + outTime + '\'' +
                 ", overtimeHours=" + overtimeHours +
-                ", employeeID=" + employeeID +
+                ", employee=" + employee +
                 '}';
     }
 }

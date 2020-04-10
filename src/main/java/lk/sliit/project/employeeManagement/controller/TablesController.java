@@ -39,7 +39,7 @@ public class TablesController {
        //Top Employee
         Attendance totalCount =  attendanceBO.getEmployeeAttCount ( );
  try {
-     model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
+     model.addAttribute ( "genAttendanceId",( totalCount.getAttendanceId ( )) + 1 );
  }catch (NullPointerException e){
      model.addAttribute ( "genAttendanceId", 1 );
  }

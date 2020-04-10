@@ -61,7 +61,6 @@
             filter = input.value.toUpperCase();
             table = document.getElementById("datatable-responsive");
             tr = table.getElementsByTagName("tr");
-
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[0];
@@ -75,7 +74,6 @@
                 }
             }
         }
-
     </script>
     <style>
         .row-selected{
@@ -327,13 +325,11 @@
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <!--/////-->
                             <script>
-
                                 function formatTime() {
                                     now = new Date();
                                     hour = now.getHours();
                                     min = now.getMinutes();
                                     sec = now.getSeconds();
-
                                     if (document.clock.sivamtime[0].checked) {
                                         if (min <= 9) {
                                             min = "0" + min;
@@ -354,10 +350,8 @@
                                         if (hour == 0) {
                                             hour = "12";
                                         }
-
                                         document.clock.sivam.value = ((hour <= 9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;
                                     }
-
                                     if (document.clock.sivamtime[1].checked) {
                                         if (min <= 9) {
                                             min = "0" + min;
@@ -370,12 +364,9 @@
                                         }
                                         document.clock.sivam.value = hour + ':' + min + ':' + sec;
                                     }
-
                                     setTimeout("formatTime()", 1000);
                                 }
-
                                 window.onload = formatTime;
-
                             </script>
                             <form name="clock" style="float: right">
                                 <table class="clock" width="135">
@@ -415,205 +406,205 @@
                     <!--////////////////////////////////////////////////////////////////////////////-->
                     <form  method="POST" action="tablesAdd">
                         <div style="display: none"><input name="attendanceId" value="${genAttendanceId}"></div>
-                    <div class="col-md-6 col-sm-6 " style="float: left">
-                        <label>Search aID</label>
-                        <input type="text" style="cursor: pointer;" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">
-
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 " style="float: right">
-
-                        <div class="form-group">
-                            <label for="itemCode">Employee Id</label>
-                            <input type="text" class="form-control" name="attendance.idNo"
-                                   required="required"
-                                   value="${genAttendanceId}"
-                                   id="itemCode" readonly="readonly" placeholder="ID">
+                        <div class="col-md-6 col-sm-6 " style="float: left">
+                            <label>Search aID</label>
+                            <input type="text" style="cursor: pointer;" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">
 
                         </div>
-                        <div class="form-group">
-                            <label for="itemDesc">Employee Name </label>
-                            <input type="text" class="form-control" id="itemDesc" placeholder="Name">
-                        </div>
 
-                        <div class="col-md-6 col-sm-6 ">
-                            <label for="itemDesc">set Time </label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Time</span>
-                                <span class="input-group-text">
+                        <div class="col-md-6 col-sm-6 " style="float: right">
+
+                            <div class="form-group">
+                                <label for="itemCode">Employee Id</label>
+                                <input type="text" class="form-control" name="attendance.idNo"
+                                       required="required"
+                                       value="${genAttendanceId}"
+                                       id="itemCode" readonly="readonly" placeholder="ID">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="itemDesc">Employee Name </label>
+                                <input type="text" class="form-control" id="itemDesc" placeholder="Name">
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 ">
+                                <label for="itemDesc">set Time </label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Time</span>
+                                        <span class="input-group-text">
                                        IN
                                 </span>
-                            </div>
-                            <input type="text" class="form-control" name="inTime" id="itemTime" value="${attendance.inTime }" aria-label="Dollar amount (with dot and two decimal places)">
+                                    </div>
+                                    <input type="text" class="form-control" name="inTime" id="itemTime" value="${attendance.inTime }" aria-label="Dollar amount (with dot and two decimal places)">
 
-                        </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 ">
-                            <label for="itemDesc">&nbsp;</label>
-                        <div class="input-group mb-3" style="float: right">
-                            <div class="input-group-prepend">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 ">
+                                <label for="itemDesc">&nbsp;</label>
+                                <div class="input-group mb-3" style="float: right">
+                                    <div class="input-group-prepend">
                                 <span class="input-group-text">
                                        OUT
                                 </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="itemTime2"  name="outTime" value="${attendance.outTime }"  aria-label="Dollar amount (with dot and two decimal places)"/>
+
+                                </div>
                             </div>
-                            <input type="text" class="form-control" id="itemTime2"  name="outTime" value="${attendance.outTime }"  aria-label="Dollar amount (with dot and two decimal places)"/>
 
-                        </div>
-                        </div>
+                            <div class="col-md-6 col-sm-6 ">
+                                <label for="itemDesc">&nbsp;</label>
 
-                        <div class="col-md-6 col-sm-6 ">
-                        <label for="itemDesc">&nbsp;</label>
-
-                        <div class="input-group mb-3" style="float: right">
-                            <div class="input-group-prepend">
+                                <div class="input-group mb-3" style="float: right">
+                                    <div class="input-group-prepend">
                                 <span class="input-group-text">
                                        OT
                                 </span>
-                            </div>
-                            <input type="text" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+                                    </div>
+                                    <input type="text" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
 
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 ">
+                                <label for="itemDesc">&nbsp;</label>
+                                <div class="input-group mb-3" style="float: right">
+                                    <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
+                                    <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                        <div class="col-md-6 col-sm-6 ">
-                            <label for="itemDesc">&nbsp;</label>
-                            <div class="input-group mb-3" style="float: right">
-                        <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
-                        <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
-                    </div>
-                    </div>
-                    </div>
 
 
-                    <div class="col-md-6 col-sm-6 " style="float: left">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Employees
-                                    <small>Users</small>
-                                </h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="card-box table-responsive">
-                                            <p class="text-muted font-13 m-b-30">
+                        <div class="col-md-6 col-sm-6 " style="float: left">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Employees
+                                        <small>Users</small>
+                                    </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                               aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card-box table-responsive">
+                                                <p class="text-muted font-13 m-b-30">
 
-                                            </p>
+                                                </p>
 
-                                            <table id="datatable-responsive"
-                                                   class="table table-striped table-bordered dt-responsive nowrap"
-                                                   cellspacing="0" width="100%">
-                                                <thead class="thead-dark">
-                                                <tr>
-                                                    <th>Employee ID</th>
-                                                    <th>Name</th>
+                                                <table id="datatable-responsive"
+                                                       class="table table-striped table-bordered dt-responsive nowrap"
+                                                       cellspacing="0" width="100%">
+                                                    <thead class="thead-dark">
+                                                    <tr>
+                                                        <th>Employee ID</th>
+                                                        <th>Name</th>
 
-                                                </tr>
-                                                </thead>
-                                                <tbody>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
                                                     <c:forEach items="${listEmployeesTable}" var="e">
                                                         <tr>
                                                             <td>${e.idNo}</td>
                                                             <td>${e.name}</td>
                                                         </tr>
                                                     </c:forEach>
-                                                </tbody>
+                                                    </tbody>
 
-                                            </table>
+                                                </table>
 
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-12 col-sm-12 ">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Today active users
-                                    <small>Update Today
-                                        Users</small>
-                                </h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="card-box table-responsive">
-                                            <p class="text-muted font-13 m-b-30">
-                                                The User Table Provide To Find Data Of Users.If You Want Edit OR Remove User You Can Find
-                                                User And Just Click On User Row.
-                                            </p>
-                                            <table id="datatable-buttons" class="table table-striped table-bordered">
-                                                <thead class="thead-light">
-                                                <tr>
-                                                    <th>Atendance ID</th>
-                                                    <th>User ID</th>
-                                                    <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>inTime</th>
-                                                    <th>OutTime</th>
-                                                    <th>OverTime</th>
-                                                    <th>Delete</th>
-                                                    <th>Edit</th>
-                                                </tr>
-
-                                                </thead>
-                                                <tbody>
-                                                <c:forEach items="${listAttendance}" var="e">
+                        <div class="col-md-12 col-sm-12 ">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Today active users
+                                        <small>Update Today
+                                            Users</small>
+                                    </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                               aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card-box table-responsive">
+                                                <p class="text-muted font-13 m-b-30">
+                                                    The User Table Provide To Find Data Of Users.If You Want Edit OR Remove User You Can Find
+                                                    User And Just Click On User Row.
+                                                </p>
+                                                <table id="datatable-buttons" class="table table-striped table-bordered">
+                                                    <thead class="thead-light">
                                                     <tr>
-                                                        <td>${e.pid}</td>
-                                                        <td>${e.employee.idNo}</td>
-                                                        <td>${e.employee.name}</td>
-                                                        <td>${e.employee.occupation}</td>
-                                                        <td>${e.inTime}</td>
-                                                        <td>${e.outTime}</td>
-                                                        <td>${e.overtimeHours}</td>
-                                                        <td><a href="/delete?pid=${e.pid}"><span
-                                                                class="glyphicon glyphicon-trash"></span></a></td>
-                                                        <td><a href="/edit-employee?pid=${e.pid }"><span
-                                                                class="glyphicon glyphicon-pencil"></span></a></td>
+                                                        <th>Atendance ID</th>
+                                                        <th>User ID</th>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>inTime</th>
+                                                        <th>OutTime</th>
+                                                        <th>OverTime</th>
+                                                        <th>Delete</th>
+                                                        <th>Edit</th>
                                                     </tr>
-                                                </c:forEach>
-                                                </tbody>
-                                            </table>
+
+                                                    </thead>
+                                                    <tbody>
+                                                    <c:forEach items="${listAttendance}" var="e">
+                                                        <tr>
+                                                            <td>${e.pid}</td>
+                                                            <td>${e.employee.idNo}</td>
+                                                            <td>${e.employee.name}</td>
+                                                            <td>${e.employee.occupation}</td>
+                                                            <td>${e.inTime}</td>
+                                                            <td>${e.outTime}</td>
+                                                            <td>${e.overtimeHours}</td>
+                                                            <td><a href="/delete?pid=${e.pid}"><span
+                                                                    class="glyphicon glyphicon-trash"></span></a></td>
+                                                            <td><a href="/edit-employee?pid=${e.pid }"><span
+                                                                    class="glyphicon glyphicon-pencil"></span></a></td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>
@@ -666,19 +657,15 @@
         var today = date.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
         date2.setHours(date.getHours()+8);
         var today2 = date2.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
-
         selectedRow = $(this);
         $("#itemCode").val($(this).find("td:first-child").text());
         $("#itemDesc").val($(this).find("td:nth-child(2)").text());
         $("#itemTime").val(today);
         $("#itemTime2").val(today2);
-
         $("#itemCode").attr("disabled", 'true');
         $("#datatable-responsive tbody tr").removeClass('row-selected');
         selectedRow.addClass('row-selected');
     });
-
-
 </script>
 
 <!-- Custom Theme Scripts -->

@@ -1,7 +1,5 @@
 package lk.sliit.project.employeeManagement.dto;
 
-import lk.sliit.project.employeeManagement.business.SuperBO;
-
 import java.sql.Date;
 /**
  * @author: Rivindu-Wijayarathna
