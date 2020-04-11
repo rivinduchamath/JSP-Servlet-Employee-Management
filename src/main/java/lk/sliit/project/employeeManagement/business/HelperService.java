@@ -4,7 +4,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-
+/**
+ * @author: Rivindu-Wijayarathna
+ * Date: 16-Mar-20
+ */
 public interface HelperService<C> {
 	List<C> findAllEmployees();
 	
