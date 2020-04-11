@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.controller;
 
+import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
@@ -24,6 +25,8 @@ public class IndexController {
     EmployeeBO employeeBO;
     @Autowired
     DashboardBO dashboardBO;
+    @Autowired
+    AttendanceBO attendanceBO;
 
     //Initial Load Page http://localhost:8091
     @Scope(scopeName = "")
@@ -45,7 +48,7 @@ public class IndexController {
             long maleCount = ( dashboardBO.getMaleCount ( ) );
             long totalCount = ( dashboardBO.getAllEmployeeCount ( ) );
             long femaleCount = dashboardBO.getFemaleCount ();
-            model.addAttribute ( "empData", employeeBO.findAllEmployees ( ) );
+            model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );
 

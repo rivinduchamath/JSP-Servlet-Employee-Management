@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -39,7 +40,7 @@ public class TablesController {
 
         ModelAndView mav = new ModelAndView ("tables" );
         //Get All In Attendance
-        mav.addObject ("listAttendance", attendanceBO.findtodayAttendence ( )  );
+        mav.addObject ("listAttendance", attendanceBO.findTodayAttendance ( )  );
        //Get All Employees
         mav.addObject ("listEmployeesTable", employeeBO.findAllEmployees ()  );
        //Top Employee
@@ -59,7 +60,21 @@ public class TablesController {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
        attendance.setDate ( date );
-        attendanceBO.save(attendance);
+        List <AttendanceDTO> todayAttendance = null;
+       String dtId= attendance.getEmployeeID ().getIdNo ();
+        String id ="";
+         todayAttendance = attendanceBO.findTodayAttendance ( );
+        for (AttendanceDTO a :todayAttendance){
+          id = a.getEmployeeID ().getIdNo () ;
+        if(id.equals ( dtId)){
+            System.out.println ("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" );
+
+        } else {
+            attendanceBO.save(attendance);
+               break;
+        }
+        }
+
       return "redirect:/tables";
     }
 

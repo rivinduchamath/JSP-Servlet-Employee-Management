@@ -429,7 +429,7 @@
                                 <label for="itemCode">Employee Id</label>
                                 <input type="text" class="form-control"
                                        required="required" name="employeeID"
-                                       id="itemCode" placeholder="ID"/>
+                                       id="itemCode" placeholder="ID" readonly/>
                             </div>
 
                             <div class="form-group">

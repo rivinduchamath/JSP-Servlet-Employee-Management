@@ -26,7 +26,7 @@ public class AttendanceBOImpl implements AttendanceBO {
     AttendanceDAO attendanceDAO;
 
     @Override
-    public List<AttendanceDTO> findtodayAttendence() {
+    public List<AttendanceDTO> findTodayAttendance() {
         DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
         Date date = new Date();
         Iterable <Attendance> attendances = attendanceDAO.findAttendanceByDateEquals (date );

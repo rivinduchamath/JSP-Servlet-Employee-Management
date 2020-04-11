@@ -12,7 +12,7 @@ import java.util.List;
  * Date: 09-Apr-20
  */
 public interface AttendanceBO extends SuperBO {
-   List<AttendanceDTO> findtodayAttendence();
+   List<AttendanceDTO> findTodayAttendance();
 
     Attendance getEmployeeAttCount();
 

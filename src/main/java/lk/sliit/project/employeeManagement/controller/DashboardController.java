@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.controller;
 
+import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
@@ -29,7 +30,8 @@ public class DashboardController extends HttpServlet {
     private DashboardBO dashboardBO;
     @Autowired
     private EmployeeBO employeeBO;
-
+    @Autowired
+    AttendanceBO attendanceBO;
     //Find Total Employee Count For DashBoard
     @RequestMapping("/Dashboard")
     public void dashboard(Model model,@ModelAttribute EmployeeDTO employee) {
@@ -41,7 +43,7 @@ public class DashboardController extends HttpServlet {
         long totalCount =  dashboardBO.getAllEmployeeCount ( );
         long femaleCount =  dashboardBO.getFemaleCount();
         model.addAttribute ( "empData", employeeBO.findAllEmployees ( ) );
-
+        model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
         else model.addAttribute ( "maleCountDashBoard", 0 );
 
