@@ -17,12 +17,12 @@ public class AttendanceDTO {
     private String outTime;
     private double overtimeHours;
     private Employee employeeID;
-    private String EpId;
+
 
     public AttendanceDTO() {
     }
 
-    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID, String epId) {
+    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -30,20 +30,14 @@ public class AttendanceDTO {
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
         this.employeeID = employeeID;
-        EpId = epId;
+
     }
 
     public int getAttendanceId() {
         return attendanceId;
     }
 
-    public String getIcx() {
-        return EpId;
-    }
 
-    public void setIcx(String EpId) {
-        this.EpId = EpId;
-    }
 
     public void setAttendanceId(int attendanceId) {
         this.attendanceId = attendanceId;
@@ -113,14 +107,6 @@ public class AttendanceDTO {
         this.employeeID = employeeID;
     }
 
-    public String getEpId() {
-        return EpId;
-    }
-
-    public void setEpId(String epId) {
-        EpId = epId;
-    }
-
     @Override
     public String toString() {
         return "AttendanceDTO{" +
@@ -131,7 +117,6 @@ public class AttendanceDTO {
                 ", outTime='" + outTime + '\'' +
                 ", overtimeHours=" + overtimeHours +
                 ", employeeID=" + employeeID +
-                ", EpId='" + EpId + '\'' +
                 '}';
     }
 }

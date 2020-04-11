@@ -428,7 +428,7 @@
                             <div class="form-group">
                                 <label for="itemCode">Employee Id</label>
                                 <input type="text" class="form-control"
-                                       required="required" name="EpId"
+                                       required="required" name="employeeID"
                                        id="itemCode" placeholder="ID"/>
                             </div>
 

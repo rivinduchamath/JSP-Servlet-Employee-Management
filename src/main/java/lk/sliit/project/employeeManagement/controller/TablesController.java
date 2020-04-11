@@ -56,9 +56,6 @@ public class TablesController {
     }
     @RequestMapping(value="tablesAdd",method=RequestMethod.POST)
     public String index2(@ModelAttribute AttendanceDTO attendance,Model model) {
-
-        System.out.println ("Employee ID ============ "+ attendance.getEpId ());
-        System.out.println ("IN TOME  "+attendance.getInTime ());
         attendanceBO.save(attendance);
       return "redirect:/tables";
     }

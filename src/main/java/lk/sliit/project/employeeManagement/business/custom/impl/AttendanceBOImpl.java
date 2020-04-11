@@ -35,8 +35,7 @@ public class AttendanceBOImpl implements AttendanceBO {
                     attendance.getInTime (),
                     attendance.getOutTime (),
                     attendance.getOvertimeHours (),
-                    attendance.getEmployee (),
-                    attendance.getEpId ()
+                    attendance.getEmployee ()
             ) );
         }
         return dtos;
@@ -55,8 +54,8 @@ public class AttendanceBOImpl implements AttendanceBO {
                 attendanceDTO.getInTime (),
                 attendanceDTO.getOutTime (),
                 attendanceDTO.getOvertimeHours (),
-                attendanceDTO.getEmployee (),
-                attendanceDTO.getEpId ()
+                attendanceDTO.getEmployee ()
+
         ));
     }
 
