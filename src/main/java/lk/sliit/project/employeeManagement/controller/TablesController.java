@@ -65,13 +65,20 @@ public class TablesController {
         Date date = new Date ( );
         attendance.setDate ( date );
         List <AttendanceDTO> todayAttendance = null;
-        String dtId = attendance.getEmployeeID ( ).getIdNo ( );
+        String dtId = "";
+        try {
+             dtId = attendance.getEmployeeID ( ).getIdNo ( );
+        }catch (NullPointerException e){
+
+            return "redirect:/tables";
+        }
+
         String id = "";
         todayAttendance = attendanceBO.findTodayAttendance ( );
         for (AttendanceDTO a : todayAttendance) {
             id = a.getEmployeeID ( ).getIdNo ( );
             if (id.equals ( dtId )) {
-//                mav.addObject ( "errorLog", "Incorrect ID" );
+
                 return "redirect:/tables";
             }
         }

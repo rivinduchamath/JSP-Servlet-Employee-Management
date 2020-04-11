@@ -406,7 +406,7 @@
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
 
-                <%--    <form  method="POST" action="/tablesAdd" name="errorLog">
+              <%-- <form  method="POST" action="/tablesAdd" name="errorLog">
                     <script>
                         window.addEventListener("load",function(){
                             alert("${errorLog}");
