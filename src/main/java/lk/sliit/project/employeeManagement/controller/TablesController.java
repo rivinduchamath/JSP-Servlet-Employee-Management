@@ -56,6 +56,9 @@ public class TablesController {
     }
     @RequestMapping(value="tablesAdd",method=RequestMethod.POST)
     public String index2(@ModelAttribute AttendanceDTO attendance,Model model) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+       attendance.setDate ( date );
         attendanceBO.save(attendance);
       return "redirect:/tables";
     }

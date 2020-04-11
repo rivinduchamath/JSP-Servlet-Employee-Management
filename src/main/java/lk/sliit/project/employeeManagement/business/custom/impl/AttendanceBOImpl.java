@@ -9,7 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,8 +27,9 @@ public class AttendanceBOImpl implements AttendanceBO {
 
     @Override
     public List<AttendanceDTO> findtodayAttendence() {
-
-        Iterable <Attendance> attendances = attendanceDAO.findAll ( );
+        DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
+        Date date = new Date();
+        Iterable <Attendance> attendances = attendanceDAO.findAttendanceByDateEquals (date );
         List <AttendanceDTO> dtos = new ArrayList <> ( );
         for (Attendance attendance : attendances) {
             dtos.add ( new AttendanceDTO (
