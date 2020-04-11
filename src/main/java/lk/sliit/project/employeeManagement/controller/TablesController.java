@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.controller;
 
+import javafx.scene.control.Alert;
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.swing.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,8 +27,8 @@ import java.util.List;
  */
 @Controller
 public class TablesController {
-    DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
-    Date date = new Date ();
+    DateFormat dateFormat = new SimpleDateFormat ( "yyyy/MM/dd" );
+    Date date = new Date ( );
 
     @Autowired
     EmployeeBO employeeBO;
@@ -36,46 +38,46 @@ public class TablesController {
     AttendanceBO attendanceBO;
 
     @RequestMapping("tables")
-    public ModelAndView index(Model model,@ModelAttribute AttendanceDTO attendance) {
+    public ModelAndView index(Model model, @ModelAttribute AttendanceDTO attendance) {
 
-        ModelAndView mav = new ModelAndView ("tables" );
+        ModelAndView mav = new ModelAndView ( "tables" );
         //Get All In Attendance
-        mav.addObject ("listAttendance", attendanceBO.findTodayAttendance ( )  );
-       //Get All Employees
-        mav.addObject ("listEmployeesTable", employeeBO.findAllEmployees ()  );
-       //Top Employee
-        Attendance totalCount =  attendanceBO.getEmployeeAttCount( );
- try {
-     model.addAttribute ("genAttendanceId",totalCount.getPid ( )+1);
- }catch (NullPointerException e){
-     model.addAttribute ("genAttendanceId",1);
- }
+        mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
+        //Get All Employees
+        mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
+        //Top Employee
+        Attendance totalCount = attendanceBO.getEmployeeAttCount ( );
+        try {
+            model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
+        } catch (NullPointerException e) {
+            model.addAttribute ( "genAttendanceId", 1 );
+        }
 
         //For get Logger Name and Picture
-        model.addAttribute ("loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
     }
-    @RequestMapping(value="tablesAdd",method=RequestMethod.POST)
-    public String index2(@ModelAttribute AttendanceDTO attendance,Model model) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date date = new Date();
-       attendance.setDate ( date );
+
+    @RequestMapping(value = "tablesAdd", method = RequestMethod.POST)
+    public String index2(@ModelAttribute AttendanceDTO attendance, Model model) {
+//        ModelAndView mav = new ModelAndView ( "tables" );
+        DateFormat dateFormat = new SimpleDateFormat ( "yyyy/MM/dd" );
+        Date date = new Date ( );
+        attendance.setDate ( date );
         List <AttendanceDTO> todayAttendance = null;
-       String dtId= attendance.getEmployeeID ().getIdNo ();
-        String id ="";
-         todayAttendance = attendanceBO.findTodayAttendance ( );
-        for (AttendanceDTO a :todayAttendance){
-          id = a.getEmployeeID ().getIdNo () ;
-        if(id.equals ( dtId)){
-            System.out.println ("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" );
-
-        } else {
-            attendanceBO.save(attendance);
-               break;
-        }
+        String dtId = attendance.getEmployeeID ( ).getIdNo ( );
+        String id = "";
+        todayAttendance = attendanceBO.findTodayAttendance ( );
+        for (AttendanceDTO a : todayAttendance) {
+            id = a.getEmployeeID ( ).getIdNo ( );
+            if (id.equals ( dtId )) {
+//                mav.addObject ( "errorLog", "Incorrect ID" );
+                return "redirect:/tables";
+            }
         }
 
-      return "redirect:/tables";
+        attendanceBO.save ( attendance );
+        return "redirect:/tables";
     }
 
 }

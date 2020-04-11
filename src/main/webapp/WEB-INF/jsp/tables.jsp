@@ -406,12 +406,13 @@
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
 
-                    <%--<form name="tablesAdd" action="tablesAdd" method="POST" >--%>
-                        <%--<ul>--%>
-                            <%--<li><label>User:</label> <input type='text' name='uuu' /></li>--%>
-                         <%----%>
-                        <%--</ul>--%>
-                    <%--</form>--%>
+                <%--    <form  method="POST" action="/tablesAdd" name="errorLog">
+                    <script>
+                        window.addEventListener("load",function(){
+                            alert("${errorLog}");
+                        })
+                    </script>
+                    </form>--%>
 
                     <form  method="POST" action="tablesAdd" name="tablesAdd">
                         <div style="display: none"><input name="attendanceId" value="${genAttendanceId}"></div>
@@ -485,7 +486,11 @@
 
                                     <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
                                     <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
+
                                 </div>
+
+
+
                             </div>
                         </div>
 
