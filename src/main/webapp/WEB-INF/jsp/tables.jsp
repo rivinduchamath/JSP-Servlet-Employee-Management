@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <html lang="en">
@@ -84,7 +85,7 @@
 
 <body class="nav-md">
 
-
+<%! String date =""; %>
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
@@ -404,8 +405,17 @@
 
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
-                    <form  method="POST" action="tablesAdd">
+
+                    <%--<form name="tablesAdd" action="tablesAdd" method="POST" >--%>
+                        <%--<ul>--%>
+                            <%--<li><label>User:</label> <input type='text' name='uuu' /></li>--%>
+                         <%----%>
+                        <%--</ul>--%>
+                    <%--</form>--%>
+
+                    <form  method="POST" action="tablesAdd" name="tablesAdd">
                         <div style="display: none"><input name="attendanceId" value="${genAttendanceId}"></div>
+
                         <div class="col-md-6 col-sm-6 " style="float: left">
                             <label>Search aID</label>
                             <input type="text" style="cursor: pointer;" id="myInput" onkeyup="myFunction()" placeholder="Search By ID..">
@@ -414,14 +424,14 @@
 
                         <div class="col-md-6 col-sm-6 " style="float: right">
 
+
                             <div class="form-group">
                                 <label for="itemCode">Employee Id</label>
-                                <input type="text" class="form-control" name="attendance.idNo"
-                                       required="required"
-                                       value="${genAttendanceId}"
-                                       id="itemCode" readonly="readonly" placeholder="ID">
-
+                                <input type="text" class="form-control"
+                                       required="required" name="EpId"
+                                       id="itemCode" placeholder="ID"/>
                             </div>
+
                             <div class="form-group">
                                 <label for="itemDesc">Employee Name </label>
                                 <input type="text" class="form-control" id="itemDesc" placeholder="Name">
@@ -436,7 +446,8 @@
                                        IN
                                 </span>
                                     </div>
-                                    <input type="text" class="form-control" name="inTime" id="itemTime" value="${attendance.inTime }" aria-label="Dollar amount (with dot and two decimal places)">
+                                    <input type="text" class="form-control" name="inTime" id="itemTime"
+                                           aria-label="Dollar amount (with dot and two decimal places)">
 
                                 </div>
                             </div>
@@ -448,7 +459,9 @@
                                        OUT
                                 </span>
                                     </div>
-                                    <input type="text" class="form-control" id="itemTime2"  name="outTime" value="${attendance.outTime }"  aria-label="Dollar amount (with dot and two decimal places)"/>
+                                    <input type="text" class="form-control"
+                                           id="itemTime2"  name="outTime" value="${attendance.outTime }"
+                                           aria-label="Dollar amount (with dot and two decimal places)"/>
 
                                 </div>
                             </div>
@@ -469,6 +482,7 @@
                             <div class="col-md-6 col-sm-6 ">
                                 <label for="itemDesc">&nbsp;</label>
                                 <div class="input-group mb-3" style="float: right">
+
                                     <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
                                     <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
                                 </div>
@@ -662,7 +676,6 @@
         $("#itemDesc").val($(this).find("td:nth-child(2)").text());
         $("#itemTime").val(today);
         $("#itemTime2").val(today2);
-        $("#itemCode").attr("disabled", 'true');
         $("#datatable-responsive tbody tr").removeClass('row-selected');
         selectedRow.addClass('row-selected');
     });

@@ -5,6 +5,7 @@ import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +21,7 @@ import java.util.List;
 public class AttendanceBOImpl implements AttendanceBO {
     @Autowired
     AttendanceDAO attendanceDAO;
+
     @Override
     public List<AttendanceDTO> findtodayAttendence() {
 
@@ -33,7 +35,8 @@ public class AttendanceBOImpl implements AttendanceBO {
                     attendance.getInTime (),
                     attendance.getOutTime (),
                     attendance.getOvertimeHours (),
-                    attendance.getEmployee ()
+                    attendance.getEmployee (),
+                    attendance.getEpId ()
             ) );
         }
         return dtos;
@@ -52,7 +55,8 @@ public class AttendanceBOImpl implements AttendanceBO {
                 attendanceDTO.getInTime (),
                 attendanceDTO.getOutTime (),
                 attendanceDTO.getOvertimeHours (),
-                attendanceDTO.getEmployee ()
+                attendanceDTO.getEmployee (),
+                attendanceDTO.getEpId ()
         ));
     }
 

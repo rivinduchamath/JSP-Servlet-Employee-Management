@@ -23,10 +23,12 @@ public class Attendance implements SuperEntity {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "employeeId", referencedColumnName = "idNo", nullable = true)
     private Employee employeeID;
+    private String EpId;
 
     public Attendance() {}
 
-    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
+    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime,
+                      double overtimeHours, Employee employeeID, String epId) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -34,10 +36,8 @@ public class Attendance implements SuperEntity {
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
         this.employeeID = employeeID;
+        EpId = epId;
     }
-
-
-
 
     public int getPid() {
         return attendanceId;
@@ -95,16 +95,41 @@ public class Attendance implements SuperEntity {
         this.employeeID = employeeID;
     }
 
+    public int getAttendanceId() {
+        return attendanceId;
+    }
+
+    public void setAttendanceId(int attendanceId) {
+        this.attendanceId = attendanceId;
+    }
+
+    public Employee getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(Employee employeeID) {
+        this.employeeID = employeeID;
+    }
+
+    public String getEpId() {
+        return EpId;
+    }
+
+    public void setEpId(String epId) {
+        EpId = epId;
+    }
+
     @Override
     public String toString() {
-        return "AttendanceBOImpl{" +
+        return "Attendance{" +
                 "attendanceId=" + attendanceId +
                 ", salary=" + salary +
                 ", date=" + date +
-                ", inTime=" + inTime +
-                ", outTime=" + outTime +
+                ", inTime='" + inTime + '\'' +
+                ", outTime='" + outTime + '\'' +
                 ", overtimeHours=" + overtimeHours +
                 ", employeeID=" + employeeID +
+                ", EpId='" + EpId + '\'' +
                 '}';
     }
 }

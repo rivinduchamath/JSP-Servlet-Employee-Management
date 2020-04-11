@@ -17,10 +17,12 @@ public class AttendanceDTO {
     private String outTime;
     private double overtimeHours;
     private Employee employeeID;
+    private String EpId;
 
-    public AttendanceDTO(){}
+    public AttendanceDTO() {
+    }
 
-    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
+    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID, String epId) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -28,10 +30,19 @@ public class AttendanceDTO {
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
         this.employeeID = employeeID;
+        EpId = epId;
     }
 
     public int getAttendanceId() {
         return attendanceId;
+    }
+
+    public String getIcx() {
+        return EpId;
+    }
+
+    public void setIcx(String EpId) {
+        this.EpId = EpId;
     }
 
     public void setAttendanceId(int attendanceId) {
@@ -94,6 +105,21 @@ public class AttendanceDTO {
         this.overtimeHours = overtimeHours;
     }
 
+    public Employee getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(Employee employeeID) {
+        this.employeeID = employeeID;
+    }
+
+    public String getEpId() {
+        return EpId;
+    }
+
+    public void setEpId(String epId) {
+        EpId = epId;
+    }
 
     @Override
     public String toString() {
@@ -101,11 +127,13 @@ public class AttendanceDTO {
                 "attendanceId=" + attendanceId +
                 ", salary=" + salary +
                 ", date=" + date +
-                ", inTime=" + inTime +
-                ", outTime=" + outTime +
+                ", inTime='" + inTime + '\'' +
+                ", outTime='" + outTime + '\'' +
                 ", overtimeHours=" + overtimeHours +
                 ", employeeID=" + employeeID +
+                ", EpId='" + EpId + '\'' +
                 '}';
     }
 }
+
 

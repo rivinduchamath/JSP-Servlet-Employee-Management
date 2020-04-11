@@ -10,7 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -18,6 +24,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class TablesController {
+    DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
+    Date date = new Date ();
+
     @Autowired
     EmployeeBO employeeBO;
     @Autowired
@@ -25,31 +34,33 @@ public class TablesController {
     @Autowired
     AttendanceBO attendanceBO;
 
-
     @RequestMapping("tables")
     public ModelAndView index(Model model,@ModelAttribute AttendanceDTO attendance) {
 
-        ModelAndView mav = new ModelAndView ( "tables" );
+        ModelAndView mav = new ModelAndView ("tables" );
         //Get All In Attendance
-        mav.addObject ( "listAttendance", attendanceBO.findtodayAttendence ( )  );
+        mav.addObject ("listAttendance", attendanceBO.findtodayAttendence ( )  );
        //Get All Employees
-        mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ()  );
+        mav.addObject ("listEmployeesTable", employeeBO.findAllEmployees ()  );
        //Top Employee
-        Attendance totalCount =  attendanceBO.getEmployeeAttCount ( );
+        Attendance totalCount =  attendanceBO.getEmployeeAttCount( );
  try {
-     model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
+     model.addAttribute ("genAttendanceId",totalCount.getPid ( )+1);
  }catch (NullPointerException e){
-     model.addAttribute ( "genAttendanceId", 1 );
+     model.addAttribute ("genAttendanceId",1);
  }
 
         //For get Logger Name and Picture
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        model.addAttribute ("loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return mav;
     }
-    @RequestMapping("tablesAdd")
-    public String index2(Model model,@ModelAttribute AttendanceDTO attendance) {
-      attendanceBO.save ( attendance );
-        return "redirect:/tables";
+    @RequestMapping(value="tablesAdd",method=RequestMethod.POST)
+    public String index2(@ModelAttribute AttendanceDTO attendance,Model model) {
+
+        System.out.println ("Employee ID ============ "+ attendance.getEpId ());
+        System.out.println ("IN TOME  "+attendance.getInTime ());
+        attendanceBO.save(attendance);
+      return "redirect:/tables";
     }
 
 }
