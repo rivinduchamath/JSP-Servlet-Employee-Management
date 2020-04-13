@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
 
+
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 23-Mar-20

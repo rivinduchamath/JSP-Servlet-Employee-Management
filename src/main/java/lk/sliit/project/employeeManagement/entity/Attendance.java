@@ -36,7 +36,6 @@ public class Attendance implements SuperEntity {
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
         this.employeeID = employeeID;
-
     }
 
     public int getPid() {
@@ -110,8 +109,6 @@ public class Attendance implements SuperEntity {
     public void setEmployeeID(Employee employeeID) {
         this.employeeID = employeeID;
     }
-
-
 
     @Override
     public String toString() {

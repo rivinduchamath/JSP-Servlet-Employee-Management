@@ -118,7 +118,7 @@
                                 <ul class="nav child_menu">
                                     <li><a href="../../chartjs.jsp">Chart JS</a></li>
 
-                                    <li><a href="../../morisjs.jsp">Moris JS</a></li>
+                                    <li><a href="salary">Salary</a></li>
                                     <li><a href="../../echarts.jsp">ECharts</a></li>
 
                                 </ul>
