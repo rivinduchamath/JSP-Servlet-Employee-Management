@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Employee Management </title>
-
+    <link href="../../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -341,56 +341,45 @@
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
+                                    <button class="btn btn-success" style="position: absolute;display:inline; right: 0;width: 10%;
+                                             height: 35px; ">Pay</button>
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="x_content">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="card-box table-responsive">
-                                            <p class="text-muted font-13 m-b-30">
-                                                The User Table Provide To Find Data Of Users.If You Want Edit OR Remove User You Can Find
-                                                User And Just Click On User Row.
-                                            </p>
-                                            <table id="datatable-buttons" class="table table-striped table-bordered">
-                                                <thead class="thead-light">
-                                                <tr>
-                                                    <th>Atendance ID</th>
-                                                    <th>User ID</th>
-                                                    <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>inTime</th>
-                                                    <th>OutTime</th>
-                                                    <th>OverTime</th>
-                                                    <th>Delete</th>
-                                                    <th>Edit</th>
-                                                </tr>
 
+                            <div class="x_content">
+
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+
+                                        <div class="card-box table-responsive">
+
+                                            <table id="datatable-buttons" class="table table-striped jambo_table bulk_action table-bordered">
+                                                <thead class="thead-dark">
+
+                                                <tr>
+                                                    <th>EmpId</th>
+                                                    <th>Name</th>
+                                                    <th>Salary</th>
+                                                    <th>Total Salary</th>
+                                                    <th>Delete</th>
+                                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                                </tr>
                                                 </thead>
+
                                                 <tbody>
                                                 <c:forEach items="${listEmployeesTable}" var="e">
                                                     <tr>
                                                         <td>${e.idNo}</td>
-                                                        <td>${e.idNo}</td>
                                                         <td>${e.name}</td>
-                                                        <td>${e.occupation}</td>
-                                                        <td>${e.occupation}</td>
-                                                        <td>${e.occupation}</td>
-                                                        <td>${e.occupation}</td>
+                                                        <td>${e.salary}</td>
+                                                        <td>${e.paymentDueTo}</td>
                                                         <td><a href="/delete?pid=${e.occupation}"><span
                                                                 class="glyphicon glyphicon-trash"></span></a></td>
-                                                        <td><a href="/edit-employee?pid=${e.occupation }"><span
-                                                                class="glyphicon glyphicon-pencil"></span></a></td>
+                                                        <td class="a-center ">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
                                                     </tr>
                                                 </c:forEach>
                                                 </tbody>
@@ -454,8 +443,7 @@
 <script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
 <script src="../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 <script src="../../vendors/jszip/dist/jszip.min.js"></script>
-<script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
-<script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
+<script src="../../vendors/iCheck/icheck.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="../../build/js/custom.min.js"></script>
 </body>
