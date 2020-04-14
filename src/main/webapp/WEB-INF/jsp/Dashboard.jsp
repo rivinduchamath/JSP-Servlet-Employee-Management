@@ -99,7 +99,7 @@
                                     <li><a href="../../general_elements.jsp">General Elements</a></li>
                                     <li><a href="../../media_gallery.jsp">Media Gallery</a></li>
 
-                                    <li><a href="index2">Icons</a></li>
+                                    <li><a href="index">Icons</a></li>
                                     <li><a href="../../glyphicons.jsp">Glyphicons</a></li>
 
                                     <li><a href="../../invoice.jsp">Invoice</a></li>
