@@ -21,6 +21,7 @@ public class Salary implements SuperEntity {
     private Employee employeeID;
 
 
+
     public Salary() {
 
     }
@@ -83,4 +84,6 @@ public class Salary implements SuperEntity {
                 ", employeeID=" + employeeID +
                 '}';
     }
+
+
 }

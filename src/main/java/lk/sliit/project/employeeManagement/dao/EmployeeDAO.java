@@ -17,5 +17,6 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
      @Query(value = "SELECT occupation FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
      String findPos(String idNo);
      @Query(value = "SELECT Pic FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
-    String findPic(String idNo);
+     String findPic(String idNo);
+
 }

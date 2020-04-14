@@ -13,14 +13,27 @@ public class SalaryDTO {
     private double salary;
     private double totalOtHours;
     private String fullPayment;
-    private Employee employee;
+    private String employeeName;
+    private String employee;
 
-    public SalaryDTO(int salaryId, double salary, double totalOtHours, String fullPayment, Employee employee) {
+    public SalaryDTO(int salaryId, double salary, double totalOtHours, String fullPayment, String employee) {
         this.salaryId = salaryId;
         this.salary = salary;
         this.totalOtHours = totalOtHours;
         this.fullPayment = fullPayment;
         this.employee = employee;
+    }
+
+    public SalaryDTO() {
+    }
+
+    public SalaryDTO(int salaryId, String fullPayment, double salary, double totalOtHours, String employeeID, String employeeName) {
+        this.salaryId = salaryId;
+        this.salary = salary;
+        this.totalOtHours = totalOtHours;
+        this.fullPayment = fullPayment;
+        this.employee = employeeID;
+        this.employeeName =employeeName;
     }
 
     public int getSalaryId() {
@@ -55,12 +68,20 @@ public class SalaryDTO {
         this.fullPayment = fullPayment;
     }
 
-    public Employee getEmployee() {
+    public String getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(String employee) {
         this.employee = employee;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
     @Override
@@ -70,6 +91,7 @@ public class SalaryDTO {
                 ", salary=" + salary +
                 ", totalOtHours=" + totalOtHours +
                 ", fullPayment='" + fullPayment + '\'' +
+                ", employeeName='" + employeeName + '\'' +
                 ", employee=" + employee +
                 '}';
     }
