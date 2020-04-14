@@ -1,5 +1,7 @@
 package lk.sliit.project.employeeManagement.entity;
 
+import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -14,6 +16,7 @@ public class Salary implements SuperEntity {
     private int salaryId;
     @Column(nullable = true)
     private double salary;
+    @Column(nullable = true)
     private double totalOtHours;
     private String fullPayment;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
@@ -32,6 +35,7 @@ public class Salary implements SuperEntity {
         this.fullPayment = fullPayment;
         this.employeeID = employeeID;
     }
+
 
     public int getSalaryId() {
         return salaryId;

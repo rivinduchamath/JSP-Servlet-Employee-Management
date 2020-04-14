@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 13-Apr-20
@@ -26,13 +29,34 @@ public class SalaryBOImpl implements SalaryBO {
     public void updateSalary(SalaryDTO employee) {
 
         salaryDAO.save(new Salary (
-               3,
+                employee.getSalaryId (),
                 employee.getSalary (),
                 employee.getTotalOtHours (),
                 employee.getFullPayment (),
                 employee.getEmployee ()
 
         ));
+    }
+
+    @Override
+    public List<SalaryDTO> findAllSalaries() {
+        Iterable <Salary> allItems = salaryDAO.findAll();
+        List <SalaryDTO> dtos = new ArrayList<> ();
+        for (Salary salary : allItems) {
+            dtos.add(new SalaryDTO (
+                    salary.getSalaryId (),
+                    salary.getSalary (),
+                    salary.getTotalOtHours (),
+                    salary.getFullPayment (),
+                    salary.getEmployeeID ()
+            ));
+        }
+        return dtos;
+    }
+
+    @Override
+    public Salary getSalaryId() {
+        return salaryDAO.findTopByOrderBySalaryIdDesc();
     }
 
 

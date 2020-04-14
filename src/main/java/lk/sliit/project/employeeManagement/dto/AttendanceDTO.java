@@ -17,13 +17,13 @@ public class AttendanceDTO extends Component {
     private String inTime;
     private String outTime;
     private double overtimeHours;
-    private Employee employeeID;
+    private EmployeeDTO employeeID;
 
 
-    public AttendanceDTO() {
+    public AttendanceDTO(int pid, double salary, Date date, String inTime, String outTime, double overtimeHours, String idNo) {
     }
 
-    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
+    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, EmployeeDTO employeeID) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -33,6 +33,8 @@ public class AttendanceDTO extends Component {
         this.employeeID = employeeID;
 
     }
+
+
 
     public int getAttendanceId() {
         return attendanceId;
@@ -44,11 +46,11 @@ public class AttendanceDTO extends Component {
         this.attendanceId = attendanceId;
     }
 
-    public Employee getEmployee() {
+    public EmployeeDTO getEmployee() {
         return employeeID;
     }
 
-    public void setEmployee(Employee employeeID) {
+    public void setEmployee(EmployeeDTO employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -100,11 +102,11 @@ public class AttendanceDTO extends Component {
         this.overtimeHours = overtimeHours;
     }
 
-    public Employee getEmployeeID() {
+    public EmployeeDTO getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(Employee employeeID) {
+    public void setEmployeeID(EmployeeDTO employeeID) {
         this.employeeID = employeeID;
     }
 

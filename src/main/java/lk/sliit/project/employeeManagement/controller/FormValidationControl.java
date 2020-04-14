@@ -2,7 +2,12 @@ package lk.sliit.project.employeeManagement.controller;
 
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.dto.SalaryDTO;
+import lk.sliit.project.employeeManagement.entity.Attendance;
+import lk.sliit.project.employeeManagement.entity.Employee;
+import lk.sliit.project.employeeManagement.entity.Salary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +35,10 @@ public class FormValidationControl {
     private EmployeeBO employeeBO;
     @Autowired
     private DashboardBO dashboardBO;
+    @Autowired
+    private SalaryBO salaryBO;
+
+
     private  String path ="";
     private  File file ;
 
@@ -54,8 +63,25 @@ public class FormValidationControl {
         if(employee.getPic ().equals ( "" ) && employee.getGender ().equals ( "female" )){
             employee.setPic ( "images.png" );
         }
-
+        //Save Employee Data
         employeeBO.save ( employee );
+
+        /* *********Save Data In The Salary Table When Add Employee To the System****************/
+        //Create Salary Object
+        SalaryDTO salaryDTO = new SalaryDTO (  );
+        //Get Current Highest SalaryId
+        Salary totalCount =  salaryBO.getSalaryId();
+        //If totalCount.geSalaryId > 0
+        try {
+            salaryDTO.setSalaryId ( totalCount.getSalaryId ( ) + 1 );
+        } catch (NullPointerException e) { //else
+            salaryDTO.setSalaryId ( 1 );
+        }
+        salaryDTO.setSalary (employee.getSalary ());
+        salaryDTO.setEmployee (employee);
+
+        salaryBO.updateSalary (salaryDTO );
+
         path = "C:/Users/User/Desktop/e/" + employee.getPic ();
         file = new File(path);
         BufferedImage cp, img;

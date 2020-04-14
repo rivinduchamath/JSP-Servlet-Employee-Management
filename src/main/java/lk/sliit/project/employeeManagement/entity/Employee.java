@@ -169,7 +169,10 @@ public class Employee implements SuperEntity {
         return attendance;
     }
 
-
+    public void addAttendance(Attendance attendance){
+        attendance.setEmployee (this);
+        this.attendance.add(attendance);
+    }
     /////////////////////////////////////////////////////////
 
 

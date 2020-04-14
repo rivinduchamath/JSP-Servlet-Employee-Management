@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  * Date: 14-Apr-20
  */
 public interface SalaryDAO  extends CrudRepository<Salary, String> {
-
+ Salary findTopByOrderBySalaryIdDesc();
 }

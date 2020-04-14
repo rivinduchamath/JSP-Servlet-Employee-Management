@@ -89,6 +89,10 @@ public class Attendance implements SuperEntity {
     public Employee getEmployee() {
         return employeeID;
     }
+    public void addEmployee(Employee employee){
+        employee.setIdNo (employee.getIdNo ());
+        this.employeeID.setIdNo (employee.getIdNo ());
+    }
 
     public void setEmployee(Employee employeeID) {
         this.employeeID = employeeID;
@@ -109,6 +113,7 @@ public class Attendance implements SuperEntity {
     public void setEmployeeID(Employee employeeID) {
         this.employeeID = employeeID;
     }
+
 
     @Override
     public String toString() {

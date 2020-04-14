@@ -13,15 +13,17 @@ public class SalaryDTO {
     private double salary;
     private double totalOtHours;
     private String fullPayment;
-    private Employee employee;
-
-    public SalaryDTO(int salaryId, double salary, double totalOtHours, String fullPayment, Employee employee) {
+    private EmployeeDTO employee;
+    public SalaryDTO(){}
+    public SalaryDTO(int salaryId, double salary, double totalOtHours, String fullPayment, EmployeeDTO employee) {
         this.salaryId = salaryId;
         this.salary = salary;
         this.totalOtHours = totalOtHours;
         this.fullPayment = fullPayment;
         this.employee = employee;
     }
+
+
 
     public int getSalaryId() {
         return salaryId;
@@ -55,11 +57,12 @@ public class SalaryDTO {
         this.fullPayment = fullPayment;
     }
 
-    public Employee getEmployee() {
+
+    public EmployeeDTO getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(EmployeeDTO employee) {
         this.employee = employee;
     }
 
@@ -73,4 +76,5 @@ public class SalaryDTO {
                 ", employee=" + employee +
                 '}';
     }
+
 }

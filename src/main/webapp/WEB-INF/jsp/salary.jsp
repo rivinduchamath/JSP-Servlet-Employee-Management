@@ -370,14 +370,14 @@
                                                 </thead>
 
                                                 <tbody>
-                                                <c:forEach items="${listEmployeesTable}" var="e">
+                                                <c:forEach items="${listSalaryTable}" var="e">
                                                     <tr>
-                                                        <td>${e.idNo}</td>
-                                                        <td>${e.name}</td>
-                                                        <td>${e.salary}</td>
+                                                        <td>${e.employee.idNo}</td>
+                                                        <td>${e.employee.name}</td>
+                                                        <td>${e.employee.salary}</td>
                                                         <td>${e.totalOtHours}</td>
-                                                        <td>${e.paymentDueTo}</td>
-                                                        <td><a href="/delete?pid=${e.occupation}"><span
+                                                        <td>${e.fullPayment}</td>
+                                                        <td><a href="/delete?pid=${e.totalOtHours}"><span
                                                                 class="glyphicon glyphicon-trash"></span></a></td>
                                                         <td class="a-center ">
                                                             <input type="checkbox" class="flat" name="table_records">
