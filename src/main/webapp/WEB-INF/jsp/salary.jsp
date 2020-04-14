@@ -393,14 +393,14 @@
                         </div>
                     </div>
                     <!--///////////////////////////////////////////////////////-->
-
+                    <form  method="POST" action="/salarySave" name="salary">
                     <div class="col-md-4 col-sm-4 " style="float: right">
 
 
                         <div class="form-group">
                             <label for="itemCode">Employee Id</label>
                             <input type="text" class="form-control"
-                                   required="required" name="employeeID"
+                                   required="required" name="idNo"
                                    id="itemCode" placeholder="ID" readonly/>
                         </div>
 
@@ -418,7 +418,7 @@
                                        Normal
                                 </span>
                                 </div>
-                                <input type="text" class="form-control" name="inTime" id="itemTime"
+                                <input type="text" class="form-control" name="salary" id="itemTime"
                                        aria-label="Dollar amount (with dot and two decimal places)">
 
                             </div>
@@ -432,7 +432,7 @@
                                 </span>
                                 </div>
                                 <input type="text" class="form-control"
-                                       id="itemTime2"  name="outTime" value="${attendance.outTime }"
+                                       id="itemTime2"  name="totalOtHours"
                                        aria-label="Dollar amount (with dot and two decimal places)"/>
 
                             </div>
@@ -447,7 +447,9 @@
                                        Total
                                 </span>
                                 </div>
-                                <input type="text" id="tot" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+                                <input type="text" id="tot" class="form-control"
+                                       name="paymentDueTo"  value= "0" id="itemTime3"
+                                       aria-label="Dollar amount (with dot and two decimal places)">
 
                             </div>
                         </div>
@@ -459,13 +461,12 @@
                                 <button type='reset' class="btn btn-outline-success" value="">Reset</button>
 
                             </div>
-
-
-
                         </div>
                     </div>
                     <!--////////////////////////////////////////////-->
+                    </form>
                 </div>
+
             </div>
         </div>
         <!-- /page content -->

@@ -19,7 +19,7 @@ public class EmployeeDTO{
     private Date dateOfBirth;
     private String gender;
     private Date date;
-    private int paymentDueTo;
+    private double paymentDueTo;
     private String pic;
     private boolean admin;
     private double totalOtHours;
@@ -30,7 +30,7 @@ public class EmployeeDTO{
     public EmployeeDTO(String idNo, String name, int mobileNumber,
                        String email, String address, double salary, String occupation,
                        String password, Date dateOfBirth,
-                       String gender, Date date, int paymentDueTo, String pic, boolean admin,
+                       String gender, Date date, double paymentDueTo, String pic, boolean admin,
                        double totalOtHours) {
         this.idNo = idNo;
         this.name = name;
@@ -47,6 +47,11 @@ public class EmployeeDTO{
         this.pic = pic;
         this.admin = admin;
         this.totalOtHours = totalOtHours;
+    }
+
+    public EmployeeDTO(String idNo, double salary, double totalOtHours, double salary1) {
+        this.totalOtHours = totalOtHours; this.salary = salary;
+        this.paymentDueTo = salary1;  this.idNo = idNo;
     }
 
     public String getIdNo() {
@@ -145,11 +150,11 @@ public class EmployeeDTO{
         this.pic = Pic;
     }
 
-    public int getPaymentDueTo() {
+    public double getPaymentDueTo() {
         return paymentDueTo;
     }
 
-    public void setPaymentDueTo(int paymentDueTo) {
+    public void setPaymentDueTo(double paymentDueTo) {
         this.paymentDueTo = paymentDueTo;
     }
 

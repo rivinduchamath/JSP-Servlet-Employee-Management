@@ -28,4 +28,5 @@ public interface EmployeeBO extends SuperBO {
     List<EmployeeDTO> findAllEmployees() ;
 
     EmployeeDTO findUser(String userCode) ;
+
 }

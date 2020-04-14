@@ -27,7 +27,7 @@ public class Employee implements SuperEntity {
     private String Pic;
     private boolean admin;
     @Column(nullable = true)
-    private int paymentDueTo;
+    private double paymentDueTo;
     @Column(nullable = true)
     private double totalOtHours;
     @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
@@ -39,7 +39,7 @@ public class Employee implements SuperEntity {
 
     public Employee(String idNo, String name, int mobileNumber, String email,
                     String address, double salary, String occupation, String password,
-                    Date dateOfBirth, String gender, Date date,int paymentDueTo, String pic, double totalOtHours,
+                    Date dateOfBirth, String gender, Date date,double paymentDueTo, String pic, double totalOtHours,
                     boolean admin) {
         this.idNo = idNo;
         this.name = name;
@@ -59,7 +59,10 @@ public class Employee implements SuperEntity {
 
     }
 
-
+    public Employee(String idNo, String idNo1, double salary, double totalOtHours, double paymentDueTo) {
+        this.totalOtHours = totalOtHours; this.salary = salary;
+        this.paymentDueTo = paymentDueTo;  this.idNo = idNo;
+    }
 
 
     public String getIdNo() {
@@ -158,11 +161,11 @@ public class Employee implements SuperEntity {
         this.Pic = Pic;
     }
 
-    public int getPaymentDueTo() {
+    public double getPaymentDueTo() {
         return paymentDueTo;
     }
 
-    public void setPaymentDueTo(int paymentDueTo) {
+    public void setPaymentDueTo(double paymentDueTo) {
         this.paymentDueTo = paymentDueTo;
     }
 
