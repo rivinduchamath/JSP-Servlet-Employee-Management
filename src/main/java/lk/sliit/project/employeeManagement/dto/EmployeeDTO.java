@@ -19,10 +19,8 @@ public class EmployeeDTO{
     private Date dateOfBirth;
     private String gender;
     private Date date;
-    private double paymentDueTo;
     private String pic;
     private boolean admin;
-    private double totalOtHours;
 
     public EmployeeDTO() {
     }
@@ -30,8 +28,7 @@ public class EmployeeDTO{
     public EmployeeDTO(String idNo, String name, int mobileNumber,
                        String email, String address, double salary, String occupation,
                        String password, Date dateOfBirth,
-                       String gender, Date date, double paymentDueTo, String pic, boolean admin,
-                       double totalOtHours) {
+                       String gender, Date date, String pic, boolean admin) {
         this.idNo = idNo;
         this.name = name;
         this.mobileNumber = mobileNumber;
@@ -43,10 +40,8 @@ public class EmployeeDTO{
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.date = date;
-        this.paymentDueTo = paymentDueTo;
         this.pic = pic;
         this.admin = admin;
-        this.totalOtHours = totalOtHours;
     }
 
 
@@ -147,14 +142,6 @@ public class EmployeeDTO{
         this.pic = Pic;
     }
 
-    public double getPaymentDueTo() {
-        return paymentDueTo;
-    }
-
-    public void setPaymentDueTo(double paymentDueTo) {
-        this.paymentDueTo = paymentDueTo;
-    }
-
     public boolean isAdmin() {
         return admin;
     }
@@ -163,13 +150,6 @@ public class EmployeeDTO{
         this.admin = admin;
     }
 
-    public double getTotalOtHours() {
-        return totalOtHours;
-    }
-
-    public void setTotalOtHours(double totalOtHours) {
-        this.totalOtHours = totalOtHours;
-    }
 
     @Override
     public String toString() {
@@ -185,10 +165,8 @@ public class EmployeeDTO{
                 ", dateOfBirth=" + dateOfBirth +
                 ", gender='" + gender + '\'' +
                 ", date=" + date +
-                ", paymentDueTo=" + paymentDueTo +
                 ", pic='" + pic + '\'' +
                 ", admin=" + admin +
-                ", totalOtHours=" + totalOtHours +
                 '}';
     }
 }
