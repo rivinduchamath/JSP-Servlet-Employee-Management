@@ -48,7 +48,7 @@ public class SalaryBOImpl implements SalaryBO {
                     salary.getSalary (),
                     salary.getTotalOtHours (),
                     salary.getEmployeeID ().getIdNo (),
-                    salaryDAO.getEmployeeName( salary.getEmployeeID ().getIdNo () )
+                    salaryDAO.getEmployeeName( salary.getEmployeeID ().getIdNo ())
             ));
         }
         return dtos;
