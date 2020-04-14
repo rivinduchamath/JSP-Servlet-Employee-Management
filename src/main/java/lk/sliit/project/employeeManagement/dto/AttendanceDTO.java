@@ -20,8 +20,7 @@ public class AttendanceDTO extends Component {
     private Employee employeeID;
 
 
-    public AttendanceDTO() {
-    }
+    public AttendanceDTO() { }
 
     public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
         this.attendanceId = attendanceId;
