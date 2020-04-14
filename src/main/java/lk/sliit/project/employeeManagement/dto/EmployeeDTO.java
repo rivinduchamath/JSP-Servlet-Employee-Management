@@ -22,13 +22,16 @@ public class EmployeeDTO{
     private int paymentDueTo;
     private String pic;
     private boolean admin;
+    private double totalOtHours;
 
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(String idNo, String name, int mobileNumber, String email, String address, double salary,
-                    String occupation, String password, Date dateOfBirth, String gender, Date date,
-                    int paymentDueTo,  String pic,boolean admin) {
+    public EmployeeDTO(String idNo, String name, int mobileNumber,
+                       String email, String address, double salary, String occupation,
+                       String password, Date dateOfBirth,
+                       String gender, Date date, int paymentDueTo, String pic, boolean admin,
+                       double totalOtHours) {
         this.idNo = idNo;
         this.name = name;
         this.mobileNumber = mobileNumber;
@@ -40,10 +43,10 @@ public class EmployeeDTO{
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.date = date;
-        this.pic = pic;
         this.paymentDueTo = paymentDueTo;
+        this.pic = pic;
         this.admin = admin;
-
+        this.totalOtHours = totalOtHours;
     }
 
     public String getIdNo() {
@@ -158,10 +161,18 @@ public class EmployeeDTO{
         this.admin = admin;
     }
 
+    public double getTotalOtHours() {
+        return totalOtHours;
+    }
+
+    public void setTotalOtHours(double totalOtHours) {
+        this.totalOtHours = totalOtHours;
+    }
+
     @Override
     public String toString() {
-        return "Employee{" +
-                "idNo=" + idNo +
+        return "EmployeeDTO{" +
+                "idNo='" + idNo + '\'' +
                 ", name='" + name + '\'' +
                 ", mobileNumber=" + mobileNumber +
                 ", email='" + email + '\'' +
@@ -172,9 +183,10 @@ public class EmployeeDTO{
                 ", dateOfBirth=" + dateOfBirth +
                 ", gender='" + gender + '\'' +
                 ", date=" + date +
+                ", paymentDueTo=" + paymentDueTo +
                 ", pic='" + pic + '\'' +
                 ", admin=" + admin +
-                ", paymentDueTo=" + paymentDueTo +
+                ", totalOtHours=" + totalOtHours +
                 '}';
     }
 }

@@ -38,7 +38,10 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employee.getGender (),
                 employee.getDate (),
                 employee.getPaymentDueTo(),
-                employee.getPic (),employee.isAdmin ()
+                employee.getPic (),
+                employee.getTotalOtHours(),
+                employee.isAdmin ()
+
         ));
     }
 
@@ -60,7 +63,9 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employee.getDate () ,
                 employee.getPaymentDueTo (),
                 employee.getPic (),
-                employee.isAdmin ());
+                employee.isAdmin (),
+                employee.getTotalOtHours()
+                );
     }
 
 
@@ -90,7 +95,8 @@ public class EmployeeBOImpl implements EmployeeBO {
                     employee.getDate (),
                     employee.getPaymentDueTo (),
                     employee.getPic (),
-                    employee.isAdmin ()
+                    employee.isAdmin (),
+                    employee.getTotalOtHours()
             ));
         }
         return dtos;

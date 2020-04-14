@@ -362,6 +362,7 @@
                                                     <th>EmpId</th>
                                                     <th>Name</th>
                                                     <th>Salary</th>
+                                                    <th>OT Hours</th>
                                                     <th>Total Salary</th>
                                                     <th>Delete</th>
                                                     <th><input type="checkbox" id="check-all" class="flat"></th>
@@ -374,6 +375,7 @@
                                                         <td>${e.idNo}</td>
                                                         <td>${e.name}</td>
                                                         <td>${e.salary}</td>
+                                                        <td>${e.totalOtHours}</td>
                                                         <td>${e.paymentDueTo}</td>
                                                         <td><a href="/delete?pid=${e.occupation}"><span
                                                                 class="glyphicon glyphicon-trash"></span></a></td>
@@ -407,13 +409,13 @@
                             <input type="text" class="form-control" id="itemDesc" placeholder="Name">
                         </div>
 
-                        <div class="col-md-6 col-sm-6 ">
-                            <label for="itemDesc">set Time </label>
+                        <div class="col-md-7 col-sm-7 ">
+                            <label for="itemDesc">Salary </label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Time</span>
+
                                     <span class="input-group-text">
-                                       IN
+                                       Normal
                                 </span>
                                 </div>
                                 <input type="text" class="form-control" name="inTime" id="itemTime"
@@ -421,12 +423,12 @@
 
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 ">
+                        <div class="col-md-5 col-sm-5 ">
                             <label for="itemDesc">&nbsp;</label>
                             <div class="input-group mb-3" style="float: right">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">
-                                       OUT
+                                       OT
                                 </span>
                                 </div>
                                 <input type="text" class="form-control"
@@ -436,13 +438,13 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-sm-6 ">
+                        <div class="col-md-12 col-sm-12 ">
                             <label for="itemDesc">&nbsp;</label>
 
                             <div class="input-group mb-3" style="float: right">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">
-                                       OT
+                                       Total
                                 </span>
                                 </div>
                                 <input type="text" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
@@ -451,10 +453,10 @@
                         </div>
                         <div class="col-md-6 col-sm-6 ">
                             <label for="itemDesc">&nbsp;</label>
-                            <div class="input-group mb-3" style="float: right">
+                            <div class="input-group mb-5" style="float: right">
 
-                                <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
-                                <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
+                                <button type='submit' class="btn btn-success" style="width: 50%" value="Register">Submit</button>
+                                <button type='reset' class="btn btn-outline-success" value="">Reset</button>
 
                             </div>
 

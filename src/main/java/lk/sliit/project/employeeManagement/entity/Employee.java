@@ -28,6 +28,8 @@ public class Employee implements SuperEntity {
     private boolean admin;
     @Column(nullable = true)
     private int paymentDueTo;
+    @Column(nullable = true)
+    private double totalOtHours;
     @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List <Attendance> attendance = new ArrayList <> ( );
 
@@ -35,9 +37,10 @@ public class Employee implements SuperEntity {
     public Employee() {
     }
 
-    public Employee(String idNo, String name, int mobileNumber, String email, String address, double salary,
-                    String occupation, String password, Date dateOfBirth, String gender, Date date,
-                    int paymentDueTo,  String Pic,boolean admin) {
+    public Employee(String idNo, String name, int mobileNumber, String email,
+                    String address, double salary, String occupation, String password,
+                    Date dateOfBirth, String gender, Date date,int paymentDueTo, String pic, double totalOtHours,
+                    boolean admin) {
         this.idNo = idNo;
         this.name = name;
         this.mobileNumber = mobileNumber;
@@ -49,11 +52,13 @@ public class Employee implements SuperEntity {
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.date = date;
-        this.Pic = Pic;
-        this.paymentDueTo = paymentDueTo;
+        Pic = pic;
         this.admin = admin;
+        this.paymentDueTo = paymentDueTo;
+        this.totalOtHours = totalOtHours;
 
     }
+
 
 
 
@@ -169,6 +174,15 @@ public class Employee implements SuperEntity {
         this.admin = admin;
     }
 
+
+    public double getTotalOtHours() {
+        return totalOtHours;
+    }
+
+    public void setTotalOtHours(double totalOtHours) {
+        this.totalOtHours = totalOtHours;
+    }
+
     ////////////////////////////////////////////////////////////
     public List<Attendance> getOrders() {
         return attendance;
@@ -176,10 +190,11 @@ public class Employee implements SuperEntity {
 
 
     /////////////////////////////////////////////////////////
+
     @Override
     public String toString() {
         return "Employee{" +
-                "idNo=" + idNo +
+                "idNo='" + idNo + '\'' +
                 ", name='" + name + '\'' +
                 ", mobileNumber=" + mobileNumber +
                 ", email='" + email + '\'' +
@@ -193,6 +208,8 @@ public class Employee implements SuperEntity {
                 ", Pic='" + Pic + '\'' +
                 ", admin=" + admin +
                 ", paymentDueTo=" + paymentDueTo +
+                ", totalOtHours=" + totalOtHours +
+                ", attendance=" + attendance +
                 '}';
     }
 }
