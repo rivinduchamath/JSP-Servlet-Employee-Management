@@ -49,9 +49,9 @@ public class SalaryController {
     public String registerUser(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
 
         System.out.println (employee.getIdNo () );
-        System.out.println (employee.getPaymentDueTo () );
+
         System.out.println (employee.getSalary () );
-        System.out.println (employee.getTotalOtHours () );
+
         System.out.println (employee.getName () );
       //  salaryBO.updateSalary ( employee );
 //        salaryBO.updateSalary ( employee.getIdNo () );
