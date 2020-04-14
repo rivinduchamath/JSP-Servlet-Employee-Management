@@ -67,7 +67,7 @@ public class TablesController {
         List <AttendanceDTO> todayAttendance = null;
         String dtId = "";
         try {
-             dtId = attendance.getEmployeeID ( ).getIdNo ( );
+             dtId = attendance.getEmployeeID ( );
         }catch (NullPointerException e){
 
             return "redirect:/tables";
@@ -76,7 +76,7 @@ public class TablesController {
         String id = "";
         todayAttendance = attendanceBO.findTodayAttendance ( );
         for (AttendanceDTO a : todayAttendance) {
-            id = a.getEmployeeID ( ).getIdNo ( );
+            id = a.getEmployeeID ( );
             if (id.equals ( dtId )) {
 
                 return "redirect:/tables";

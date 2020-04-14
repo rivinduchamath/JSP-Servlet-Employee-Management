@@ -604,9 +604,9 @@
                                                     <c:forEach items="${listAttendance}" var="e">
                                                         <tr>
                                                             <td>${e.pid}</td>
-                                                            <td>${e.employee.idNo}</td>
-                                                            <td>${e.employee.name}</td>
-                                                            <td>${e.employee.occupation}</td>
+                                                            <td>${e.employeeID}</td>
+                                                            <td>${e.empName}</td>
+                                                            <td>${e.position}</td>
                                                             <td>${e.inTime}</td>
                                                             <td>${e.outTime}</td>
                                                             <td>${e.overtimeHours}</td>

@@ -12,4 +12,5 @@ import java.util.Date;
 public interface AttendanceDAO extends CrudRepository<Attendance, String> {
     Attendance findTopByOrderByAttendanceIdDesc();
     Iterable<Attendance> findAttendanceByDateEquals(Date date);
+
 }

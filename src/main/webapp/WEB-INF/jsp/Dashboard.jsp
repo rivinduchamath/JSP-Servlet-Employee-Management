@@ -430,17 +430,17 @@
                                     <div class="block">
                                         <div class="tags">
                                             <a href="" class="tag">
-                                                <span><img style="height: 50px;width: 50px;border-radius: 10%" src="../../images/icons/${e.employeeID.pic}"></span>
+                                                <span><img style="height: 50px;width: 50px;border-radius: 10%" src="../../images/icons/${e.pic}"></span>
                                             </a>
                                         </div>
                                         <div class="block_content">
                                             <h2 class="title">
-                                                <a>${e.employeeID.name}</a>
+                                                <a>${e.empName}</a>
                                             </h2>
                                             <div class="byline">
-                                                <span>13 hours ago</span> by <a>${e.employeeID.name}</a>
+                                                <span>13 hours ago</span> by <a>${e.inTime}</a>
                                             </div>
-                                            <p class="excerpt">Position :- ${e.employeeID.occupation} <br> Mobile :- ${e.employeeID.mobileNumber}<a></a>
+                                            <p class="excerpt">Position :- ${e.position} <br> Mobile :- ${e.outTime}<a></a>
                                             </p>
                                         </div>
                                     </div>

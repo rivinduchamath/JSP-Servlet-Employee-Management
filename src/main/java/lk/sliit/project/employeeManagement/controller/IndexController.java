@@ -3,6 +3,7 @@ package lk.sliit.project.employeeManagement.controller;
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -48,6 +50,7 @@ public class IndexController {
             long maleCount = ( dashboardBO.getMaleCount ( ) );
             long totalCount = ( dashboardBO.getAllEmployeeCount ( ) );
             long femaleCount = dashboardBO.getFemaleCount ();
+
             model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );

@@ -17,12 +17,16 @@ public class AttendanceDTO extends Component {
     private String inTime;
     private String outTime;
     private double overtimeHours;
-    private Employee employeeID;
+    private String employeeID;
+    private String empName;
+    private String position;
+    private String pic;
 
 
-    public AttendanceDTO() { }
+    public AttendanceDTO(){}
 
-    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, Employee employeeID) {
+
+    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, String employeeID, String empName, String position, String pic) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -30,7 +34,17 @@ public class AttendanceDTO extends Component {
         this.outTime = outTime;
         this.overtimeHours = overtimeHours;
         this.employeeID = employeeID;
+        this.empName = empName;
+        this.position = position;
+        this.pic = pic;
+    }
 
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 
     public int getAttendanceId() {
@@ -43,11 +57,11 @@ public class AttendanceDTO extends Component {
         this.attendanceId = attendanceId;
     }
 
-    public Employee getEmployee() {
+    public String getEmployee() {
         return employeeID;
     }
 
-    public void setEmployee(Employee employeeID) {
+    public void setEmployee(String employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -99,12 +113,28 @@ public class AttendanceDTO extends Component {
         this.overtimeHours = overtimeHours;
     }
 
-    public Employee getEmployeeID() {
+    public String getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(Employee employeeID) {
+    public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     @Override
