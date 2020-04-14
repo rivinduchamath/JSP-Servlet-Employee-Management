@@ -65,7 +65,7 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employee.getPic (),
                 employee.isAdmin (),
                 employee.getTotalOtHours()
-                );
+        );
     }
 
 

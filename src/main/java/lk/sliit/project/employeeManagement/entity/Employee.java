@@ -32,6 +32,8 @@ public class Employee implements SuperEntity {
     private double totalOtHours;
     @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List <Attendance> attendance = new ArrayList <> ( );
+    @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+    private List <Salary> salaries = new ArrayList <> ( );
 
 
     public Employee() {
@@ -59,10 +61,7 @@ public class Employee implements SuperEntity {
 
     }
 
-    public Employee(String idNo, String idNo1, double salary, double totalOtHours, double paymentDueTo) {
-        this.totalOtHours = totalOtHours; this.salary = salary;
-        this.paymentDueTo = paymentDueTo;  this.idNo = idNo;
-    }
+
 
 
     public String getIdNo() {
@@ -194,6 +193,11 @@ public class Employee implements SuperEntity {
 
     /////////////////////////////////////////////////////////
 
+
+    public List <Salary> getSalaries() {
+        return salaries;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -213,6 +217,7 @@ public class Employee implements SuperEntity {
                 ", paymentDueTo=" + paymentDueTo +
                 ", totalOtHours=" + totalOtHours +
                 ", attendance=" + attendance +
+                ", salaries=" + salaries +
                 '}';
     }
 }

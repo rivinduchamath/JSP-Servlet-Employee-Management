@@ -53,7 +53,7 @@ public class SalaryController {
         System.out.println (employee.getSalary () );
         System.out.println (employee.getTotalOtHours () );
         System.out.println (employee.getName () );
-        salaryBO.updateSalary ( employee );
+      //  salaryBO.updateSalary ( employee );
 //        salaryBO.updateSalary ( employee.getIdNo () );
     return "redirect:/salary";
 }

@@ -1,6 +1,7 @@
 package lk.sliit.project.employeeManagement.business.custom;
 
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -8,5 +9,5 @@ import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
  */
 public interface SalaryBO {
 
-    void updateSalary(EmployeeDTO employee);
+    void updateSalary(SalaryDTO employee);
 }

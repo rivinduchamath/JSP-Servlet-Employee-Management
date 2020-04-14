@@ -4,8 +4,10 @@ import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
 import lk.sliit.project.employeeManagement.dao.SalaryDAO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
 import lk.sliit.project.employeeManagement.entity.Employee;
+import lk.sliit.project.employeeManagement.entity.Salary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,16 +23,18 @@ public class SalaryBOImpl implements SalaryBO {
     @Autowired
     private SalaryDAO salaryDAO;
     @Override
-    public void updateSalary(EmployeeDTO employee) {
+    public void updateSalary(SalaryDTO employee) {
 
-        salaryDAO.save(new Employee (employee.getIdNo (),
-                employee.getIdNo (),
+        salaryDAO.save(new Salary (
+               3,
                 employee.getSalary (),
                 employee.getTotalOtHours (),
-                employee.getPaymentDueTo ()
+                employee.getFullPayment (),
+                employee.getEmployee ()
 
         ));
     }
+
 
 
 }

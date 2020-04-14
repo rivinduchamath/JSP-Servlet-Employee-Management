@@ -49,10 +49,7 @@ public class EmployeeDTO{
         this.totalOtHours = totalOtHours;
     }
 
-    public EmployeeDTO(String idNo, double salary, double totalOtHours, double salary1) {
-        this.totalOtHours = totalOtHours; this.salary = salary;
-        this.paymentDueTo = salary1;  this.idNo = idNo;
-    }
+
 
     public String getIdNo() {
         return idNo;
