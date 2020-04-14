@@ -447,7 +447,7 @@
                                        Total
                                 </span>
                                 </div>
-                                <input type="text" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+                                <input type="text" id="tot" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
 
                             </div>
                         </div>
@@ -515,8 +515,9 @@
         selectedRow = $(this);
         $("#itemCode").val($(this).find("td:first-child").text());
         $("#itemDesc").val($(this).find("td:nth-child(2)").text());
-        $("#itemTime").val(today);
-        $("#itemTime2").val(today2);
+        $("#itemTime").val($(this).find("td:nth-child(3)").text());
+        $("#itemTime2").val($(this).find("td:nth-child(4)").text());
+        $("#tot").val($(this).find("td:nth-child(5)").text());
         $("#datatable-buttons tbody tr").removeClass('row-selected');
         selectedRow.addClass('row-selected');
     });
