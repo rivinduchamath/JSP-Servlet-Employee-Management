@@ -21,7 +21,9 @@ public class Salary implements SuperEntity {
     private Employee employeeID;
 
 
-    public Salary() { }
+    public Salary() {
+
+    }
 
     public Salary(int salaryId, double salary, double totalOtHours, String fullPayment, Employee employeeID) {
         this.salaryId = salaryId;
