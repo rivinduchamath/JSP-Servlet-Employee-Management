@@ -47,7 +47,6 @@ public class DashboardController extends HttpServlet {
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
         else model.addAttribute ( "maleCountDashBoard", 0 );
 
-
         if (totalCount > 0) model.addAttribute ( "employeeCountDashBoard", totalCount );
         else model.addAttribute ( "employeeCountDashBoard", 0 );
 

@@ -69,7 +69,7 @@
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
-            table = document.getElementById("datatable-responsive");
+            table = document.getElementById("datatable-buttons");
             tr = table.getElementsByTagName("tr");
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
@@ -355,7 +355,7 @@
 
                                         <div class="card-box table-responsive">
 
-                                            <table id="datatable-buttons" class="table table-striped jambo_table bulk_action table-bordered">
+                                            <table id="datatable-buttons"  class="table table-striped jambo_table bulk_action table-bordered">
                                                 <thead class="thead-dark">
 
                                                 <tr>
@@ -390,6 +390,79 @@
                             </div>
                         </div>
                     </div>
+                    <!--///////////////////////////////////////////////////////-->
+
+                    <div class="col-md-4 col-sm-4 " style="float: right">
+
+
+                        <div class="form-group">
+                            <label for="itemCode">Employee Id</label>
+                            <input type="text" class="form-control"
+                                   required="required" name="employeeID"
+                                   id="itemCode" placeholder="ID" readonly/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="itemDesc">Employee Name </label>
+                            <input type="text" class="form-control" id="itemDesc" placeholder="Name">
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 ">
+                            <label for="itemDesc">set Time </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Time</span>
+                                    <span class="input-group-text">
+                                       IN
+                                </span>
+                                </div>
+                                <input type="text" class="form-control" name="inTime" id="itemTime"
+                                       aria-label="Dollar amount (with dot and two decimal places)">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 ">
+                            <label for="itemDesc">&nbsp;</label>
+                            <div class="input-group mb-3" style="float: right">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                       OUT
+                                </span>
+                                </div>
+                                <input type="text" class="form-control"
+                                       id="itemTime2"  name="outTime" value="${attendance.outTime }"
+                                       aria-label="Dollar amount (with dot and two decimal places)"/>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 ">
+                            <label for="itemDesc">&nbsp;</label>
+
+                            <div class="input-group mb-3" style="float: right">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                       OT
+                                </span>
+                                </div>
+                                <input type="text" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 ">
+                            <label for="itemDesc">&nbsp;</label>
+                            <div class="input-group mb-3" style="float: right">
+
+                                <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
+                                <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <!--////////////////////////////////////////////-->
                 </div>
             </div>
         </div>
@@ -429,6 +502,23 @@
 <script src="../../vendors/nprogress/nprogress.js"></script>
 <!-- iCheck -->
 <script src="../../vendors/iCheck/icheck.min.js"></script>
+<script>
+    var selectedRow = null;
+    $("#datatable-buttons tbody").on('click', 'tr', function () {
+        var date = new Date();
+        var date2 = new Date();
+        var today = date.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
+        date2.setHours(date.getHours()+8);
+        var today2 = date2.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
+        selectedRow = $(this);
+        $("#itemCode").val($(this).find("td:first-child").text());
+        $("#itemDesc").val($(this).find("td:nth-child(2)").text());
+        $("#itemTime").val(today);
+        $("#itemTime2").val(today2);
+        $("#datatable-buttons tbody tr").removeClass('row-selected');
+        selectedRow.addClass('row-selected');
+    });
+</script>
 <!-- Datatables -->
 <script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
