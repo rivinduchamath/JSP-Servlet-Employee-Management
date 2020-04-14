@@ -31,13 +31,11 @@ public class SalaryBOImpl implements SalaryBO {
     public void updateSalary(SalaryDTO employee) {
 
         salaryDAO.save(new Salary (
-              21,
+              employee.getSalaryId (),
                 employee.getSalary (),
                 employee.getTotalOtHours (),
                 employee.getFullPayment (),
                 employeeDAO.findOne (employee.getEmployee ())));
-
-
     }
     @Override
     public List<SalaryDTO> findAllSalary() {
