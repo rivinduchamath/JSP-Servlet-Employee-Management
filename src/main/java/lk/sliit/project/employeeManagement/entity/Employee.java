@@ -26,10 +26,6 @@ public class Employee implements SuperEntity {
     private Date date;
     private String Pic;
     private boolean admin;
-    @Column(nullable = true)
-    private double paymentDueTo;
-    @Column(nullable = true)
-    private double totalOtHours;
     @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List <Attendance> attendance = new ArrayList <> ( );
     @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
@@ -41,7 +37,7 @@ public class Employee implements SuperEntity {
 
     public Employee(String idNo, String name, int mobileNumber, String email,
                     String address, double salary, String occupation, String password,
-                    Date dateOfBirth, String gender, Date date,double paymentDueTo, String pic, double totalOtHours,
+                    Date dateOfBirth, String gender, Date date, String pic,
                     boolean admin) {
         this.idNo = idNo;
         this.name = name;
@@ -56,8 +52,7 @@ public class Employee implements SuperEntity {
         this.date = date;
         Pic = pic;
         this.admin = admin;
-        this.paymentDueTo = paymentDueTo;
-        this.totalOtHours = totalOtHours;
+
 
     }
 
@@ -160,14 +155,6 @@ public class Employee implements SuperEntity {
         this.Pic = Pic;
     }
 
-    public double getPaymentDueTo() {
-        return paymentDueTo;
-    }
-
-    public void setPaymentDueTo(double paymentDueTo) {
-        this.paymentDueTo = paymentDueTo;
-    }
-
     public boolean isAdmin() {
         return admin;
     }
@@ -176,14 +163,6 @@ public class Employee implements SuperEntity {
         this.admin = admin;
     }
 
-
-    public double getTotalOtHours() {
-        return totalOtHours;
-    }
-
-    public void setTotalOtHours(double totalOtHours) {
-        this.totalOtHours = totalOtHours;
-    }
 
     ////////////////////////////////////////////////////////////
     public List<Attendance> getOrders() {
@@ -214,8 +193,6 @@ public class Employee implements SuperEntity {
                 ", date=" + date +
                 ", Pic='" + Pic + '\'' +
                 ", admin=" + admin +
-                ", paymentDueTo=" + paymentDueTo +
-                ", totalOtHours=" + totalOtHours +
                 ", attendance=" + attendance +
                 ", salaries=" + salaries +
                 '}';
