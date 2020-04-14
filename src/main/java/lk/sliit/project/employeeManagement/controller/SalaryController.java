@@ -5,6 +5,7 @@ import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,14 +48,14 @@ public class SalaryController {
     }
 
     @PostMapping("salarySave")
-    public String registerUser(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
+    public String registerUser(@ModelAttribute SalaryDTO salaryDTO, HttpServletRequest request, Model model) throws IOException {
 
-        System.out.println (employee.getIdNo () );
+        System.out.println (salaryDTO.getSalaryId () );
 
-        System.out.println (employee.getSalary () );
+        System.out.println (salaryDTO.getSalary () );
 
-        System.out.println (employee.getName () );
-      //  salaryBO.updateSalary ( employee );
+        System.out.println (salaryDTO.getTotalOtHours () );
+        salaryBO.updateSalary ( salaryDTO );
 //        salaryBO.updateSalary ( employee.getIdNo () );
     return "redirect:/salary";
 }

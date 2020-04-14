@@ -400,7 +400,7 @@
                         <div class="form-group">
                             <label for="itemCode">Employee Id</label>
                             <input type="text" class="form-control"
-                                   required="required" name="idNo"
+                                   required="required" name="employee"
                                    id="itemCode" placeholder="ID" readonly/>
                         </div>
 
@@ -448,7 +448,7 @@
                                 </span>
                                 </div>
                                 <input type="text" id="tot" class="form-control"
-                                       name="paymentDueTo"  value= "0" id="itemTime3"
+                                       name="fullPayment"  value= "0" id="itemTime3"
                                        aria-label="Dollar amount (with dot and two decimal places)">
 
                             </div>

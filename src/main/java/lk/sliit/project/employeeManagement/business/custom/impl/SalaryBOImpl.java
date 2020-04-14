@@ -31,7 +31,7 @@ public class SalaryBOImpl implements SalaryBO {
     public void updateSalary(SalaryDTO employee) {
 
         salaryDAO.save(new Salary (
-               employee.getSalaryId (),
+              21,
                 employee.getSalary (),
                 employee.getTotalOtHours (),
                 employee.getFullPayment (),
