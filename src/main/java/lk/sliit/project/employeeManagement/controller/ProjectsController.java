@@ -36,6 +36,13 @@ public class ProjectsController {
     }
 
 
+    @RequestMapping("/projectController")
+    public String projectsManage(HttpServletRequest request) {
+        request.setAttribute ( "mode", "MODE_REGISTER" );
+        return "projectController";
+    }
+
+
 
 
 }

@@ -125,14 +125,9 @@
                     </div>
 
                     <div class="x_content">
-                        <form class="form-horizontal" method="POST" action="Dashboards">
+                        <form class="form-horizontal" method="POST" action="/projects">
                             <span class="section">Manage Employee
-                            <span style="float: right">
 
-                        <input type="checkbox" name="admin" value="${true }"><span style="font-size: 70%">isAdmin</span><BR>
-
-
-                            </span>
                             </span>
 
                                 <%--Name--%>
@@ -141,9 +136,9 @@
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
                                     <input class="form-control" data-validate-length-range="6"
-                                           data-validate-words="2" name="name"
+                                           data-validate-words="2"
                                            placeholder="ex. John f. Kennedy" required="required"
-                                           value="${employee.name }"/>
+                                          />
                                 </div>
                             </div>
 
@@ -152,9 +147,9 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">NIC No<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='optional' name="idNo"
+                                    <input class="form-control" class='optional'
                                            data-validate-words="1"required="required"
-                                           value="${employee.idNo }"/></div>
+                                         /></div>
                             </div>
 
                                 <%--<input type="hidden" name="id" value="${employee.id }" />--%>
@@ -163,7 +158,8 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">email<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" name="email" class='email' required="required"
+                                    <input class="form-control"
+                                           class='email' required="required"
                                            type="email"/></div>
                             </div>
                             <div class="field item form-group">
@@ -171,8 +167,10 @@
                                     address<span
                                             class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="email" class='email' name="confirm_email"
-                                           data-validate-linked='email' required='required' value="${employee.email }"/>
+                                    <input class="form-control" type="email" class='email'
+
+                                           data-validate-linked='email'
+                                           required='required' />
                                 </div>
                             </div>
 
@@ -181,8 +179,8 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Occupation<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='optional' name="occupation"
-                                           type="text" value="${employee.occupation}"/></div>
+                                    <input class="form-control" class='optional'
+                                           type="text" /></div>
                             </div>
 
                                 <%--Registered Date--%>
@@ -191,8 +189,8 @@
                                     Date<span
                                             class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="date" name="date"
-                                           required='required' value="${employee.date }"></div>
+                                    <input class="form-control" class='date' type="date"
+                                           required='required'></div>
                             </div>
 
 
@@ -201,9 +199,9 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="password" name="password"
+                                    <input class="form-control" type="password"
                                            data-validate-length="6,8"
-                                           required='required' value="${employee.password }"/></div>
+                                           required='required' /></div>
                             </div>
 
                                 <%--Salary--%>
@@ -211,9 +209,9 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Salary<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" class='tel' name="salary"
+                                    <input class="form-control" type="number" class='tel'
                                            required='required'
-                                           data-validate-length-range="1,15" value="${employee.salary }"/></div>
+                                           data-validate-length-range="1,15"/></div>
                             </div>
 
                                 <%--Telephone--%>
@@ -221,9 +219,9 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Telephone<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" name="mobileNumber"
+                                    <input class="form-control" type="number"
                                            required='required'
-                                           data-validate-length-range="1,10" value="${employee.mobileNumber }"/></div>
+                                           data-validate-length-range="1,10"/></div>
                             </div>
 
                                 <%--Date--%>
@@ -232,8 +230,8 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Date Of Birth<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="date" name="dateOfBirth"
-                                           required='required' value="${employee.dateOfBirth }"></div>
+                                    <input class="form-control" class='date' type="date"
+                                           required='required' ></div>
                             </div>
 
 
@@ -243,14 +241,14 @@
                                     <div id="gender1" class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-secondary" data-toggle-class="btn-primary"
                                                data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="male" class="join-btn"
-                                                   value="${employee.gender }">
+                                            <input type="radio" name="gender"  class="join-btn"
+                                                 >
                                             &nbsp; Male &nbsp;
                                         </label>
                                         <label class="btn btn-primary" data-toggle-class="btn-primary"
                                                data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="female" class="join-btn"
-                                                   value="${employee.gender }">
+                                            <input type="radio" name="gender" class="join-btn"
+                                                  >
                                             Female
                                         </label>
                                     </div>
@@ -265,7 +263,7 @@
                                             class="fa fa-picture-o"></i></a><span
                                         class="required"> *</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input type="file" value="${employee.pic }" name="pic" data-role="magic-overlay"
+                                    <input type="file" name="pic" data-role="magic-overlay"
                                            data-target="#pictureBtn"
                                            data-edit="insertImage"/></div>
                             </div>
@@ -275,8 +273,8 @@
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Address<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="text" name="address"
-                                           required='required' value="${employee.address }"></div>
+                                    <input class="form-control" class='date' type="text"
+                                           required='required' ></div>
                             </div>
                             <div class="ln_solid">
                                 <div class="form-group">
