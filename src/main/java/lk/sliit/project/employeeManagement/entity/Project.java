@@ -13,7 +13,7 @@ import java.sql.Date;
 @Entity
 public class Project implements SuperEntity {
     @Id
-    private int projectId;
+    private String projectId;
     private String projectName;
     private String teamMembers;
     @Column(nullable = true)
@@ -31,7 +31,7 @@ public class Project implements SuperEntity {
 
     public Project(){}
 
-    public Project(int projectId, String projectName, String teamMembers, double progress, double estBudget, double spentBudget, Date duration, Date date, String client, String clientMobile) {
+    public Project(String projectId, String projectName, String teamMembers, double progress, double estBudget, double spentBudget, Date duration, Date date, String client, String clientMobile) {
         this.projectId = projectId;
         this.projectName = projectName;
         this.teamMembers = teamMembers;
@@ -44,11 +44,11 @@ public class Project implements SuperEntity {
         this.clientMobile = clientMobile;
     }
 
-    public int getProjectId() {
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
+    public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 

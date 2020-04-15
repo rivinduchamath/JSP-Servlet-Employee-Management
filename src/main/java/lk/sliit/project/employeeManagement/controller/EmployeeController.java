@@ -29,7 +29,6 @@ public class EmployeeController {
     public ModelAndView index(Model model,@ModelAttribute EmployeeDTO employee) {
         ModelAndView mav = new ModelAndView ( "tables_dynamic" );
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
-
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return mav;
     }

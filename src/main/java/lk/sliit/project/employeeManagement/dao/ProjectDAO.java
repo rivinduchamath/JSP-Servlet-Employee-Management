@@ -8,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  * Date: 15-Apr-20
  */
 public interface ProjectDAO extends CrudRepository<Project, String> {
+    Project getProjectByProjectId(String idNo);
 }

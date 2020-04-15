@@ -92,16 +92,8 @@
 
 <c:choose>
 
-    <%--<c:when test="${mode=='MODE_HOME' }">--%>
-    <%--<div class="container" id="homediv">--%>
-    <%--<div class="jumbotron text-center">--%>
-    <%--<h1>Welcome to Tecno-tab</h1>--%>
-    <%--<h3>Subscribe my channel to support me</h3>--%>
-    <%--</div>--%>
-    <%--</div>--%>
-
     <%--</c:when>--%>
-    <c:when test="${mode=='MODE_REGISTER' }">
+    <c:when test="${mode=='MODE_REG' }">
         <!-- page content -->
 
         <div class="">
@@ -125,12 +117,12 @@
                     </div>
 
                     <div class="x_content">
-                        <form class="form-horizontal" method="POST" action="/projects">
+                        <form class="form-horizontal" method="POST" action="/pro">
                             <span class="section">Manage Employee
 
                             </span>
 
-                                <%--Name--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Name<span
                                         class="required">*</span></label>
@@ -142,7 +134,7 @@
                                 </div>
                             </div>
 
-                                <%--NIC No--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">NIC No<span
                                         class="required">*</span></label>
@@ -152,8 +144,8 @@
                                          /></div>
                             </div>
 
-                                <%--<input type="hidden" name="id" value="${employee.id }" />--%>
-                                <%--Email--%>
+                                <input type="hidden" name="id" value="${employee.id }" />
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">email<span
                                         class="required">*</span></label>
@@ -174,7 +166,7 @@
                                 </div>
                             </div>
 
-                                <%--Occupation--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Occupation<span
                                         class="required">*</span></label>
@@ -183,7 +175,7 @@
                                            type="text" /></div>
                             </div>
 
-                                <%--Registered Date--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Registered
                                     Date<span
@@ -194,7 +186,7 @@
                             </div>
 
 
-                                <%--Password--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span
                                         class="required">*</span></label>
@@ -204,7 +196,6 @@
                                            required='required' /></div>
                             </div>
 
-                                <%--Salary--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Salary<span
                                         class="required">*</span></label>
@@ -214,7 +205,7 @@
                                            data-validate-length-range="1,15"/></div>
                             </div>
 
-                                <%--Telephone--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Telephone<span
                                         class="required">*</span></label>
@@ -224,8 +215,7 @@
                                            data-validate-length-range="1,10"/></div>
                             </div>
 
-                                <%--Date--%>
-                                <%--Registered Date--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Date Of Birth<span
                                         class="required">*</span></label>
@@ -243,7 +233,7 @@
                                                data-toggle-passive-class="btn-default">
                                             <input type="radio" name="gender"  class="join-btn"
                                                  >
-                                            &nbsp; Male &nbsp;
+
                                         </label>
                                         <label class="btn btn-primary" data-toggle-class="btn-primary"
                                                data-toggle-passive-class="btn-default">
@@ -255,7 +245,7 @@
                                 </div>
                             </div>
 
-                                <%--Picture--%>
+
                             <div class="field item form-group">
 
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">
@@ -267,8 +257,7 @@
                                            data-target="#pictureBtn"
                                            data-edit="insertImage"/></div>
                             </div>
-                                <%--Address--%>
-                                <%--Registered Date--%>
+
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Address<span
                                         class="required">*</span></label>
@@ -291,7 +280,7 @@
         </div>
 
     </c:when>
-    <c:when test="${mode=='MODE_UPDATE' }">
+    <c:when test="${mode=='MODE_UP' }">
         <!-- page content -->
 
         <div class="">
@@ -314,59 +303,40 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <form class="form-horizontal" method="POST" action="Dashboards">
-                             <span class="section">Manage Employee
-                            <span style="float: right">
+                        <form class="form-horizontal" method="POST" action="/projects">
+                             <span class="section">Manage Projects
 
-                        <input type="checkbox" name="admin" value="${true }"><span style="font-size: 70%">isAdmin</span><BR>
-
-
-                            </span>
                             </span>
 
                                 <%--Name--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Name<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Project Name <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
                                     <input class="form-control" data-validate-length-range="6"
-                                           data-validate-words="2" name="name"
-                                           placeholder="ex. John f. Kennedy" required="required"
-                                           value="${employee.name }"/>
+                                           data-validate-words="2" name="projectName"
+                                           placeholder="ex. Employee Management" required="required"
+                                           value="${project.projectName }"/>
                                 </div>
                             </div>
 
                                 <%--NIC No--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">NIC No<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Project ID<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input readonly="readonly" class="form-control" class='optional' name="idNo"
+                                    <input readonly="readonly" class="form-control" class='optional'
+                                           name="projectId"
                                            data-validate-words="1"required="required"
-                                           value="${employee.idNo }"/></div>
+                                           value="${project.projectId }"/></div>
                             </div>
 
                                 <%--<input type="hidden" name="id" value="${employee.id }" />--%>
                                 <%--Email--%>
 
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">email
-                                    address<span
-                                            class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="email" class='email' name="email"
-                                           data-validate-linked='email' required='required' value="${employee.email }"/>
-                                </div>
-                            </div>
 
-                                <%--Occupation--%>
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Occupation<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='optional' name="occupation"
-                                           type="text" value="${employee.occupation}"/></div>
-                            </div>
+
+
 
                                 <%--Registered Date--%>
                             <div class="field item form-group">
@@ -375,96 +345,65 @@
                                             class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
                                     <input class="form-control" class='date' type="date" name="date"
-                                           required='required' value="${employee.date }"></div>
+                                           required='required' value="${project.date }"></div>
                             </div>
 
 
                                 <%--Password--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Progress<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="password" name="password"
+                                    <input class="form-control" type="number" name="progress"
                                            data-validate-length="6,8"
-                                           required='required' value="${employee.password }"/></div>
+                                           required='required' value="${project.progress }"/></div>
                             </div>
 
                                 <%--Salary--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Salary<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Budget<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" class='tel' name="salary"
+                                    <input class="form-control" type="number" class='tel' name="estBudget"
                                            required='required'
-                                           data-validate-length-range="1,15" value="${employee.salary }"/></div>
+                                           data-validate-length-range="1,15" value="${project.estBudget }"/></div>
                             </div>
 
-                                <%--Telephone--%>
+
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Telephone<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Client Mobile<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" name="mobileNumber"
+                                    <input class="form-control" type="number" name="clientMobile"
                                            required='required'
-                                           data-validate-length-range="1,10" value="${employee.mobileNumber }"/></div>
+                                           data-validate-length-range="1,10" value="${project.clientMobile }"/></div>
                             </div>
 
                                 <%--Date--%>
                                 <%--Registered Date--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Date Of Birth<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Closing Date<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="date" name="dateOfBirth"
-                                           required='required' value="${employee.dateOfBirth }"></div>
+                                    <input class="form-control" class='date' type="date"
+                                           name="duration"
+                                           required='required' value="${project.duration }"></div>
                             </div>
 
 
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
-                                <div class="col-md-6 col-sm-6 ">
-                                    <div id="gend" class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-secondary" data-toggle-class="btn-primary"
-                                               data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="male" class="join-btn"
-                                                   value="${employee.gender }">
-                                            &nbsp; Male &nbsp;
-                                        </label>
-                                        <label class="btn btn-primary" data-toggle-class="btn-primary"
-                                               data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="female" class="join-btn"
-                                                   value="${employee.gender }">
-                                            Female
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                                <%--Picture--%>
-                            <div class="field item form-group">
-
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">
-                                    <a class="" title="Insert picture (or just drag & drop)" ><i
-                                            class="fa fa-picture-o"></i></a><span
-                                        class="required"> *</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input type="file" value="${employee.pic }" name="pic" data-role="magic-overlay"
-                                           data-target="#pictureBtn"
-                                           data-edit="insertImage"/></div>
-                            </div>
                                 <%--Address--%>
                                 <%--Registered Date--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Address<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Spent Budgett<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="text" name="address"
-                                           required='required' value="${employee.address }"></div>
+                                    <input class="form-control" class='date' type="text" name="spentBudget"
+                                           required='required' value="${project.spentBudget }"></div>
                             </div>
                             <div class="ln_solid">
                                 <div class="form-group">
                                     <div class="col-md-6 offset-md-3">
-                                        <button type='submit' class="btn btn-primary" value="Register">Submit</button>
+                                        <button type='submit' class="btn btn-primary" value="Register">Update</button>
                                         <button type='reset' class="btn btn-success">Reset</button>
                                     </div>
                                 </div>

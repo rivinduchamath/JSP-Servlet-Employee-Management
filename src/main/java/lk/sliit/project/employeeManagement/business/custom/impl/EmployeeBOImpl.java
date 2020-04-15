@@ -121,11 +121,27 @@ public class EmployeeBOImpl implements EmployeeBO {
     @Override
     public Employee findByIdNoAndPassword(String idNo, String password) {
         return employeeDAO.findByIdNoAndPassword(idNo, password);
+
     }
 
     @Override
-    public Employee getEmployeeByIdNo(String idNo) {
-        return employeeDAO.getEmployeeByIdNo(idNo);
+    public EmployeeDTO getEmployeeByIdNo(String idNo) {
+        Employee employee = employeeDAO.findOne (idNo);
+        return new EmployeeDTO (employee.getIdNo (),
+                employee.getName (),
+                employee.getMobileNumber (),
+                employee.getEmail (),
+                employee.getAddress (),
+                employee.getSalary (),
+                employee.getOccupation (),
+                employee.getPassword (),
+                employee.getDateOfBirth (),
+                employee.getGender (),
+                employee.getDate (),
+                employee.getPic (),
+                employee.isAdmin ()
+                );
+
     }
 
 }

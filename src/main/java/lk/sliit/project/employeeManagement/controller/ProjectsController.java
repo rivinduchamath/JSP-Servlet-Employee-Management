@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +25,7 @@ public class ProjectsController {
     @Autowired
     ProjectBO projectBO;
 
-    @RequestMapping("/projects")
+    @PostMapping("/projects")
     public ModelAndView projects(Model model, @ModelAttribute ProjectDTO projectDTO) {
 
         ModelAndView mav = new ModelAndView ( "projects" );
@@ -37,8 +39,18 @@ public class ProjectsController {
 
 
     @RequestMapping("/projectController")
-    public String projectsManage(HttpServletRequest request) {
-        request.setAttribute ( "mode", "MODE_REGISTER" );
+    public String projectsManage(HttpServletRequest request,@ModelAttribute ProjectDTO project) {
+        request.setAttribute ( "mode", "MODE_REG" );
+        return "projectController";
+    }
+
+
+    @RequestMapping("edit-project")
+    public String editUser(@RequestParam String projectId, Model model, HttpServletRequest request) {
+        System.out.println ("ssssssssssssssssss"+projectId );
+        request.setAttribute ( "project", projectBO.findProject ( projectId ) );
+        request.setAttribute ( "mode", "MODE_UP" );
+      model.addAttribute ( "loggerName", projectBO.getEmployeeByIdNo(SuperController.idNo) );
         return "projectController";
     }
 

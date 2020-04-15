@@ -7,7 +7,7 @@ import java.sql.Date;
  * Date: 15-Apr-20
  */
 public class ProjectDTO {
-    private int projectId;
+    private String projectId;
     private String projectName;
     private String teamMembers;
     private double progress;
@@ -18,7 +18,7 @@ public class ProjectDTO {
     private String client;
     private String clientMobile;
 
-    public ProjectDTO(int projectId, String projectName, String teamMembers,
+    public ProjectDTO(String projectId, String projectName, String teamMembers,
                       double progress, double estBudget, double spentBudget,
                       Date expDate, Date date, String client, String clientMobile) {
         this.projectId = projectId;
@@ -36,11 +36,11 @@ public class ProjectDTO {
     public ProjectDTO() {
     }
 
-    public int getProjectId() {
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
+    public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 

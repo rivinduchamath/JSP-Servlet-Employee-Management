@@ -17,7 +17,7 @@ public interface EmployeeBO extends SuperBO {
 
     public Employee findByIdNoAndPassword(String idNo, String password);
 
-    Employee getEmployeeByIdNo(String idNo);
+    EmployeeDTO getEmployeeByIdNo(String idNo);
 
     void save(EmployeeDTO employee);
 

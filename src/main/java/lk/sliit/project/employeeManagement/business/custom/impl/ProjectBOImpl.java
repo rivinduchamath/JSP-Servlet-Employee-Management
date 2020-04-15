@@ -2,7 +2,9 @@ package lk.sliit.project.employeeManagement.business.custom.impl;
 
 import lk.sliit.project.employeeManagement.business.custom.ProjectBO;
 import lk.sliit.project.employeeManagement.dao.ProjectDAO;
+import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.dto.ProjectDTO;
+import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.entity.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +41,31 @@ public class ProjectBOImpl implements ProjectBO {
             ));
         }
         return dtos;
+    }
+
+    @Override
+    public ProjectDTO findProject(String projectId) {
+        Project project = projectDAO.findOne (projectId);
+        return new ProjectDTO (
+                project.getProjectId (),
+                project.getProjectName (),
+                project.getTeamMembers (),
+                project.getProgress (),
+                project.getEstBudget (),
+                project.getSpentBudget (),
+                project.getDuration (),
+                project.getDate (),
+                project.getClient (),
+                project.getClientMobile ()
+
+
+        );
+
+    }
+
+    @Override
+    public Project getEmployeeByIdNo(String idNo) {
+        return projectDAO.getProjectByProjectId(idNo);
     }
 
 }
