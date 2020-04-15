@@ -265,7 +265,7 @@
                                             class="fa fa-picture-o"></i></a><span
                                         class="required"> *</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input type="file" value="${employee.pic }" name="pic" data-role="magic-overlay"
+                                    <input   data-role="magic-overlay"
                                            data-target="#pictureBtn"
                                            data-edit="insertImage"/></div>
                             </div>
@@ -450,7 +450,7 @@
                                             class="fa fa-picture-o"></i></a><span
                                         class="required"> *</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input type="file" value="${employee.pic }" name="pic" data-role="magic-overlay"
+                                    <input  data-role="magic-overlay"
                                            data-target="#pictureBtn"
                                            data-edit="insertImage"/></div>
                             </div>

@@ -1,5 +1,8 @@
 package lk.sliit.project.employeeManagement.dto;
 
+
+import javax.persistence.Lob;
+import java.sql.Blob;
 import java.sql.Date;
 
 /**
@@ -19,7 +22,7 @@ public class EmployeeDTO{
     private Date dateOfBirth;
     private String gender;
     private Date date;
-    private String pic;
+    private Blob pic;
     private boolean admin;
 
     public EmployeeDTO() {
@@ -28,7 +31,7 @@ public class EmployeeDTO{
     public EmployeeDTO(String idNo, String name, int mobileNumber,
                        String email, String address, double salary, String occupation,
                        String password, Date dateOfBirth,
-                       String gender, Date date, String pic, boolean admin) {
+                       String gender, Date date, Blob pic, boolean admin) {
         this.idNo = idNo;
         this.name = name;
         this.mobileNumber = mobileNumber;
@@ -134,11 +137,11 @@ public class EmployeeDTO{
         this.date = date;
     }
 
-    public String getPic() {
+    public Blob getPic() {
         return pic;
     }
 
-    public void setPic(String Pic) {
+    public void setPic(Blob Pic) {
         this.pic = Pic;
     }
 

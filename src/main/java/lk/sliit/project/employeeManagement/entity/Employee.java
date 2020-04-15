@@ -1,6 +1,8 @@
 package lk.sliit.project.employeeManagement.entity;
 
 import javax.persistence.*;
+
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,8 @@ public class Employee implements SuperEntity {
     @Column(nullable = true)
     private String gender;
     private Date date;
-    private String Pic;
+    @Lob
+    private Blob Pic;
     private boolean admin;
     @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List <Attendance> attendance = new ArrayList <> ( );
@@ -37,7 +40,7 @@ public class Employee implements SuperEntity {
 
     public Employee(String idNo, String name, int mobileNumber, String email,
                     String address, double salary, String occupation, String password,
-                    Date dateOfBirth, String gender, Date date, String pic,
+                    Date dateOfBirth, String gender, Date date, Blob pic,
                     boolean admin) {
         this.idNo = idNo;
         this.name = name;
@@ -147,11 +150,11 @@ public class Employee implements SuperEntity {
         this.date = date;
     }
 
-    public String getPic() {
+    public Blob getPic() {
         return Pic;
     }
 
-    public void setPic(String Pic) {
+    public void setPic(Blob Pic) {
         this.Pic = Pic;
     }
 
