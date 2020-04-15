@@ -20,6 +20,7 @@ public class ProjectDTO {
     private String client;
     private String clientMobile;
 
+    //ProjectDTO Full Arg Constructor
     public ProjectDTO(String projectId, String projectName, String teamMembers,
                       double progress, double estBudget, double spentBudget,
                       Date expDate, Date date, String client, String clientMobile) {
@@ -33,11 +34,12 @@ public class ProjectDTO {
         this.date = date;
         this.client = client;
         this.clientMobile = clientMobile;
-    }
+    }//End Full-arg
 
-    public ProjectDTO() {
-    }
+    //Project DTO Default Constructor
+    public ProjectDTO() { }
 
+    //Getters And Setters
     public String getProjectId() {
         return projectId;
     }
@@ -118,6 +120,7 @@ public class ProjectDTO {
         this.clientMobile = clientMobile;
     }
 
+    // Override to-String Method
     @Override
     public String toString() {
         return "ProjectDTO{" +
@@ -132,5 +135,5 @@ public class ProjectDTO {
                 ", client='" + client + '\'' +
                 ", clientMobile='" + clientMobile + '\'' +
                 '}';
-    }
-}
+    }//End to-String
+}//End DTO

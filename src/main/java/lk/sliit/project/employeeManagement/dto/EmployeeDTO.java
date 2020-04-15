@@ -6,7 +6,9 @@ import java.sql.Date;
  * @author: Rivindu-Wijayarathna
  * Date: 08-Mar-20
  */
-public class EmployeeDTO{
+
+//Class EmployeeDTO
+public class EmployeeDTO {
 
     private String idNo;
     private String name;
@@ -22,9 +24,11 @@ public class EmployeeDTO{
     private String pic;
     private boolean admin;
 
+    //Default Constructor
     public EmployeeDTO() {
     }
 
+    //Full arg Constructor
     public EmployeeDTO(String idNo, String name, int mobileNumber,
                        String email, String address, double salary, String occupation,
                        String password, Date dateOfBirth,
@@ -45,7 +49,7 @@ public class EmployeeDTO{
     }
 
 
-
+    //Getters And Setters
     public String getIdNo() {
         return idNo;
     }
@@ -151,6 +155,7 @@ public class EmployeeDTO{
     }
 
 
+    // Override To String
     @Override
     public String toString() {
         return "EmployeeDTO{" +
@@ -168,5 +173,5 @@ public class EmployeeDTO{
                 ", pic='" + pic + '\'' +
                 ", admin=" + admin +
                 '}';
-    }
-}
+    }//End To String
+}//End Class EmployeeDTO

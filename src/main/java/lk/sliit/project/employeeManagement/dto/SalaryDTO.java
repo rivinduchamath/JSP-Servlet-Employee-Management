@@ -5,33 +5,38 @@ package lk.sliit.project.employeeManagement.dto;
  * @author: Rivindu-Wijayarathna
  * Date: 14-Apr-20
  */
+//Class SalaryDTO
 public class SalaryDTO {
     private int salaryId;
     private double salary;
     private double totalOtHours;
     private String fullPayment;
     private String employeeName;
-    private String employee;
+    private String employeeID;
 
+    //Constructor
     public SalaryDTO(int salaryId, double salary, double totalOtHours, String fullPayment, String employee) {
         this.salaryId = salaryId;
         this.salary = salary;
         this.totalOtHours = totalOtHours;
         this.fullPayment = fullPayment;
-        this.employee = employee;
+        this.employeeID = employee;
     }
 
+    //Default Constructor
     public SalaryDTO() {}
 
+    //Full-arg  Constructor
     public SalaryDTO(int salaryId, String fullPayment, double salary, double totalOtHours, String employeeID, String employeeName) {
         this.salaryId = salaryId;
         this.salary = salary;
         this.totalOtHours = totalOtHours;
         this.fullPayment = fullPayment;
-        this.employee = employeeID;
+        this.employeeID = employeeID;
         this.employeeName =employeeName;
-    }
+    }//End Full Arg
 
+    //Getters And Setters
     public int getSalaryId() {
         return salaryId;
     }
@@ -65,11 +70,11 @@ public class SalaryDTO {
     }
 
     public String getEmployee() {
-        return employee;
+        return employeeID;
     }
 
     public void setEmployee(String employee) {
-        this.employee = employee;
+        this.employeeID = employee;
     }
 
     public String getEmployeeName() {
@@ -80,6 +85,7 @@ public class SalaryDTO {
         this.employeeName = employeeName;
     }
 
+    // Override to String
     @Override
     public String toString() {
         return "SalaryDTO{" +
@@ -88,7 +94,7 @@ public class SalaryDTO {
                 ", totalOtHours=" + totalOtHours +
                 ", fullPayment='" + fullPayment + '\'' +
                 ", employeeName='" + employeeName + '\'' +
-                ", employee=" + employee +
+                ", employeeID=" + employeeID +
                 '}';
-    }
-}
+    }//End ToString
+}//End Class DTO

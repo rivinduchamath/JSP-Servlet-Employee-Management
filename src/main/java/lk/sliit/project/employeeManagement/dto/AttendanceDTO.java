@@ -7,7 +7,8 @@ import java.util.Date;
  * @author: Rivindu-Wijayarathna
  * Date: 09-Apr-20
  */
-public class AttendanceDTO  {
+//Class AttendanceDTO
+public class AttendanceDTO {
 
     private int attendanceId;
     private double salary;
@@ -20,10 +21,11 @@ public class AttendanceDTO  {
     private String position;
     private String pic;
 
+    //Default Constructor
+    public AttendanceDTO() {
+    }
 
-    public AttendanceDTO(){}
-
-
+    //Full Arg Constructor
     public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, String employeeID, String empName, String position, String pic) {
         this.attendanceId = attendanceId;
         this.salary = salary;
@@ -35,8 +37,9 @@ public class AttendanceDTO  {
         this.empName = empName;
         this.position = position;
         this.pic = pic;
-    }
+    }//End Full arg
 
+    //Getters And Setters
     public AttendanceDTO(int attendanceId) {
         this.attendanceId = attendanceId;
     }
@@ -52,8 +55,6 @@ public class AttendanceDTO  {
     public int getAttendanceId() {
         return attendanceId;
     }
-
-
 
     public void setAttendanceId(int attendanceId) {
         this.attendanceId = attendanceId;
@@ -139,6 +140,7 @@ public class AttendanceDTO  {
         this.position = position;
     }
 
+    // Override To String
     @Override
     public String toString() {
         return "AttendanceDTO{" +
@@ -150,7 +152,7 @@ public class AttendanceDTO  {
                 ", overtimeHours=" + overtimeHours +
                 ", employeeID=" + employeeID +
                 '}';
-    }
-}
+    }//End To String
+}//End Class Attendance DTO
 
 
