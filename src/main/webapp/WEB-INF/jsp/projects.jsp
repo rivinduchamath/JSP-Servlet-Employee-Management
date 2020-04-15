@@ -280,7 +280,7 @@
                 </div>
 
                 <div class="clearfix"></div>
-                <form  method="POST" action="tablesAdd" name="tablesAdd">
+                <form  method="POST" action="/projectController" name="projectController">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="x_panel">
@@ -306,7 +306,7 @@
 
                                 <p style="font-weight: bold; font-size: 14px">Click Here To Add New Project >> &emsp;
                                     <button class="btn-outline-info" style="width: 9%;font-weight: bolder;color: black;
-                          height:36px; "
+                          height:36px; " href="/"
                                             onMouseOver="this.style.color='white'; this.style.fontWeight='bold'"
                                             onMouseOut="this.style.color='black'; "
                                     >+New
@@ -319,7 +319,7 @@
                                     <tr>
                                         <th style="width: 1%">#</th>
                                         <th style="width: 20%">Project Name</th>
-                                        <th>Expected date</th>
+                                        <th>Closing date</th>
                                         <th>Project Progress</th>
                                         <th>Status</th>
                                         <th style="width: 20%">#Edit</th>
@@ -328,7 +328,7 @@
                                     <tbody>
                                     <c:forEach items="${lias}" var="a">
                                         <tr>
-                                            <td>#</td>
+                                            <td>${a.projectId}</td>
                                             <td>
                                                 <a>${a.projectName}</a>
                                                 <br/>
