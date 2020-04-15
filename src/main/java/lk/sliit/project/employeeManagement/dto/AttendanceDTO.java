@@ -1,15 +1,13 @@
 package lk.sliit.project.employeeManagement.dto;
 
-import lk.sliit.project.employeeManagement.entity.Employee;
 
-import java.awt.*;
 import java.util.Date;
 
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 09-Apr-20
  */
-public class AttendanceDTO extends Component {
+public class AttendanceDTO  {
 
     private int attendanceId;
     private double salary;
