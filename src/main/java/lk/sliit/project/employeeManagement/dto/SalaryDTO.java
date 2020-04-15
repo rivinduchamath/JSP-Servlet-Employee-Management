@@ -21,8 +21,7 @@ public class SalaryDTO {
         this.employee = employee;
     }
 
-    public SalaryDTO() {
-    }
+    public SalaryDTO() {}
 
     public SalaryDTO(int salaryId, String fullPayment, double salary, double totalOtHours, String employeeID, String employeeName) {
         this.salaryId = salaryId;

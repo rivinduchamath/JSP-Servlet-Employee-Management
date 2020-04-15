@@ -18,7 +18,7 @@ public interface DashboardBO extends SuperBO {
 
     long getFemaleCount();
 
-    Attendance getEmployeeAttCount();
+    AttendanceDTO getEmployeeAttCount();
 
     void save(EmployeeDTO employee);
 

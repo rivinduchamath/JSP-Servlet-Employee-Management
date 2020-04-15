@@ -1,7 +1,6 @@
 package lk.sliit.project.employeeManagement.entity;
 
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -20,13 +19,10 @@ public class Salary implements SuperEntity {
     @JoinColumn(name = "employeeID", referencedColumnName = "idNo", nullable = true)
     private Employee employeeID;
 
+    public Salary() {}
 
-
-    public Salary() {
-
-    }
-
-    public Salary(int salaryId, double salary, double totalOtHours, String fullPayment, Employee employeeID) {
+    public Salary(int salaryId, double salary, double totalOtHours,
+                  String fullPayment, Employee employeeID) {
         this.salaryId = salaryId;
         this.salary = salary;
         this.totalOtHours = totalOtHours;

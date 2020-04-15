@@ -27,8 +27,9 @@ public class Attendance implements SuperEntity {
 
     public Attendance() {}
 
-    public Attendance(int attendanceId, double salary, Date date, String inTime, String outTime,
-                      double overtimeHours, Employee employeeID) {
+    public Attendance(int attendanceId, double salary, Date date,
+                       String inTime, String outTime, double overtimeHours,
+                       Employee employeeID) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -86,9 +87,7 @@ public class Attendance implements SuperEntity {
         this.overtimeHours = overtimeHours;
     }
 
-    public Employee getEmployee() {
-        return employeeID;
-    }
+    public Employee getEmployee() { return employeeID; }
 
     public void setEmployee(Employee employeeID) {
         this.employeeID = employeeID;
@@ -120,7 +119,6 @@ public class Attendance implements SuperEntity {
                 ", outTime='" + outTime + '\'' +
                 ", overtimeHours=" + overtimeHours +
                 ", employeeID=" + employeeID +
-
                 '}';
     }
 }

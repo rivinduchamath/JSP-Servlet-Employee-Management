@@ -6,6 +6,8 @@ import java.sql.Date;
  * @author: Rivindu-Wijayarathna
  * Date: 15-Apr-20
  */
+
+//Class ProjectDTO
 public class ProjectDTO {
     private String projectId;
     private String projectName;

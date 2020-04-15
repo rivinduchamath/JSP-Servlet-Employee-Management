@@ -1,6 +1,7 @@
 package lk.sliit.project.employeeManagement.business.custom;
 
 import lk.sliit.project.employeeManagement.business.SuperBO;
+import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import lk.sliit.project.employeeManagement.entity.Project;
 
@@ -15,5 +16,5 @@ public interface ProjectBO extends SuperBO {
 
     ProjectDTO findProject(String projectId);
 
-    Project getEmployeeByIdNo(String idNo);
+
 }

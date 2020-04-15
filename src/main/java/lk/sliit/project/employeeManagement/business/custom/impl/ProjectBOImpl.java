@@ -63,9 +63,4 @@ public class ProjectBOImpl implements ProjectBO {
 
     }
 
-    @Override
-    public Project getEmployeeByIdNo(String idNo) {
-        return projectDAO.getProjectByProjectId(idNo);
-    }
-
 }

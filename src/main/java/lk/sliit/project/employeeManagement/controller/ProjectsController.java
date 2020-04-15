@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.controller;
 
+import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.business.custom.ProjectBO;
 import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
 import lk.sliit.project.employeeManagement.dao.SalaryDAO;
@@ -24,8 +25,10 @@ import java.util.List;
 public class ProjectsController {
     @Autowired
     ProjectBO projectBO;
+    @Autowired
+    EmployeeBO employeeBO;
 
-    @PostMapping("/projects")
+    @RequestMapping("/projects")
     public ModelAndView projects(Model model, @ModelAttribute ProjectDTO projectDTO) {
 
         ModelAndView mav = new ModelAndView ( "projects" );
@@ -50,7 +53,7 @@ public class ProjectsController {
         System.out.println ("ssssssssssssssssss"+projectId );
         request.setAttribute ( "project", projectBO.findProject ( projectId ) );
         request.setAttribute ( "mode", "MODE_UP" );
-      model.addAttribute ( "loggerName", projectBO.getEmployeeByIdNo(SuperController.idNo) );
+      model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return "projectController";
     }
 

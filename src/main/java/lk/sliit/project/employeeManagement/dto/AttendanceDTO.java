@@ -37,6 +37,10 @@ public class AttendanceDTO  {
         this.pic = pic;
     }
 
+    public AttendanceDTO(int attendanceId) {
+        this.attendanceId = attendanceId;
+    }
+
     public String getPic() {
         return pic;
     }

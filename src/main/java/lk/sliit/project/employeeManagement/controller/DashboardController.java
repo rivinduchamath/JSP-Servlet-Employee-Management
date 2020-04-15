@@ -61,8 +61,13 @@ public class DashboardController extends HttpServlet {
     public ModelAndView index(Model model,@ModelAttribute EmployeeDTO employee,HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "contacts" );
         mav.addObject ( "countEmployee", employeeBO.findAllEmployees ( ) );
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+       try {
+           model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
+       }catch (Exception e) {
+           System.out.println ("Server Re-Started So, please LogIn" );
+       }
         return mav;
+
     }
 
 //
