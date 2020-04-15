@@ -1,47 +1,39 @@
-package lk.sliit.project.employeeManagement.entity;
+package lk.sliit.project.employeeManagement.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.sql.Date;
-
 
 /**
  * @author: Rivindu-Wijayarathna
- * Date: 23-Mar-20
+ * Date: 15-Apr-20
  */
-@Entity
-public class Project implements SuperEntity {
-    @Id
+public class ProjectDTO {
     private int projectId;
     private String projectName;
     private String teamMembers;
-    @Column(nullable = true)
     private double progress;
-    @Column(nullable = true)
     private double estBudget;
-    @Column(nullable = true)
     private double spentBudget;
-    @Column(nullable = true)
     private Date expDate;
-    @Column(nullable = true)
     private Date date;
     private String client;
     private String clientMobile;
 
-    public Project(){}
-
-    public Project(int projectId, String projectName, String teamMembers, double progress, double estBudget, double spentBudget, Date duration, Date date, String client, String clientMobile) {
+    public ProjectDTO(int projectId, String projectName, String teamMembers,
+                      double progress, double estBudget, double spentBudget,
+                      Date expDate, Date date, String client, String clientMobile) {
         this.projectId = projectId;
         this.projectName = projectName;
         this.teamMembers = teamMembers;
         this.progress = progress;
         this.estBudget = estBudget;
         this.spentBudget = spentBudget;
-        this.expDate = duration;
+        this.expDate = expDate;
         this.date = date;
         this.client = client;
         this.clientMobile = clientMobile;
+    }
+
+    public ProjectDTO() {
     }
 
     public int getProjectId() {
@@ -96,8 +88,8 @@ public class Project implements SuperEntity {
         return expDate;
     }
 
-    public void setDuration(Date duration) {
-        this.expDate = duration;
+    public void setDuration(Date expDate) {
+        this.expDate = expDate;
     }
 
     public Date getDate() {
@@ -126,14 +118,14 @@ public class Project implements SuperEntity {
 
     @Override
     public String toString() {
-        return "Project{" +
+        return "ProjectDTO{" +
                 "projectId=" + projectId +
                 ", projectName='" + projectName + '\'' +
                 ", teamMembers='" + teamMembers + '\'' +
                 ", progress=" + progress +
                 ", estBudget=" + estBudget +
                 ", spentBudget=" + spentBudget +
-                ", duration=" + expDate +
+                ", expDate=" + expDate +
                 ", date=" + date +
                 ", client='" + client + '\'' +
                 ", clientMobile='" + clientMobile + '\'' +

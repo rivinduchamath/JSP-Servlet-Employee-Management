@@ -1,8 +1,5 @@
 package lk.sliit.project.employeeManagement.dto;
 
-import lk.sliit.project.employeeManagement.entity.Employee;
-
-import javax.persistence.Column;
 
 /**
  * @author: Rivindu-Wijayarathna

@@ -12,6 +12,8 @@ import java.util.List;
  */
 public interface SalaryBO {
 
-     List<SalaryDTO> findAllSalary();
+    List <SalaryDTO> findAllSalary();
+
     void updateSalary(SalaryDTO employee);
+
 }
