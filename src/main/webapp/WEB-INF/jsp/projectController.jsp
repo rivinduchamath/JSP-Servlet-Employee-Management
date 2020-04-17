@@ -220,8 +220,8 @@
                             <div class="ln_solid">
                                 <div class="form-group">
                                     <div class="col-md-6 offset-md-3">
-                                        <button type='submit' class="btn btn-primary" value="Register">Update</button>
-                                        <button type='reset' class="btn btn-success">Reset</button>
+                                        <button type='submit' class="btn btn-primary" value="Register">Add New</button>
+                                        <button type='reset' class="btn btn-success">Back To Projects</button>
                                     </div>
                                 </div>
                             </div>
