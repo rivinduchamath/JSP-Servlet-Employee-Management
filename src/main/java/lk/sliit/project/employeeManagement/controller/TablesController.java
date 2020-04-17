@@ -46,7 +46,7 @@ public class TablesController {
         //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         //Top Employee
-        Attendance totalCount = attendanceBO.getEmployeeAttCount ( );
+        AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
         try {
             model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
         } catch (NullPointerException e) {

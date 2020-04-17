@@ -1,9 +1,9 @@
 package lk.sliit.project.employeeManagement.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -28,6 +28,8 @@ public class Project implements SuperEntity {
     private Date date;
     private String client;
     private String clientMobile;
+    @OneToMany(mappedBy = "projectsID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+    private List<ProjectActivity> projects = new ArrayList<> ( );
 
     public Project(){}
 
@@ -124,19 +126,28 @@ public class Project implements SuperEntity {
         this.clientMobile = clientMobile;
     }
 
+    public Date getExpDate() {
+        return expDate;
+    }
+
+    public List <ProjectActivity> getProjects() {
+        return projects;
+    }
+
     @Override
     public String toString() {
         return "Project{" +
-                "projectId=" + projectId +
+                "projectId='" + projectId + '\'' +
                 ", projectName='" + projectName + '\'' +
                 ", teamMembers='" + teamMembers + '\'' +
                 ", progress=" + progress +
                 ", estBudget=" + estBudget +
                 ", spentBudget=" + spentBudget +
-                ", duration=" + expDate +
+                ", expDate=" + expDate +
                 ", date=" + date +
                 ", client='" + client + '\'' +
                 ", clientMobile='" + clientMobile + '\'' +
+                ", projects=" + projects +
                 '}';
     }
 }

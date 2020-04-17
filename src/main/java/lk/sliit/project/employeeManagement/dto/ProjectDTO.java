@@ -11,7 +11,7 @@ import java.sql.Date;
 public class ProjectDTO {
     private String projectId;
     private String projectName;
-    private String teamMembers;
+    private String projectDes;
     private double progress;
     private double estBudget;
     private double spentBudget;
@@ -21,12 +21,12 @@ public class ProjectDTO {
     private String clientMobile;
 
     //ProjectDTO Full Arg Constructor
-    public ProjectDTO(String projectId, String projectName, String teamMembers,
+    public ProjectDTO(String projectId, String projectName, String projectDes,
                       double progress, double estBudget, double spentBudget,
                       Date expDate, Date date, String client, String clientMobile) {
         this.projectId = projectId;
         this.projectName = projectName;
-        this.teamMembers = teamMembers;
+        this.projectDes = projectDes;
         this.progress = progress;
         this.estBudget = estBudget;
         this.spentBudget = spentBudget;
@@ -57,11 +57,11 @@ public class ProjectDTO {
     }
 
     public String getTeamMembers() {
-        return teamMembers;
+        return projectDes;
     }
 
-    public void setTeamMembers(String teamMembers) {
-        this.teamMembers = teamMembers;
+    public void setTeamMembers(String projectDes) {
+        this.projectDes = projectDes;
     }
 
     public double getProgress() {
@@ -126,7 +126,7 @@ public class ProjectDTO {
         return "ProjectDTO{" +
                 "projectId=" + projectId +
                 ", projectName='" + projectName + '\'' +
-                ", teamMembers='" + teamMembers + '\'' +
+                ", projectDes='" + projectDes + '\'' +
                 ", progress=" + progress +
                 ", estBudget=" + estBudget +
                 ", spentBudget=" + spentBudget +

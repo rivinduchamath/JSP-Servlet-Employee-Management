@@ -12,7 +12,8 @@ import java.util.List;
  */
 public class SuperController {
     List<EmployeeDTO> dtos = new ArrayList<> ();
-    static String idNo;
+    static String idNo ="1";
+    static String projectId= "";
 
 
 }

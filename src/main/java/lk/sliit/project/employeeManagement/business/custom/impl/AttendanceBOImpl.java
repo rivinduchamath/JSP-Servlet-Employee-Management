@@ -23,11 +23,13 @@ import java.util.List;
 @Service
 @Transactional
 public class AttendanceBOImpl implements AttendanceBO {
+    //Automate Object Creation
     @Autowired
     AttendanceDAO attendanceDAO;
     @Autowired
     EmployeeDAO employeeDAO;
 
+    //Find Today attendance To load Today Attendance Table
     @Override
     public List<AttendanceDTO> findTodayAttendance() {
         DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
@@ -46,16 +48,20 @@ public class AttendanceBOImpl implements AttendanceBO {
                     employeeDAO.findName ( attendance.getEmployee ().getIdNo () ),
                     employeeDAO.findPos ( attendance.getEmployee ().getIdNo ()),
                     employeeDAO.findPic ( attendance.getEmployee ().getIdNo () )
-
             ) );
         }
         return dtos;
     }
+    //Get Top Attendance ID (IF Delete SomeOne)
     @Override
-    public Attendance getEmployeeAttCount() {
-        return attendanceDAO.findTopByOrderByAttendanceIdDesc();
+    public AttendanceDTO getEmployeeAttCount() {
+        Attendance employee = attendanceDAO.findTopByOrderByAttendanceIdDesc ();
+        return new AttendanceDTO (
+                employee.getAttendanceId ()
+        );
     }
 
+    //Save Attendance If Not Already Add Today
     @Override
     public void save(AttendanceDTO attendanceDTO) {
         attendanceDAO.save(new Attendance (

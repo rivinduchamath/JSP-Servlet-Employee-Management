@@ -31,19 +31,21 @@ public class DashboardBOImpl implements DashboardBO {
     @Override
     public long  getAllEmployeeCount() { return employeeDAO.count (); }
 
+    //Find Male Count To Dashboard
     @Override
     public long getMaleCount() {
         return employeeDAO.countByGender("male");
     }
 
+    //Find Female Count To Dashboard
     @Override
     public long getFemaleCount() {
         return employeeDAO.countByGender("female");
     }
 
+    //
     @Override
     public AttendanceDTO getEmployeeAttCount() {
-
         Attendance employee = attendanceDAO.findTopByOrderByAttendanceIdDesc ();
         return new AttendanceDTO (
                 employee.getAttendanceId ()

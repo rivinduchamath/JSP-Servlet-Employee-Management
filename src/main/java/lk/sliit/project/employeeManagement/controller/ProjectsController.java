@@ -50,12 +50,12 @@ public class ProjectsController {
 
     @RequestMapping("edit-project")
     public String editUser(@RequestParam String projectId, Model model, HttpServletRequest request) {
-        System.out.println ("ssssssssssssssssss"+projectId );
         request.setAttribute ( "project", projectBO.findProject ( projectId ) );
         request.setAttribute ( "mode", "MODE_UP" );
-      model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return "projectController";
     }
+
 
 
 

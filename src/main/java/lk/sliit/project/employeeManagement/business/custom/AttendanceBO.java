@@ -14,7 +14,7 @@ import java.util.List;
 public interface AttendanceBO extends SuperBO {
    List<AttendanceDTO> findTodayAttendance();
 
-    Attendance getEmployeeAttCount();
+ AttendanceDTO getEmployeeAttCount();
 
     void save(AttendanceDTO attendance);
 

@@ -115,160 +115,112 @@
                         </ul>
                         <div class="clearfix"></div>
                     </div>
-
                     <div class="x_content">
-                        <form class="form-horizontal" method="POST" action="/pro">
-                            <span class="section">Manage Employee
+                        <form class="form-horizontal" method="POST" action="/projects">
+                             <span class="section">Manage Projects
 
                             </span>
 
-
+                                <%--Project Name--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Name<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Project Name <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
                                     <input class="form-control" data-validate-length-range="6"
-                                           data-validate-words="2"
-                                           placeholder="ex. John f. Kennedy" required="required"
-                                          />
+                                           data-validate-words="2" name="projectName"
+                                           placeholder="ex. Employee Management" required="required"
+                                           value="${project.projectName }"/>
                                 </div>
                             </div>
 
-
+                                <%--Project No--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">NIC No<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Project ID<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='optional'
+                                    <input readonly="readonly" class="form-control" class='optional'
+                                           name="projectId"
                                            data-validate-words="1"required="required"
-                                         /></div>
+                                           value="${project.projectId }"/></div>
                             </div>
 
-                                <input type="hidden" name="id" value="${employee.id }" />
-
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">email<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control"
-                                           class='email' required="required"
-                                           type="email"/></div>
-                            </div>
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Confirm email
-                                    address<span
-                                            class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="email" class='email'
-
-                                           data-validate-linked='email'
-                                           required='required' />
-                                </div>
-                            </div>
-
-
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Occupation<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='optional'
-                                           type="text" /></div>
-                            </div>
-
-
+                                <%--Registered Date--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Registered
                                     Date<span
                                             class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
+                                    <input class="form-control" class='date' type="date" name="date"
+                                           required='required' value="${project.date }"></div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Closing Date<span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
                                     <input class="form-control" class='date' type="date"
-                                           required='required'></div>
+                                           name="duration"
+                                           required='required' value="${project.duration }"></div>
                             </div>
 
 
-
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Progress<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="password"
+                                    <input class="form-control" type="number" name="progress"
                                            data-validate-length="6,8"
-                                           required='required' /></div>
+                                           required='required' value="${project.progress }"/></div>
                             </div>
 
+                                <%--Salary--%>
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Salary<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Budget<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" class='tel'
+                                    <input class="form-control" type="number" class='tel' name="estBudget"
                                            required='required'
-                                           data-validate-length-range="1,15"/></div>
+                                           data-validate-length-range="1,15" value="${project.estBudget }"/></div>
                             </div>
-
-
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Telephone<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Spent Budgett<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number"
+                                    <input class="form-control" class='date' type="number" name="spentBudget"
+                                           required='required' value="${project.spentBudget }"></div>
+                            </div>
+
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Client Name<span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input class="form-control" type="text" name="client"
                                            required='required'
-                                           data-validate-length-range="1,10"/></div>
+                                           data-validate-length-range="1,10" value="${project.client }"/></div>
                             </div>
-
-
                             <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Date Of Birth<span
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Client Mobile<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="date"
-                                           required='required' ></div>
+                                    <input class="form-control" type="text" name="clientMobile"
+                                           required='required'
+                                           data-validate-length-range="1,10" value="${project.clientMobile }"/></div>
                             </div>
 
-
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
-                                <div class="col-md-6 col-sm-6 ">
-                                    <div id="gender1" class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-secondary" data-toggle-class="btn-primary"
-                                               data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender"  class="join-btn"
-                                                 >
-
-                                        </label>
-                                        <label class="btn btn-primary" data-toggle-class="btn-primary"
-                                               data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" class="join-btn"
-                                                  >
-                                            Female
-                                        </label>
-                                    </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Project Description<span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input style="height: 60px" class="form-control" type="text" name="teamMembers"
+                                           required='required'
+                                           data-validate-length-range="1,10" value="${project.teamMembers }">
+                                    </input>
                                 </div>
                             </div>
 
-
-                            <div class="field item form-group">
-
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">
-                                    <a class="" title="Insert picture (or just drag & drop)" id=""><i
-                                            class="fa fa-picture-o"></i></a><span
-                                        class="required"> *</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input type="file" name="pic" data-role="magic-overlay"
-                                           data-target="#pictureBtn"
-                                           data-edit="insertImage"/></div>
-                            </div>
-
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Address<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="text"
-                                           required='required' ></div>
-                            </div>
                             <div class="ln_solid">
                                 <div class="form-group">
                                     <div class="col-md-6 offset-md-3">
-                                        <button type='submit' class="btn btn-primary" value="Register">Submit</button>
+                                        <button type='submit' class="btn btn-primary" value="Register">Update</button>
                                         <button type='reset' class="btn btn-success">Reset</button>
                                     </div>
                                 </div>
@@ -308,7 +260,7 @@
 
                             </span>
 
-                                <%--Name--%>
+                                <%--Project Name--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Project Name <span
                                         class="required">*</span></label>
@@ -320,7 +272,7 @@
                                 </div>
                             </div>
 
-                                <%--NIC No--%>
+                                <%--Project No--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Project ID<span
                                         class="required">*</span></label>
@@ -331,13 +283,6 @@
                                            value="${project.projectId }"/></div>
                             </div>
 
-                                <%--<input type="hidden" name="id" value="${employee.id }" />--%>
-                                <%--Email--%>
-
-
-
-
-
                                 <%--Registered Date--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Registered
@@ -347,9 +292,16 @@
                                     <input class="form-control" class='date' type="date" name="date"
                                            required='required' value="${project.date }"></div>
                             </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Closing Date<span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input class="form-control" class='date' type="date"
+                                           name="duration"
+                                           required='required' value="${project.duration }"></div>
+                            </div>
 
 
-                                <%--Password--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Progress<span
                                         class="required">*</span></label>
@@ -368,38 +320,42 @@
                                            required='required'
                                            data-validate-length-range="1,15" value="${project.estBudget }"/></div>
                             </div>
-
-
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Client Mobile<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" name="clientMobile"
-                                           required='required'
-                                           data-validate-length-range="1,10" value="${project.clientMobile }"/></div>
-                            </div>
-
-                                <%--Date--%>
-                                <%--Registered Date--%>
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Closing Date<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="date"
-                                           name="duration"
-                                           required='required' value="${project.duration }"></div>
-                            </div>
-
-
-                                <%--Address--%>
-                                <%--Registered Date--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Spent Budgett<span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" class='date' type="text" name="spentBudget"
+                                    <input class="form-control" class='date' type="number" name="spentBudget"
                                            required='required' value="${project.spentBudget }"></div>
                             </div>
+
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Client Name<span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input class="form-control" type="text" name="client"
+                                           required='required'
+                                           data-validate-length-range="1,10" value="${project.client }"/></div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Client Mobile<span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input class="form-control" type="text" name="clientMobile"
+                                           required='required'
+                                           data-validate-length-range="1,10" value="${project.clientMobile }"/></div>
+                            </div>
+
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Project Description<span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input style="height: 60px" class="form-control" type="text" name="teamMembers"
+                                           required='required'
+                                              data-validate-length-range="1,10" value="${project.teamMembers }">
+                                    </input>
+                                </div>
+                            </div>
+
                             <div class="ln_solid">
                                 <div class="form-group">
                                     <div class="col-md-6 offset-md-3">

@@ -350,7 +350,7 @@
                                                 <button type="button" class="btn btn-success btn-xs">Success</button>
                                             </td>
                                             <td>
-                                                <a href="/project_detail" class="btn btn-primary btn-xs"><i
+                                                <a href="/project_detail?projectId=${a.projectId }" class="btn btn-primary btn-xs"><i
                                                         class="fa fa-folder"></i> View </a>
                                                 <a href="/edit-project?projectId=${a.projectId }" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>
                                                     Edit </a>
