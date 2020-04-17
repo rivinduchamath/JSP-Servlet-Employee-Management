@@ -26,6 +26,9 @@ public class ProjectActivityDTO {
         this.projectsID = projectsID;
     }
 
+    public ProjectActivityDTO() {
+    }
+
     public String getDescription() {
         return description;
     }

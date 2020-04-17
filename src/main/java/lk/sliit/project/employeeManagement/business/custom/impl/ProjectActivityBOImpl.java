@@ -2,14 +2,11 @@ package lk.sliit.project.employeeManagement.business.custom.impl;
 
 import lk.sliit.project.employeeManagement.business.custom.ProjectActivityBO;
 import lk.sliit.project.employeeManagement.dao.ProjectActivityDAO;
-import lk.sliit.project.employeeManagement.dao.QueryDAO;
-import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
+import lk.sliit.project.employeeManagement.dao.ProjectDAO;
 import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;
-import lk.sliit.project.employeeManagement.entity.Attendance;
 import lk.sliit.project.employeeManagement.entity.ProjectActivity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +20,10 @@ import java.util.List;
 public class ProjectActivityBOImpl implements ProjectActivityBO {
     @Autowired
     ProjectActivityDAO projectActivityDAO;
+    @Autowired
+    ProjectDAO projectDAO;
     @Override
     public List<ProjectActivityDTO> loadProjectActivity(String projectId) {
-        System.out.println ("ssssssssssssssssssssssssssssssssssss"+projectId );
         Iterable <ProjectActivity> projectActivities = projectActivityDAO.findProjectActivitiesByProjectsIDEquals ( projectId );
         List <ProjectActivityDTO> dtos = new ArrayList<> ( );
         for (ProjectActivity projectActivity : projectActivities) {
@@ -47,6 +45,16 @@ public class ProjectActivityBOImpl implements ProjectActivityBO {
         return new ProjectActivityDTO (
                 projectActivity.getActivityId ()
         );
+    }
+
+    @Override
+    public void save(ProjectActivityDTO projectActivity) {
+        projectActivityDAO.save(new ProjectActivity (
+                projectActivity.getActivityId (),
+                projectActivity.getActivity (),
+                projectActivity.getDescription (),
+                projectActivity.getDate (),
+                projectDAO.findOne ( projectActivity.getProjectsID ())));
     }
 
 }

@@ -255,14 +255,15 @@
                                     </ul>
                                     <br/>
 
-                                    <div>
+                                    <form  method="POST" action="saveActivities" name="saveActivities">
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">
                                                 Activity Name<span
                                                         class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" placeholder="ex. Project Manage"
-                                                <%--value="${genActivityId}" name="activityId"--%>
+                                                <input class="form-control" data-validate-length-range="6"
+                                                       placeholder="ex. Project Manage"
+                                                      name="activity"
                                                         required="required">
 
                                             </div>
@@ -274,7 +275,7 @@
                                                     class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                                 <input style="height: 60px" class="form-control" data-validate-length-range="6"
-                                                       data-validate-words="2" type="text"
+                                                       data-validate-words="2" type="text" name="description"
                                                       required="required"
                                                 />
                                             </div>
@@ -286,7 +287,7 @@
                                                     class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" data-validate-length-range="6"
-                                                       data-validate-words="2"
+                                                       data-validate-words="2" name="date"
                                                        required="required" type="date"
                                                 />
                                             </div>
@@ -299,11 +300,19 @@
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" data-validate-length-range="6"
                                                        data-validate-words="2" name="projectId"
-                                                       required="required" type="text" value="${projectData.projectId}"
+                                                       required="required" readonly="true" type="text" value="${projectData.projectId}"
                                                 />
                                             </div>
                                         </div>
-                                    </div>
+                                        <div class="text-center mtop20">
+
+                                            <button type='submit' class="btn btn-primary" style="width: 30%" value="Register">Submit</button>
+                                            <%--<a href="#" class="btn btn-sm btn-primary">Save Activity</a>--%>
+                                            <br>
+                                            <a href="/project_detail?projectId=${projectData.projectId}"
+                                               class="btn btn-sm btn-warning"><< Back</a>
+                                        </div>
+                                    </form>
 
 
                                     <h4>Recent Activity Month<p id="output"></p></h4>
@@ -312,7 +321,7 @@
                                     <ul class="messages">
                                         <c:forEach items="${loadActivity}" var="e">
 
-                                            <li style="background-color: #fcf6ff">
+                                            <li style="background-color: hsla(34,23%,94%,0.36)">
 
 
                                                 <div style="margin-right: 11px" class="message_date">
@@ -393,14 +402,7 @@
                                             </ul>
                                             <br/>
 
-                                            <div class="text-center mtop20">
 
-
-                                                <a href="#" class="btn btn-sm btn-primary">Save Activity</a>
-                                                <br>
-                                                <a href="/project_detail?projectId=${projectData.projectId}"
-                                                   class="btn btn-sm btn-warning"><< Back</a>
-                                            </div>
                                         </div>
 
                                     </section>

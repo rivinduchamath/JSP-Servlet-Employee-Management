@@ -13,9 +13,12 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -49,7 +52,7 @@ public class ProjectDetails {
     }
 
     @RequestMapping("/project_detail_Edit")
-    public ModelAndView index(Model model, HttpServletRequest request )  {
+    public ModelAndView index(Model model )  {
         ModelAndView mav = new ModelAndView ( "project_detail_Edit" );
         model.addAttribute ( "projectData", projectBO.findProject (  SuperController.projectId  ) );
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
@@ -58,15 +61,23 @@ public class ProjectDetails {
         }catch (NullPointerException e){
             System.out.println ("No Project activities Found" );
         }
-
-//        ProjectActivityDTO totalCount = projectActivityBO.getgenActivityIdCount ( );
-//        try {
-//            model.addAttribute ( "genActivityId", totalCount.getActivityId ( ) + 1 );
-//        } catch (NullPointerException e) {
-//            model.addAttribute ( "genActivityId", 1 );
-//        }
-
         return mav;
+    }
+
+    @PostMapping("saveActivities")
+    public String registerUser(@ModelAttribute ProjectActivityDTO projectActivity) throws IOException {
+
+        try {
+            ProjectActivityDTO totalCount = projectActivityBO.getgenActivityIdCount ( );
+            int q = Integer.parseInt ( totalCount.getActivityId () );
+             int c= q+ 1 ;
+            projectActivity.setActivityId ( String.valueOf ( c ) );
+        } catch (NullPointerException e) {
+            projectActivity.setActivityId ( "1"  );
+        }
+        projectActivity.setProjectsID ( SuperController.projectId );
+        projectActivityBO.save ( projectActivity );
+        return "redirect:/project_detail?projectId="+SuperController.projectId;
     }
 
 }

@@ -12,4 +12,6 @@ public interface ProjectActivityBO {
     List<ProjectActivityDTO> loadProjectActivity(String projectId);
 
     ProjectActivityDTO getgenActivityIdCount();
+
+    void save(ProjectActivityDTO projectActivity);
 }

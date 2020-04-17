@@ -10,7 +10,6 @@ import java.sql.Date;
 @Entity
 public class ProjectActivity implements SuperEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
     private String activityId;
     private String activity;
     private String description;
@@ -19,7 +18,8 @@ public class ProjectActivity implements SuperEntity {
     @JoinColumn(name = "projectsID", referencedColumnName = "projectId", nullable = true)
     private Project projectsID;
 
-    public ProjectActivity(String activity, String description, Date date, Project projectsID) {
+    public ProjectActivity(String activityId, String activity, String description, Date date, Project projectsID) {
+        this.activityId = activityId;
         this.activity = activity;
         this.description = description;
         this.date = date;
