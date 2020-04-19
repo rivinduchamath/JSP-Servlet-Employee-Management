@@ -25,6 +25,7 @@ public class SalaryBOImpl implements SalaryBO {
     @Autowired
     private EmployeeDAO employeeDAO;
     @Override
+
     public void updateSalary(SalaryDTO employee) {
 
         salaryDAO.save(new Salary (
