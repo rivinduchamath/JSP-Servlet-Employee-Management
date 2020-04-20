@@ -93,15 +93,17 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px" src="../../images/favicon.ico"><span style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
+                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px"
+                                                                 src="../../images/favicon.ico"><span
+                            style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
-                    <div class="profile_pic"style=" width: 80px;height: 80px">
-                        <img src="../../images/icons/${loggerName.pic}"  alt="..." class="img-circle profile_img">
+                    <div class="profile_pic" style=" width: 80px;height: 80px">
+                        <img src="../../images/icons/${loggerName.pic}" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -110,7 +112,7 @@
                 </div>
                 <!-- /menu profile quick info -->
 
-                <br />
+                <br/>
 
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -133,7 +135,8 @@
 
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-desktop"></i> UI Elements <span
+                                    class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="general_elements.jsp">General Elements</a></li>
                                     <li><a href="media_gallery.jsp">Media Gallery</a></li>
@@ -152,7 +155,8 @@
                                     <li><a href="tables_dynamic">Table Dynamic</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span
+                                    class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="chartjs.jsp">Chart JS</a></li>
 
@@ -167,7 +171,8 @@
                     <div class="menu_section">
                         <h3>Live On</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-bug"></i> Additional Pages <span
+                                    class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="e_commerce.jsp">E-commerce</a></li>
                                     <li><a href="projects">Projects</a></li>
@@ -221,29 +226,33 @@
                 <nav class="nav navbar-nav">
                     <ul class=" navbar-right">
                         <li class="nav-item dropdown open" style="padding-left: 15px;">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
+                               id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                 <img src="../../images/icons/${loggerName.pic}" alt=""> ${loggerName.name}
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                                <a class="dropdown-item"  href="javascript:;">
+                                <a class="dropdown-item" href="javascript:;"> Profile</a>
+                                <a class="dropdown-item" href="javascript:;">
                                     <span class="badge bg-red pull-right">50%</span>
                                     <span>Settings</span>
                                 </a>
-                                <a class="dropdown-item"  href="javascript:;">Help</a>
-                                <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                <a class="dropdown-item" href="javascript:;">Help</a>
+                                <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log
+                                    Out</a>
                             </div>
                         </li>
 
                         <li role="presentation" class="nav-item dropdown open">
-                            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1"
+                               data-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-envelope-o"></i>
                                 <span class="badge bg-green">6</span>
                             </a>
-                            <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                            <ul class="dropdown-menu list-unstyled msg_list" role="menu"
+                                aria-labelledby="navbarDropdown1">
                                 <li class="nav-item">
                                     <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
                                         <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -255,7 +264,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
                                         <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -267,7 +276,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
                                         <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -279,7 +288,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
                                         <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -310,7 +319,9 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Tables <small>Some examples to get you started</small></h3>
+                        <h3>Tables
+                            <small>Some examples to get you started</small>
+                        </h3>
                     </div>
 
                     <div class="title_right">
@@ -335,14 +346,26 @@
                             <div class="x_title">
                                 <h2>Today active users
                                     <small>Update Today
-                                        Users</small>
+                                        Users
+                                    </small>
                                 </h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <a href="/invoice" style="font-weight: bold" class="btn btn-primary btn-xs"><i
-                                            class="fa fa-angle-double-down" ></i> Pay </a>
-                                </ul>
+                                <form method="POST" action="/payment" name="payment">
+                                    <input style="display: none" type="text" id="itemPay" name="salaryId">
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <button type="submit" value="Register" disabled="true"
+                                                style="font-weight: bold;color: white" ; id="name"
+                                                class="btn btn-success "> Pay <i class="fa fa-file-image-o"></i>
+                                        </button>
+                                    </ul>
+
+                                </form>
+
+                                <button onclick="getValue();return false" ; style="font-weight: bold;color: white" ;
+                                    id="btn_enable"    class="btn btn-success ">Add Payment <i class="fa fa-plus-circle"></i></button>
+
+                                <!--href="/invoice"-->
                                 <div class="clearfix"></div>
                             </div>
 
@@ -354,7 +377,8 @@
 
                                         <div class="card-box table-responsive">
 
-                                            <table id="datatable-buttons"  class="table table-striped jambo_table bulk_action table-bordered">
+                                            <table id="datatable-buttons"
+                                                   class="table table-striped jambo_table bulk_action table-bordered">
                                                 <thead class="thead-dark">
 
                                                 <tr>
@@ -376,10 +400,11 @@
                                                         <td>${e.salary}</td>
                                                         <td>${e.totalOtHours}</td>
                                                         <td>${e.fullPayment}</td>
-                                                        <td><a href="/delete?pid=${e.salaryId}"><span
+                                                        <td><a href="/delete?pid=${e.employee}"><span
                                                                 class="glyphicon glyphicon-trash"></span></a></td>
                                                         <td class="a-center ">
-                                                            <input type="checkbox" class="flat" name="table_records">
+                                                            <input type="checkbox" class="flat checks"
+                                                                   value="${e.salaryId}" name="table_records">
                                                         </td>
                                                     </tr>
                                                 </c:forEach>
@@ -392,77 +417,79 @@
                         </div>
                     </div>
                     <!--///////////////////////////////////////////////////////-->
-                    <form  method="POST" action="/salarySave" name="salary">
-                    <div class="col-md-4 col-sm-4 " style="float: right">
+                    <form method="POST" action="/salarySave" name="salary">
+                        <div class="col-md-4 col-sm-4 " style="float: right">
 
 
-                        <div class="form-group">
-                            <label for="itemCode">Employee Id</label>
-                            <input type="text" class="form-control"
-                                   required="required" name="employee"
-                                   id="itemCode" placeholder="ID" readonly/>
-                        </div>
+                            <div class="form-group">
+                                <label for="itemCode">Employee Id</label>
+                                <input type="text" class="form-control"
+                                       required="required" name="employee"
+                                       id="itemCode" placeholder="ID" readonly/>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="itemDesc">Employee Name </label>
-                            <input type="text" class="form-control" id="itemDesc" placeholder="Name">
-                        </div>
+                            <div class="form-group">
+                                <label for="itemDesc">Employee Name </label>
+                                <input type="text" class="form-control" id="itemDesc" placeholder="Name">
+                            </div>
 
-                        <div class="col-md-7 col-sm-7 ">
-                            <label for="itemDesc">Salary </label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
+                            <div class="col-md-7 col-sm-7 ">
+                                <label for="itemDesc">Salary </label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
 
                                     <span class="input-group-text">
                                        Normal
                                 </span>
-                                </div>
-                                <input type="text" class="form-control" name="salary" id="itemTime"
-                                       aria-label="Dollar amount (with dot and two decimal places)">
+                                    </div>
+                                    <input type="text" class="form-control" name="salary" id="itemTime"
+                                           aria-label="Dollar amount (with dot and two decimal places)">
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-5 col-sm-5 ">
-                            <label for="itemDesc">&nbsp;</label>
-                            <div class="input-group mb-3" style="float: right">
-                                <div class="input-group-prepend">
+                            <div class="col-md-5 col-sm-5 ">
+                                <label for="itemDesc">&nbsp;</label>
+                                <div class="input-group mb-3" style="float: right">
+                                    <div class="input-group-prepend">
                                 <span class="input-group-text">
                                        OT
                                 </span>
+                                    </div>
+                                    <input type="text" class="form-control"
+                                           id="itemTime2" name="totalOtHours"
+                                           aria-label="Dollar amount (with dot and two decimal places)"/>
+
                                 </div>
-                                <input type="text" class="form-control"
-                                       id="itemTime2"  name="totalOtHours"
-                                       aria-label="Dollar amount (with dot and two decimal places)"/>
-
                             </div>
-                        </div>
 
-                        <div class="col-md-12 col-sm-12 ">
-                            <label for="itemDesc">&nbsp;</label>
+                            <div class="col-md-12 col-sm-12 ">
+                                <label for="itemDesc">&nbsp;</label>
 
-                            <div class="input-group mb-3" style="float: right">
-                                <div class="input-group-prepend">
+                                <div class="input-group mb-3" style="float: right">
+                                    <div class="input-group-prepend">
                                 <span class="input-group-text">
                                        Total
                                 </span>
+                                    </div>
+                                    <input type="text" id="tot" class="form-control"
+                                           name="fullPayment" value="0" id="itemTime3"
+                                           aria-label="Dollar amount (with dot and two decimal places)">
+
                                 </div>
-                                <input type="text" id="tot" class="form-control"
-                                       name="fullPayment"  value= "0" id="itemTime3"
-                                       aria-label="Dollar amount (with dot and two decimal places)">
+                            </div>
+                            <div class="col-md-6 col-sm-6 ">
+                                <label for="itemDesc">&nbsp;</label>
+                                <div class="input-group mb-5" style="float: right">
 
+                                    <button type='submit' class="btn btn-success" style="width: 50%" value="Register">
+                                        Submit
+                                    </button>
+                                    <button type='reset' class="btn btn-outline-success" value="">Reset</button>
+
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 ">
-                            <label for="itemDesc">&nbsp;</label>
-                            <div class="input-group mb-5" style="float: right">
-
-                                <button type='submit' class="btn btn-success" style="width: 50%" value="Register">Submit</button>
-                                <button type='reset' class="btn btn-outline-success" value="">Reset</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--////////////////////////////////////////////-->
+                        <!--////////////////////////////////////////////-->
                     </form>
                 </div>
 
@@ -470,6 +497,20 @@
         </div>
         <!-- /page content -->
 
+
+        <script>
+            function getValue() {
+                var checks = document.getElementsByClassName('checks');
+                var str = '';
+
+                for (i = 0; i < 2; i++) {
+                    if (checks[i].checked === true) {
+                        str += checks[i].value + "a";
+                    }
+                }
+                $("#itemPay").val(str);
+            }
+        </script>
         <!-- footer content -->
         <footer>
             <div class="pull-right">
@@ -509,9 +550,9 @@
     $("#datatable-buttons tbody").on('click', 'tr', function () {
         var date = new Date();
         var date2 = new Date();
-        var today = date.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
-        date2.setHours(date.getHours()+8);
-        var today2 = date2.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
+        var today = date.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
+        date2.setHours(date.getHours() + 8);
+        var today2 = date2.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
         selectedRow = $(this);
         $("#itemCode").val($(this).find("td:first-child").text());
         $("#itemDesc").val($(this).find("td:nth-child(2)").text());
@@ -521,6 +562,16 @@
         $("#datatable-buttons tbody tr").removeClass('row-selected');
         selectedRow.addClass('row-selected');
     });
+</script>
+
+<script> $(document).ready(function () {
+    $("#btn_enable").click(function () {
+        $("#name").prop("disabled", false);
+    });
+    // $("#btn_disable").click(function () {
+    //     $("#name").prop("disabled", true);
+    // });
+});
 </script>
 <!-- Datatables -->
 <script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>

@@ -10,10 +10,7 @@ import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
@@ -59,4 +56,12 @@ public class SalaryController {
     return "redirect:/salary";
 }
 
+    @RequestMapping(value = "payment", method = RequestMethod.POST)
+    public String index2(@ModelAttribute SalaryDTO salaryDTO, Model model) {
+        System.out.println (salaryDTO.getSalaryId () );
+        System.out.println (salaryDTO.getTotalOtHours () );
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+
+        return "redirect:/invoice";
+    }
     }

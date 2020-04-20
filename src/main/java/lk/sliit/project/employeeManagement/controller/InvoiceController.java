@@ -29,4 +29,11 @@ public class InvoiceController {
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return mav;
     }
+
+    @RequestMapping("/sa")
+    public ModelAndView indexa(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
+        ModelAndView mav = new ModelAndView ( "sa" );
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        return mav;
+    }
 }

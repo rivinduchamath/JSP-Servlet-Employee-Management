@@ -297,7 +297,7 @@
                         <div class="  invoice-header">
                           <h1>
                                           <i class="fa fa-globe"></i> Invoice.
-                                          <small class="pull-right">Date: 16/08/2016</small>
+                                          <small>Date: 16/08/2016</small>
                                       </h1>
                         </div>
                         <!-- /.col -->

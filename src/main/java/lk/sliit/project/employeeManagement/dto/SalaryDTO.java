@@ -7,7 +7,7 @@ package lk.sliit.project.employeeManagement.dto;
  */
 //Class SalaryDTO
 public class SalaryDTO {
-    private int salaryId;
+    private String salaryId;
     private double salary;
     private double totalOtHours;
     private String fullPayment;
@@ -15,7 +15,7 @@ public class SalaryDTO {
     private String employeeID;
 
     //Constructor
-    public SalaryDTO(int salaryId, double salary, double totalOtHours, String fullPayment, String employee) {
+    public SalaryDTO(String salaryId, double salary, double totalOtHours, String fullPayment, String employee) {
         this.salaryId = salaryId;
         this.salary = salary;
         this.totalOtHours = totalOtHours;
@@ -27,7 +27,7 @@ public class SalaryDTO {
     public SalaryDTO() {}
 
     //Full-arg  Constructor
-    public SalaryDTO(int salaryId, String fullPayment, double salary, double totalOtHours, String employeeID, String employeeName) {
+    public SalaryDTO(String salaryId, String fullPayment, double salary, double totalOtHours, String employeeID, String employeeName) {
         this.salaryId = salaryId;
         this.salary = salary;
         this.totalOtHours = totalOtHours;
@@ -37,11 +37,11 @@ public class SalaryDTO {
     }//End Full Arg
 
     //Getters And Setters
-    public int getSalaryId() {
+    public String getSalaryId() {
         return salaryId;
     }
 
-    public void setSalaryId(int salaryId) {
+    public void setSalaryId(String salaryId) {
         this.salaryId = salaryId;
     }
 

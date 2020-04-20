@@ -96,7 +96,7 @@
                             <li><a><i class="fa fa-desktop"></i> UI Elements <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="../../general_elements.jsp">General Elements</a></li>
+                                    <li><a href="sa">General Elements</a></li>
                                     <li><a href="../../media_gallery.jsp">Media Gallery</a></li>
 
                                     <li><a href="index">Icons</a></li>
