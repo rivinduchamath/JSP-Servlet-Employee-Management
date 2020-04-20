@@ -128,7 +128,6 @@ public class EmployeeBOImpl implements EmployeeBO {
         }
         return dtos;
     }
-
     //Get Last Employee Method
     @Override
     public String getLastUserCode() {
