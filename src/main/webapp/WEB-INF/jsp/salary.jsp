@@ -340,8 +340,8 @@
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
-                                    <button class="btn btn-success" style="position: absolute;display:inline; right: 0;width: 10%;
-                                             height: 35px; ">Pay</button>
+                                    <a href="/invoice" style="font-weight: bold" class="btn btn-primary btn-xs"><i
+                                            class="fa fa-angle-double-down" ></i> Pay </a>
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>

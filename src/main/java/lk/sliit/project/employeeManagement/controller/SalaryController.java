@@ -39,7 +39,6 @@ public class SalaryController {
             request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "salary" );
         mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
-//        mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         mav.addObject ( "listEmployeesTableSalary", salaryBO.findAllSalary ( ) );
         mav.addObject ( "countEmployee", employeeBO.findAllEmployees ( ) );
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
