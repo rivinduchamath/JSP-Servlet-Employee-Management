@@ -102,7 +102,7 @@
                                     <li><a href="index">Icons</a></li>
                                     <li><a href="../../glyphicons.jsp">Glyphicons</a></li>
 
-                                    <li><a href="../../invoice.jsp">Invoice</a></li>
+                                    <li><a href="invoice">Invoice</a></li>
 
                                     <li><a href="/calendar">Calendar</a></li>
                                 </ul>

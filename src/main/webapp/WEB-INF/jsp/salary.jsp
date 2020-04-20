@@ -138,7 +138,7 @@
                                     <li><a href="general_elements.jsp">General Elements</a></li>
                                     <li><a href="media_gallery.jsp">Media Gallery</a></li>
 
-                                    <li><a href="index.jsp">Icons</a></li>
+                                    <li><a href="index">Icons</a></li>
                                     <li><a href="glyphicons.jsp">Glyphicons</a></li>
 
                                     <li><a href="invoice.jsp">Invoice</a></li>
@@ -156,7 +156,7 @@
                                 <ul class="nav child_menu">
                                     <li><a href="chartjs.jsp">Chart JS</a></li>
 
-                                    <li><a href="morisjs.jsp">Moris JS</a></li>
+                                    <li><a href="salary">Salary</a></li>
                                     <li><a href="echarts.jsp">ECharts</a></li>
 
                                 </ul>
@@ -170,8 +170,7 @@
                             <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="e_commerce.jsp">E-commerce</a></li>
-                                    <li><a href="projects.jsp">Projects</a></li>
-                                    <li><a href="project_detail.jsp">Project Detail</a></li>
+                                    <li><a href="projects">Projects</a></li>
                                     <li><a href="contacts">Contacts</a></li>
                                     <li><a href="profile">Profile</a></li>
                                 </ul>
