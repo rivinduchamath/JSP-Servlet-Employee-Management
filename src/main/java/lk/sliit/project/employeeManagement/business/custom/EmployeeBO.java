@@ -1,6 +1,7 @@
 package lk.sliit.project.employeeManagement.business.custom;
 
 import lk.sliit.project.employeeManagement.business.SuperBO;
+import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 
@@ -29,4 +30,5 @@ public interface EmployeeBO extends SuperBO {
 
     EmployeeDTO findUser(String userCode) ;
 
+    List<EmployeeDTO> upcomingBirthDays();
 }

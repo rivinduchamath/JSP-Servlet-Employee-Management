@@ -52,6 +52,7 @@ public class IndexController {
             long femaleCount = dashboardBO.getFemaleCount ();
 
             model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
+            model.addAttribute ( "upcomingBitrhDays", employeeBO.upcomingBirthDays ( ) );
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );
 

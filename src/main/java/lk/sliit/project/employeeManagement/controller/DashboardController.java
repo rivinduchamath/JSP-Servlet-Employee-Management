@@ -44,6 +44,7 @@ public class DashboardController extends HttpServlet {
         long femaleCount =  dashboardBO.getFemaleCount();
         model.addAttribute ( "empData", employeeBO.findAllEmployees ( ) );
         model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
+        model.addAttribute ( "upcomingBitrhDays", employeeBO.upcomingBirthDays ( ) );
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
         else model.addAttribute ( "maleCountDashBoard", 0 );
 
