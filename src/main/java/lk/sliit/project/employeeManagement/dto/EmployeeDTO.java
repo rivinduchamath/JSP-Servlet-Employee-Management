@@ -48,6 +48,14 @@ public class EmployeeDTO {
         this.admin = admin;
     }
 
+    public EmployeeDTO(String idNo, String name, String pic, String occupation, Date dateOfBirth) {
+        this.idNo = idNo;
+        this.name = name;
+        this.pic = pic;
+        this.occupation = occupation;
+        this.dateOfBirth = dateOfBirth;
+    }
+
 
     //Getters And Setters
     public String getIdNo() {

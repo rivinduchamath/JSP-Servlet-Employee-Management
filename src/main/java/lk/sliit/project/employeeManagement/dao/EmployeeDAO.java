@@ -4,6 +4,8 @@ import lk.sliit.project.employeeManagement.entity.Employee;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Date;
+
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 08-Mar-20
@@ -32,4 +34,5 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
      @Query(value = "SELECT Pic FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
      String findPic(String idNo);
 
+     Iterable<Employee> findEmployeesByDateBetween(Date date,Date date1);
 }

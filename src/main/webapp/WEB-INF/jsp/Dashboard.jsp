@@ -459,6 +459,7 @@
                                   onMouseOut="this.style.color='#007bff'; this.style.fontWeight='normal'"
                                 > Watch Calendar</a></small></h2>
                             <ul class="nav navbar-right panel_toolbox">
+
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
                                 <li class="dropdown">
@@ -475,21 +476,24 @@
                         </div>
                         <div class="x_content">
                             <ul class="list-unstyled msg_list">
+                                <c:forEach items="${upcomingBitrhDays}" var="q">
                                 <li>
                                     <a>
                         <span class="image">
-                          <img style="border-radius: 100%" src="images/img.jpg" alt="img" />
+                          <img style="border-radius: 100%" src="../../images/icons/${q.pic}" alt="img" />
                         </span>
                                         <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
+                          <span>${q.name}</span>
+                          <span class="time">Date Of Birth : ${q.dateOfBirth}</span>
                         </span>
                                         <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that
+                                            Hope your special day brings you all that your heart desires! Here’s wishing you a day full of pleasant surprises! Happy birthday!
+                                            to Our
+                                                ${q.occupation}
                         </span>
                                     </a>
                                 </li>
-
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>

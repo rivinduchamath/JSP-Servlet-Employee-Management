@@ -2,13 +2,18 @@ package lk.sliit.project.employeeManagement.business.custom.impl;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
+
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -103,7 +108,26 @@ public class EmployeeBOImpl implements EmployeeBO {
         return null;
     }
 
-
+    @Override
+    public List <EmployeeDTO> upcomingBirthDays() {
+        DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, 1);
+        java.util.Date dt = cal.getTime();
+        Iterable <Employee> employees = employeeDAO.findEmployeesByDateBetween (date ,dt);
+        List <EmployeeDTO> dtos = new ArrayList <> ( );
+        for (Employee employeee : employees) {
+            dtos.add ( new EmployeeDTO (
+                    employeee.getIdNo (),
+                    employeee.getName (),
+                    employeee.getPic (),
+                    employeee.getOccupation (),
+                    employeee.getDateOfBirth ()
+            ) );
+        }
+        return dtos;
+    }
 
     //Get Last Employee Method
     @Override
