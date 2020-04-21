@@ -349,7 +349,7 @@
                                         Users
                                     </small>
                                 </h2>
-                                <form method="POST" action="/payment" name="payment">
+                                <form method="POST" action="/invoice" name="invoice">
                                     <input style="display: none" type="text" id="itemPay" name="salaryId">
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -362,7 +362,7 @@
 
                                 </form>
 
-                                <button onclick="getValue();return false" ; style="font-weight: bold;color: white" ;
+                                <button onclick="getValue();return false" ; style="float: right; font-weight: bold;color: white" ;
                                     id="btn_enable"    class="btn btn-success ">Add Payment <i class="fa fa-plus-circle"></i></button>
 
                                 <!--href="/invoice"-->
@@ -481,10 +481,10 @@
                                 <label for="itemDesc">&nbsp;</label>
                                 <div class="input-group mb-5" style="float: right">
 
-                                    <button type='submit' class="btn btn-success" style="width: 50%" value="Register">
+                                    <button type='submit' class="btn btn-success" style="width: 50%" value="Register" >
                                         Submit
                                     </button>
-                                    <button type='reset' class="btn btn-outline-success" value="">Reset</button>
+                                    <button  type='reset' class="btn btn-outline-success" value="">Reset</button>
 
                                 </div>
                             </div>
@@ -505,7 +505,7 @@
 
                 for (i = 0; i < 2; i++) {
                     if (checks[i].checked === true) {
-                        str += checks[i].value + "a";
+                        str += checks[i].value + " ";
                     }
                 }
                 $("#itemPay").val(str);

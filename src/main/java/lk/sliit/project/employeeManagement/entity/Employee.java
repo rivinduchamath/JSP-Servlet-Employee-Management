@@ -177,24 +177,5 @@ public class Employee implements SuperEntity {
         return salaries;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "idNo='" + idNo + '\'' +
-                ", name='" + name + '\'' +
-                ", mobileNumber=" + mobileNumber +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", salary=" + salary +
-                ", occupation='" + occupation + '\'' +
-                ", password='" + password + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", gender='" + gender + '\'' +
-                ", date=" + date +
-                ", Pic='" + Pic + '\'' +
-                ", admin=" + admin +
-                ", attendance=" + attendance +
-                ", salaries=" + salaries +
-                '}';
-    }
+
 }

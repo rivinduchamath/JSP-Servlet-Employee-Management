@@ -1,8 +1,6 @@
 package lk.sliit.project.employeeManagement.dao.impl;
 
 import lk.sliit.project.employeeManagement.dao.QueryDAO;
-import lk.sliit.project.employeeManagement.entity.ProjectActivity;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**

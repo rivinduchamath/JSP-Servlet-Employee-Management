@@ -1,7 +1,5 @@
 package lk.sliit.project.employeeManagement.dao;
 
-import lk.sliit.project.employeeManagement.entity.ProjectActivity;
-import org.springframework.data.jpa.repository.Query;
 
 /**
  * @author: Rivindu-Wijayarathna

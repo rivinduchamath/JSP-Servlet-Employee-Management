@@ -6,10 +6,8 @@ import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

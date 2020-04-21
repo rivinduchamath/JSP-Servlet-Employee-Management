@@ -2,14 +2,11 @@ package lk.sliit.project.employeeManagement.controller;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.business.custom.ProjectBO;
-import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
-import lk.sliit.project.employeeManagement.dao.SalaryDAO;
 import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;

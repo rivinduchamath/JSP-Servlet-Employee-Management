@@ -3,7 +3,6 @@ package lk.sliit.project.employeeManagement.controller;
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
-import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -12,10 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna

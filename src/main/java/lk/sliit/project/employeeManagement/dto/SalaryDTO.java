@@ -36,6 +36,17 @@ public class SalaryDTO {
         this.employeeName =employeeName;
     }//End Full Arg
 
+
+
+    public SalaryDTO(String salaryId, String fullPayment, double salary, double totalOtHours) {
+
+        this.salaryId = salaryId;
+        this.salary = salary;
+        this.totalOtHours = totalOtHours;
+        this.fullPayment = fullPayment;
+
+    }
+
     //Getters And Setters
     public String getSalaryId() {
         return salaryId;

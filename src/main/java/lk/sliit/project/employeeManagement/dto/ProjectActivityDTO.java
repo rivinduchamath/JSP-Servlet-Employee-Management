@@ -1,10 +1,5 @@
 package lk.sliit.project.employeeManagement.dto;
 
-import lk.sliit.project.employeeManagement.entity.Project;
-
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.sql.Date;
 
 /**

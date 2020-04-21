@@ -30,6 +30,8 @@ public class Salary implements SuperEntity {
         this.employeeID = employeeID;
     }
 
+
+
     public String getSalaryId() {
         return salaryId;
     }
@@ -66,20 +68,15 @@ public class Salary implements SuperEntity {
         return employeeID;
     }
 
-    public void setEmployeeID(Employee employeeID) {
-        this.employeeID = employeeID;
-    }
 
     @Override
     public String toString() {
         return "Salary{" +
-                "salaryId=" + salaryId +
+                "salaryId='" + salaryId + '\'' +
                 ", salary=" + salary +
                 ", totalOtHours=" + totalOtHours +
                 ", fullPayment='" + fullPayment + '\'' +
                 ", employeeID=" + employeeID +
                 '}';
     }
-
-
 }

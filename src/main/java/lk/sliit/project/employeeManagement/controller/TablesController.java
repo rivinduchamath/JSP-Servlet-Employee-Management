@@ -1,21 +1,16 @@
 package lk.sliit.project.employeeManagement.controller;
 
-import javafx.scene.control.Alert;
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
-import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.swing.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -46,8 +41,9 @@ public class TablesController {
         //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         //Top Employee
-        AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
+
         try {
+            AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
             model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
         } catch (NullPointerException e) {
             model.addAttribute ( "genAttendanceId", 1 );
