@@ -2,7 +2,9 @@ package lk.sliit.project.employeeManagement.controller;
 
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,7 @@ import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -27,6 +30,8 @@ public class FormValidationControl {
     //Automate Object Creation
     @Autowired
     private EmployeeBO employeeBO;
+    @Autowired
+    private SalaryBO salaryBO;
     @Autowired
     private DashboardBO dashboardBO;
     private  String path ="";
@@ -55,6 +60,16 @@ public class FormValidationControl {
         }
 
         employeeBO.save ( employee );
+        List<EmployeeDTO> employeeDTOS =employeeBO.findAllEmployees ( );
+        int i =0;
+        for (EmployeeDTO e: employeeDTOS) {
+            i++;
+        }String a = String.valueOf ( i );
+        SalaryDTO salaryDTO = new SalaryDTO (  );
+        salaryDTO.setSalaryId ( a);
+        salaryDTO.setTotalOtHours ( 0);
+        salaryDTO.setEmployee ( employee.getIdNo ()  );
+        salaryBO.updateSalary ( salaryDTO );
         path = "C:/Users/User/Desktop/e/" + employee.getPic ();
         file = new File(path);
         BufferedImage cp, img;

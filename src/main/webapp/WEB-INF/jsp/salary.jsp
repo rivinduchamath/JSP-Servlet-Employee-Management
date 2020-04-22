@@ -85,6 +85,7 @@
             }
         }
     </script>
+
 </head>
 
 <body class="nav-md">
@@ -503,7 +504,7 @@
                 var checks = document.getElementsByClassName('checks');
                 var str = '';
 
-                for (i = 0; i < 2; i++) {
+                for (i = 0; i < ${countEmployee2}; i++) {
                     if (checks[i].checked === true) {
                         str += checks[i].value + " ";
                     }
