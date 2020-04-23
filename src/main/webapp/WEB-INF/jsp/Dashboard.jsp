@@ -80,50 +80,29 @@
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="Dashboard">Dashboard</a></li>
-
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-edit"></i> Employee <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="../../form.jsp">General Form</a></li>
-                                    <li><a href="../../form_advanced.jsp">Advanced Components</a></li>
-                                    <li><a href="form_validation">Form Validation</a></li>
-                                    <li><a href="../../form_wizards.jsp">Form Wizard</a></li>
-                                    <li><a href="../../form_upload.jsp">Form Upload</a></li>
-
+                                    <li><a href="form_validation">Add New Employee</a></li>
+                                    <li><a href="tables_dynamic">Employee Manage</a></li>
+                                    <li><a href="tables">Attendance</a></li>
+                                    <li><a href="salary">Salary Manage</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-desktop"></i> UI Elements <span
+                            <li><a><i class="fa fa-desktop"></i> Other Information <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="sa">General Elements</a></li>
-                                    <li><a href="../../media_gallery.jsp">Media Gallery</a></li>
-
-                                    <li><a href="index">Icons</a></li>
-                                    <li><a href="../../glyphicons.jsp">Glyphicons</a></li>
-
-                                    <li><a href="invoice">Invoice</a></li>
-
-                                    <li><a href="/calendar">Calendar</a></li>
+                                    <li><a href="media_gallery">View Images</a></li>
+                                    <li><a href="calendar">Calendar</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-table"></i> Notice <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="tables">Tables</a></li>
-                                    <li><a href="tables_dynamic">Table Dynamic</a></li>
+                                    <li><a href="form_wizards">View All</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span
-                                    class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="../../chartjs.jsp">Chart JS</a></li>
-
-                                    <li><a href="salary">Salary</a></li>
-                                    <li><a href="../../echarts.jsp">ECharts</a></li>
-
-                                </ul>
-                            </li>
-
                         </ul>
                     </div>
                     <div class="menu_section">
@@ -135,17 +114,13 @@
                                     <li><a href="#">E-commerce</a></li>
                                     <li><a href="projects">Projects</a></li>
                                     <li><a href="contacts">Contacts</a></li>
-                                    <li><a href="/profile">Profile</a></li>
+                                    <li><a href="profile">Profile</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="../../page_403.jsp">403 Error</a></li>
-                                    <li><a href="../../page_404.jsp">404 Error</a></li>
-                                    <li><a href="../../page_500.jsp">500 Error</a></li>
-                                    <li><a href="../../plain_page.jsp">Plain Page</a></li>
                                     <li><a href="login">Login Page</a></li>
-                                    <li><a href="../../pricing_tables.jsp">Pricing Tables</a></li>
+                                    <li><a href="pricing_tables.jsp">Pricing Tables</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -193,72 +168,6 @@
                             </div>
                         </li>
 
-                        <li role="presentation" class="nav-item dropdown open">
-                            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1"
-                               data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
-                            </a>
-                            <ul class="dropdown-menu list-unstyled msg_list" role="menu"
-                                aria-labelledby="navbarDropdown1">
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="../../images/img.jpg" alt="Profile Image"/></span>
-                                        <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                                        <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="../../images/img.jpg" alt="Profile Image"/></span>
-                                        <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                                        <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="../../images/img.jpg" alt="Profile Image"/></span>
-                                        <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                                        <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="../../images/img.jpg" alt="Profile Image"/></span>
-                                        <span>
-                            <span>John Smith</span>
-                            <span class="time">3 mins ago</span>
-                          </span>
-                                        <span class="message">
-                            Film festivals used to be do-or-die moments for movie makers. They were where...
-                          </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="text-center">
-                                        <a class="dropdown-item">
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </nav>
             </div>
