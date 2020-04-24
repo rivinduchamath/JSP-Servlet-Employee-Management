@@ -83,7 +83,6 @@
     </style>
 </head>
 
-
 <body class="nav-md" style="cursor: pointer">
 <%! String date =""; %>
 <div class="container body">
@@ -118,32 +117,29 @@
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="Dashboard">Dashboard</a></li>
-
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-edit"></i> Employee <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="../../form_advanced.jsp">Advanced Components</a></li>
-                                    <li><a href="form_validation">Form Validation</a></li>
-                                    <li><a href="/form_wizards">Notice</a></li>
-
+                                    <li><a href="form_validation">Add New Employee</a></li>
+                                    <li><a href="tables_dynamic">Employee Manage</a></li>
+                                    <li><a href="tables">Attendance</a></li>
+                                    <li><a href="salary">Salary Manage</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-desktop"></i> UI Elements <span
+                            <li><a><i class="fa fa-desktop"></i> Other Information <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="sa">General Elements</a></li>
-                                    <li><a href="/media_gallery">Media Gallery</a></li>
-                                    <li><a href="/calendar">Calendar</a></li>
+                                    <li><a href="media_gallery">View Images</a></li>
+                                    <li><a href="calendar">Calendar</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-table"></i> Notice <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="tables">Tables</a></li>
-                                    <li><a href="tables_dynamic">Table Dynamic</a></li>
+                                    <li><a href="form_wizards">View All</a></li>
                                 </ul>
                             </li>
-
                         </ul>
                     </div>
                     <div class="menu_section">
@@ -155,13 +151,13 @@
                                     <li><a href="#">E-commerce</a></li>
                                     <li><a href="projects">Projects</a></li>
                                     <li><a href="contacts">Contacts</a></li>
-                                    <li><a href="/profile">Profile</a></li>
+                                    <li><a href="profile">Profile</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="login">Login Page</a></li>
-                                    <li><a href="../../pricing_tables.jsp">Pricing Tables</a></li>
+                                    <li><a href="pricing_tables.jsp">Pricing Tables</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -214,6 +210,7 @@
             </div>
         </div>
         <!-- /top navigation -->
+
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">

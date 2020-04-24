@@ -13,6 +13,7 @@ public class Salary implements SuperEntity {
     private String salaryId;
     @Column(nullable = true)
     private double salary;
+    @Column(nullable = true)
     private double totalOtHours;
     private String fullPayment;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})

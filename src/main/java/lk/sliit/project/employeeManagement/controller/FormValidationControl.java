@@ -58,18 +58,38 @@ public class FormValidationControl {
         if(employee.getPic ().equals ( "" ) && employee.getGender ().equals ( "female" )){
             employee.setPic ( "images.png" );
         }
-
-        employeeBO.save ( employee );
         List<EmployeeDTO> employeeDTOS =employeeBO.findAllEmployees ( );
         int i =0;
+        boolean check = false;
         for (EmployeeDTO e: employeeDTOS) {
+            if (e.getIdNo ().equals ( employee.getIdNo () )){
+                check =true;
+                System.out.println ( e.getIdNo ());
+                System.out.println ( employee.getIdNo ());
+            }
             i++;
-        }String a = String.valueOf ( i );
+        }String a = String.valueOf ( i+1 );
+        //Save Employee If Save Or Update Both
+        employeeBO.save ( employee );
+        //To Get All EmployeeCount Call Existing Method instead of Count Method
+
+        //Create SalaryDTO Object
         SalaryDTO salaryDTO = new SalaryDTO (  );
-        salaryDTO.setSalaryId ( a);
-        salaryDTO.setTotalOtHours ( 0);
-        salaryDTO.setEmployee ( employee.getIdNo ()  );
-        salaryBO.updateSalary ( salaryDTO );
+
+            //Set Salary Id As TotalEmployee Count + 1
+
+            salaryDTO.setSalaryId ( employee.getIdNo () );
+
+            a = String.valueOf ( employee.getSalary ( ));
+
+            salaryDTO.setFullPayment ( a );
+            salaryDTO.setSalary ( employee.getSalary ( ) );
+
+            salaryDTO.setEmployee ( employee.getIdNo ( ) );
+
+            salaryBO.updateSalary ( salaryDTO );
+
+
         path = "C:/Users/User/Desktop/e/" + employee.getPic ();
         file = new File(path);
         BufferedImage cp, img;

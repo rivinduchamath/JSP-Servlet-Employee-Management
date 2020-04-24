@@ -84,7 +84,6 @@
                             </li>
                             <li><a><i class="fa fa-edit"></i> Employee <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="form_validation">Add New Employee</a></li>
                                     <li><a href="tables_dynamic">Employee Manage</a></li>
                                     <li><a href="tables">Attendance</a></li>
                                     <li><a href="salary">Salary Manage</a></li>
