@@ -276,11 +276,11 @@
                         </div>
 
                         <div class="col-md-6 col-sm-6 ">
-                            <div class="input-group mb-5" style="float: right">
+                            <div class="input-group mb-8" style="float: right">
 
-                                <button type='submit' class="btn btn-success" style="width: 50%" value="Register" >Submit</button>
+                                <button type='submit' class="btn btn-primary" style="width: 50%" value="Register" >Submit</button>
                                 <button  type='reset' class="btn btn-outline-success" value="">Reset</button>
-                                <button type='submit' class="btn btn-success" style="width: 50%" value="Register" >Delete</button>
+                                <button type='submit' class="btn btn-danger" style="width: 50%" value="Register" >Delete</button>
                             </div>
                         </div>
 
@@ -329,10 +329,10 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <c:forEach items="${listEmployeesWithOT}" var="e">
+                                            <c:forEach items="${listEmployeesTable}" var="e">
                                                 <tr>
-                                                    <td>${e.idNo}</td>
                                                     <td>${e.name}</td>
+                                                    <td>${e.idNo}</td>
                                                 </tr>
                                             </c:forEach>
                                             </tbody>

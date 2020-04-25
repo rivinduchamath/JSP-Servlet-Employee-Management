@@ -35,6 +35,7 @@ public class SalaryController {
         ModelAndView mav = new ModelAndView ( "salary" );
         mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
         mav.addObject ( "listEmployeesTableSalary", salaryBO.findAllSalary ( ) );
+        mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         List<EmployeeDTO> employeeDTOS =employeeBO.findAllEmployees ( );
         mav.addObject ( "countEmployee", employeeDTOS);
         int i =0;
