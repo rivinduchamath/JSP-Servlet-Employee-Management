@@ -238,13 +238,146 @@
                         </div>
                     </div>
                 </div>
+                <form method="POST" action="/salarySave" name="salary">
+                    <div class="col-md-12 col-sm-12 " style="">
 
-                <div class="clearfix"></div>
+                        <div class="col-md-2 col-sm-2 " style="">
+                        <div class="form-group">
+                            <label for="itemCode">Employee Id</label>
+                            <input type="text" class="form-control"
+                                   required="required" name="employee"
+                                   id="itemCode" placeholder="ID" />
+                        </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 " style="">
+                        <div class="form-group">
+                            <label for="itemDesc">Employee Name </label>
+                            <input type="text" class="form-control" id="itemDesc"
+                                   placeholder="Name">
+                        </div>
+                        </div>
 
-                <div class="row" style="display: block;">
+                        <div class="col-md-3 col-sm-3 ">
+                            <label for="itemDesc">Salary </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+
+                                    <span class="input-group-text">
+                                       Normal
+                                </span>
+                                </div>
+                                <input type="text" class="form-control" name="salary" id="itemTime"
+                                       aria-label="Dollar amount (with dot and two decimal places)">
+
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 ">
+                            <label for="itemDesc">&nbsp;</label>
+                            <div class="input-group mb-3" style="float: right">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                       OT
+                                </span>
+                                </div>
+                                <input type="text" class="form-control"
+                                       id="itemTime2" name="totalOtHours"
+                                       aria-label="Dollar amount (with dot and two decimal places)"/>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 ">
+                            <label for="itemDesc">&nbsp;</label>
+
+                            <div class="input-group mb-3" style="float: right">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                       Total
+                                </span>
+                                </div>
+                                <input type="text" id="tot" class="form-control"
+                                       name="fullPayment" value="0" id="itemTime3"
+                                       aria-label="Dollar amount (with dot and two decimal places)">
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 ">
+                            <div class="input-group mb-5" style="float: right">
+
+                                <button type='submit' class="btn btn-success" style="width: 50%" value="Register" >
+                                    Submit
+                                </button>
+                                <button  type='reset' class="btn btn-outline-success" value="">Reset</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--////////////////////////////////////////////-->
+                </form>
+
+                <div class="col-md-5 col-sm-5 " >
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Employees
+                                <small>Users</small>
+                            </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card-box table-responsive">
+                                        <p class="text-muted font-13 m-b-30">
+
+                                        </p>
+
+                                        <table id="datatable-responsive"
+                                               class="table table-striped table-bordered dt-responsive nowrap"
+                                               cellspacing="0" width="100%">
+                                            <thead class="thead-dark">
+                                            <tr>
+                                                <th>Employee ID</th>
+                                                <th>Name</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <c:forEach items="${listEmployeesTable}" var="e">
+                                                <tr>
+                                                    <td>${e.idNo}</td>
+                                                    <td>${e.name}</td>
+                                                </tr>
+                                            </c:forEach>
+                                            </tbody>
+
+                                        </table>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
 
                     <div class="clearfix"></div>
-                    <div class="col-md-8 col-sm-8 ">
+                    <div class="col-md-12 col-sm-12 " style="float: right">
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Today active users
@@ -320,81 +453,7 @@
                         </div>
                     </div>
                     <!--///////////////////////////////////////////////////////-->
-                    <form method="POST" action="/salarySave" name="salary">
-                        <div class="col-md-4 col-sm-4 " style="float: right">
 
-
-                            <div class="form-group">
-                                <label for="itemCode">Employee Id</label>
-                                <input type="text" class="form-control"
-                                       required="required" name="employee"
-                                       id="itemCode" placeholder="ID" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="itemDesc">Employee Name </label>
-                                <input type="text" class="form-control" id="itemDesc"
-                                       placeholder="Name">
-                            </div>
-
-                            <div class="col-md-7 col-sm-7 ">
-                                <label for="itemDesc">Salary </label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-
-                                    <span class="input-group-text">
-                                       Normal
-                                </span>
-                                    </div>
-                                    <input type="text" class="form-control" name="salary" id="itemTime"
-                                           aria-label="Dollar amount (with dot and two decimal places)">
-
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-sm-5 ">
-                                <label for="itemDesc">&nbsp;</label>
-                                <div class="input-group mb-3" style="float: right">
-                                    <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                       OT
-                                </span>
-                                    </div>
-                                    <input type="text" class="form-control"
-                                           id="itemTime2" name="totalOtHours"
-                                           aria-label="Dollar amount (with dot and two decimal places)"/>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12 ">
-                                <label for="itemDesc">&nbsp;</label>
-
-                                <div class="input-group mb-3" style="float: right">
-                                    <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                       Total
-                                </span>
-                                    </div>
-                                    <input type="text" id="tot" class="form-control"
-                                           name="fullPayment" value="0" id="itemTime3"
-                                           aria-label="Dollar amount (with dot and two decimal places)">
-
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 ">
-                                <label for="itemDesc">&nbsp;</label>
-                                <div class="input-group mb-5" style="float: right">
-
-                                    <button type='submit' class="btn btn-success" style="width: 50%" value="Register" >
-                                        Submit
-                                    </button>
-                                    <button  type='reset' class="btn btn-outline-success" value="">Reset</button>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!--////////////////////////////////////////////-->
-                    </form>
                 </div>
 
             </div>
