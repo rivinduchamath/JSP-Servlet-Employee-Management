@@ -76,7 +76,7 @@ public class SalaryBOImpl implements SalaryBO {
             dtos.add(new SalaryDTO (
                     salary.getSalaryId (),
                     salary.getFullPayment (),
-                    salaryDAO.getEmployeeSalary ( salary.getEmployeeID ().getIdNo ()),
+                    salary.getSalary (),
                     salary.getTotalOtHours (),
                     salary.getEmployeeID ().getIdNo (),
                     salaryDAO.getEmployeeName( salary.getEmployeeID ().getIdNo ())

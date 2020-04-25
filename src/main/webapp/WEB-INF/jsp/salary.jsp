@@ -328,12 +328,13 @@
                                 <label for="itemCode">Employee Id</label>
                                 <input type="text" class="form-control"
                                        required="required" name="employee"
-                                       id="itemCode" placeholder="ID" readonly/>
+                                       id="itemCode" placeholder="ID" />
                             </div>
 
                             <div class="form-group">
                                 <label for="itemDesc">Employee Name </label>
-                                <input type="text" class="form-control" id="itemDesc" placeholder="Name">
+                                <input type="text" class="form-control" id="itemDesc"
+                                       placeholder="Name">
                             </div>
 
                             <div class="col-md-7 col-sm-7 ">

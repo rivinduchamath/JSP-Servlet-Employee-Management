@@ -48,11 +48,9 @@ public class SalaryController {
     }
 
     @PostMapping("salarySave")
-    public String registerUser(@ModelAttribute SalaryDTO salaryDTO, HttpServletRequest request, Model model) throws IOException {
-
-
+    public String registerUser(@ModelAttribute SalaryDTO salaryDTO) throws IOException {
         System.out.println (salaryDTO.getSalaryId () );
-
+        salaryDTO.setSalaryId ( salaryDTO.getEmployee () );
         salaryBO.updateSalary ( salaryDTO );
 //        salaryBO.updateSalary ( employee.getIdNo () );
     return "redirect:/salary";
