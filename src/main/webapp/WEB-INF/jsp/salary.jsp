@@ -292,7 +292,7 @@
 
                     </form>
 
-                         <a href="/allSalary"> <button  class="btn btn-info" style="width: 50%" >
+                         <a href="/updateSalary"> <button  class="btn btn-info" style="width: 50%" >
                              Update
                          </button></a> </div>
                     <!--////////////////////////////////////////////-->
