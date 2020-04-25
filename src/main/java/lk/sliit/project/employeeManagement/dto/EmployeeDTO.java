@@ -15,7 +15,6 @@ public class EmployeeDTO {
     private int mobileNumber;
     private String email;
     private String address;
-    private double salary;
     private String occupation;
     private String password;
     private Date dateOfBirth;
@@ -30,7 +29,7 @@ public class EmployeeDTO {
 
     //Full arg Constructor
     public EmployeeDTO(String idNo, String name, int mobileNumber,
-                       String email, String address, double salary, String occupation,
+                       String email, String address,String occupation,
                        String password, Date dateOfBirth,
                        String gender, Date date, String pic, boolean admin) {
         this.idNo = idNo;
@@ -38,7 +37,7 @@ public class EmployeeDTO {
         this.mobileNumber = mobileNumber;
         this.email = email;
         this.address = address;
-        this.salary = salary;
+
         this.occupation = occupation;
         this.password = password;
         this.dateOfBirth = dateOfBirth;
@@ -98,13 +97,6 @@ public class EmployeeDTO {
         this.address = address;
     }
 
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 
     public String getOccupation() {
         return occupation;
@@ -172,7 +164,6 @@ public class EmployeeDTO {
                 ", mobileNumber=" + mobileNumber +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
-                ", salary=" + salary +
                 ", occupation='" + occupation + '\'' +
                 ", password='" + password + '\'' +
                 ", dateOfBirth=" + dateOfBirth +

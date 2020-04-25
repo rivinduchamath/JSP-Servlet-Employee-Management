@@ -206,15 +206,6 @@
                                            required='required' value="${employee.password }"/></div>
                             </div>
 
-                                <%--Salary--%>
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Salary<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" class='tel' name="salary"
-                                           required='required'
-                                           data-validate-length-range="1,15" value="${employee.salary }"/></div>
-                            </div>
 
                                 <%--Telephone--%>
                             <div class="field item form-group">
@@ -391,15 +382,7 @@
                                            required='required' value="${employee.password }"/></div>
                             </div>
 
-                                <%--Salary--%>
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Salary<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input class="form-control" type="number" class='tel' name="salary"
-                                           required='required'
-                                           data-validate-length-range="1,15" value="${employee.salary }"/></div>
-                            </div>
+
 
                                 <%--Telephone--%>
                             <div class="field item form-group">

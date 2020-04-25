@@ -301,7 +301,6 @@
                                                     <th>Mobile Number</th>
                                                     <th>Email</th>
                                                     <th>Address</th>
-                                                    <th>Salary</th>
                                                     <th>Position</th>
                                                     <th>Gender</th>
                                                     <th>Password</th>
@@ -320,7 +319,6 @@
                                                         <td>${e.mobileNumber}</td>
                                                         <td>${e.email}</td>
                                                         <td>${e.address}</td>
-                                                        <td>${e.salary}</td>
                                                         <td>${e.occupation}</td>
                                                         <td>${e.gender}</td>
                                                         <td>${e.password}</td>

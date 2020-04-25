@@ -80,10 +80,10 @@ public class FormValidationControl {
 
             salaryDTO.setSalaryId ( employee.getIdNo () );
 
-            a = String.valueOf ( employee.getSalary ( ));
+            a = String.valueOf ( 0 );
 
             salaryDTO.setFullPayment ( a );
-            salaryDTO.setSalary ( employee.getSalary ( ) );
+
 
             salaryDTO.setEmployee ( employee.getIdNo ( ) );
 

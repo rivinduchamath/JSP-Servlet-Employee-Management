@@ -17,7 +17,6 @@ public class Employee implements SuperEntity {
     private int mobileNumber;
     private String email;
     private String address;
-    private double salary;
     private String occupation;
     private String password;
     private Date dateOfBirth;
@@ -36,7 +35,7 @@ public class Employee implements SuperEntity {
     }
 
     public Employee(String idNo, String name, int mobileNumber, String email,
-                    String address, double salary, String occupation, String password,
+                    String address, String occupation, String password,
                     Date dateOfBirth, String gender, Date date, String pic,
                     boolean admin) {
         this.idNo = idNo;
@@ -44,7 +43,6 @@ public class Employee implements SuperEntity {
         this.mobileNumber = mobileNumber;
         this.email = email;
         this.address = address;
-        this.salary = salary;
         this.occupation = occupation;
         this.password = password;
         this.dateOfBirth = dateOfBirth;
@@ -99,13 +97,7 @@ public class Employee implements SuperEntity {
         this.address = address;
     }
 
-    public double getSalary() {
-        return salary;
-    }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 
     public String getOccupation() {
         return occupation;
@@ -173,9 +165,6 @@ public class Employee implements SuperEntity {
     /////////////////////////////////////////////////////////
 
 
-    public List <Salary> getSalaries() {
-        return salaries;
-    }
 
 
 }

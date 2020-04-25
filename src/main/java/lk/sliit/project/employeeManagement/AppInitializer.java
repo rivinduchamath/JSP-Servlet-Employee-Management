@@ -42,7 +42,6 @@ public class AppInitializer {
                             0223123456,
                             "someOne@gmail.com",
                             "Galle",
-                            0,
                             "Admin",
                             "1",
                             date,
