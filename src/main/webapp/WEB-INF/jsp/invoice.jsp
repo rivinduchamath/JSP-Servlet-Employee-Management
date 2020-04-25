@@ -349,11 +349,11 @@
                                                 <c:forEach items="${getSalaryData}" var="e">
                                                 <tr>
                                                     <td>${e.salaryId}</td>
-                                                    <td>${e.employee}</td>
-                                                    <td>${e.employeeName}</td>
-                                                    <td>${e.salary}</td>
-                                                    <td>${e.totalOtHours}</td>
-                                                    <td>${e.fullPayment}</td>
+                                                    <td>${e.employeeID.idNo}</td>
+                                                    <td>${e.employeeID.name}</td>
+                                                    <td>${((e.basicSalary+e.bonus)+(e.otRate*e.otHours))-e.incomeTax}</td>
+                                                    <td>${e.otHours}</td>
+                                                    <td>${e.bonus}</td>
                                                 </tr>
                                                 </c:forEach>
 

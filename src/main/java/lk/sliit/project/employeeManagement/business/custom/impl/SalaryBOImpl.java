@@ -69,6 +69,10 @@ public class SalaryBOImpl implements SalaryBO {
         return dtos;
     }
 
+    @Override
+    public void deleteSalary(String idNo) {
+        salaryDAO.delete (idNo);
+    }
 
 
     @Override

@@ -33,13 +33,12 @@ public class SalaryController {
     public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest
             request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "salary" );
-        mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
         mav.addObject ( "listEmployeesTableSalary", salaryBO.findAllSalary ( ) );
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
-        List<EmployeeDTO> employeeDTOS =employeeBO.findAllEmployees ( );
-        mav.addObject ( "countEmployee", employeeDTOS);
+        List<SalaryDTO> salaryDTOS =salaryBO.findAllSalary ( );
+
         int i =0;
-        for (EmployeeDTO e: employeeDTOS) {
+        for (SalaryDTO e: salaryDTOS) {
             i++;
         }
         mav.addObject ( "countEmployee2", i );
@@ -50,11 +49,18 @@ public class SalaryController {
 
     @PostMapping("salarySave")
     public String registerUser(@ModelAttribute SalaryDTO salaryDTO) throws IOException {
-        System.out.println (salaryDTO.getSalaryId () );
+        salaryDTO.setSalaryId ("S"+ salaryDTO.getEmployeeID ().getIdNo () );
         salaryBO.updateSalary ( salaryDTO );
-//        salaryBO.updateSalary ( employee.getIdNo () );
     return "redirect:/salary";
 }
+
+    //Delete Employee in the Table tables_dynamic.jsp
+    @RequestMapping("deleteSalary")
+    public String deleteUser(@RequestParam String idNo, HttpServletRequest request) {
+        salaryBO.deleteSalary ( idNo );
+        return "redirect:/salary";
+    }
+
 
     @RequestMapping("invoice")
     public ModelAndView index2(@ModelAttribute SalaryDTO salaryDTO, Model model) {

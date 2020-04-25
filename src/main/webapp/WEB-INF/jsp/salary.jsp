@@ -229,125 +229,135 @@
 
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                            <button type='submit' class="btn btn-success" style="width: 50%;float: right" value="Register;"  >List All Salary</button>
+                            <a href="/allSalary">
+                            <button  type='submit' class="btn btn-secondary" style="width: 50%;float: right" value="Register" >
+                                List All salary
+                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-5 " style="float: left">
-                <form method="POST" action="/salarySave" name="salary">
-                        <div class="form-group">
-                            <label for="itemCode">Employee Id</label>
-                            <input type="text" class="form-control"
-                                   required="required" name="employee"
-                                   id="itemCode" placeholder="ID" />
-                        </div>
+
+                <div class="clearfix"></div>
+                 <div class=" ">
+                     <div class="col-md-4 col-sm-4 " style="float: left">
+                    <form method="POST" action="/salarySave" name="salary">
 
 
-                        <div class="form-group">
-                            <label for="itemDesc">Basic Salary</label>
-                            <input type="text" class="form-control" id="itemDesc"
-                                   placeholder="Basic Salary">
-                        </div>
 
-
-                        <div class="form-group">
-                            <label for="itemCode">OT Rate</label>
-                            <input type="text" class="form-control"
-                                   required="required" name="employee"
-                                   id="OTRate" placeholder="OT Rate" />
-                        </div>
-                        <div class="form-group">
-                            <label for="itemCode">OT Hours</label>
-                            <input type="text" class="form-control"
-                                   required="required" name="employee"
-                                   id="OTHours" placeholder="OT Hours" />
-                        </div>
-                        <div class="form-group">
-                            <label for="itemCode">Monthly Bonus</label>
-                            <input type="text" class="form-control"
-                                   required="required" name="employee"
-                                   id="MonthlyBonus" placeholder="Monthly Bonus" />
-                        </div>
-                        <div class="form-group">
-                            <label for="itemCode">Income Tax</label>
-                            <input type="text" class="form-control"
-                                   required="required" name="employee"
-                                   id="IncomeTax" placeholder="Income Tax" />
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 ">
-                            <div class="input-group mb-8" style="float: right">
-
-                                <button type='submit' class="btn btn-primary" style="width: 50%" value="Register" >Submit</button>
-                                <button  type='reset' class="btn btn-outline-success" value="">Reset</button>
-                                <button type='submit' class="btn btn-danger" style="width: 50%" value="Register" >Delete</button>
+                            <div class="form-group">
+                                <label for="itemCode">Employee Id</label>
+                                <input type="text" class="form-control"
+                                       required="required" name="employeeID"
+                                       id="itemCode" placeholder="Employee Id" />
                             </div>
-                        </div>
 
+                            <div class="form-group">
+                                <label for="itemCode">Basic Salary</label>
+                                <input type="text" class="form-control"
+                                       required="required" name="basicSalary"
+                                       id="BasicSalary" placeholder="Basic Salary" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemCode">OT Rate</label>
+                                <input type="text" class="form-control"
+                                       required="required" name="otRate"
+                                       id="OTRate" placeholder="OT Rate" />
+                            </div>
+                            <div class="form-group">
+                                <label for="itemCode">OT Hrs</label>
+                                <input type="text" class="form-control"
+                                       required="required" name="otHours"
+                                       id="OTHrs" placeholder="OT Hrs" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemCode">Monthly Bonus</label>
+                                <input type="text" class="form-control"
+                                       required="required" name="bonus"
+                                       id="MonthlyBonus" placeholder="Monthly Bonus" />
+                            </div>
+                            <div class="form-group">
+                                <label for="itemCode">Income Tax</label>
+                                <input type="text" class="form-control"
+                                       required="required" name="incomeTax"
+                                       id="IncomeTax" placeholder="Income Tax" />
+                            </div>
+                           <input style="display: none" type="text" id="itemPay1" name="SalaryId">
+                            <button type='submit' class="btn btn-primary" style="width: 50%" value="Register" >
+                                Submit
+                            </button>
+                            <button  type='reset' class="btn btn-outline-success" value="">Reset</button>
+
+                    </form>
+
+                         <a href="/allSalary"> <button  class="btn btn-info" style="width: 50%" >
+                             Update
+                         </button></a> </div>
                     <!--////////////////////////////////////////////-->
-                </form>
-                </div>
+                    <div class="col-md-8 col-sm-8" style="position: relative;display: inline-block">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Employees
+                                    <small>Users</small>
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Settings 1</a>
+                                            <a class="dropdown-item" href="#">Settings 2</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card-box table-responsive">
+                                            <p class="text-muted font-13 m-b-30">
 
-                <div class="col-md-7 col-sm-7 "  style="float: right">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>Employees
-                                <small>Users</small>
-                            </h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
-                                    </div>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card-box table-responsive">
-                                        <p class="text-muted font-13 m-b-30">
+                                            </p>
 
-                                        </p>
-
-                                        <table id="datatable-responsive"
-                                               class="table table-striped table-bordered dt-responsive nowrap"
-                                               cellspacing="0" width="100%">
-                                            <thead class="thead-dark">
-                                            <tr>
-                                                <th>Employee Name</th>
-                                                <th>Employee ID</th>
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <c:forEach items="${listEmployeesTable}" var="e">
+                                            <table id="datatable-responsive"
+                                                   class="table table-striped table-bordered dt-responsive nowrap"
+                                                   cellspacing="0" width="100%">
+                                                <thead class="thead-dark">
                                                 <tr>
-                                                    <td>${e.name}</td>
-                                                    <td>${e.idNo}</td>
-                                                </tr>
-                                            </c:forEach>
-                                            </tbody>
+                                                    <th>Employee Name</th>
+                                                    <th>Employee ID</th>
 
-                                        </table>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <c:forEach items="${listEmployeesTable}" var="e">
+                                                    <tr>
+                                                        <td>${e.name}</td>
+                                                        <td>${e.idNo}</td>
+                                                    </tr>
+                                                </c:forEach>
+                                                </tbody>
+
+                                            </table>
+
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                    <div class="col-md-12 col-sm-12 " style="float: right">
+                     <div class="col-md-8 col-sm-8" style="float: right; position: relative;display: inline-block">
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Today active users
@@ -356,7 +366,7 @@
                                     </small>
                                 </h2>
                                 <form method="POST" action="/invoice" name="invoice">
-                                    <input style="display: none" type="text" id="itemPay" name="salaryId">
+                                    <input style="display: none" type="text" id="itemPay" name="SalaryId">
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -369,7 +379,7 @@
                                 </form>
 
                                 <button onclick="getValue();return false" ; style="float: right; font-weight: bold;color: white" ;
-                                    id="btn_enable"    class="btn btn-success ">Add Payment <i class="fa fa-plus-circle"></i></button>
+                                        id="btn_enable"    class="btn btn-success ">Add Payment <i class="fa fa-plus-circle"></i></button>
 
                                 <!--href="/invoice"-->
                                 <div class="clearfix"></div>
@@ -399,12 +409,10 @@
                                                 <tbody>
                                                 <c:forEach items="${listEmployeesTableSalary}" var="e">
                                                     <tr>
-                                                        <td>${e.employee}</td>
-                                                        <td>${e.employeeName}</td>
-                                                        <td>${e.salary}</td>
-                                                        <td>${e.totalOtHours}</td>
-                                                        <td>${e.fullPayment}</td>
-                                                        <td><a href="/delete?pid=${e.employee}"><span
+                                                        <td>${e.employeeID.idNo}</td>
+                                                        <td>${e.employeeID.name}</td>
+                                                        <td>${((e.basicSalary+e.bonus)+(e.otRate*e.otHours))-e.incomeTax}</td>
+                                                        <td><a href="/deleteSalary?idNo=${e.salaryId}"><span
                                                                 class="glyphicon glyphicon-trash"></span></a></td>
                                                         <td class="a-center ">
                                                             <input type="checkbox" class="flat checks"
@@ -422,6 +430,7 @@
                     </div>
                     <!--///////////////////////////////////////////////////////-->
 
+                </div>
                 </div>
 
             </div>
@@ -478,19 +487,15 @@
 <script src="../../vendors/iCheck/icheck.min.js"></script>
 <script>
     var selectedRow = null;
-    $("#datatable-buttons tbody").on('click', 'tr', function () {
+    $("#datatable-responsive tbody").on('click', 'tr', function () {
         var date = new Date();
         var date2 = new Date();
         var today = date.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
         date2.setHours(date.getHours() + 8);
         var today2 = date2.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
         selectedRow = $(this);
-        $("#itemCode").val($(this).find("td:first-child").text());
-        $("#itemDesc").val($(this).find("td:nth-child(2)").text());
-        $("#itemTime").val($(this).find("td:nth-child(3)").text());
-        $("#itemTime2").val($(this).find("td:nth-child(4)").text());
-        $("#tot").val($(this).find("td:nth-child(5)").text());
-        $("#datatable-buttons tbody tr").removeClass('row-selected');
+        $("#itemCode").val($(this).find("td:nth-child(2)").text());
+        $("#datatable-responsive tbody tr").removeClass('row-selected');
         selectedRow.addClass('row-selected');
     });
 </script>

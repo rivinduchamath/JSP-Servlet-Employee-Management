@@ -73,19 +73,6 @@ public class FormValidationControl {
         employeeBO.save ( employee );
         //To Get All EmployeeCount Call Existing Method instead of Count Method
 
-        //Create SalaryDTO Object
-        SalaryDTO salaryDTO = new SalaryDTO (  );
-
-            //Set Salary Id As TotalEmployee Count + 1
-
-            salaryDTO.setSalaryId ( employee.getIdNo () );
-
-            a = String.valueOf ( 0 );
-
-
-
-            salaryBO.updateSalary ( salaryDTO );
-
 
         path = "C:/Users/User/Desktop/e/" + employee.getPic ();
         file = new File(path);
