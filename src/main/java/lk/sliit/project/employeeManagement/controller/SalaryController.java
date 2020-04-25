@@ -50,7 +50,6 @@ public class SalaryController {
     @PostMapping("salarySave")
     public String registerUser(@ModelAttribute SalaryDTO salaryDTO) throws IOException {
         System.out.println (salaryDTO.getSalaryId () );
-        salaryDTO.setSalaryId ( salaryDTO.getEmployee () );
         salaryBO.updateSalary ( salaryDTO );
 //        salaryBO.updateSalary ( employee.getIdNo () );
     return "redirect:/salary";
@@ -59,8 +58,7 @@ public class SalaryController {
     @RequestMapping("invoice")
     public ModelAndView index2(@ModelAttribute SalaryDTO salaryDTO, Model model) {
         ModelAndView mav = new ModelAndView ( "invoice" );
-        System.out.println (salaryDTO.getSalaryId () );
-        System.out.println (salaryDTO.getTotalOtHours () );
+
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         model.addAttribute ( "getSalaryData",  salaryBO.getSalaryData(salaryDTO.getSalaryId ()));
         return mav;

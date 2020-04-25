@@ -1,6 +1,7 @@
 package lk.sliit.project.employeeManagement.business.custom;
 
 import lk.sliit.project.employeeManagement.business.SuperBO;
+import lk.sliit.project.employeeManagement.dto.CustomDTO;
 import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface SalaryBO extends SuperBO {
     void updateSalary(SalaryDTO employee);
 
     List <SalaryDTO> getSalaryData(String idNo);
+
+
 }

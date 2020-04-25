@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.dao;
 
+import lk.sliit.project.employeeManagement.entity.CustomEntity;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -34,4 +35,5 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
      String findPic(String idNo);
 
      Iterable<Employee> findEmployeesByDateBetween(Date date,Date date1);
+
 }

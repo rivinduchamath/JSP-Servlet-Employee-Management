@@ -16,4 +16,5 @@ public interface SalaryDAO  extends CrudRepository<Salary, String> {
     String getEmployeeName(String idNo);
     @Query(value = "SELECT salary FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
     double getEmployeeSalary(String idNo);
+
 }

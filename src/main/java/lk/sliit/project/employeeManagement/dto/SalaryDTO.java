@@ -1,111 +1,103 @@
 package lk.sliit.project.employeeManagement.dto;
 
 
+import lk.sliit.project.employeeManagement.entity.Employee;
+
+import javax.persistence.*;
+
 /**
  * @author: Rivindu-Wijayarathna
  * Date: 14-Apr-20
  */
 //Class SalaryDTO
 public class SalaryDTO {
-    private String salaryId;
-    private double salary;
-    private double totalOtHours;
-    private String fullPayment;
-    private String employeeName;
-    private String employeeID;
 
-    //Constructor
-    public SalaryDTO(String salaryId, double salary, double totalOtHours, String fullPayment, String employee) {
-        this.salaryId = salaryId;
-        this.salary = salary;
-        this.totalOtHours = totalOtHours;
-        this.fullPayment = fullPayment;
-        this.employeeID = employee;
-    }
+    private String SalaryId;
+    private double basicSalary;
+    private double otHours;
+    private double otRate;
+    private double bonus;
+    private double incomeTax;
+    private Employee employeeID;
 
-    //Default Constructor
     public SalaryDTO() {}
 
-    //Full-arg  Constructor
-    public SalaryDTO(String salaryId, String fullPayment, double salary, double totalOtHours, String employeeID, String employeeName) {
-        this.salaryId = salaryId;
-        this.salary = salary;
-        this.totalOtHours = totalOtHours;
-        this.fullPayment = fullPayment;
+    public SalaryDTO(String salaryId, double basicSalary, double otHours, double otRate, double bonus, double incomeTax, Employee employeeID) {
+        SalaryId = salaryId;
+        this.basicSalary = basicSalary;
+        this.otHours = otHours;
+        this.otRate = otRate;
+        this.bonus = bonus;
+        this.incomeTax = incomeTax;
         this.employeeID = employeeID;
-        this.employeeName =employeeName;
-    }//End Full Arg
-
-
-
-    public SalaryDTO(String salaryId, String fullPayment, double salary, double totalOtHours) {
-
-        this.salaryId = salaryId;
-        this.salary = salary;
-        this.totalOtHours = totalOtHours;
-        this.fullPayment = fullPayment;
-
     }
 
-    //Getters And Setters
     public String getSalaryId() {
-        return salaryId;
+        return SalaryId;
     }
 
     public void setSalaryId(String salaryId) {
-        this.salaryId = salaryId;
+        SalaryId = salaryId;
     }
 
-    public double getSalary() {
-        return salary;
+    public double getBasicSalary() {
+        return basicSalary;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setBasicSalary(double basicSalary) {
+        this.basicSalary = basicSalary;
     }
 
-    public double getTotalOtHours() {
-        return totalOtHours;
+    public double getOtHours() {
+        return otHours;
     }
 
-    public void setTotalOtHours(double totalOtHours) {
-        this.totalOtHours = totalOtHours;
+    public void setOtHours(double otHours) {
+        this.otHours = otHours;
     }
 
-    public String getFullPayment() {
-        return fullPayment;
+    public double getOtRate() {
+        return otRate;
     }
 
-    public void setFullPayment(String fullPayment) {
-        this.fullPayment = fullPayment;
+    public void setOtRate(double otRate) {
+        this.otRate = otRate;
     }
 
-    public String getEmployee() {
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
+
+    public double getIncomeTax() {
+        return incomeTax;
+    }
+
+    public void setIncomeTax(double incomeTax) {
+        this.incomeTax = incomeTax;
+    }
+
+    public Employee getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployee(String employee) {
-        this.employeeID = employee;
+    public void setEmployeeID(Employee employeeID) {
+        this.employeeID = employeeID;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
-    }
-
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
-    }
-
-    // Override to String
     @Override
     public String toString() {
-        return "SalaryDTO{" +
-                "salaryId=" + salaryId +
-                ", salary=" + salary +
-                ", totalOtHours=" + totalOtHours +
-                ", fullPayment='" + fullPayment + '\'' +
-                ", employeeName='" + employeeName + '\'' +
+        return "Salary{" +
+                "SalaryId='" + SalaryId + '\'' +
+                ", basicSalary=" + basicSalary +
+                ", otHours=" + otHours +
+                ", otRate=" + otRate +
+                ", bonus=" + bonus +
+                ", incomeTax=" + incomeTax +
                 ", employeeID=" + employeeID +
                 '}';
-    }//End ToString
-}//End Class DTO
+    }
+}

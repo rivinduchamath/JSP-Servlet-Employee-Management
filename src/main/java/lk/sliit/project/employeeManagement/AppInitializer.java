@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement;
 
+import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
 import lk.sliit.project.employeeManagement.dao.SalaryDAO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.entity.Salary;
@@ -29,15 +30,12 @@ public class AppInitializer {
     Date date= Date.valueOf(str);
 
     @Bean
-    CommandLineRunner init2(SalaryDAO salaryDAO) {
+    CommandLineRunner init2(EmployeeDAO employeeDAO) {
         return args -> {
             List <String> names = Arrays.asList ( "1");
-            names.forEach ( name -> salaryDAO.save ( new Salary (
+            names.forEach ( name -> employeeDAO.save ( new Employee (
+
                             "1",
-                            0,
-                            0,
-                            "0",
-                    new Employee (   "1",
                             "Kamala",
                             0223123456,
                             "someOne@gmail.com",
@@ -49,7 +47,7 @@ public class AppInitializer {
                             date,
                             "img.jpg",
                             false)
-                    ) )
+                    )
             );
         };
 }}
