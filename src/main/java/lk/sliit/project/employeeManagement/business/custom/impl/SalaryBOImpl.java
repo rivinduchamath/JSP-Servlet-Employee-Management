@@ -39,31 +39,22 @@ public class SalaryBOImpl implements SalaryBO {
 
     @Override
     public List <SalaryDTO> getSalaryData(String source) {
-        System.out.println ( "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"+source);
-
-        List<String> list=new ArrayList<String>();
+       List<String> list=new ArrayList<String>();
         String[] sourceAry = source.split(" ");
 
         for(String value : sourceAry) {
             list.add (value );
         }
-//        for (String s: list) {
-//            System.out.println ("sssssssssssssssssaaaaaaaaaaaaaaaaaa"+s);
-//    }
         Iterable <Salary> all = salaryDAO.findAll (list);
-        System.out.println ("sssssssssssssssssssssssssssss"+all );
         List <SalaryDTO> dtos = new ArrayList<> ();
         for (Salary salary : all) {
             dtos.add(new SalaryDTO (
                     salary.getSalaryId (),
                     salary.getFullPayment (),
-                    salaryDAO.getEmployeeSalary ( salary.getEmployeeID ().getIdNo ()),
+                    salary.getSalary (),
                     salary.getTotalOtHours (),
                     salary.getEmployeeID ().getIdNo (),
                     salaryDAO.getEmployeeName( salary.getEmployeeID ().getIdNo ())));
-
-
-            System.out.println ( "aaaaaaaaaaaaaaaaaaaaaa"+salary.getSalaryId () );
         }
         return dtos;
     }
