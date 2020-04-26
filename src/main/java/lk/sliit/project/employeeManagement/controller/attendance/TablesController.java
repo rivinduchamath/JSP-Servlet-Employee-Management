@@ -11,8 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -80,6 +82,15 @@ public class TablesController { //tables.jsp Page For Attendance Manage
             }
         }
         attendanceBO.save ( attendance );
+        return "redirect:/tables";
+    }
+
+    //Delete employee in the Table tables_dynamic.jsp
+    @RequestMapping("deleteAttendance")
+    public String deleteUser(@RequestParam String pid, HttpServletRequest request) {
+        employeeBO.deleteUser ( pid );
+        //Get All Employees After Delete
+        request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         return "redirect:/tables";
     }
 

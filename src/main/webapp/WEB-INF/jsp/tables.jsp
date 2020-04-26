@@ -509,7 +509,7 @@
                                                             <td>${e.inTime}</td>
                                                             <td>${e.outTime}</td>
                                                             <td>${e.overtimeHours}</td>
-                                                            <td><a href="/delete?pid=${e.pid}"><span
+                                                            <td><a href="/deleteAttendance?pid=${e.pid}"><span
                                                                     class="glyphicon glyphicon-trash"></span></a></td>
                                                             <td><a href="/edit-employee?pid=${e.pid }"><span
                                                                     class="glyphicon glyphicon-pencil"></span></a></td>
