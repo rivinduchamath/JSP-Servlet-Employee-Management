@@ -318,7 +318,7 @@
                                         <div class="col-sm-4 invoice-col">
                                             To
                                             <address>
-                                                <strong>Rivindu Chamath</strong>
+                                                <strong>Rivindu Wijayarathna</strong>
                                                 <br>Yakkalamulla
                                                 <br>Galle, Sri Lanka
                                                 <br>Phone: 0778799940
