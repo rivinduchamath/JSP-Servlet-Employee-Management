@@ -9,7 +9,7 @@ import java.util.Date;
 //Class AttendanceDTO
 public class AttendanceDTO {
 
-    private int attendanceId;
+    private String attendanceId;
     private double salary;
     private Date date;
     private String inTime;
@@ -25,7 +25,7 @@ public class AttendanceDTO {
     }
 
     //Full Arg Constructor
-    public AttendanceDTO(int attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, String employeeID, String empName, String position, String pic) {
+    public AttendanceDTO(String attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, String employeeID, String empName, String position, String pic) {
         this.attendanceId = attendanceId;
         this.salary = salary;
         this.date = date;
@@ -38,11 +38,12 @@ public class AttendanceDTO {
         this.pic = pic;
     }//End Full arg
 
-    //Getters And Setters
-    public AttendanceDTO(int attendanceId) {
+    //Constructor
+    public AttendanceDTO(String attendanceId) {
         this.attendanceId = attendanceId;
     }
 
+    //Getters And Setters
     public String getPic() {
         return pic;
     }
@@ -51,11 +52,11 @@ public class AttendanceDTO {
         this.pic = pic;
     }
 
-    public int getAttendanceId() {
+    public String getAttendanceId() {
         return attendanceId;
     }
 
-    public void setAttendanceId(int attendanceId) {
+    public void setAttendanceId(String attendanceId) {
         this.attendanceId = attendanceId;
     }
 
@@ -67,11 +68,11 @@ public class AttendanceDTO {
         this.employeeID = employeeID;
     }
 
-    public int getPid() {
+    public String getPid() {
         return attendanceId;
     }
 
-    public void setPid(int attendanceId) {
+    public void setPid(String attendanceId) {
         this.attendanceId = attendanceId;
     }
 

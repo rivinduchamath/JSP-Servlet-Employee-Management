@@ -24,7 +24,7 @@ import java.util.List;
  * Date: 20-Mar-20
  */
 @Controller
-public class TablesController { //tables.jsp Page For Attendance Manage
+public class AttendanceController { //attendance.jsp Page For Attendance Manage
     DateFormat dateFormat = new SimpleDateFormat ( "yyyy/MM/dd" );
     Date date = new Date ( );
 
@@ -35,10 +35,10 @@ public class TablesController { //tables.jsp Page For Attendance Manage
     @Autowired
     AttendanceBO attendanceBO;
 
-    @RequestMapping("tables")
+    @RequestMapping("attendance")
     public ModelAndView index(Model model, @ModelAttribute AttendanceDTO attendance) {
 
-        ModelAndView mav = new ModelAndView ( "tables" );
+        ModelAndView mav = new ModelAndView ( "attendance" );
         //Get All In Attendance
         mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
         //Get All Employees
@@ -47,7 +47,8 @@ public class TablesController { //tables.jsp Page For Attendance Manage
 
         try {
             AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
-            model.addAttribute ( "genAttendanceId", totalCount.getPid ( ) + 1 );
+            int x = Integer.parseInt ( totalCount.getAttendanceId ( ) )+ 1;
+            model.addAttribute ( "genAttendanceId", x);
         } catch (NullPointerException e) {
             model.addAttribute ( "genAttendanceId", 1 );
         }
@@ -63,31 +64,38 @@ public class TablesController { //tables.jsp Page For Attendance Manage
         attendance.setDate ( date );
         List <AttendanceDTO> todayAttendance = null;
         String dtId = "";
-        try {
-            dtId = attendance.getEmployeeID ( );
-        } catch (NullPointerException e) {
-
-            return "redirect:/tables";
-        }
-
+        String dtAId = "";
+        String aId = "";
         String id = "";
         todayAttendance = attendanceBO.findTodayAttendance ( );
+        try {
+            dtId = attendance.getEmployeeID ( );
+            dtAId = attendance.getAttendanceId ( );
+        } catch (NullPointerException e) {
+
+            return "redirect:/attendance";
+        }
         for (AttendanceDTO a : todayAttendance) {
             id = a.getEmployeeID ( );
+            aId = a.getAttendanceId ();
             if (id.equals ( dtId )) {
-                return "redirect:/tables";
+                attendance.setAttendanceId ( aId );
+                attendanceBO.save ( attendance );
+                return "redirect:/attendance";
             }
         }
         attendanceBO.save ( attendance );
-        return "redirect:/tables";
+        return "redirect:/attendance";
     }
 
     //Delete Attendance in the Table Attendance
     @RequestMapping("deleteAttendance")
     public String deleteUser(@RequestParam String pid, HttpServletRequest request) {
-        employeeBO.deleteUser ( pid );
+        attendanceBO.deleteUser ( pid );
         //Get All Employees After Delete
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
-        return "redirect:/tables";
+        return "redirect:/attendance";
     }
+
+
 }

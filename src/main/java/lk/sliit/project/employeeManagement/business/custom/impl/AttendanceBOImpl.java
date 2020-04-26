@@ -36,7 +36,7 @@ public class AttendanceBOImpl implements AttendanceBO {
         List <AttendanceDTO> dtos = new ArrayList <> ( );
         for (Attendance attendance : attendances) {
             dtos.add ( new AttendanceDTO (
-                attendance.getPid (),
+                attendance.getAttendanceId (),
                     attendance.getSalary (),
                     attendance.getDate (),
                     attendance.getInTime (),
@@ -81,7 +81,7 @@ public class AttendanceBOImpl implements AttendanceBO {
 
     @Override
     public void deleteUser(String id) {
-
+        attendanceDAO.delete (id);
     }
 
     @Override

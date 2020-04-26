@@ -38,9 +38,9 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
 
     //Update employee in the Table tables_dynamic.jsp + form_validation
     @RequestMapping("edit-employee")
-    public String editUser(@RequestParam String idNo, Model model, HttpServletRequest request) {
+    public String editUser(@RequestParam String pid, Model model, HttpServletRequest request) {
         //Go To Mode Update In form_validation.jsp to Update Selected employee
-        request.setAttribute ( "employee", employeeBO.updateUser ( idNo ) );
+        request.setAttribute ( "employee", employeeBO.updateUser ( pid ) );
         request.setAttribute ( "mode", "MODE_UPDATE" );
         //Get Logger User Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );

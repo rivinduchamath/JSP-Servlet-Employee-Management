@@ -89,7 +89,7 @@
                   </li>
                   <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.jsp">Tables</a></li>
+                      <li><a href="attendance.jsp">Tables</a></li>
                       <li><a href="tables_dynamic.jsp">Table Dynamic</a></li>
                     </ul>
                   </li>

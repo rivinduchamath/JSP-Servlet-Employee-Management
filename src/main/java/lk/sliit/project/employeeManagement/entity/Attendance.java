@@ -11,7 +11,7 @@ import java.util.Date;
 public class Attendance implements SuperEntity {
 
     @Id
-    private int attendanceId;
+    private String attendanceId;
     @Column(nullable = true)
     private double salary;
     @Temporal(TemporalType.DATE)
@@ -27,7 +27,7 @@ public class Attendance implements SuperEntity {
 
     public Attendance() {}
 
-    public Attendance(int attendanceId, double salary, Date date,
+    public Attendance(String attendanceId, double salary, Date date,
                        String inTime, String outTime, double overtimeHours,
                        Employee employeeID) {
         this.attendanceId = attendanceId;
@@ -39,13 +39,7 @@ public class Attendance implements SuperEntity {
         this.employeeID = employeeID;
     }
 
-    public int getPid() {
-        return attendanceId;
-    }
 
-    public void setPid(int attendanceId) {
-        this.attendanceId = attendanceId;
-    }
 
     public double getSalary() {
         return salary;
@@ -93,11 +87,11 @@ public class Attendance implements SuperEntity {
         this.employeeID = employeeID;
     }
 
-    public int getAttendanceId() {
+    public String getAttendanceId() {
         return attendanceId;
     }
 
-    public void setAttendanceId(int attendanceId) {
+    public void setAttendanceId(String attendanceId) {
         this.attendanceId = attendanceId;
     }
 

@@ -334,7 +334,8 @@
 
                             <div class="form-group">
                                 <label for="itemDesc">Employee Name </label>
-                                <input type="text" class="form-control" id="itemDesc" placeholder="Name">
+                                <input type="text" class="form-control" id="itemDesc"
+                                       placeholder="Name">
                             </div>
 
                             <div class="col-md-6 col-sm-6 ">
@@ -346,7 +347,8 @@
                                        IN
                                 </span>
                                     </div>
-                                    <input type="text" class="form-control" name="inTime" id="itemTime"
+                                    <input type="text" class="form-control"
+                                           name="inTime" id="itemTime"
                                            aria-label="Dollar amount (with dot and two decimal places)">
 
                                 </div>
@@ -375,7 +377,8 @@
                                        OT
                                 </span>
                                     </div>
-                                    <input type="text" class="form-control" name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+                                    <input type="text" class="form-control"
+                                           name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
 
                                 </div>
                             </div>
@@ -495,24 +498,22 @@
                                                         <th>OutTime</th>
                                                         <th>OverTime</th>
                                                         <th>Delete</th>
-                                                        <th>Edit</th>
+
                                                     </tr>
 
                                                     </thead>
                                                     <tbody>
                                                     <c:forEach items="${listAttendance}" var="e">
                                                         <tr>
-                                                            <td>${e.pid}</td>
+                                                            <td>${e.attendanceId}</td>
                                                             <td>${e.employeeID}</td>
                                                             <td>${e.empName}</td>
                                                             <td>${e.position}</td>
                                                             <td>${e.inTime}</td>
                                                             <td>${e.outTime}</td>
                                                             <td>${e.overtimeHours}</td>
-                                                            <td><a href="/deleteAttendance?pid=${e.pid}"><span
+                                                            <td><a href="/deleteAttendance?pid=${e.attendanceId}"><span
                                                                     class="glyphicon glyphicon-trash"></span></a></td>
-                                                            <td><a href="/edit-employee?pid=${e.pid }"><span
-                                                                    class="glyphicon glyphicon-pencil"></span></a></td>
                                                         </tr>
                                                     </c:forEach>
                                                     </tbody>
@@ -584,7 +585,20 @@
         selectedRow.addClass('row-selected');
     });
 </script>
+<script>
+    var selectedRow = null;
+    $("#datatable-buttons tbody").on('click', 'tr', function () {
 
+        selectedRow = $(this);
+        $("#itemCode").val($(this).find("td:nth-child(2)").text());
+        $("#itemTime").val($(this).find("td:nth-child(5)").text());
+        $("#itemDesc").val($(this).find("td:nth-child(3)").text());
+        $("#itemTime2").val($(this).find("td:nth-child(6)").text());
+        $("#itemTime3").val($(this).find("td:nth-child(7)").text());
+        $("#datatable-responsive tbody tr").removeClass('row-selected');
+        selectedRow.addClass('row-selected');
+    });
+</script>
 <!-- Custom Theme Scripts -->
 <script src="../../build/js/custom.min.js"></script>
 </body>
