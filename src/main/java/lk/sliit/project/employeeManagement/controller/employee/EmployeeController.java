@@ -1,7 +1,8 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.employee;
 
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,11 +30,11 @@ public class EmployeeController {//table_dynamic.jsp Page Controller
         //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
        //Get Logger User Data
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo( SuperController.idNo) );
         return mav;
     }
 
-    //Delete Employee in the Table tables_dynamic.jsp
+    //Delete employee in the Table tables_dynamic.jsp
     @RequestMapping("delete")
     public String deleteUser(@RequestParam String idNo, HttpServletRequest request) {
         employeeBO.deleteUser ( idNo );

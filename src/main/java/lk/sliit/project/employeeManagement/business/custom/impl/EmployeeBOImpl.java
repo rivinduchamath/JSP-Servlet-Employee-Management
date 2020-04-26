@@ -123,7 +123,7 @@ public class EmployeeBOImpl implements EmployeeBO {
         }
         return dtos;
     }
-    //Get Last Employee Method
+    //Get Last employee Method
     @Override
     public String getLastUserCode() {
         return null;

@@ -1,10 +1,9 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.employee;
 
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
-import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
-import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,10 +36,10 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
     private String path = "";
     private File file;
 
-    //Update Employee in the Table tables_dynamic.jsp + form_validation
+    //Update employee in the Table tables_dynamic.jsp + form_validation
     @RequestMapping("edit-employee")
     public String editUser(@RequestParam String idNo, Model model, HttpServletRequest request) {
-        //Go To Mode Update In form_validation.jsp to Update Selected Employee
+        //Go To Mode Update In form_validation.jsp to Update Selected employee
         request.setAttribute ( "employee", employeeBO.updateUser ( idNo ) );
         request.setAttribute ( "mode", "MODE_UPDATE" );
         //Get Logger User Data
@@ -48,7 +47,7 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
         return "form_validation";
     }
 
-    //Load Employee add form from form_validation.jsp Mode = "MODE_REGISTER"
+    //Load employee add form from form_validation.jsp Mode = "MODE_REGISTER"
     @RequestMapping("/form_validation")
     public String registration(HttpServletRequest request) {
         request.setAttribute ( "mode", "MODE_REGISTER" );
@@ -82,7 +81,7 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
             i++;
         }
         String a = String.valueOf ( i + 1 );
-        // Employee Save Or Update Both
+        // employee Save Or Update Both
         employeeBO.save ( employee );
         //To Get All EmployeeCount Call Existing Method instead of Count Method
 
@@ -92,11 +91,11 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
         BufferedImage cp, img;
         img = ImageIO.read ( file );
         deepCopy ( img, employee );
-        //In Dashboard Employee Count
+        //In Dashboard employee Count
         model.addAttribute ( "employeeCountDashBoard", dashboardBO.getAllEmployeeCount ( ) );
-        //In Dashboard Employee Id No
+        //In Dashboard employee Id No
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
-        //In Dashboard all Employee
+        //In Dashboard all employee
         model.addAttribute ( "empData", employeeBO.findAllEmployees ( ) );
         return "redirect:/Dashboard";
     }

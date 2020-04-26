@@ -48,7 +48,7 @@ public class IndexController { //index.jsp Page Controller
         if (employeeBO.findByIdNoAndPassword ( employee.getIdNo ( ), employee.getPassword ( ) ) != null) {
             //Get Male Count
             long maleCount = (dashboardBO.getMaleCount ( ));
-            //Get All Employee Count
+            //Get All employee Count
             long totalCount = (dashboardBO.getAllEmployeeCount ( ));
             //Get Female Count
             long femaleCount = dashboardBO.getFemaleCount ( );
@@ -57,7 +57,7 @@ public class IndexController { //index.jsp Page Controller
             model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
             //Get Upcoming Birth days(1 Month ahead )
             model.addAttribute ( "upcomingBitrhDays", employeeBO.upcomingBirthDays ( ) );
-            //Set A Value If Male, Female, Employee Count = null (Gender Is Varchar)
+            //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );
 

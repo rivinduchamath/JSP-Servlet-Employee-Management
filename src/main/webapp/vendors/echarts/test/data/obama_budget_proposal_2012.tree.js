@@ -1031,7 +1031,7 @@ window.obama_budget_2012 = [
                     160000,
                     23.75
                 ],
-                "name": "Employee Benefits Security Administration",
+                "name": "employee Benefits Security Administration",
                 "id": "leaf-208",
                 "discretion": "discretionary"
             },

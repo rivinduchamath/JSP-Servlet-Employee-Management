@@ -1,7 +1,8 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.salary;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.gallery;
 
 import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import org.springframework.stereotype.Controller;
@@ -17,10 +17,10 @@ import java.io.IOException;
  * Date: 23-Apr-20
  */
 @Controller
-public class NoticeController { //form_wizards.jsp For All Notice
-    @GetMapping("/form_wizards")
-    public ModelAndView index(Model model, @ModelAttribute SalaryDTO salaryDTO, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
-        ModelAndView mav = new ModelAndView ( "form_wizards" );
+public class GalleryController { //media_gallery.jsp Controller
+    @GetMapping("/media_gallery")
+    public ModelAndView index( ) throws ServletException,IllegalStateException, IOException {
+        ModelAndView mav = new ModelAndView ( "media_gallery" );
         return mav;
     }
 }

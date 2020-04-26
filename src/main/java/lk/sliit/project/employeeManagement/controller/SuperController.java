@@ -9,8 +9,8 @@ import java.util.List;
  * Date: 22-Mar-20
  */
 public class SuperController {  //Super Controller For Store Common Things
-    static String idNo = "1"; //Store Logger User ID
-    static String projectId = ""; //Store Clicked Project Id
+   public static String idNo = "1"; //Store Logger User ID
+   public static String projectId = ""; //Store Clicked Project Id
     List <EmployeeDTO> dtos = new ArrayList <> ( );
 
 

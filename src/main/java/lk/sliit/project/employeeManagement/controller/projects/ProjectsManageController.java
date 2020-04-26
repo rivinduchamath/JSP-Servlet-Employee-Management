@@ -1,7 +1,8 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.projects;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.business.custom.ProjectBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,7 +40,7 @@ public class ProjectsManageController {//projectController.jsp Controller
         request.setAttribute ( "project", projectBO.findProject ( projectId ) );
         request.setAttribute ( "mode", "MODE_UP" );
         //Logger DAta
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo( SuperController.idNo) );
         return "projectController";
     }
 

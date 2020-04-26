@@ -1,6 +1,7 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.profile;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,13 +19,14 @@ import java.io.IOException;
  * Date: 22-Mar-20
  */
 @Controller
-public class CalenderController {
+public class ProfileController {//profile.jsp Page Controller
     @Autowired
     EmployeeBO employeeBO;
-    @RequestMapping("/calendar")
+    @RequestMapping("/profile")//If SomeOne Click Profile Load Loggers Profile
     public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
-        ModelAndView mav = new ModelAndView ( "calendar" );
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        ModelAndView mav = new ModelAndView ( "profile" );
+        //Get Logger Data
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo( SuperController.idNo) );
         return mav;
     }
 }

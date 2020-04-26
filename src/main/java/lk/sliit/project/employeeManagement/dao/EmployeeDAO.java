@@ -13,7 +13,7 @@ import java.util.Date;
 //Interface EmployeeDAO Extend From CrudRepository InterFace
 public interface EmployeeDAO extends CrudRepository<Employee, String> {
 
-     //Get Total Employee Count
+     //Get Total employee Count
      Long countByGender(String gender);
 
      //Get Logger User Name And Password is Ok

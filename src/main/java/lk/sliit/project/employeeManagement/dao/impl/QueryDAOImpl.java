@@ -24,7 +24,7 @@ public class QueryDAOImpl implements QueryDAO {
 //
 //    @Override
 //    public Iterable <CustomEntity> findAll() {
-//        List<Object[]> resultList = entityManager.createQuery("SELECT C.idNo,C.name, O.overtimeHours FROM Employee C INNER JOIN Attendance O ON C.idNo=O.employeeID ")
+//        List<Object[]> resultList = entityManager.createQuery("SELECT C.idNo,C.name, O.overtimeHours FROM employee C INNER JOIN Attendance O ON C.idNo=O.employeeID ")
 //                .getResultList();
 //        List<CustomEntity> al = new ArrayList<> ();
 //        for (Object[] cols : resultList) {

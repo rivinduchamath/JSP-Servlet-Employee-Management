@@ -1,7 +1,8 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.salary;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +28,9 @@ public class SalaryController { //salary.jsp to Manage Salary
     public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee) throws IllegalStateException {
 
         ModelAndView mav = new ModelAndView ( "salary" );
-        //Load All Employee to a Table With their Total Salary
+        //Load All employee to a Table With their Total Salary
         mav.addObject ( "listEmployeesTableSalary", salaryBO.findAllSalary ( ) );
-        //Load All Employee to a Table
+        //Load All employee to a Table
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
 
         //Get All Data In Salary Table
@@ -40,7 +41,7 @@ public class SalaryController { //salary.jsp to Manage Salary
         }
         //Pass Salary Row Count
         mav.addObject ( "countEmployee2", i );
-        //Get Logged Employee Id
+        //Get Logged employee Id
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
 
@@ -55,7 +56,7 @@ public class SalaryController { //salary.jsp to Manage Salary
         return "redirect:/salary";
     }
 
-    //Delete Employee in the Table When Click Delete Icon
+    //Delete employee in the Table When Click Delete Icon
     @RequestMapping("deleteSalary")
     public String deleteUser(@RequestParam String idNo) {
         salaryBO.deleteSalary ( idNo );

@@ -1,6 +1,7 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.profile;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,7 @@ public class ContactsController {//contacts.jsp Controller
     @RequestMapping("/contacts")//When Click contacts.jsp Page
     public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "contacts" );
-        //Get All Employee Count
+        //Get All employee Count
         mav.addObject ( "countEmployee", employeeBO.findAllEmployees ( ) );
         try {
             //Get Logger Data
@@ -42,7 +43,7 @@ public class ContactsController {//contacts.jsp Controller
          request.setAttribute ( "mode", "MODE_UPDATE" );
         //Get Logger Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
-        //Get Clicked Employee Data
+        //Get Clicked employee Data
         model.addAttribute ( "loggerNames", employeeBO.getEmployeeByIdNo(idNo) );
         return "profiles";
     }

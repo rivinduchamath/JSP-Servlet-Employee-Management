@@ -1,8 +1,9 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.dashboard;
 
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
     @Autowired
     private EmployeeBO employeeBO;
 
-    //Find Total Employee Count For DashBoard
+    //Find Total employee Count For DashBoard
     @RequestMapping("/Dashboard")  //Control dashboard.jsp Page
     public void dashboard(Model model, @ModelAttribute EmployeeDTO employee) {
         DashBoardLoad ( model, employee );
@@ -47,7 +48,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         //Show Upcoming BirthDays in Dashboard
         model.addAttribute ( "upcomingBitrhDays", employeeBO.upcomingBirthDays ( ) );
 
-        //Set A Value If Male, Female, Employee Count = null (Gender Is Varchar)
+        //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
         else model.addAttribute ( "maleCountDashBoard", 0 );
 
@@ -57,7 +58,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         if (femaleCount > 0) model.addAttribute ( "femaleCountDashBoard", femaleCount );
         else model.addAttribute ( "femaleCountDashBoard", 0 );
 
-        //get Logged Employee
+        //get Logged employee
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return "Dashboard";
     }

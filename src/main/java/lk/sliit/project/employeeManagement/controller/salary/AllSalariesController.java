@@ -1,7 +1,8 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.salary;
 
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.business.custom.SalaryBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,21 +17,20 @@ import java.io.IOException;
 
 /**
  * @author: Rivindu-Wijayarathna
- * Date: 25-Apr-20
+ * Date: 20-Apr-20
  */
 @Controller
-public class UpdateSalaryController { //updateSalary.JSP Page Controller
+public class AllSalariesController {//allSalary.jsp Controller
     @Autowired
     EmployeeBO employeeBO;
     @Autowired
     private SalaryBO salaryBO;
 
-    @RequestMapping("/updateSalary")//Update Salary
+    //Load All Salaries To a Table
+    @RequestMapping("/allSalary")
     public ModelAndView indexa(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
-        ModelAndView mav = new ModelAndView ( "updateSalary" );
-       //load All Salry
+        ModelAndView mav = new ModelAndView ( "allSalary" );
         mav.addObject ( "listEmployeesTableSalarya", salaryBO.findAllSalary ( ) );
-      //Logged User Name
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
     }

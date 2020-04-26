@@ -1,8 +1,9 @@
-package lk.sliit.project.employeeManagement.controller;
+package lk.sliit.project.employeeManagement.controller.attendance;
 
 import lk.sliit.project.employeeManagement.business.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +42,7 @@ public class TablesController { //tables.jsp Page For Attendance Manage
         mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
         //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
-        //Top Employee
+        //Top employee
 
         try {
             AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
