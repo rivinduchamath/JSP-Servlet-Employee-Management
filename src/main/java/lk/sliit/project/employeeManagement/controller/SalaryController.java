@@ -70,4 +70,6 @@ public class SalaryController {
         model.addAttribute ( "getSalaryData",  salaryBO.getSalaryData(salaryDTO.getSalaryId ()));
         return mav;
     }
+    //Delete Employee in the Table tables_dynamic.jsp
+
     }

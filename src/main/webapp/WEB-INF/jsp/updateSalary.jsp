@@ -64,7 +64,6 @@
     <link href="../../build/css/custom.min.css" rel="stylesheet">
 
 
-
 </head>
 
 <body class="nav-md" style="cursor: pointer">
@@ -74,7 +73,9 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px" src="../../images/favicon.ico"><span style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
+                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px"
+                                                                 src="../../images/favicon.ico"><span
+                            style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -86,7 +87,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>  ${loggerName.name}</h2>
+                        <h2> ${loggerName.name}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -194,8 +195,63 @@
             </div>
         </div>
         <!-- /top navigation -->
+        <div class=" col-md-12 col-sm-12 " >
+            <div class="col-md-4 col-sm-4 "  >
+                <form method="POST" style="float: right" action="/salarySave" name="salary">
+
+                    <div class="form-group">
+                        <label for="itemCode">Employee Id</label>
+                        <input type="text" class="form-control"
+                               required="required" name="employeeID"
+                               id="itemCode" placeholder="Employee Id"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemCode">Basic Salary</label>
+                        <input type="text" class="form-control"
+                               required="required" name="basicSalary"
+                               id="BasicSalary" placeholder="Basic Salary"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemCode">OT Rate</label>
+                        <input type="text" class="form-control"
+                               required="required" name="otRate"
+                               id="OTRate" placeholder="OT Rate"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemCode">OT Hrs</label>
+                        <input type="text" class="form-control"
+                               required="required" name="otHours"
+                               id="OTHrs" placeholder="OT Hrs"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemCode">Monthly Bonus</label>
+                        <input type="text" class="form-control"
+                               required="required" name="bonus"
+                               id="MonthlyBonus" placeholder="Monthly Bonus"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemCode">Income Tax</label>
+                        <input type="text" class="form-control"
+                               required="required" name="incomeTax"
+                               id="IncomeTax" placeholder="Income Tax"/>
+                    </div>
+                    <input style="display: none" type="text" id="itemPay1" name="SalaryId">
+                    <button type='submit' class="btn btn-primary" style="width: 50%" value="Register">
+                        Submit
+                    </button>
+                    <button type='reset' class="btn btn-outline-success" value="">Reset</button>
+
+                </form>
+            </div>
+
+
+
 
         <!-- page content -->
+
         <div class="right_col" role="main">
             <div class="">
                 <div class="row" style="">
@@ -224,12 +280,13 @@
                             <div class="x_content">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="card-box table-responsive">
+                                        <div class="card-box datatable-responsive">
                                             <p class="text-muted font-13 m-b-30">
-                                                The User Table Provide To Find Data Of Users.If You Want Edit OR Remove User You Can Find
+                                                The User Table Provide To Find Data Of Users.If You Want Edit OR Remove
+                                                User You Can Find
                                                 User And Just Click On User Row.
                                             </p>
-                                            <table id="datatable-buttons" class="table table-striped table-bordered">
+                                            <table id="datatable-responsive" class="table table-striped table-bordered">
                                                 <thead class="thead-light">
                                                 <tr>
                                                     <th>Salary ID</th>
@@ -254,7 +311,7 @@
                                                         <td>${e.incomeTax}</td>
                                                         <td>${e.otHours}</td>
                                                         <td>${e.otRate}</td>
-                                                            </tr>
+                                                    </tr>
                                                 </c:forEach>
                                                 </tbody>
                                             </table>
@@ -267,20 +324,20 @@
                 </div>
             </div>
         </div>
-            </div>
-        </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-            <div class="pull-right">
-                Copyright © Employee Management 2019.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
-                Wijayarathna</a>
-            </div>
-            <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
     </div>
+</div>
+<!-- /page content -->
+
+<!-- footer content -->
+<footer>
+    <div class="pull-right">
+        Copyright © Employee Management 2019.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
+        Wijayarathna</a>
+    </div>
+    <div class="clearfix"></div>
+</footer>
+<!-- /footer content -->
+</div>
 </div>
 
 <!-- jQuery -->
@@ -293,6 +350,43 @@
 <script src="../../vendors/nprogress/nprogress.js"></script>
 <!-- iCheck -->
 <script src="../../vendors/iCheck/icheck.min.js"></script>
+
+<!-- jQuery -->
+<script src="../../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="../../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../../vendors/nprogress/nprogress.js"></script>
+<!-- iCheck -->
+<script src="../../vendors/iCheck/icheck.min.js"></script>
+<script>
+    var selectedRow = null;
+    $("#datatable-responsive tbody").on('click', 'tr', function () {
+        var date = new Date();
+        var date2 = new Date();
+        var today = date.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
+        date2.setHours(date.getHours() + 8);
+        var today2 = date2.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
+        selectedRow = $(this);
+        $("#itemCode").val($(this).find("td:nth-child(2)").text());
+        $("#BasicSalary").val($(this).find("td:nth-child(4)").text());
+        $("#OTRate").val($(this).find("td:nth-child(8)").text());
+        $("#OTHrs").val($(this).find("td:nth-child(7)").text());
+        $("#MonthlyBonus").val($(this).find("td:nth-child(5)").text());
+        $("#IncomeTax").val($(this).find("td:nth-child(6)").text());
+        $("#datatable-responsive tbody tr").removeClass('row-selected');
+        selectedRow.addClass('row-selected');
+    });
+</script>
+
+<script> $(document).ready(function () {
+    $("#btn_enable").click(function () {
+        $("#name").prop("disabled", false);
+    });
+});
+</script>
 <!-- Datatables -->
 <script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -307,11 +401,8 @@
 <script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
 <script src="../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 <script src="../../vendors/jszip/dist/jszip.min.js"></script>
-<script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
-<script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
-
+<script src="../../vendors/iCheck/icheck.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="../../build/js/custom.min.js"></script>
-
 </body>
 </html>

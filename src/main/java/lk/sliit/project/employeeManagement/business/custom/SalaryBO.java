@@ -21,5 +21,4 @@ public interface SalaryBO extends SuperBO {
 
     void deleteSalary(String idNo);
 
-
 }

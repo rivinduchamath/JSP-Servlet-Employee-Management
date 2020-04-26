@@ -504,9 +504,6 @@
     $("#btn_enable").click(function () {
         $("#name").prop("disabled", false);
     });
-    // $("#btn_disable").click(function () {
-    //     $("#name").prop("disabled", true);
-    // });
 });
 </script>
 <!-- Datatables -->

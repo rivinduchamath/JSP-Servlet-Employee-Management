@@ -75,6 +75,8 @@ public class SalaryBOImpl implements SalaryBO {
     }
 
 
+
+
     @Override
     public List<SalaryDTO> findAllSalary() {
         Iterable <Salary> all = salaryDAO.findAll ( );
