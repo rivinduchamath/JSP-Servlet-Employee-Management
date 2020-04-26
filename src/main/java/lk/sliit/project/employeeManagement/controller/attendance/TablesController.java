@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -52,7 +51,6 @@ public class TablesController { //tables.jsp Page For Attendance Manage
         } catch (NullPointerException e) {
             model.addAttribute ( "genAttendanceId", 1 );
         }
-
         //For get Logger Name and Picture
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
@@ -77,7 +75,6 @@ public class TablesController { //tables.jsp Page For Attendance Manage
         for (AttendanceDTO a : todayAttendance) {
             id = a.getEmployeeID ( );
             if (id.equals ( dtId )) {
-
                 return "redirect:/tables";
             }
         }
@@ -85,7 +82,7 @@ public class TablesController { //tables.jsp Page For Attendance Manage
         return "redirect:/tables";
     }
 
-    //Delete employee in the Table tables_dynamic.jsp
+    //Delete Attendance in the Table Attendance
     @RequestMapping("deleteAttendance")
     public String deleteUser(@RequestParam String pid, HttpServletRequest request) {
         employeeBO.deleteUser ( pid );
@@ -93,5 +90,4 @@ public class TablesController { //tables.jsp Page For Attendance Manage
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         return "redirect:/tables";
     }
-
 }
