@@ -222,8 +222,8 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Tables
-                            <small>Some examples to get you started</small>
+                        <h3>Employee Salary >
+                            <small>Monthly Salary Manage</small>
                         </h3>
                     </div>
 
@@ -360,9 +360,8 @@
                      <div class="col-md-8 col-sm-8" style="float: right; position: relative;display: inline-block">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Today active users
-                                    <small>Update Today
-                                        Users
+                                <h2>Employee Monthly Salary
+                                    <small>Click CheckBox And Pay Salary
                                     </small>
                                 </h2>
                                 <form method="POST" action="/invoice" name="invoice">
