@@ -276,7 +276,7 @@
                                 <label for="itemCode">Monthly Bonus</label>
                                 <input type="text" class="form-control"
                                        required="required" name="bonus"
-                                       id="MonthlyBonus" placeholder="Monthly Bonus" />
+                                       id="MonthlyBonus"  placeholder="Monthly Bonus" />
                             </div>
                             <div class="form-group">
                                 <label for="itemCode">Income Tax</label>
@@ -288,7 +288,7 @@
                             <button type='submit' class="btn btn-primary" style="width: 50%" value="Register" >
                                 Submit
                             </button>
-                            <button  type='reset' class="btn btn-outline-success" value="">Reset</button>
+                            <button onclick="document.getElementsByClassName('form-control').value = ''" type='reset' class="btn btn-outline-success" value="">Reset</button>
 
                     </form>
 
