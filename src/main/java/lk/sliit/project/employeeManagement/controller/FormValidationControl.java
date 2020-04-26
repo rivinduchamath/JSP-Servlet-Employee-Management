@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import java.awt.image.BufferedImage;
@@ -25,75 +27,89 @@ import java.util.List;
  * Date: 08-Mar-20
  */
 @Controller
-public class FormValidationControl {
+public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "MODE_UPDATE" and "MODE_Register"
 
     //Automate Object Creation
     @Autowired
     private EmployeeBO employeeBO;
     @Autowired
-    private SalaryBO salaryBO;
-    @Autowired
     private DashboardBO dashboardBO;
-    private  String path ="";
-    private  File file ;
+    private String path = "";
+    private File file;
 
+    //Update Employee in the Table tables_dynamic.jsp + form_validation
+    @RequestMapping("edit-employee")
+    public String editUser(@RequestParam String idNo, Model model, HttpServletRequest request) {
+        //Go To Mode Update In form_validation.jsp to Update Selected Employee
+        request.setAttribute ( "employee", employeeBO.updateUser ( idNo ) );
+        request.setAttribute ( "mode", "MODE_UPDATE" );
+        //Get Logger User Data
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
+        return "form_validation";
+    }
 
-    //Load Employee add form from form_validation.jsp
+    //Load Employee add form from form_validation.jsp Mode = "MODE_REGISTER"
     @RequestMapping("/form_validation")
     public String registration(HttpServletRequest request) {
         request.setAttribute ( "mode", "MODE_REGISTER" );
         return "form_validation";
     }
-////////////////////////////////////////////////////
-    //Save Employee from form_validation.jsp
+
+    //After Save Return to Dashboard
     @PostMapping("Dashboards")
     public String registerUser(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
 
-        if(employee.getPic ().equals ( "" ) & employee.getGender () == null ){
+        //If Some One Not Click In Gender Or Pic
+        if (employee.getPic ( ).equals ( "" ) & employee.getGender ( ) == null) {
             employee.setPic ( "unknown.png" );
         }
-        if(employee.getPic ().equals ( "" ) && employee.getGender ().equals ( "male" )){
+        //If Some One Click In Gender as male and not choose Pic
+        if (employee.getPic ( ).equals ( "" ) && employee.getGender ( ).equals ( "male" )) {
             employee.setPic ( "user.png" );
         }
-        if(employee.getPic ().equals ( "" ) && employee.getGender ().equals ( "female" )){
+        //If Some One Click In Gender as female and not choose Pic
+        if (employee.getPic ( ).equals ( "" ) && employee.getGender ( ).equals ( "female" )) {
             employee.setPic ( "images.png" );
         }
-        List<EmployeeDTO> employeeDTOS =employeeBO.findAllEmployees ( );
-        int i =0;
+        //Get All Employees
+        List <EmployeeDTO> employeeDTOS = employeeBO.findAllEmployees ( );
+        int i = 0;
         boolean check = false;
-        for (EmployeeDTO e: employeeDTOS) {
-            if (e.getIdNo ().equals ( employee.getIdNo () )){
-                check =true;
-                System.out.println ( e.getIdNo ());
-                System.out.println ( employee.getIdNo ());
+        for (EmployeeDTO e : employeeDTOS) {
+            if (e.getIdNo ( ).equals ( employee.getIdNo ( ) )) {
+                check = true;
             }
             i++;
-        }String a = String.valueOf ( i+1 );
-        //Save Employee If Save Or Update Both
+        }
+        String a = String.valueOf ( i + 1 );
+        // Employee Save Or Update Both
         employeeBO.save ( employee );
         //To Get All EmployeeCount Call Existing Method instead of Count Method
 
-
-        path = "C:/Users/User/Desktop/e/" + employee.getPic ();
-        file = new File(path);
+           //Get Img And Copy to Application
+        path = "C:/Users/User/Desktop/e/" + employee.getPic ( );
+        file = new File ( path );
         BufferedImage cp, img;
-        img = ImageIO.read(file);
-        deepCopy(img,employee);
+        img = ImageIO.read ( file );
+        deepCopy ( img, employee );
+        //In Dashboard Employee Count
         model.addAttribute ( "employeeCountDashBoard", dashboardBO.getAllEmployeeCount ( ) );
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        //In Dashboard Employee Id No
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
+        //In Dashboard all Employee
         model.addAttribute ( "empData", employeeBO.findAllEmployees ( ) );
         return "redirect:/Dashboard";
     }
 
     private BufferedImage deepCopy(BufferedImage bi, EmployeeDTO employee) throws IOException {
-        String saveAs =employee.getPic () ;
-        ColorModel cm = bi.getColorModel();
-        boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
-        WritableRaster raster = bi.copyData(null);
-        BufferedImage cImg = new BufferedImage(cm, raster, isAlphaPremultiplied, null);
-        File saveImage = new File("D:\\JSP SERVlet\\artiyaCopy\\artiya\\src\\main\\webapp\\images\\icons", saveAs);
-        ImageIO.write(cImg, "jpg", saveImage);
-        ImageIO.write(cImg, "png", saveImage);
+        String saveAs = employee.getPic ( );
+        ColorModel cm = bi.getColorModel ( );
+        boolean isAlphaPremultiplied = cm.isAlphaPremultiplied ( );
+        WritableRaster raster = bi.copyData ( null );
+        BufferedImage cImg = new BufferedImage ( cm, raster, isAlphaPremultiplied, null );
+        File saveImage = new File ( "D:\\JSP SERVlet\\artiyaCopy\\artiya\\src\\main\\webapp\\images\\icons", saveAs );
+        ImageIO.write ( cImg, "jpg", saveImage );
+        ImageIO.write ( cImg, "png", saveImage );
         return cImg;
     }
 

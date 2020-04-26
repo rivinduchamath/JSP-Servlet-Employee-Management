@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,7 +22,7 @@ import java.util.List;
  * Date: 20-Mar-20
  */
 @Controller
-public class TablesController {
+public class TablesController { //tables.jsp Page For Attendance Manage
     DateFormat dateFormat = new SimpleDateFormat ( "yyyy/MM/dd" );
     Date date = new Date ( );
 
@@ -56,15 +57,14 @@ public class TablesController {
 
     @RequestMapping(value = "tablesAdd", method = RequestMethod.POST)
     public String index2(@ModelAttribute AttendanceDTO attendance, Model model) {
-//        ModelAndView mav = new ModelAndView ( "tables" );
         DateFormat dateFormat = new SimpleDateFormat ( "yyyy/MM/dd" );
         Date date = new Date ( );
         attendance.setDate ( date );
         List <AttendanceDTO> todayAttendance = null;
         String dtId = "";
         try {
-             dtId = attendance.getEmployeeID ( );
-        }catch (NullPointerException e){
+            dtId = attendance.getEmployeeID ( );
+        } catch (NullPointerException e) {
 
             return "redirect:/tables";
         }
@@ -78,7 +78,6 @@ public class TablesController {
                 return "redirect:/tables";
             }
         }
-
         attendanceBO.save ( attendance );
         return "redirect:/tables";
     }

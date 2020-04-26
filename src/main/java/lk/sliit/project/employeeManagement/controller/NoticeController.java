@@ -17,11 +17,10 @@ import java.io.IOException;
  * Date: 23-Apr-20
  */
 @Controller
-public class NoticeController {
+public class NoticeController { //form_wizards.jsp For All Notice
     @GetMapping("/form_wizards")
     public ModelAndView index(Model model, @ModelAttribute SalaryDTO salaryDTO, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "form_wizards" );
-
         return mav;
     }
 }

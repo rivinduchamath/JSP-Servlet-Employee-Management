@@ -18,12 +18,13 @@ import java.io.IOException;
  * Date: 22-Mar-20
  */
 @Controller
-public class ProfileController {
+public class ProfileController {//profile.jsp Page Controller
     @Autowired
     EmployeeBO employeeBO;
-    @RequestMapping("/profile")
+    @RequestMapping("/profile")//If SomeOne Click Profile Load Loggers Profile
     public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "profile" );
+        //Get Logger Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return mav;
     }

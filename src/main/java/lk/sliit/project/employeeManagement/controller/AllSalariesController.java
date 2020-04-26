@@ -19,18 +19,18 @@ import java.io.IOException;
  * Date: 20-Apr-20
  */
 @Controller
-public class AllSalariesController {
-    @Autowired
-    private SalaryBO salaryBO;
+public class AllSalariesController {//allSalary.jsp Controller
     @Autowired
     EmployeeBO employeeBO;
+    @Autowired
+    private SalaryBO salaryBO;
 
-
+    //Load All Salaries To a Table
     @RequestMapping("/allSalary")
-    public ModelAndView indexa(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
+    public ModelAndView indexa(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "allSalary" );
         mav.addObject ( "listEmployeesTableSalarya", salaryBO.findAllSalary ( ) );
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
     }
 }

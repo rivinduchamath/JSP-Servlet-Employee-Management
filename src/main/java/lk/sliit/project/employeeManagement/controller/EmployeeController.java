@@ -17,9 +17,8 @@ import javax.servlet.http.HttpServletRequest;
  * Date: 08-Mar-20
  */
 @Controller
-public class EmployeeController {
+public class EmployeeController {//table_dynamic.jsp Page Controller
 
-    //Automate Object Creation
     @Autowired
     private EmployeeBO employeeBO;
 
@@ -27,7 +26,9 @@ public class EmployeeController {
     @RequestMapping("tables_dynamic")
     public ModelAndView index(Model model,@ModelAttribute EmployeeDTO employee) {
         ModelAndView mav = new ModelAndView ( "tables_dynamic" );
+        //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
+       //Get Logger User Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
         return mav;
     }
@@ -36,16 +37,10 @@ public class EmployeeController {
     @RequestMapping("delete")
     public String deleteUser(@RequestParam String idNo, HttpServletRequest request) {
         employeeBO.deleteUser ( idNo );
+        //Get All Employees After Delete
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         return "redirect:/tables_dynamic";
     }
 
-    //Update Employee in the Table tables_dynamic.jsp + form_validation
-    @RequestMapping("edit-employee")
-    public String editUser(@RequestParam String idNo,Model model, HttpServletRequest request) {
-        request.setAttribute ( "employee", employeeBO.updateUser ( idNo ) );
-        request.setAttribute ( "mode", "MODE_UPDATE" );
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
-        return "form_validation";
-    }
+
 }

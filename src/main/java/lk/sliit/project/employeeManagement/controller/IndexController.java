@@ -19,7 +19,7 @@ import java.io.IOException;
  * Date: 08-Mar-20
  */
 @Controller
-public class IndexController {
+public class IndexController { //index.jsp Page Controller
     @Autowired
     EmployeeBO employeeBO;
     @Autowired
@@ -27,44 +27,54 @@ public class IndexController {
     @Autowired
     AttendanceBO attendanceBO;
 
-    //Initial Load Page http://localhost:8091
+    //Initial Load Page http://localhost:8091/login
     @Scope(scopeName = "")
     @RequestMapping("/login")
     public String index(HttpServletRequest request) {
-        request.setAttribute("mode", "MODE_LOGIN");
+        request.setAttribute ( "mode", "MODE_LOGIN" );
         return "index";
     }
+
+    //Initial Load Page http://localhost:8091
     @RequestMapping("/")
     public String indexa(HttpServletRequest request) {
-        request.setAttribute("mode", "MODE_LOGIN");
+        request.setAttribute ( "mode", "MODE_LOGIN" );
         return "index";
     }
 
-/////////////
-    @PostMapping("Dashboard")
+    @PostMapping("Dashboard") // Load dashboard.jsp Page If Id And password is mach
     public String registerUser(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
+        //True If Id and password is match
         if (employeeBO.findByIdNoAndPassword ( employee.getIdNo ( ), employee.getPassword ( ) ) != null) {
-            long maleCount = ( dashboardBO.getMaleCount ( ) );
-            long totalCount = ( dashboardBO.getAllEmployeeCount ( ) );
-            long femaleCount = dashboardBO.getFemaleCount ();
+            //Get Male Count
+            long maleCount = (dashboardBO.getMaleCount ( ));
+            //Get All Employee Count
+            long totalCount = (dashboardBO.getAllEmployeeCount ( ));
+            //Get Female Count
+            long femaleCount = dashboardBO.getFemaleCount ( );
 
+            //Get Today Attendance
             model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
+            //Get Upcoming Birth days(1 Month ahead )
             model.addAttribute ( "upcomingBitrhDays", employeeBO.upcomingBirthDays ( ) );
+            //Set A Value If Male, Female, Employee Count = null (Gender Is Varchar)
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );
-
 
             if (totalCount > 0) model.addAttribute ( "employeeCountDashBoard", totalCount );
             else model.addAttribute ( "employeeCountDashBoard", 0 );
 
             if (femaleCount > 0) model.addAttribute ( "femaleCountDashBoard", femaleCount );
             else model.addAttribute ( "femaleCountDashBoard", 0 );
-             SuperController.idNo = employee.getIdNo ();
-             model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+
+            //Add Logger Id To the static variable idNo
+            SuperController.idNo = employee.getIdNo ( );
+            //Get Logger Data
+            model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
 
             return "/Dashboard";
-        } else {
+        } else {//If User name And Password is not match
             return "redirect:/login";
         }
-    }
-}
+    }//End method
+}//End class

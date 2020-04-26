@@ -19,21 +19,32 @@ import java.util.List;
  * Date: 23-Mar-20
  */
 @Controller
-public class ProjectsController {//projects.jsp Controller
+public class ProjectsManageController {//projectController.jsp Controller
     @Autowired
     ProjectBO projectBO;
     @Autowired
     EmployeeBO employeeBO;
 
-    @RequestMapping("/projects") // Load All Projects
-    public ModelAndView projects(Model model, @ModelAttribute ProjectDTO projectDTO) {
 
-        ModelAndView mav = new ModelAndView ( "projects" );
-        List<ProjectDTO> p = projectBO.findAllProjects ( );
-        for (ProjectDTO s: p) {
-        }
-        mav.addObject ( "lias", p );
-        return mav;
+    @RequestMapping("/projectController") //Add New Project Go to MODE_REG
+    public String projectsManage(HttpServletRequest request,@ModelAttribute ProjectDTO project) {
+        request.setAttribute ( "mode", "MODE_REG" );
+        return "projectController";
     }
+
+
+    @RequestMapping("edit-project") // If Some One Click Edit Button Go To "MODE_UP"
+    public String editUser(@RequestParam String projectId, Model model, HttpServletRequest request) {
+       //Get add Clicked Project Data
+        request.setAttribute ( "project", projectBO.findProject ( projectId ) );
+        request.setAttribute ( "mode", "MODE_UP" );
+        //Logger DAta
+        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
+        return "projectController";
+    }
+
+
+
+
 
 }
