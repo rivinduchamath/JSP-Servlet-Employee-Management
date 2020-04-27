@@ -345,9 +345,9 @@
                                                 <a>${e.empName}</a>
                                             </h2>
                                             <div class="byline">
-                                                <span>13 hours ago</span> by <a>${e.inTime}</a>
+                                                <span>Position :-</span> <a>${e.position}</a>
                                             </div>
-                                            <p class="excerpt">Position :- ${e.position} <br> Mobile :- ${e.outTime}<a></a>
+                                            <p class="excerpt">In Time :- ${e.inTime} <br> OutTime :- ${e.outTime}<a></a>
                                             </p>
                                         </div>
                                     </div>

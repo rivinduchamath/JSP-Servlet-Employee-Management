@@ -67,15 +67,12 @@
 </head>
 
 <body class="nav-md" style="cursor: pointer">
-
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px"
-                                                                 src="../../images/favicon.ico"><span
-                            style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
+                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px" src="../../images/favicon.ico"><span style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -87,7 +84,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2> ${loggerName.name}</h2>
+                        <h2>  ${loggerName.name}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -106,9 +103,8 @@
                             </li>
                             <li><a><i class="fa fa-edit"></i> Employee <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="form_validation">Add New Employee</a></li>
                                     <li><a href="tables_dynamic">Employee Manage</a></li>
-                                    <li><a href="tables">Attendance</a></li>
+                                    <li><a href="attendance">Attendance</a></li>
                                     <li><a href="salary">Salary Manage</a></li>
                                 </ul>
                             </li>
