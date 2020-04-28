@@ -26,7 +26,7 @@ public class ProjectDetailsController {//project_detail.jsp Page Controller
     @Autowired
     EmployeeBO employeeBO;
 
-    @RequestMapping("project_detail")//Get Clicked Project Details
+    @GetMapping("project_detail")//Get Clicked Project Details
     public String project_details(@RequestParam String projectId, Model model, HttpServletRequest request){
         SuperController.projectId = projectId;
         model.addAttribute ( "projectData", projectBO.findProject ( projectId ) );

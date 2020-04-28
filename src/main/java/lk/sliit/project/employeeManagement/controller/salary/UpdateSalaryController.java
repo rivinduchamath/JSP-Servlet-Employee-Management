@@ -7,7 +7,9 @@ import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.ServletException;
@@ -26,7 +28,7 @@ public class UpdateSalaryController { //updateSalary.JSP Page Controller
     @Autowired
     private SalaryBO salaryBO;
 
-    @RequestMapping("/updateSalary")//Update Salary
+    @GetMapping("/updateSalary")//Update Salary
     public ModelAndView indexa(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "updateSalary" );
        //load All Salry

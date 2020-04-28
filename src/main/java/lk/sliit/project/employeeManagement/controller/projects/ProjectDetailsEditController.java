@@ -27,8 +27,6 @@ public class ProjectDetailsEditController {//project_detail_Edit.jsp Controller
     @Autowired
     EmployeeBO employeeBO;
 
-
-
     @RequestMapping("/project_detail_Edit")
     public ModelAndView index(Model model )  {
         ModelAndView mav = new ModelAndView ( "project_detail_Edit" );

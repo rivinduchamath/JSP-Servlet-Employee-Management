@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -41,7 +42,7 @@ public class InvoiceController { //invoice.jsp Page Controller
     }
 
 
-    @RequestMapping("deleteInvoiceSalary")//When Payment Is Complete Delete Salary Data Which Clicked
+    @PostMapping("deleteInvoiceSalary")//When Payment Is Complete Delete Salary Data Which Clicked
     public String deleteIN(@ModelAttribute SalaryDTO salaryDTO, Model model) {
         //Pass All Data as a String And Add Only Salary Id To a String array
         String[] sourceAry = salaryDTO.getSalaryId ( ).split ( " " );

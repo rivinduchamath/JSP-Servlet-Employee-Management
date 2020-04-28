@@ -24,7 +24,7 @@ public class SalaryController { //salary.jsp to Manage Salary
     @Autowired
     private EmployeeBO employeeBO;
 
-    @RequestMapping("salary")//Load Salary JSP Page
+    @GetMapping("salary")//Load Salary JSP Page
     public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee) throws IllegalStateException {
 
         ModelAndView mav = new ModelAndView ( "salary" );

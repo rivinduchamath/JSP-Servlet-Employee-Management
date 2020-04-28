@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,14 +30,14 @@ public class IndexController { //index.jsp Page Controller
 
     //Initial Load Page http://localhost:8091/login
     @Scope(scopeName = "")
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String index(HttpServletRequest request) {
         request.setAttribute ( "mode", "MODE_LOGIN" );
         return "index";
     }
 
     //Initial Load Page http://localhost:8091
-    @RequestMapping("/")
+    @GetMapping("/")
     public String indexa(HttpServletRequest request) {
         request.setAttribute ( "mode", "MODE_LOGIN" );
         return "index";

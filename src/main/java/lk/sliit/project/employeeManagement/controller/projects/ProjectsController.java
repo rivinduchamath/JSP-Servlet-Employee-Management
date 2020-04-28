@@ -6,6 +6,7 @@ import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +26,7 @@ public class ProjectsController {//projects.jsp Controller
     @Autowired
     EmployeeBO employeeBO;
 
-    @RequestMapping("/projects") // Load All Projects
+    @GetMapping("/projects") // Load All Projects
     public ModelAndView projects(Model model, @ModelAttribute ProjectDTO projectDTO) {
 
         ModelAndView mav = new ModelAndView ( "projects" );
