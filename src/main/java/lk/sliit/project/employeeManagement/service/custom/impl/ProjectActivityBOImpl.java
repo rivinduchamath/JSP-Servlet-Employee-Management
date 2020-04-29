@@ -1,6 +1,6 @@
-package lk.sliit.project.employeeManagement.business.custom.impl;
+package lk.sliit.project.employeeManagement.service.custom.impl;
 
-import lk.sliit.project.employeeManagement.business.custom.ProjectActivityBO;
+import lk.sliit.project.employeeManagement.service.custom.ProjectActivityBO;
 import lk.sliit.project.employeeManagement.dao.ProjectActivityDAO;
 import lk.sliit.project.employeeManagement.dao.ProjectDAO;
 import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;

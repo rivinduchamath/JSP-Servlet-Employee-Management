@@ -1,4 +1,4 @@
-package lk.sliit.project.employeeManagement.business;
+package lk.sliit.project.employeeManagement.service;
 
 /**
  * @author: Rivindu-Wijayarathna

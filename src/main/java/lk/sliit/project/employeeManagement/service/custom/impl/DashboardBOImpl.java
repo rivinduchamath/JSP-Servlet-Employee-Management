@@ -1,6 +1,6 @@
-package lk.sliit.project.employeeManagement.business.custom.impl;
+package lk.sliit.project.employeeManagement.service.custom.impl;
 
-import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
+import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;

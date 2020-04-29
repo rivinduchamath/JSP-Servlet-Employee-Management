@@ -3907,7 +3907,7 @@ var Grid = FC.Grid = Class.extend(ListenerMixin, MouseIgnorerMixin, {
 	},
 
 
-	/* Fill System (highlight, background events, business hours)
+	/* Fill System (highlight, background events, service hours)
 	--------------------------------------------------------------------------------------------------------------------
 	TODO: remove this system. like we did in TimeGrid
 	*/
@@ -4203,7 +4203,7 @@ Grid.mixin({
 	},
 
 
-	// Generates an array of classNames to be used for the rendering business hours overlay. Called by the fill system.
+	// Generates an array of classNames to be used for the rendering service hours overlay. Called by the fill system.
 	// Called by fillSegHtml.
 	businessHoursSegClasses: function(seg) {
 		return [ 'fc-nonbusiness', 'fc-bgevent' ];
@@ -4214,8 +4214,8 @@ Grid.mixin({
 	------------------------------------------------------------------------------------------------------------------*/
 
 
-	// Compute business hour segs for the grid's current date range.
-	// Caller must ask if whole-day business hours are needed.
+	// Compute service hour segs for the grid's current date range.
+	// Caller must ask if whole-day service hours are needed.
 	// If no `businessHours` configuration value is specified, assumes the calendar default.
 	buildBusinessHourSegs: function(wholeDay, businessHours) {
 		return this.eventsToSegs(
@@ -4224,8 +4224,8 @@ Grid.mixin({
 	},
 
 
-	// Compute business hour *events* for the grid's current date range.
-	// Caller must ask if whole-day business hours are needed.
+	// Compute service hour *events* for the grid's current date range.
+	// Caller must ask if whole-day service hours are needed.
 	// If no `businessHours` configuration value is specified, assumes the calendar default.
 	buildBusinessHourEvents: function(wholeDay, businessHours) {
 		var calendar = this.view.calendar;
@@ -4239,9 +4239,9 @@ Grid.mixin({
 
 		events = calendar.computeBusinessHourEvents(wholeDay, businessHours);
 
-		// HACK. Eventually refactor business hours "events" system.
+		// HACK. Eventually refactor service hours "events" system.
 		// If no events are given, but businessHours is activated, this means the entire visible range should be
-		// marked as *not* business-hours, via inverse-background rendering.
+		// marked as *not* service-hours, via inverse-background rendering.
 		if (!events.length && businessHours) {
 			events = [
 				$.extend({}, BUSINESS_HOUR_EVENT_DEFAULTS, {
@@ -6138,7 +6138,7 @@ var DayGrid = FC.DayGrid = Grid.extend(DayTableMixin, {
 	},
 
 
-	/* Fill System (highlight, background events, business hours)
+	/* Fill System (highlight, background events, service hours)
 	------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -7466,7 +7466,7 @@ TimeGrid.mixin({
 						'<div class="fc-event-container"></div>' +
 						'<div class="fc-highlight-container"></div>' +
 						'<div class="fc-bgevent-container"></div>' +
-						'<div class="fc-business-container"></div>' +
+						'<div class="fc-service-container"></div>' +
 					'</div>' +
 				'</td>';
 		}
@@ -7484,7 +7484,7 @@ TimeGrid.mixin({
 		this.fgContainerEls = skeletonEl.find('.fc-event-container:not(.fc-helper-container)');
 		this.bgContainerEls = skeletonEl.find('.fc-bgevent-container');
 		this.highlightContainerEls = skeletonEl.find('.fc-highlight-container');
-		this.businessContainerEls = skeletonEl.find('.fc-business-container');
+		this.businessContainerEls = skeletonEl.find('.fc-service-container');
 
 		this.bookendCells(skeletonEl.find('tr')); // TODO: do this on string level
 		this.el.append(skeletonEl);
@@ -8604,13 +8604,13 @@ var View = FC.View = Class.extend(EmitterMixin, ListenerMixin, {
 	------------------------------------------------------------------------------------------------------------------*/
 
 
-	// Renders business-hours onto the view. Assumes updateSize has already been called.
+	// Renders service-hours onto the view. Assumes updateSize has already been called.
 	renderBusinessHours: function() {
 		// subclasses should implement
 	},
 
 
-	// Unrenders previously-rendered business-hours
+	// Unrenders previously-rendered service-hours
 	unrenderBusinessHours: function() {
 		// subclasses should implement
 	},
@@ -12768,13 +12768,13 @@ var BUSINESS_HOUR_EVENT_DEFAULTS = {
 	// classNames are defined in businessHoursSegClasses
 };
 
-// Return events objects for business hours within the current view.
+// Return events objects for service hours within the current view.
 // Abuse of our event system :(
 Calendar.prototype.getCurrentBusinessHourEvents = function(wholeDay) {
 	return this.computeBusinessHourEvents(wholeDay, this.options.businessHours);
 };
 
-// Given a raw input value from options, return events objects for business hours within the current view.
+// Given a raw input value from options, return events objects for service hours within the current view.
 Calendar.prototype.computeBusinessHourEvents = function(wholeDay, input) {
 	if (input === true) {
 		return this.expandBusinessHourEvents(wholeDay, [ {} ]);

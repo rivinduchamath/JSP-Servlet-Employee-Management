@@ -5980,7 +5980,7 @@ function jsonStringify(object, spaces, depth) {
 
   for (var i in object) {
     if (!object.hasOwnProperty(i)) {
-      continue; // not my business
+      continue; // not my service
     }
     --length;
     str += '\n ' + repeat(' ', space)

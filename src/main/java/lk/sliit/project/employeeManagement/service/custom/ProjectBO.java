@@ -1,6 +1,6 @@
-package lk.sliit.project.employeeManagement.business.custom;
+package lk.sliit.project.employeeManagement.service.custom;
 
-import lk.sliit.project.employeeManagement.business.SuperBO;
+import lk.sliit.project.employeeManagement.service.SuperBO;
 import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import java.util.List;
 

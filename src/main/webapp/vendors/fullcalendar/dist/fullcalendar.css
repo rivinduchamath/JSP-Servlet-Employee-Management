@@ -65,7 +65,7 @@ body .fc { /* extra precedence to overcome jqui */
 	opacity: .3;
 }
 
-.fc-nonbusiness { /* default look for non-business-hours areas */
+.fc-nonbusiness { /* default look for non-service-hours areas */
 	/* will inherit .fc-bgevent's styles */
 	background: #d7d7d7;
 }

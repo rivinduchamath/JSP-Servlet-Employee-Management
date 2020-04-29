@@ -1,6 +1,6 @@
-package lk.sliit.project.employeeManagement.business.custom;
+package lk.sliit.project.employeeManagement.service.custom;
 
-import lk.sliit.project.employeeManagement.business.SuperBO;
+import lk.sliit.project.employeeManagement.service.SuperBO;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import java.util.List;
 
@@ -9,9 +9,9 @@ import java.util.List;
  * Date: 09-Apr-20
  */
 public interface AttendanceBO extends SuperBO {
-   List<AttendanceDTO> findTodayAttendance();
+    List<AttendanceDTO> findTodayAttendance();
 
- AttendanceDTO getEmployeeAttCount();
+    AttendanceDTO getEmployeeAttCount();
 
     void save(AttendanceDTO attendance);
 

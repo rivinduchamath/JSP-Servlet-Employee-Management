@@ -1,4 +1,4 @@
-package lk.sliit.project.employeeManagement.business.custom;
+package lk.sliit.project.employeeManagement.service.custom;
 
 import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;
 import java.util.List;

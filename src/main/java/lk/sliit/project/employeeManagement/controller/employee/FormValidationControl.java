@@ -1,7 +1,7 @@
 package lk.sliit.project.employeeManagement.controller.employee;
 
-import lk.sliit.project.employeeManagement.business.custom.DashboardBO;
-import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
+import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;

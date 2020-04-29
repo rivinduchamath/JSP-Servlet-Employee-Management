@@ -1,18 +1,15 @@
 package lk.sliit.project.employeeManagement.controller.projects;
 
-import lk.sliit.project.employeeManagement.business.custom.EmployeeBO;
-import lk.sliit.project.employeeManagement.business.custom.ProjectBO;
+import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
+import lk.sliit.project.employeeManagement.service.custom.ProjectBO;
 import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
