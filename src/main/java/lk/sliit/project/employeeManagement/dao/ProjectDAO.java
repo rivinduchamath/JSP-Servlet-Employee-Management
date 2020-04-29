@@ -11,4 +11,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface ProjectDAO extends CrudRepository<Project, String> {
     //Get Project from id
     Project getProjectByProjectId(String idNo);
+
+    Project findTopByOrderByProjectIdDesc();
 }

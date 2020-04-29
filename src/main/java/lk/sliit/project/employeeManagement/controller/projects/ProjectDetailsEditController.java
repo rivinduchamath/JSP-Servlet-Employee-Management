@@ -44,7 +44,7 @@ public class ProjectDetailsEditController {//project_detail_Edit.jsp Controller
     }
 
     //Add New Activities
-    @PostMapping("saveActivities")
+    @RequestMapping("saveActivities")
     public String registerUser(@ModelAttribute ProjectActivityDTO projectActivity) throws IOException {
 
         try {

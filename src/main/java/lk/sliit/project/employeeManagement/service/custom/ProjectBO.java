@@ -13,4 +13,9 @@ public interface ProjectBO extends SuperBO {
 
     ProjectDTO findProject(String projectId);
 
+    ProjectDTO getProjectAttCount();
+
+    void saveProject(ProjectDTO projectDTO);
+
+    void deleteProject(String pid);
 }

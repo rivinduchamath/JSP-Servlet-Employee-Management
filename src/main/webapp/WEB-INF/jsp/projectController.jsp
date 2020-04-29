@@ -101,11 +101,11 @@
 
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Home >>
+                        <h2>Back >>
                             <small><a style="color: #007bff;cursor:hand"
                                       onMouseOver="this.style.color='red'; this.style.fontWeight='bold'"
                                       onMouseOut="this.style.color='#00F'; this.style.fontWeight='normal'"
-                                      href="Dashboard">click here</a></small>
+                                      href="/projects">click here</a></small>
                         </h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -116,8 +116,8 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <form class="form-horizontal" method="POST" action="/projects">
-                             <span class="section">Manage Projects
+                        <form class="form-horizontal" method="POST" action="/projectSave">
+                             <span class="section">+New Projects
 
                             </span>
 
@@ -133,16 +133,7 @@
                                 </div>
                             </div>
 
-                                <%--Project No--%>
-                            <div class="field item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Project ID<span
-                                        class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6">
-                                    <input readonly="readonly" class="form-control" class='optional'
-                                           name="projectId"
-                                           data-validate-words="1"required="required"
-                                           value="${project.projectId }"/></div>
-                            </div>
+
 
                                 <%--Registered Date--%>
                             <div class="field item form-group">
@@ -240,11 +231,11 @@
 
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Home >>
+                        <h2>Back >>
                             <small><a style="color: #007bff;cursor:hand"
                                       onMouseOver="this.style.color='red'; this.style.fontWeight='bold'"
                                       onMouseOut="this.style.color='#00F'; this.style.fontWeight='normal'"
-                                      href="Dashboard">click here</a></small>
+                                      href="/projects">click here</a></small>
                         </h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -255,7 +246,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <form class="form-horizontal" method="POST" action="/projects">
+                        <form class="form-horizontal" method="POST" action="/projectUpdate">
                              <span class="section">Manage Projects
 
                             </span>

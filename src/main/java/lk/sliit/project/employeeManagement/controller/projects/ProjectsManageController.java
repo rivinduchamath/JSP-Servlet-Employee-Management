@@ -1,5 +1,8 @@
 package lk.sliit.project.employeeManagement.controller.projects;
 
+import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
+import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;
 import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.service.custom.ProjectBO;
 import lk.sliit.project.employeeManagement.controller.SuperController;
@@ -8,10 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -42,8 +48,37 @@ public class ProjectsManageController {//projectController.jsp Controller
         return "projectController";
     }
 
+    @PostMapping("projectSave")//Save project
+    public String updateProject(@ModelAttribute ProjectDTO projectDTO,Model model) {
+
+        try {
+            //Get Project Id
+            ProjectDTO totalCount = projectBO.getProjectAttCount ( );
+            int q = Integer.parseInt ( totalCount.getProjectId ( )  );
+            int c= q+ 1 ;
+            projectDTO.setProjectId ( String.valueOf ( c ) );
+        } catch (NullPointerException e) {
+            //Project Count = 0 then assign 1
+            projectDTO.setProjectId ( "1"  );
+        }
+        //Calling Update Method
+        projectBO.saveProject ( projectDTO );
+        return "redirect:/projects";
+    }
+    @PostMapping("projectUpdate")//Update project
+    public String saveProject(@ModelAttribute ProjectDTO projectDTO,Model model) {
+        projectBO.saveProject ( projectDTO );
+        return "redirect:/projects";
+    }
 
 
+    @RequestMapping("deleteProject")
+    public String deleteProect(@RequestParam String pid, HttpServletRequest request) {
+        projectBO.deleteProject ( pid );
+        //Get All Employees After Delete
+        request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
+        return "redirect:/attendance";
+    }
 
 
-}
+    }

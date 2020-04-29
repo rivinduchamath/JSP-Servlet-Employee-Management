@@ -24,6 +24,10 @@ public class ProjectActivityDTO {
     public ProjectActivityDTO() {
     }
 
+    public ProjectActivityDTO(String activityId) {
+        this.activityId = activityId;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -32,8 +36,6 @@ public class ProjectActivityDTO {
         this.description = description;
     }
 
-    public ProjectActivityDTO(String activityId) {        this.activityId = activityId;
-    }
 
     public String getActivity() {
         return activity;

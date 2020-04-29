@@ -39,6 +39,10 @@ public class ProjectDTO {
     //Project DTO Default Constructor
     public ProjectDTO() { }
 
+    public ProjectDTO(String projectId) {
+        this.projectId = projectId;
+    }
+
     //Getters And Setters
     public String getProjectId() {
         return projectId;

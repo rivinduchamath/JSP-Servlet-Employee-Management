@@ -38,9 +38,9 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
 
     //Update employee in the Table tables_dynamic.jsp + form_validation
     @RequestMapping("edit-employee")
-    public String editUser(@RequestParam String pid, Model model, HttpServletRequest request) {
+    public String editUser(@RequestParam String idNo, Model model, HttpServletRequest request) {
         //Go To Mode Update In form_validation.jsp to Update Selected employee
-        request.setAttribute ( "employee", employeeBO.updateUser ( pid ) );
+        request.setAttribute ( "employee", employeeBO.updateUser ( idNo ) );
         request.setAttribute ( "mode", "MODE_UPDATE" );
         //Get Logger User Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
@@ -70,17 +70,7 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
         if (employee.getPic ( ).equals ( "" ) && employee.getGender ( ).equals ( "female" )) {
             employee.setPic ( "images.png" );
         }
-        //Get All Employees
-        List <EmployeeDTO> employeeDTOS = employeeBO.findAllEmployees ( );
-        int i = 0;
-        boolean check = false;
-        for (EmployeeDTO e : employeeDTOS) {
-            if (e.getIdNo ( ).equals ( employee.getIdNo ( ) )) {
-                check = true;
-            }
-            i++;
-        }
-        String a = String.valueOf ( i + 1 );
+
         // employee Save Or Update Both
         employeeBO.save ( employee );
         //To Get All EmployeeCount Call Existing Method instead of Count Method
