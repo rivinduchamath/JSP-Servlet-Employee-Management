@@ -302,7 +302,84 @@
                 <div class="row" style="display: block;">
 
                     <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 ">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Find Users
+                                        <small>User Page</small>
+                                    </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                               aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <a href="/attendance">
+                                    <button style="float: right;font-weight: bolder"  class="btn btn-success"><i class="fa fa-backward"></i> Back</button>
+                                </a>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card-box table-responsive">
+                                                <p class="text-muted font-13 m-b-30">
+                                                    The User Table Provide To Find Data Of Users.If You Want Edit OR Remove User You Can Find
+                                                    User And Just Click On User Row.
+                                                </p>
+                                                <table id="datatable-buttons" class="table table-striped table-bordered">
+                                                    <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Attendance ID</th>
+                                                        <th>Date</th>
+                                                        <th>Employee Id</th>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>In Time</th>
+                                                        <th>Out Time</th>
+                                                        <th>OT Hours</th>
+                                                        <th>Salary</th>
 
+                                                    </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                    <c:forEach items="${listEmployeesTable}" var="e">
+                                                        <tr>
+                                                            <td>${e.idNo}</td>
+                                                            <td>${e.name}</td>
+                                                            <td>${e.mobileNumber}</td>
+                                                            <td>${e.email}</td>
+                                                            <td>${e.address}</td>
+                                                            <td>${e.occupation}</td>
+                                                            <td>${e.gender}</td>
+                                                            <td>${e.password}</td>
+                                                            <td>${e.dateOfBirth}</td>
+                                                            <td>${e.date}</td>
+                                                            <td><a href="/delete?idNo=${e.idNo}"><span
+                                                                    class="glyphicon glyphicon-trash"></span></a></td>
+                                                            <td><a href="/edit-employee?idNo=${e.idNo }"><span
+                                                                    class="glyphicon glyphicon-pencil"></span></a></td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
