@@ -1,5 +1,7 @@
 package lk.sliit.project.employeeManagement.dto;
 
+import lk.sliit.project.employeeManagement.entity.Employee;
+
 import java.util.Date;
 
 /**
@@ -37,11 +39,20 @@ public class AttendanceDTO {
         this.position = position;
         this.pic = pic;
     }//End Full arg
-
+    public AttendanceDTO(String attendanceId, double salary, Date date, String inTime, String outTime, double overtimeHours, String employeeID) {
+        this.attendanceId = attendanceId;
+        this.salary = salary;
+        this.date = date;
+        this.inTime = inTime;
+        this.outTime = outTime;
+        this.overtimeHours = overtimeHours;
+        this.employeeID = employeeID;
+    }
     //Constructor
     public AttendanceDTO(String attendanceId) {
         this.attendanceId = attendanceId;
     }
+
 
     //Getters And Setters
     public String getPic() {

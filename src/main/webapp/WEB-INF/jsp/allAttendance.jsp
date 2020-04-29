@@ -348,27 +348,28 @@
                                                         <th>Out Time</th>
                                                         <th>OT Hours</th>
                                                         <th>Salary</th>
-
+                                                        <th>Delete</th>
+                                                        <th>Edit</th>
                                                     </tr>
 
                                                     </thead>
                                                     <tbody>
-                                                    <c:forEach items="${listEmployeesTable}" var="e">
+                                                    <c:forEach items="${listAttendanceTable}" var="e">
                                                         <tr>
-                                                            <td>${e.idNo}</td>
-                                                            <td>${e.name}</td>
-                                                            <td>${e.mobileNumber}</td>
-                                                            <td>${e.email}</td>
-                                                            <td>${e.address}</td>
-                                                            <td>${e.occupation}</td>
-                                                            <td>${e.gender}</td>
-                                                            <td>${e.password}</td>
-                                                            <td>${e.dateOfBirth}</td>
+                                                            <td>${e.attendanceId}</td>
                                                             <td>${e.date}</td>
-                                                            <td><a href="/delete?idNo=${e.idNo}"><span
+                                                            <td>${e.employeeID}</td>
+                                                            <td>${e.empName}</td>
+                                                            <td>${e.position}</td>
+                                                            <td>${e.inTime}</td>
+                                                            <td>${e.outTime}</td>
+                                                            <td>${e.overtimeHours}</td>
+                                                            <td>${e.salary}</td>
+                                                            <td><a href="/delete?idNo=${e.attendanceId}"><span
                                                                     class="glyphicon glyphicon-trash"></span></a></td>
-                                                            <td><a href="/edit-employee?idNo=${e.idNo }"><span
+                                                            <td><a href="/edit-employee?idNo=${e.attendanceId }"><span
                                                                     class="glyphicon glyphicon-pencil"></span></a></td>
+
                                                         </tr>
                                                     </c:forEach>
                                                     </tbody>

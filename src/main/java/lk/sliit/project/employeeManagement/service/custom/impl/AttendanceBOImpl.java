@@ -1,5 +1,7 @@
 package lk.sliit.project.employeeManagement.service.custom.impl;
 
+import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.service.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
@@ -92,5 +94,26 @@ public class AttendanceBOImpl implements AttendanceBO {
     @Override
     public AttendanceDTO findUser(String userCode) {
         return null;
+    }
+
+    @Override
+    public List <AttendanceDTO> findAllAtendance() {
+        Iterable <Attendance> allItems = attendanceDAO.findAll();
+        List <AttendanceDTO> dtos = new ArrayList <> ();
+        for (Attendance attendance : allItems) {
+            dtos.add(new AttendanceDTO (
+                    attendance.getAttendanceId (),
+                    attendance.getSalary (),
+                    attendance.getDate (),
+                    attendance.getInTime (),
+                    attendance.getOutTime (),
+                    attendance.getOvertimeHours (),
+                    attendance.getEmployee ().getIdNo (),
+                    employeeDAO.findName ( attendance.getEmployee ().getIdNo () ),
+                    employeeDAO.findPos ( attendance.getEmployee ().getIdNo ()),
+                    employeeDAO.findPic ( attendance.getEmployee ().getIdNo () )
+            ));
+        }
+        return dtos;
     }
 }

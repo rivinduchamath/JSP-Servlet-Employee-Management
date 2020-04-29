@@ -24,4 +24,5 @@ public interface AttendanceBO extends SuperBO {
     AttendanceDTO findUser(String userCode) ;
 
 
+    List<AttendanceDTO> findAllAtendance();
 }

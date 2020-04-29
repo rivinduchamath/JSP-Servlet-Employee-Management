@@ -36,14 +36,14 @@ public class AppInitializer {
             names.forEach ( name -> employeeDAO.save ( new Employee (
 
                             "1",
-                            "Kamala",
+                            "Rivindu Wijayarathna",
                             0223123456,
                             "someOne@gmail.com",
                             "Galle",
                             "Admin",
                             "1",
                             date,
-                            "Female",
+                            "Male",
                             date,
                             "img.jpg",
                             false)
