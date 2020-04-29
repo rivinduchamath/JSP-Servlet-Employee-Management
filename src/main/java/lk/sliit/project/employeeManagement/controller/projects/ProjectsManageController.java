@@ -77,7 +77,7 @@ public class ProjectsManageController {//projectController.jsp Controller
         projectBO.deleteProject ( pid );
         //Get All Employees After Delete
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
-        return "redirect:/attendance";
+        return "redirect:/projects";
     }
 
 
