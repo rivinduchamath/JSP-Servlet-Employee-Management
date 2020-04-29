@@ -218,6 +218,11 @@
                         <h3>Tables
                             <small>Some examples to get you started</small>
                         </h3>
+                        <a style=" float: left" href="allAttendance">
+                            <button   type='submit' class="btn btn-secondary" style="width: 100%;" value="Register" >
+                               Find All
+                            </button>
+                        </a>
                     </div>
 
                     <div class="title_right">
@@ -532,7 +537,7 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Copyright © Employee Management 2018.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
+                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
                 Wijayarathna</a>
             </div>
             <div class="clearfix"></div>

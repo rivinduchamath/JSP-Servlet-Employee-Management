@@ -2,13 +2,14 @@
   Created by IntelliJ IDEA.
   User: Rivindu Chamath
   Date: 03-Mar-20
-  Time: 7:43 AM
+  Time: 5:32 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import = "java.util.Date" %>
-<%@ page import = "java.text.SimpleDateFormat" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,6 +21,16 @@
     <title>Employee Management </title>
     <link rel="icon" type="image/png" href="../../images/icons/gdfgd.png"/>
     <!-- Bootstrap -->
+    <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../../build/css/custom.min.css" rel="stylesheet">
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -38,13 +49,42 @@
 
     <!-- Custom Theme Style -->
     <link href="../../build/css/custom.min.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
     <%
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String date = sdf.format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat ( "dd-MM-yyyy" );
+        String date = sdf.format ( new Date ( ) );
     %>
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("datatable-responsive");
+            tr = table.getElementsByTagName("tr");
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .row-selected{
+            background-color: rgba(36, 107, 218, 0.21) !important;
+        }
+    </style>
 </head>
 
 <body class="nav-md" style="cursor: pointer">
+<%! String date =""; %>
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
@@ -170,172 +210,100 @@
         </div>
         <!-- /top navigation -->
 
-
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Users
+                        <h3>Tables
                             <small>Some examples to get you started</small>
                         </h3>
                     </div>
 
                     <div class="title_right">
-                        <script>
-
-                            function formatTime() {
-                                now = new Date();
-                                hour = now.getHours();
-                                min = now.getMinutes();
-                                sec = now.getSeconds();
-
-                                if (document.clock.sivamtime[0].checked) {
-                                    if (min <= 9) {
-                                        min = "0" + min;
+                        <div class="col-md-5 col-sm-5   form-group pull-right top_search">
+                            <!--/////-->
+                            <script>
+                                function formatTime() {
+                                    now = new Date();
+                                    hour = now.getHours();
+                                    min = now.getMinutes();
+                                    sec = now.getSeconds();
+                                    if (document.clock.sivamtime[0].checked) {
+                                        if (min <= 9) {
+                                            min = "0" + min;
+                                        }
+                                        if (sec <= 9) {
+                                            sec = "0" + sec;
+                                        }
+                                        if (hour > 12) {
+                                            hour = hour - 12;
+                                            add = " p.m.";
+                                        } else {
+                                            hour = hour;
+                                            add = " a.m.";
+                                        }
+                                        if (hour == 12) {
+                                            add = " p.m.";
+                                        }
+                                        if (hour == 0) {
+                                            hour = "12";
+                                        }
+                                        document.clock.sivam.value = ((hour <= 9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;
                                     }
-                                    if (sec <= 9) {
-                                        sec = "0" + sec;
+                                    if (document.clock.sivamtime[1].checked) {
+                                        if (min <= 9) {
+                                            min = "0" + min;
+                                        }
+                                        if (sec <= 9) {
+                                            sec = "0" + sec;
+                                        }
+                                        if (hour < 10) {
+                                            hour = "0" + hour;
+                                        }
+                                        document.clock.sivam.value = hour + ':' + min + ':' + sec;
                                     }
-                                    if (hour > 12) {
-                                        hour = hour - 12;
-                                        add = " p.m.";
-                                    } else {
-                                        hour = hour;
-                                        add = " a.m.";
-                                    }
-                                    if (hour == 12) {
-                                        add = " p.m.";
-                                    }
-                                    if (hour == 0) {
-                                        hour = "12";
-                                    }
-
-                                    document.clock.sivam.value = ((hour<=9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;
+                                    setTimeout("formatTime()", 1000);
                                 }
+                                window.onload = formatTime;
+                            </script>
+                            <form name="clock" style="float: right">
+                                <table class="clock" width="135">
+                                    <tr>
+                                        <h6 style="color:#73879C; float:right;border: none;background-color: #f6f6f6">
 
-                                if (document.clock.sivamtime[1].checked) {
-                                    if (min <= 9) {
-                                        min = "0" + min; }
-                                    if (sec <= 9) {
-                                        sec = "0" + sec; }
-                                    if (hour < 10) {
-                                        hour = "0" + hour; }
-                                    document.clock.sivam.value = hour + ':' + min + ':' + sec;
-                                }
 
-                                setTimeout("formatTime()", 1000);
-                            }
+                                            <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6"
+                                                   class="clock2" type="text" name="sivam" size="12"><br>
+                                            <p><%=date%> </p>
 
-                            window.onload=formatTime;
+                                        </h6>
 
-                        </script>
-                        <form name="clock" style="float: right">
-                            <table class="clock" width="135">
-                                <tr>
-                                    <td class="clock2">
-                                    </td>
-                                </tr>
-                                <tr >
-                                    <h6  style="color:#73879C; float:right;border: none;background-color: #f6f6f6">
-                                        <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6" class="clock2" type="text" name="sivam" size="12"><br>
-                                        <p > <%=date%></p>
-                                    </h6>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="clock3" for="1"><input type="radio" style="display: none"
+                                                                                 id="1" name="sivamtime"
+                                                                                 checked></label><br>
+                                            <label class="clock3" for="2"><input type="radio" style="display: none"
+                                                                                 id="2" name="sivamtime"></label>
+                                        </td>
+                                    </tr>
+                                </table>
 
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="clock3" for="1"><input type="radio"style="display: none" id="1" name="sivamtime" checked></label><br>
-                                        <label class="clock3" for="2"><input type="radio" style="display: none" id="2" name="sivamtime"></label>
-                                    </td>
-                                </tr>
-                            </table>
-
-                        </form>
+                            </form>
+                            <!--////-->
+                        </div>
                     </div>
                 </div>
 
                 <div class="clearfix"></div>
 
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 ">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Find Users
-                                    <small>User Page</small>
-                                </h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="form_validation">
-                            <button style="float: right;font-weight: bolder"  class="btn btn-success">+New</button>
-                            </a>
-                                <div class="x_content">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="card-box table-responsive">
-                                            <p class="text-muted font-13 m-b-30">
-                                                The User Table Provide To Find Data Of Users.If You Want Edit OR Remove User You Can Find
-                                                User And Just Click On User Row.
-                                            </p>
-                                            <table id="datatable-buttons" class="table table-striped table-bordered">
-                                                <thead class="thead-light">
-                                                <tr>
-                                                    <th>User ID</th>
-                                                    <th>Name</th>
-                                                    <th>Mobile Number</th>
-                                                    <th>Email</th>
-                                                    <th>Address</th>
-                                                    <th>Position</th>
-                                                    <th>Gender</th>
-                                                    <th>Password</th>
-                                                    <th>DOB</th>
-                                                    <th>Date</th>
-                                                    <th>Delete</th>
-                                                    <th>Edit</th>
-                                                </tr>
+                <div class="row" style="display: block;">
 
-                                                </thead>
-                                                <tbody>
-                                                <c:forEach items="${listEmployeesTable}" var="e">
-                                                    <tr>
-                                                        <td>${e.idNo}</td>
-                                                        <td>${e.name}</td>
-                                                        <td>${e.mobileNumber}</td>
-                                                        <td>${e.email}</td>
-                                                        <td>${e.address}</td>
-                                                        <td>${e.occupation}</td>
-                                                        <td>${e.gender}</td>
-                                                        <td>${e.password}</td>
-                                                        <td>${e.dateOfBirth}</td>
-                                                        <td>${e.date}</td>
-                                                        <td><a href="/delete?idNo=${e.idNo}"><span
-                                                                class="glyphicon glyphicon-trash"></span></a></td>
-                                                        <td><a href="/edit-employee?idNo=${e.idNo }"><span
-                                                                class="glyphicon glyphicon-pencil"></span></a></td>
-                                                    </tr>
-                                                </c:forEach>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="clearfix"></div>
+
+
                 </div>
             </div>
         </div>
@@ -344,7 +312,8 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
+                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
+                Wijayarathna</a>
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -378,9 +347,38 @@
 <script src="../../vendors/jszip/dist/jszip.min.js"></script>
 <script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
+<script>
+    var selectedRow = null;
+    $("#datatable-responsive tbody").on('click', 'tr', function () {
+        var date = new Date();
+        var date2 = new Date();
+        var today = date.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
+        date2.setHours(date.getHours()+8);
+        var today2 = date2.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
+        selectedRow = $(this);
+        $("#itemCode").val($(this).find("td:first-child").text());
+        $("#itemDesc").val($(this).find("td:nth-child(2)").text());
+        $("#itemTime").val(today);
+        $("#itemTime2").val(today2);
+        $("#datatable-responsive tbody tr").removeClass('row-selected');
+        selectedRow.addClass('row-selected');
+    });
+</script>
+<script>
+    var selectedRow = null;
+    $("#datatable-buttons tbody").on('click', 'tr', function () {
 
+        selectedRow = $(this);
+        $("#itemCode").val($(this).find("td:nth-child(2)").text());
+        $("#itemTime").val($(this).find("td:nth-child(5)").text());
+        $("#itemDesc").val($(this).find("td:nth-child(3)").text());
+        $("#itemTime2").val($(this).find("td:nth-child(6)").text());
+        $("#itemTime3").val($(this).find("td:nth-child(7)").text());
+        $("#datatable-responsive tbody tr").removeClass('row-selected');
+        selectedRow.addClass('row-selected');
+    });
+</script>
 <!-- Custom Theme Scripts -->
 <script src="../../build/js/custom.min.js"></script>
-
 </body>
 </html>

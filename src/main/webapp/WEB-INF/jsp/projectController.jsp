@@ -368,7 +368,7 @@
 
 
 <div class="pull-right" style="color: white">
-    Copyright © Employee Management 2018. Created by Rivindu Wijayarathna &nbsp; &nbsp;    &nbsp;    &nbsp;
+    Copyright © Employee Management 2020. Created by Rivindu Wijayarathna &nbsp; &nbsp;    &nbsp;    &nbsp;
 </div>
 <div class="clearfix"></div>
 

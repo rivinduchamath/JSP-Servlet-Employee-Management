@@ -273,7 +273,7 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Copyright © Employee Management 2019.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
+                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
                 Wijayarathna</a>
             </div>
             <div class="clearfix"></div>

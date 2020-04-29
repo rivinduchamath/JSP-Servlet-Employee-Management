@@ -215,7 +215,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Copyright © Employee Management 2018.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
+            Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
           </div>
           <div class="clearfix"></div>
         </footer>

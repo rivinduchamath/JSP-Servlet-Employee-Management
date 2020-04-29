@@ -434,12 +434,12 @@
         <!-- /page content -->
 
         <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
+      <footer>
+        <div class="pull-right">
+          Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
         <!-- /footer content -->
       </div>
     </div>

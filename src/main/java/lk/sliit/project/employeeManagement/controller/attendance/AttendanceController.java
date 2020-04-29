@@ -43,7 +43,7 @@ public class AttendanceController { //attendance.jsp Page For Attendance Manage
         mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
         //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
-        //Top employee
+
 
         try {
             AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
