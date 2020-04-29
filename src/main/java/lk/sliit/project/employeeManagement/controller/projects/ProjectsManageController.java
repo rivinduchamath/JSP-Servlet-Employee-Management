@@ -66,7 +66,7 @@ public class ProjectsManageController {//projectController.jsp Controller
         return "redirect:/projects";
     }
     @PostMapping("projectUpdate")//Update project
-    public String saveProject(@ModelAttribute ProjectDTO projectDTO,Model model) {
+    public String saveProject(@ModelAttribute ProjectDTO projectDTO) {
         projectBO.saveProject ( projectDTO );
         return "redirect:/projects";
     }
