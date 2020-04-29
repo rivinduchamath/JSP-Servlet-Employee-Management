@@ -110,7 +110,7 @@ public class EmployeeBOImpl implements EmployeeBO {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, 1);
         java.util.Date dt = cal.getTime();
-        Iterable <Employee> employees = employeeDAO.findEmployeesByDateBetween (date ,dt);
+        Iterable <Employee> employees = employeeDAO.findEmployeesByDateOfBirthBetween (date ,dt);
         List <EmployeeDTO> dtos = new ArrayList <> ( );
         for (Employee employeee : employees) {
             dtos.add ( new EmployeeDTO (

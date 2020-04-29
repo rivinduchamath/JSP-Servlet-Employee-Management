@@ -33,6 +33,6 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
      @Query(value = "SELECT Pic FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
      String findPic(String idNo);
 
-     Iterable<Employee> findEmployeesByDateBetween(Date date,Date date1);
+     Iterable<Employee> findEmployeesByDateOfBirthBetween(Date date,Date date1);
 
 }

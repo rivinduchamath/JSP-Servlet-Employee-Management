@@ -220,7 +220,7 @@
                         </h3>
                         <a style=" float: left" href="allAttendance">
                             <button   type='submit' class="btn btn-secondary" style="width: 100%;" value="Register" >
-                               Find All
+                               Find All <i class="fa fa-forward"></i>
                             </button>
                         </a>
                     </div>

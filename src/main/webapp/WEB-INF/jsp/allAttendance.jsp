@@ -77,20 +77,22 @@
         }
     </script>
     <style>
-        .row-selected{
+        .row-selected {
             background-color: rgba(36, 107, 218, 0.21) !important;
         }
     </style>
 </head>
 
 <body class="nav-md" style="cursor: pointer">
-<%! String date =""; %>
+<%! String date = ""; %>
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px" src="../../images/favicon.ico"><span style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
+                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px"
+                                                                 src="../../images/favicon.ico"><span
+                            style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -102,7 +104,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>  ${loggerName.name}</h2>
+                        <h2> ${loggerName.name}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -265,6 +267,7 @@
                                     }
                                     setTimeout("formatTime()", 1000);
                                 }
+
                                 window.onload = formatTime;
                             </script>
                             <form name="clock" style="float: right">
@@ -275,7 +278,8 @@
 
                                             <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6"
                                                    class="clock2" type="text" name="sivam" size="12"><br>
-                                            <p><%=date%> </p>
+                                            <p><%=date%>
+                                            </p>
 
                                         </h6>
 
@@ -326,17 +330,21 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <a href="/attendance">
-                                    <button style="float: right;font-weight: bolder"  class="btn btn-success"><i class="fa fa-backward"></i> Back</button>
+                                    <button style="float: right;font-weight: bolder" class="btn btn-success"><i
+                                            class="fa fa-backward"></i> Back
+                                    </button>
                                 </a>
                                 <div class="x_content">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="card-box table-responsive">
                                                 <p class="text-muted font-13 m-b-30">
-                                                    The User Table Provide To Find Data Of Users.If You Want Edit OR Remove User You Can Find
+                                                    The User Table Provide To Find Data Of Users.If You Want Edit OR
+                                                    Remove User You Can Find
                                                     User And Just Click On User Row.
                                                 </p>
-                                                <table id="datatable-buttons" class="table table-striped table-bordered">
+                                                <table id="datatable-buttons"
+                                                       class="table table-striped table-bordered">
                                                     <thead class="thead-light">
                                                     <tr>
                                                         <th>Attendance ID</th>
@@ -344,10 +352,10 @@
                                                         <th>Employee Id</th>
                                                         <th>Name</th>
                                                         <th>Position</th>
+                                                        <th>Img</th>
                                                         <th>In Time</th>
                                                         <th>Out Time</th>
                                                         <th>OT Hours</th>
-                                                        <th>Salary</th>
                                                         <th>Delete</th>
                                                         <th>Edit</th>
                                                     </tr>
@@ -355,20 +363,27 @@
                                                     </thead>
                                                     <tbody>
                                                     <c:forEach items="${listAttendanceTable}" var="e">
-                                                        <tr>
-                                                            <td>${e.attendanceId}</td>
-                                                            <td>${e.date}</td>
-                                                            <td>${e.employeeID}</td>
-                                                            <td>${e.empName}</td>
-                                                            <td>${e.position}</td>
-                                                            <td>${e.inTime}</td>
-                                                            <td>${e.outTime}</td>
-                                                            <td>${e.overtimeHours}</td>
-                                                            <td>${e.salary}</td>
-                                                            <td><a href="/delete?idNo=${e.attendanceId}"><span
-                                                                    class="glyphicon glyphicon-trash"></span></a></td>
-                                                            <td><a href="/edit-employee?idNo=${e.attendanceId }"><span
-                                                                    class="glyphicon glyphicon-pencil"></span></a></td>
+
+                                                        <td>${e.attendanceId}</td>
+                                                        <td>${e.date}</td>
+                                                        <td>${e.employeeID}</td>
+                                                        <td>${e.empName}</td>
+                                                        <td>${e.position}</td>
+                                                        <td>
+                                                            <ul class="list-inline">
+                                                                <li>
+                                                                    <img src="../../images/icons/${e.pic}"
+                                                                         class="avatar" alt="Avatar">
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>${e.inTime}</td>
+                                                        <td>${e.outTime}</td>
+                                                        <td>${e.overtimeHours}</td>
+                                                        <td><a href="/deleteAttendance?pid=${e.attendanceId}"><span
+                                                                class="glyphicon glyphicon-trash"></span></a></td>
+                                                        <td><a href="/edit-employee?idNo=${e.attendanceId }"><span
+                                                                class="glyphicon glyphicon-pencil"></span></a></td>
 
                                                         </tr>
                                                     </c:forEach>
@@ -430,9 +445,9 @@
     $("#datatable-responsive tbody").on('click', 'tr', function () {
         var date = new Date();
         var date2 = new Date();
-        var today = date.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
-        date2.setHours(date.getHours()+8);
-        var today2 = date2.getHours() +":" + (date.getMinutes())+":"+date.getSeconds();
+        var today = date.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
+        date2.setHours(date.getHours() + 8);
+        var today2 = date2.getHours() + ":" + (date.getMinutes()) + ":" + date.getSeconds();
         selectedRow = $(this);
         $("#itemCode").val($(this).find("td:first-child").text());
         $("#itemDesc").val($(this).find("td:nth-child(2)").text());
