@@ -25,6 +25,6 @@ public interface DashboardBO extends SuperBO {
     void deleteUser(String id) ;
 
     List<EmployeeDTO> findAllEmployees() ;
-
+    List<EmployeeDTO> upcomingBirthDays();
     EmployeeDTO findUser(String userCode) ;
 }

@@ -103,26 +103,7 @@ public class EmployeeBOImpl implements EmployeeBO {
         return null;
     }
 
-    @Override
-    public List <EmployeeDTO> upcomingBirthDays() {
-        DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
-        Date date = new Date();
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.MONTH, 1);
-        java.util.Date dt = cal.getTime();
-        Iterable <Employee> employees = employeeDAO.findEmployeesByDateOfBirthBetween (date ,dt);
-        List <EmployeeDTO> dtos = new ArrayList <> ( );
-        for (Employee employeee : employees) {
-            dtos.add ( new EmployeeDTO (
-                    employeee.getIdNo (),
-                    employeee.getName (),
-                    employeee.getPic (),
-                    employeee.getOccupation (),
-                    employeee.getDateOfBirth ()
-            ) );
-        }
-        return dtos;
-    }
+
     //Get Last employee Method
     @Override
     public String getLastUserCode() {

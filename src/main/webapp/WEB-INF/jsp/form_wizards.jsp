@@ -15,8 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Employee Management</title>
-    <link rel="icon" type="image/png" href="images/icons/title.png"/>
+    <title>Employee Management </title>
+    <link rel="icon" type="image/png" href="../../images/icons/gdfgd.png"/>
     <!-- Bootstrap -->
     <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -158,7 +158,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Form Wizards</h3>
+                <h3>Notice</h3>
               </div>
 
               <div class="title_right">
@@ -179,7 +179,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Form Wizards <small>Sessions</small></h2>
+                    <h2>Notice<small>Manage</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>

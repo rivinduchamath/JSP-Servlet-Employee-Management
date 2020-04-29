@@ -57,7 +57,7 @@ public class IndexController { //index.jsp Page Controller
             //Get Today Attendance
             model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
             //Get Upcoming Birth days(1 Month ahead )
-            model.addAttribute ( "upcomingBitrhDays", employeeBO.upcomingBirthDays ( ) );
+            model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
             //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );

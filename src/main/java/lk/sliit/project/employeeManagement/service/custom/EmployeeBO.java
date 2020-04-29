@@ -28,5 +28,5 @@ public interface EmployeeBO extends SuperBO {
 
     EmployeeDTO findUser(String userCode) ;
 
-    List<EmployeeDTO> upcomingBirthDays();
+
 }

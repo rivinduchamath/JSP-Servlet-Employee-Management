@@ -46,7 +46,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         //Show Today attendance in Dashboard
         model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
         //Show Upcoming BirthDays in Dashboard
-        model.addAttribute ( "upcomingBitrhDays", employeeBO.upcomingBirthDays ( ) );
+        model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
 
         //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );

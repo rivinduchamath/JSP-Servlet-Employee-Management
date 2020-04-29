@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.service.custom.impl;
 
+import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
@@ -9,6 +10,12 @@ import lk.sliit.project.employeeManagement.entity.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,7 +55,26 @@ public class DashboardBOImpl implements DashboardBO {
                 employee.getAttendanceId ()
         );
     }
-
+    @Override
+    public List <EmployeeDTO> upcomingBirthDays() {
+        DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
+        Date todaydate = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, 1);
+        java.util.Date dt = cal.getTime();
+        Iterable <Employee> employees = employeeDAO.findEmployeesByDateOfBirthBetween (todaydate ,dt);
+        List <EmployeeDTO> dtos = new ArrayList<> ( );
+        for (Employee employeee : employees) {
+            dtos.add ( new EmployeeDTO (
+                    employeee.getIdNo (),
+                    employeee.getName (),
+                    employeee.getPic (),
+                    employeee.getOccupation (),
+                    employeee.getDateOfBirth ()
+            ) );
+        }
+        return dtos;
+    }
     @Override
     public void save(EmployeeDTO employee) {
 
