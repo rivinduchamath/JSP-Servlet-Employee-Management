@@ -34,6 +34,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         DashBoardLoad ( model, employee );
     }
 
+
     String DashBoardLoad(Model model, EmployeeDTO employee) {
         //Get Male Count in Dashboard
         long maleCount = (dashboardBO.getMaleCount ( ));
