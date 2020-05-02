@@ -21,7 +21,6 @@ import java.io.IOException;
  */
 @Controller
 public class NoticeController { //form_wizards.jsp For All Notice
-
     @Autowired
     EmployeeBO employeeBO;
     @GetMapping("/form_wizards")
