@@ -17,6 +17,4 @@ public interface AttendanceDAO extends CrudRepository<Attendance, String> {
     //Get Today attendance
     Iterable<Attendance> findAttendanceByDateEquals(Date date);
 
-//    @Query(value = "SELECT overtimeHours FROM attendance WHERE employeeId=?1", nativeQuery = true)
-//    double getEmp(String idNo);
 }

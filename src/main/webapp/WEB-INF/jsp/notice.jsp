@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html lang="en">
   <head>
@@ -79,7 +81,7 @@
                 </li>
                 <li><a><i class="fa fa-table"></i> Notice <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="form_wizards">View All</a></li>
+                    <li><a href="notice">View All</a></li>
                   </ul>
                 </li>
               </ul>
@@ -241,49 +243,40 @@
                         </li>
                       </ul>
                       <div id="step-1">
-                        <form class="form-horizontal form-label-left">
+                        <form class="form-horizontal form-label-left" action="/noticeSave" name="noticeSave">
 
                           <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span class="required">*</span>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Notice Id<span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="first-name" required="required" class="form-control  ">
+                              <input type="text" readonly id="first-name" name="noticeId" value="${genNoticeId}" required="required" class="form-control  ">
                             </div>
                           </div>
                           <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Last Name <span class="required">*</span>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title<span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="last-name" name="last-name" required="required" class="form-control ">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Middle Name / Initial</label>
-                            <div class="col-md-6 col-sm-6 ">
-                              <input id="middle-name" class="form-control col" type="text" name="middle-name">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
-                            <div class="col-md-6 col-sm-6 ">
-                              <div id="gender" class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
-                                  <input type="radio" name="gender" value="male" class="join-btn"> &nbsp; Male &nbsp;
-                                </label>
-                                <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
-                                  <input type="radio" name="gender" value="female" class="join-btn"> Female
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                              <input id="birthday" class="date-picker form-control" required="required" type="text">
+                              <input type="text" id="last-name" name="title" required="required" class="form-control ">
                             </div>
                           </div>
 
+
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">Description <span class="required">*</span>
+                            </label>
+                            <div  class="col-md-6 col-sm-6 ">
+                              <input  style="height: 70px !important;"  id="birthday" name="description" class="date-picker form-control" required="required" type="text">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Date</label>
+                            <div class="col-md-6 col-sm-6 ">
+                              <input id="middle-name" class="date-picker form-control" type="date" name="date">
+                            </div>
+                          </div>
+                          <button type='submit' class="btn btn-primary" style=";margin-left: 60%; width: 15%" value="Register" >
+                            Save
+                          </button>
                         </form>
 
                       </div>
@@ -333,15 +326,62 @@
 
 
           </div>
+
           </div>
           </div>
           </div>
-          </div>
-        </div>
+<div>
+  <div class="x_content">
+
+    <table id="datatable-buttons" class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th style="width: 1%">#</th>
+        <th style="width: 20%">Title</th>
+        <th>Description</th>
+        <th>Date</th>
+
+        <th style="width: 20%">#Edit</th>
+      </tr>
+      </thead>
+      <tbody>
+      <c:forEach items="${findAllNotice}" var="a">
+        <tr>
+          <td>${a.noticeId}</td>
+          <td>
+            <a>${a.title}</a>
+          </td>
+          <td width="45%">
+            ${a.description}
+          </td>
+          <td>
+            <ul class="list-inline">
+               ${a.date}
+            </ul>
+          </td>
+
+          <td>
+
+            <a href="/edit-project?projectId=${a.noticeId}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>
+              Edit </a>
+            <a href="/noticeDelete/?noticeId=${a.noticeId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>
+              Delete </a>
+          </td>
+        </tr>
+      </c:forEach>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
         <!-- /page content -->
+
 
         <!-- footer content -->
       <footer>
+
         <div class="pull-right">
           Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
         </div>
@@ -350,7 +390,10 @@
         <!-- /footer content -->
       </div>
     </div>
+    </div>
 
+
+  </div>
     <!-- jQuery -->
     <script src="../../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

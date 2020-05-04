@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import = "java.util.Date" %>
-<%@ page import = "java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,8 +41,8 @@
 
 
     <%
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String date = sdf.format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat ( "dd-MM-yyyy" );
+        String date = sdf.format ( new Date ( ) );
     %>
 </head>
 
@@ -53,7 +53,9 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px" src="../../images/favicon.ico"><span style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
+                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px"
+                                                                 src="../../images/favicon.ico"><span
+                            style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -65,7 +67,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>  ${loggerName.name}</h2>
+                        <h2> ${loggerName.name}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -99,7 +101,7 @@
                             </li>
                             <li><a><i class="fa fa-table"></i> Notice <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="form_wizards">View All</a></li>
+                                    <li><a href="notice">View All</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -213,23 +215,26 @@
                                         hour = "12";
                                     }
 
-                                    document.clock.sivam.value = ((hour<=9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;
+                                    document.clock.sivam.value = ((hour <= 9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;
                                 }
 
                                 if (document.clock.sivamtime[1].checked) {
                                     if (min <= 9) {
-                                        min = "0" + min; }
+                                        min = "0" + min;
+                                    }
                                     if (sec <= 9) {
-                                        sec = "0" + sec; }
+                                        sec = "0" + sec;
+                                    }
                                     if (hour < 10) {
-                                        hour = "0" + hour; }
+                                        hour = "0" + hour;
+                                    }
                                     document.clock.sivam.value = hour + ':' + min + ':' + sec;
                                 }
 
                                 setTimeout("formatTime()", 1000);
                             }
 
-                            window.onload=formatTime;
+                            window.onload = formatTime;
 
                         </script>
                         <form name="clock" style="float: right">
@@ -238,17 +243,21 @@
                                     <td class="clock2">
                                     </td>
                                 </tr>
-                                <tr >
-                                    <h6  style="color:#73879C; float:right;border: none;background-color: #f6f6f6">
-                                        <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6" class="clock2" type="text" name="sivam" size="12"><br>
-                                        <p > <%=date%></p>
+                                <tr>
+                                    <h6 style="color:#73879C; float:right;border: none;background-color: #f6f6f6">
+                                        <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6"
+                                               class="clock2" type="text" name="sivam" size="12"><br>
+                                        <p><%=date%>
+                                        </p>
                                     </h6>
 
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label class="clock3" for="1"><input type="radio"style="display: none" id="1" name="sivamtime" checked></label><br>
-                                        <label class="clock3" for="2"><input type="radio" style="display: none" id="2" name="sivamtime"></label>
+                                        <label class="clock3" for="1"><input type="radio" style="display: none" id="1"
+                                                                             name="sivamtime" checked></label><br>
+                                        <label class="clock3" for="2"><input type="radio" style="display: none" id="2"
+                                                                             name="sivamtime"></label>
                                     </td>
                                 </tr>
                             </table>
@@ -257,7 +266,7 @@
 
                         <!--////////////////////////-->
 
-                    <!--//////////////////////////-->
+                        <!--//////////////////////////-->
                     </div>
                 </div>
 
@@ -267,7 +276,7 @@
 
                     <div class="col-md-12 col-sm-12 ">
                         <div class="x_panel">
-                            <div class="row" style="display: inline-block;" >
+                            <div class="row" style="display: inline-block;">
                                 <div class="tile_count">
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
@@ -282,27 +291,32 @@
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
                                         <div class="count">123.50</div>
-                                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+                                        <span class="count_bottom"><i class="green"><i
+                                                class="fa fa-sort-asc"></i>3% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-                                        <div class="count">  ${maleCountDashBoard}</div>
-                                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                                        <div class="count"> ${maleCountDashBoard}</div>
+                                        <span class="count_bottom"><i class="green"><i
+                                                class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
-                                        <div class="count">  ${femaleCountDashBoard}</div>
-                                        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+                                        <div class="count"> ${femaleCountDashBoard}</div>
+                                        <span class="count_bottom"><i class="red"><i
+                                                class="fa fa-sort-desc"></i>12% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
                                         <div class="count">2,315</div>
-                                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                                        <span class="count_bottom"><i class="green"><i
+                                                class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
                                         <div class="count">7,325</div>
-                                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                                        <span class="count_bottom"><i class="green"><i
+                                                class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                                     </div>
                                 </div>
                             </div>
@@ -314,12 +328,15 @@
                 <div class="col-md-6 col-sm-6  ">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Daily active users <small>Sessions</small></h2>
+                            <h2>Daily active users
+                                <small>Sessions</small>
+                            </h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="#">Settings 1</a>
                                         <a class="dropdown-item" href="#">Settings 2</a>
@@ -333,25 +350,27 @@
                         <div class="x_content">
                             <ul class="list-unstyled timeline">
                                 <c:forEach items="${todayAttendance}" var="e">
-                                <li>
-                                    <div class="block">
-                                        <div class="tags">
-                                            <a href="" class="tag">
-                                                <span><img style="height: 50px;width: 50px;border-radius: 10%" src="../../images/icons/${e.pic}"></span>
-                                            </a>
-                                        </div>
-                                        <div class="block_content">
-                                            <h2 class="title">
-                                                <a>${e.empName}</a>
-                                            </h2>
-                                            <div class="byline">
-                                                <span>Position :-</span> <a>${e.position}</a>
+                                    <li>
+                                        <div class="block">
+                                            <div class="tags">
+                                                <a href="" class="tag">
+                                                    <span><img style="height: 50px;width: 50px;border-radius: 10%"
+                                                               src="../../images/icons/${e.pic}"></span>
+                                                </a>
                                             </div>
-                                            <p class="excerpt">In Time :- ${e.inTime} <br> OutTime :- ${e.outTime}<a></a>
-                                            </p>
+                                            <div class="block_content">
+                                                <h2 class="title">
+                                                    <a>${e.empName}</a>
+                                                </h2>
+                                                <div class="byline">
+                                                    <span>Position :-</span> <a>${e.position}</a>
+                                                </div>
+                                                <p class="excerpt">In Time :- ${e.inTime} <br> OutTime
+                                                    :- ${e.outTime}<a></a>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
                                 </c:forEach>
                             </ul>
 
@@ -361,17 +380,20 @@
                 <div class="col-md-6">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="cursor: auto">Upcoming Birthdays >><small>
-                                <a href="calendar" style="color:#007bff;cursor: pointer"
-                                  onMouseOver="this.style.color='red'; this.style.fontWeight='bold'"
-                                  onMouseOut="this.style.color='#007bff'; this.style.fontWeight='normal'"
-                                > Watch Calendar</a></small></h2>
+                            <h2 style="cursor: auto">Upcoming Birthdays >>
+                                <small>
+                                    <a href="calendar" style="color:#007bff;cursor: pointer"
+                                       onMouseOver="this.style.color='red'; this.style.fontWeight='bold'"
+                                       onMouseOut="this.style.color='#007bff'; this.style.fontWeight='normal'"
+                                    > Watch Calendar</a></small>
+                            </h2>
                             <ul class="nav navbar-right panel_toolbox">
 
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="#">Settings 1</a>
                                         <a class="dropdown-item" href="#">Settings 2</a>
@@ -385,22 +407,22 @@
                         <div class="x_content">
                             <ul class="list-unstyled msg_list">
                                 <c:forEach items="${upcomingBitrhDays}" var="q">
-                                <li>
-                                    <a>
+                                    <li>
+                                        <a>
                         <span class="image">
-                          <img style="border-radius: 100%" src="../../images/icons/${q.pic}" alt="img" />
+                          <img style="border-radius: 100%" src="../../images/icons/${q.pic}" alt="img"/>
                         </span>
-                                        <span>
-                          <span>${q.name}</span>
-                          <span class="time">Date Of Birth : ${q.dateOfBirth}</span>
-                        </span>
-                                        <span class="message">
+                       <span>
+                            <span>${q.name}</span>
+                            <span class="time">Date Of Birth : ${q.dateOfBirth}</span>
+                       </span>
+                       <span class="message">
                                             Hope your special day brings you all that your heart desires! Here’s wishing you a day full of pleasant surprises! Happy birthday!
                                             to Our
-                                                ${q.occupation}
+                                            ${q.occupation}
                         </span>
-                                    </a>
-                                </li>
+                                        </a>
+                                    </li>
                                 </c:forEach>
                             </ul>
                         </div>
@@ -413,7 +435,8 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
+                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
+                Wijayarathna</a>
             </div>
             <div class="clearfix"></div>
         </footer>

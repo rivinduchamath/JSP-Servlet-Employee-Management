@@ -82,7 +82,7 @@
                 </li>
                 <li><a><i class="fa fa-table"></i> Notice <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="form_wizards">View All</a></li>
+                    <li><a href="notice">View All</a></li>
                   </ul>
                 </li>
               </ul>
