@@ -1,16 +1,19 @@
 package lk.sliit.project.employeeManagement.controller.dashboard;
 
+import lk.sliit.project.employeeManagement.dto.NoticeDTO;
 import lk.sliit.project.employeeManagement.service.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.service.custom.NoticeBO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServlet;
+import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -27,6 +30,8 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
     private DashboardBO dashboardBO;
     @Autowired
     private EmployeeBO employeeBO;
+    @Autowired
+    private NoticeBO noticeBO;
 
     //Find Total employee Count For DashBoard
     @RequestMapping("/Dashboard")  //Control dashboard.jsp Page
@@ -48,7 +53,8 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
         //Show Upcoming BirthDays in Dashboard
         model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
-
+        List<NoticeDTO> p =  noticeBO.findAllNoticeDesc();
+        model.addAttribute ( "findAllNoticea", p );
         //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
         else model.addAttribute ( "maleCountDashBoard", 0 );

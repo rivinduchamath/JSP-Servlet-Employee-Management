@@ -412,15 +412,58 @@
                         <span class="image">
                           <img style="border-radius: 100%" src="../../images/icons/${q.pic}" alt="img"/>
                         </span>
-                       <span>
+                                            <span>
                             <span>${q.name}</span>
                             <span class="time">Date Of Birth : ${q.dateOfBirth}</span>
                        </span>
-                       <span class="message">
+                                            <span class="message">
                                             Hope your special day brings you all that your heart desires! Here’s wishing you a day full of pleasant surprises! Happy birthday!
                                             to Our
                                             ${q.occupation}
                         </span>
+                                        </a>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="cursor: auto"> Notice
+                            </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <ul class="list-unstyled msg_list">
+                                <c:forEach items="${findAllNoticea}" var="q">
+                                    <li>
+                                        <a>
+                        <span class="image">
+                        Notice ID :  ${q.noticeId}
+                        </span><br>
+                        <span>
+                            <span>Title : ${q.title}</span><br>
+                             <span class="message">Description :  ${q.description}</span>
+                       </span>
+                        <span class="">Date : ${q.date}</span>
                                         </a>
                                     </li>
                                 </c:forEach>
