@@ -6,9 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import = "java.util.Date" %>
+<%@ page import = "java.text.SimpleDateFormat" %>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -246,32 +246,35 @@
                         <form class="form-horizontal form-label-left" action="/noticeSave" name="noticeSave">
 
                           <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Notice Id<span class="required">*</span>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="noticeId">Notice Id<span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" readonly id="first-name" name="noticeId" value="${genNoticeId}" required="required" class="form-control  ">
+                              <input type="text" readonly id="noticeId" name="noticeId" value="${genNoticeId}" required="required" class="form-control  ">
                             </div>
                           </div>
+
                           <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title<span class="required">*</span>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Title<span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="last-name" name="title" required="required" class="form-control ">
+                              <input type="text" id="title" name="title" required="required" class="form-control ">
                             </div>
                           </div>
 
 
                           <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align">Description <span class="required">*</span>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Description<span class="required">*</span>
                             </label>
                             <div  class="col-md-6 col-sm-6 ">
-                              <input  style="height: 70px !important;"  id="birthday" name="description" class="date-picker form-control" required="required" type="text">
-                            </div>
+                            <input type="text" class="form-control" style="height: 70px !important;"
+                                   required="required" name="description"
+                                   id="description"/>
+                          </div>
                           </div>
                           <div class="form-group row">
-                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Date</label>
+                            <label  class="col-form-label col-md-3 col-sm-3 label-align" for="date">Date</label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input id="middle-name" class="date-picker form-control" type="date" name="date">
+                              <input id="date" class="date-picker form-control" type="date" name="date">
                             </div>
                           </div>
                           <button type='submit' class="btn btn-primary" style=";margin-left: 60%; width: 15%" value="Register" >
@@ -326,77 +329,61 @@
 
 
           </div>
+                  <div class="x_content">
 
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                      <thead>
+                      <tr>
+                        <th style="width: 1%">#</th>
+                        <th width="30%" >Title</th>
+                        <th width="40%">Description</th>
+                        <th>Date</th>
+                        <th>#Edit</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <c:forEach items="${findAllNotice}" var="a">
+                        <tr>
+                          <td>${a.noticeId}</td>
+                          <td style="font-weight: bold">${a.title}</td>
+                          <td>${a.description}</td>
+                          <td>${a.date}</td>
+
+                          <td>
+                            <a style="color: white;font-weight: bold" onclick="getValue();" class="btn btn-info btn-xs">
+                              Update </a>
+                            <a href="/noticeDelete/?noticeId=${a.noticeId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>
+                              Delete </a>
+                          </td>
+                        </tr>
+                      </c:forEach>
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                  <footer>
+
+                    <div class="pull-right">
+                      Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
+                    </div>
+                    <div class="clearfix"></div>
+                  </footer>
           </div>
           </div>
           </div>
-<div>
-  <div class="x_content">
-
-    <table id="datatable-buttons" class="table table-striped table-bordered">
-      <thead>
-      <tr>
-        <th style="width: 1%">#</th>
-        <th style="width: 20%">Title</th>
-        <th>Description</th>
-        <th>Date</th>
-
-        <th style="width: 20%">#Edit</th>
-      </tr>
-      </thead>
-      <tbody>
-      <c:forEach items="${findAllNotice}" var="a">
-        <tr>
-          <td>${a.noticeId}</td>
-          <td>
-            <a>${a.title}</a>
-          </td>
-          <td width="45%">
-            ${a.description}
-          </td>
-          <td>
-            <ul class="list-inline">
-               ${a.date}
-            </ul>
-          </td>
-
-          <td>
-
-            <a href="/edit-project?projectId=${a.noticeId}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>
-              Edit </a>
-            <a href="/noticeDelete/?noticeId=${a.noticeId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>
-              Delete </a>
-          </td>
-        </tr>
-      </c:forEach>
-      </tbody>
-    </table>
-
-
-  </div>
-</div>
-
-        <!-- /page content -->
-
-
-        <!-- footer content -->
-      <footer>
-
-        <div class="pull-right">
-          Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
-        </div>
-        <div class="clearfix"></div>
-      </footer>
-        <!-- /footer content -->
-      </div>
+          </div>
+          </div>
     </div>
     </div>
 
 
-  </div>
     <!-- jQuery -->
     <script src="../../vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
+
+
+
+  <!-- Bootstrap -->
    <script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FastClick -->
     <script src="../../vendors/fastclick/lib/fastclick.js"></script>
@@ -407,6 +394,21 @@
     <!-- Custom Theme Scripts -->
     <script src="../../build/js/custom.min.js"></script>
 
-	
+  <script>
+      getValue()
+
+
+      function getValue() {
+          var selectedRow = null;
+          $("#datatable-buttons tbody").on('click', 'tr', function () {
+              selectedRow = $(this);
+              $("#noticeId").val($(this).find("td:first-child").text());
+              $("#title").val($(this).find("td:nth-child(2)").text());
+              $("#description").val($(this).find("td:nth-child(3)").text());
+              $("#date").val($(this).find("td:nth-child(4)").text());
+              selectedRow.addClass('row-selected');
+          });
+      }
+  </script>
   </body>
 </html>
