@@ -53,7 +53,6 @@ public class NoticeController { //notice.jsp For All Notice
         }catch (Exception e){
             System.out.println ("Notice Id =" +noticeId+" Not Found" );
         }
-
         return "redirect:/notice";
     }
 
