@@ -313,10 +313,10 @@
                                                 class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
-                                        <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
-                                        <div class="count">7,325</div>
+                                        <span class="count_top"><i class="fa fa-user"></i> Today Attendance</span>
+                                        <div class="count">${todayAttendanceCount}</div>
                                         <span class="count_bottom"><i class="green"><i
-                                                class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                                        class="fa fa-sort-asc"></i>22%</i> Attendance</span>
                                     </div>
                                 </div>
                             </div>

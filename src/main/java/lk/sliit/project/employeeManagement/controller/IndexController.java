@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.controller;
 
+import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.NoticeDTO;
 import lk.sliit.project.employeeManagement.service.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
@@ -59,7 +60,12 @@ public class IndexController { //index.jsp Page Controller
             long femaleCount = dashboardBO.getFemaleCount ( );
 
             //Get Today Attendance
-            model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
+            List<AttendanceDTO> attendanceDTOS =attendanceBO.findTodayAttendance ( );
+           int count =0;
+            for (AttendanceDTO attendanceDTO: attendanceDTOS) {
+                count++;
+            }
+            model.addAttribute ( "todayAttendance",attendanceDTOS );
             //Get Upcoming Birth days(1 Month ahead )
             model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
             List<NoticeDTO> p =  noticeBO.findAllNoticeDesc();
@@ -67,6 +73,7 @@ public class IndexController { //index.jsp Page Controller
 
             model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));
             model.addAttribute ( "totalProjects", (dashboardBO.getTotalProjects ( )));
+            model.addAttribute ( "todayAttendanceCount", count);
                     //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );
