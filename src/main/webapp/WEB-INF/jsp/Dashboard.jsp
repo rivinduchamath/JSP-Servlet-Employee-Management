@@ -39,11 +39,11 @@
     <!-- Custom Theme Style -->
     <link href="../../build/css/custom.min.css" rel="stylesheet">
 
-
     <%
         SimpleDateFormat sdf = new SimpleDateFormat ( "dd-MM-yyyy" );
         String date = sdf.format ( new Date ( ) );
     %>
+
 </head>
 
 <body class="nav-md" style="cursor: pointer">
@@ -289,10 +289,10 @@
                                         <span class="count_bottom"><i class="green">4% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
-                                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-                                        <div class="count">123.50</div>
+                                        <span class="count_top"><i class="fa fa-clock-o"></i> Total Time</span>
+                                        <div class="count">${totalTime}</div>
                                         <span class="count_bottom"><i class="green"><i
-                                                class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+                                                class="fa fa-sort-asc"></i>3% </i> From Attendance</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
@@ -495,8 +495,12 @@
                             <div id="echart_world_map" style="height:370px;"></div>
 
                         </div>
+
                     </div>
                 </div>
+                      <!--////////////////////////////////////////////////////-->
+
+                <!--///////////////////////////////////////////////////-->
             </div>
         </div>
         <!-- /page content -->
@@ -512,6 +516,8 @@
         <!-- /footer content -->
     </div>
 </div>
+
+
 
 <!-- jQuery -->
 <script src="../../vendors/jquery/dist/jquery.min.js"></script>
@@ -541,6 +547,7 @@
 <script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
 <script src="../../vendors/echarts/dist/echarts.min.js"></script>
 <script src="../../vendors/echarts/map/js/world.js"></script>
+
 <!-- Custom Theme Scripts -->
 <script src="../../build/js/custom.min.js"></script>
 

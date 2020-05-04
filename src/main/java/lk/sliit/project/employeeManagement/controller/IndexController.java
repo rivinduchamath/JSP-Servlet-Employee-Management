@@ -64,7 +64,9 @@ public class IndexController { //index.jsp Page Controller
             model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
             List<NoticeDTO> p =  noticeBO.findAllNoticeDesc();
             model.addAttribute ( "findAllNoticea", p );
-            //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
+
+            model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));
+                    //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );
 

@@ -55,6 +55,8 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
         List<NoticeDTO> p =  noticeBO.findAllNoticeDesc();
         model.addAttribute ( "findAllNoticea", p );
+
+        model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));
         //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
         else model.addAttribute ( "maleCountDashBoard", 0 );

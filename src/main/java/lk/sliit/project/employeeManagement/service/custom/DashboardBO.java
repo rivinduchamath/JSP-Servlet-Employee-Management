@@ -27,4 +27,6 @@ public interface DashboardBO extends SuperBO {
     List<EmployeeDTO> findAllEmployees() ;
     List<EmployeeDTO> upcomingBirthDays();
     EmployeeDTO findUser(String userCode) ;
+
+    double getTotalTime();
 }
