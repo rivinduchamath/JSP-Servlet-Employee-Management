@@ -45,6 +45,7 @@ public class NoticeController { //notice.jsp For All Notice
         mav.addObject ( "findAllNotice", p );
         return mav;
     }
+
     @RequestMapping("noticeDelete")//deleteNotice
     public String deleteNotice(@RequestParam String noticeId) {
         //Calling delete Notice Method
