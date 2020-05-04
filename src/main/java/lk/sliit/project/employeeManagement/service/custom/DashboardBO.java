@@ -29,4 +29,6 @@ public interface DashboardBO extends SuperBO {
     EmployeeDTO findUser(String userCode) ;
 
     double getTotalTime();
+
+    double getTotalProjects();
 }

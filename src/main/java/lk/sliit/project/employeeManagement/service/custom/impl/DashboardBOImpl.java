@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.service.custom.impl;
 
+import lk.sliit.project.employeeManagement.dao.ProjectDAO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
@@ -28,6 +29,8 @@ public class DashboardBOImpl implements DashboardBO {
 
     @Autowired
     private EmployeeDAO employeeDAO;
+    @Autowired
+    private ProjectDAO projectDAO;
 
     @Autowired
     private AttendanceDAO attendanceDAO;
@@ -113,5 +116,10 @@ public class DashboardBOImpl implements DashboardBO {
         }
         count += (t *8);
         return count;
+    }
+
+    @Override
+    public double getTotalProjects() {
+        return projectDAO.count ();
     }
 }
