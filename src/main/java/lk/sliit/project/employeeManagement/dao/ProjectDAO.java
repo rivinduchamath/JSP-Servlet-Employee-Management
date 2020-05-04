@@ -9,8 +9,6 @@ import org.springframework.data.repository.CrudRepository;
  */
 //Interface ProjectDAO Extend From CrudRepository InterFace
 public interface ProjectDAO extends CrudRepository<Project, String> {
-    //Get Project from id
-    Project getProjectByProjectId(String idNo);
-
+    //Get Highest Project from id
     Project findTopByOrderByProjectIdDesc();
 }

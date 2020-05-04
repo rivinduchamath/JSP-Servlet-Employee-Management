@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.service.custom.impl;
 
+import lk.sliit.project.employeeManagement.dao.ProjectDAO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
@@ -28,6 +29,8 @@ public class DashboardBOImpl implements DashboardBO {
 
     @Autowired
     private EmployeeDAO employeeDAO;
+    @Autowired
+    private ProjectDAO projectDAO;
 
     @Autowired
     private AttendanceDAO attendanceDAO;
@@ -98,5 +101,25 @@ public class DashboardBOImpl implements DashboardBO {
     @Override
     public EmployeeDTO findUser(String userCode) {
         return null;
+    }
+
+    @Override
+    public double getTotalTime() {
+        Iterable <Attendance> allItems = attendanceDAO.findAll ();
+    double tot =0;
+    double t =0;
+    double count = 0;
+        for (Attendance attendance : allItems) {
+            tot= attendance.getOvertimeHours ();
+            t++;
+            count += tot;
+        }
+        count += (t *8);
+        return count;
+    }
+
+    @Override
+    public double getTotalProjects() {
+        return projectDAO.count ();
     }
 }

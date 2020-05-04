@@ -39,11 +39,11 @@
     <!-- Custom Theme Style -->
     <link href="../../build/css/custom.min.css" rel="stylesheet">
 
-
     <%
         SimpleDateFormat sdf = new SimpleDateFormat ( "dd-MM-yyyy" );
         String date = sdf.format ( new Date ( ) );
     %>
+
 </head>
 
 <body class="nav-md" style="cursor: pointer">
@@ -289,10 +289,10 @@
                                         <span class="count_bottom"><i class="green">4% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
-                                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-                                        <div class="count">123.50</div>
+                                        <span class="count_top"><i class="fa fa-clock-o"></i> Total Time</span>
+                                        <div class="count">${totalTime}</div>
                                         <span class="count_bottom"><i class="green"><i
-                                                class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+                                                class="fa fa-sort-asc"></i>3% </i> From Attendance</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
@@ -307,16 +307,16 @@
                                                 class="fa fa-sort-desc"></i>12% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
-                                        <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
-                                        <div class="count">2,315</div>
+                                        <span class="count_top"><i class="fa fa-user"></i> Total Projects</span>
+                                        <div class="count">${totalProjects}</div>
                                         <span class="count_bottom"><i class="green"><i
                                                 class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
-                                        <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
-                                        <div class="count">7,325</div>
+                                        <span class="count_top"><i class="fa fa-user"></i> Today Attendance</span>
+                                        <div class="count">${todayAttendanceCount}</div>
                                         <span class="count_bottom"><i class="green"><i
-                                                class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                                        class="fa fa-sort-asc"></i>22%</i> Attendance</span>
                                     </div>
                                 </div>
                             </div>
@@ -412,11 +412,11 @@
                         <span class="image">
                           <img style="border-radius: 100%" src="../../images/icons/${q.pic}" alt="img"/>
                         </span>
-                       <span>
+                                            <span>
                             <span>${q.name}</span>
                             <span class="time">Date Of Birth : ${q.dateOfBirth}</span>
                        </span>
-                       <span class="message">
+                                            <span class="message">
                                             Hope your special day brings you all that your heart desires! Here’s wishing you a day full of pleasant surprises! Happy birthday!
                                             to Our
                                             ${q.occupation}
@@ -428,6 +428,79 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2 style="cursor: auto"> Notice
+                            </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <ul class="list-unstyled msg_list">
+                                <c:forEach items="${findAllNoticea}" var="q">
+                                    <li>
+                                        <a>
+                        <span class="image">
+                        Notice ID :  ${q.noticeId}
+                        </span><br>
+                        <span>
+                            <span>Title : ${q.title}</span><br>
+                             <span class="message">Description :  ${q.description}</span>
+                       </span>
+                        <span class="">Date : ${q.date}</span>
+                                        </a>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12  ">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>World Map</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <div id="echart_world_map" style="height:370px;"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+                      <!--////////////////////////////////////////////////////-->
+
+                <!--///////////////////////////////////////////////////-->
             </div>
         </div>
         <!-- /page content -->
@@ -443,6 +516,8 @@
         <!-- /footer content -->
     </div>
 </div>
+
+
 
 <!-- jQuery -->
 <script src="../../vendors/jquery/dist/jquery.min.js"></script>
@@ -470,6 +545,8 @@
 <script src="../../vendors/jszip/dist/jszip.min.js"></script>
 <script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
+<script src="../../vendors/echarts/dist/echarts.min.js"></script>
+<script src="../../vendors/echarts/map/js/world.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="../../build/js/custom.min.js"></script>

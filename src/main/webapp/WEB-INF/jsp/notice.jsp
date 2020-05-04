@@ -27,6 +27,7 @@
 
     <!-- Custom Theme Style -->
     <link href="../../build/css/custom.min.css" rel="stylesheet">
+
   </head>
 
   <body class="nav-md" style="cursor: pointer">
@@ -274,7 +275,7 @@
                           <div class="form-group row">
                             <label  class="col-form-label col-md-3 col-sm-3 label-align" for="date">Date</label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input id="date" class="date-picker form-control" type="date" name="date">
+                              <input id="date"  class="date-picker form-control" type="date" name="date">
                             </div>
                           </div>
                           <button type='submit' class="btn btn-primary" style=";margin-left: 60%; width: 15%" value="Register" >
@@ -395,6 +396,7 @@
     <script src="../../build/js/custom.min.js"></script>
 
   <script>
+
       getValue()
 
 

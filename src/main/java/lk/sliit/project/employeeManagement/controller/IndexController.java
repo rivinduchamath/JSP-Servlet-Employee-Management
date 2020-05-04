@@ -1,9 +1,12 @@
 package lk.sliit.project.employeeManagement.controller;
 
+import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
+import lk.sliit.project.employeeManagement.dto.NoticeDTO;
 import lk.sliit.project.employeeManagement.service.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
+import lk.sliit.project.employeeManagement.service.custom.NoticeBO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -27,7 +31,8 @@ public class IndexController { //index.jsp Page Controller
     DashboardBO dashboardBO;
     @Autowired
     AttendanceBO attendanceBO;
-
+    @Autowired
+    private NoticeBO noticeBO;
     //Initial Load Page http://localhost:8091/login
     @Scope(scopeName = "")
     @GetMapping("/login")
@@ -55,10 +60,21 @@ public class IndexController { //index.jsp Page Controller
             long femaleCount = dashboardBO.getFemaleCount ( );
 
             //Get Today Attendance
-            model.addAttribute ( "todayAttendance", attendanceBO.findTodayAttendance ( ) );
+            List<AttendanceDTO> attendanceDTOS =attendanceBO.findTodayAttendance ( );
+           int count =0;
+            for (AttendanceDTO attendanceDTO: attendanceDTOS) {
+                count++;
+            }
+            model.addAttribute ( "todayAttendance",attendanceDTOS );
             //Get Upcoming Birth days(1 Month ahead )
             model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
-            //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
+            List<NoticeDTO> p =  noticeBO.findAllNoticeDesc();
+            model.addAttribute ( "findAllNoticea", p );
+
+            model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));
+            model.addAttribute ( "totalProjects", (dashboardBO.getTotalProjects ( )));
+            model.addAttribute ( "todayAttendanceCount", count);
+                    //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
             if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
             else model.addAttribute ( "maleCountDashBoard", 0 );
 

@@ -17,4 +17,6 @@ public interface NoticeBO extends SuperBO {
     List<NoticeDTO> findAllNotice();
 
     void deleteNotice(String noticeId);
+
+    List<NoticeDTO> findAllNoticeDesc();
 }

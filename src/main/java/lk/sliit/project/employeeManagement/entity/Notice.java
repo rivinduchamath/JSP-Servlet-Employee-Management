@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
@@ -13,6 +14,7 @@ public class Notice implements  SuperEntity{
     @Id
     private  String noticeId;
     private  String title;
+    @Column(length = 1000)
     private  String description;
     private Date date;
 
