@@ -58,7 +58,6 @@ public class NoticeController { //notice.jsp For All Notice
 
     @RequestMapping("noticeSave")//Save Or Update notice
     public String addNotice(@ModelAttribute NoticeDTO noticeDTO,Model model) {
-
         //Calling Update|Save Method
         noticeBO.addNotice ( noticeDTO );
         return "redirect:/notice";
