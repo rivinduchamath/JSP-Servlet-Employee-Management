@@ -92,5 +92,4 @@ public class SalaryBOImpl implements SalaryBO {
         return dtos;
     }
 
-
 }
