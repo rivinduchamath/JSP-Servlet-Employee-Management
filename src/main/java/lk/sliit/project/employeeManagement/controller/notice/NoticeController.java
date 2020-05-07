@@ -1,10 +1,8 @@
 package lk.sliit.project.employeeManagement.controller.notice;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
+
 import lk.sliit.project.employeeManagement.controller.SuperController;
-import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.NoticeDTO;
-import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import lk.sliit.project.employeeManagement.dto.SalaryDTO;
 import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.service.custom.NoticeBO;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
