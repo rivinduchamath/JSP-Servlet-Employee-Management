@@ -101,7 +101,7 @@
                 <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="login">Login Page</a></li>
-                    <li><a href="pricing_tables.jsp">Pricing Tables</a></li>
+                    <li><a href="pricing_tables">Pricing Tables</a></li>
                   </ul>
                 </li>
               </ul>
