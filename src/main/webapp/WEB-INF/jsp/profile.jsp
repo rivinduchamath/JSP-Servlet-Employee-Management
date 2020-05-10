@@ -102,7 +102,7 @@
                     <li><a href="media_gallery">View Images</a></li>
                     <li><a href="calendar">Calendar</a></li>
                     <li><a href="e_commerce">E-commerce</a></li>
-                    <li><a href="pricing_tables.jsp">Pricing Tables</a></li>
+                    <li><a href="pricing_tables">Pricing Tables</a></li>
                     <li><a href="login">Login Page</a></li>
                   </ul>
                 </li>

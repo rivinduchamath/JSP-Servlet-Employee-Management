@@ -18,5 +18,10 @@ public class E_CommerceController {//pricing_tables Page Controller
         ModelAndView mav = new ModelAndView ( "e_commerce" );
         return mav;
     }
+    @GetMapping("/pricing_tables")//Load E Com JSP Page
+    public ModelAndView load_AllInventry( ) throws ServletException,IllegalStateException, IOException {
+        ModelAndView mav = new ModelAndView ( "pricing_tables" );
+        return mav;
+    }
 }//End Class
 
