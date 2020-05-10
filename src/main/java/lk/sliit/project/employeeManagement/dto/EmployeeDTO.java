@@ -24,8 +24,7 @@ public class EmployeeDTO {
     private boolean admin;
 
     //Default Constructor
-    public EmployeeDTO() {
-    }
+    public EmployeeDTO() { }
 
     //Full arg Constructor
     public EmployeeDTO(String idNo, String name, int mobileNumber,
