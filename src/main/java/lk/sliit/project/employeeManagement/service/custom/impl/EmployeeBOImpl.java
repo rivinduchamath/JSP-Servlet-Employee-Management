@@ -19,7 +19,7 @@ import java.util.List;
  * Date: 08-Mar-20
  */
 @Service
-@Transactional
+@Transactional//Employee BusinessLogic / Service Implementation Class
 public class EmployeeBOImpl implements EmployeeBO {
 
     //Automate Object Creation
@@ -43,7 +43,7 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employee.isAdmin ()
 
         ));
-    }
+    }//End Save
 
     //Update Method
     @Override
@@ -64,7 +64,7 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employee.isAdmin ()
 
         );
-    }
+    }//End Update
 
 
 
@@ -95,35 +95,19 @@ public class EmployeeBOImpl implements EmployeeBO {
             ));
         }
         return dtos;
-    }
+    }//End Find All
 
-    //Find Single User
-    @Override
-    public EmployeeDTO findUser(String itemCode) {
-        return null;
-    }
-
-
-    //Get Last employee Method
-    @Override
-    public String getLastUserCode() {
-        return null;
-    }
-
-    @Override
+    @Override//Check Employee Is Exists
     public boolean exists(String i) {
         if ( employeeDAO.exists (  ( i ) )) {
             return true;
         }
         return false;
     }
-    @Override
-    public Employee findByIdNoAndPassword(String idNo, String password) {
-        return employeeDAO.findByIdNoAndPassword(idNo, password);
 
-    }
 
-    @Override
+    @Override//Find Employee by id
+    @Transactional(readOnly = true)
     public EmployeeDTO getEmployeeByIdNo(String idNo) {
         Employee employee = employeeDAO.findOne (idNo);
         return new EmployeeDTO (employee.getIdNo (),
@@ -140,6 +124,6 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employee.isAdmin ()
                 );
 
-    }
+    }//End Find by id
 
-}
+}//End Class

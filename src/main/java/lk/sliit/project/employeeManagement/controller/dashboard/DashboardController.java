@@ -60,7 +60,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         model.addAttribute ( "todayAttendance", attendanceDTOS );
         //Show Upcoming BirthDays in Dashboard
         model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
-        List<NoticeDTO> p =  noticeBO.findAllNoticeDesc();
+        List<NoticeDTO> p =  dashboardBO.findAllNoticeDesc();
         model.addAttribute ( "findAllNoticea", p );
 
         model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));

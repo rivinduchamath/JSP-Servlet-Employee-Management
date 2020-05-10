@@ -21,12 +21,13 @@ import java.util.List;
  * Date: 03-May-20
  */
 @Service
-@Transactional
+@Transactional//Notice BusinessLogic / Service Implementation Class
 public class NoticeBOImpl implements NoticeBO {
-
+    //Automate Object Creation
     @Autowired
     NoticeDAO noticeDAO;
-    @Override
+
+    @Override//Get Highest Notice Id
     public NoticeDTO getNoticeId() {
         Notice notice = noticeDAO.findTopByOrderByNoticeIdDesc ();
         return new NoticeDTO (
@@ -34,7 +35,7 @@ public class NoticeBOImpl implements NoticeBO {
         );
     }
 
-    @Override
+    @Override//Save Or Update Notice
     public void addNotice(NoticeDTO noticeDTO) {
         noticeDAO.save(new Notice (
                 noticeDTO.getNoticeId (),
@@ -42,10 +43,9 @@ public class NoticeBOImpl implements NoticeBO {
                 noticeDTO.getDescription (),
                 noticeDTO.getDate ()
                ));
-
     }
 
-    @Override
+    @Override//Get All Notice
     public List<NoticeDTO> findAllNotice() {
         Iterable <Notice> allItems = noticeDAO.findAll();
     List <NoticeDTO> dtos = new ArrayList<> ();
@@ -58,30 +58,10 @@ public class NoticeBOImpl implements NoticeBO {
         ));
     }
         return dtos;
-}
+}//End Find all
 
-    @Override
+    @Override//Delete Notice
     public void deleteNotice(String noticeId) {
         noticeDAO.delete (noticeId); }
 
-    @Override
-    public List <NoticeDTO> findAllNoticeDesc() {
-        Date todaydate = new Date();
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.MONTH, -1);
-        java.util.Date dt = cal.getTime();
-        Iterable <Notice> allItems = noticeDAO.findAllByDateBetweenOrderByDateDesc( dt, todaydate);
-        List <NoticeDTO> dtos = new ArrayList<> ();
-        for (Notice notice : allItems) {
-            dtos.add(new NoticeDTO (
-                    notice.getNoticeId (),
-                    notice.getTitle (),
-                    notice.getDescription (),
-                    notice.getDate ()
-            ));
-        }
-        return dtos;
-    }
-
-
-}
+}//End Class

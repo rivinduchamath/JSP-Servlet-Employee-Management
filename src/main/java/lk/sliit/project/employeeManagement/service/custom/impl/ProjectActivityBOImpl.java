@@ -16,12 +16,15 @@ import java.util.List;
  * Date: 17-Apr-20
  */
 @Service
-@Transactional
+@Transactional//ProjectActivity BusinessLogic / Service Implementation Class
 public class ProjectActivityBOImpl implements ProjectActivityBO {
+    //Automate Object Creation
     @Autowired
     ProjectActivityDAO projectActivityDAO;
     @Autowired
     ProjectDAO projectDAO;
+
+    //Get All Project Activities According To the Selected Project
     @Override
     public List<ProjectActivityDTO> loadProjectActivity(String projectId) {
         Iterable <ProjectActivity> projectActivities = projectActivityDAO.findProjectActivitiesByProjectsIDEquals ( projectId );
@@ -35,11 +38,10 @@ public class ProjectActivityBOImpl implements ProjectActivityBO {
                     projectActivity.getProjectsID ().getProjectId ()
             ) );
         }
-        System.out.println (dtos );
         return dtos;
-    }
+    }//Get All Project Activities Method
 
-    @Override
+    @Override//Get Top Project Activity ID to gen Activity Id
     public ProjectActivityDTO getgenActivityIdCount() {
         ProjectActivity projectActivity = projectActivityDAO.findTopByOrderByActivityIdDesc ();
         return new ProjectActivityDTO (
@@ -47,7 +49,7 @@ public class ProjectActivityBOImpl implements ProjectActivityBO {
         );
     }
 
-    @Override
+    @Override //Save OR Update Activity To Selected Project
     public void save(ProjectActivityDTO projectActivity) {
         projectActivityDAO.save(new ProjectActivity (
                 projectActivity.getActivityId (),
@@ -55,6 +57,6 @@ public class ProjectActivityBOImpl implements ProjectActivityBO {
                 projectActivity.getDescription (),
                 projectActivity.getDate (),
                 projectDAO.findOne ( projectActivity.getProjectsID ())));
-    }
+    }//End Activity Save | Update
 
-}
+}//End Class

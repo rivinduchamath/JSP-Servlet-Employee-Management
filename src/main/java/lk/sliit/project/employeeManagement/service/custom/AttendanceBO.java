@@ -8,21 +8,20 @@ import java.util.List;
  * @author: Rivindu-Wijayarathna
  * Date: 09-Apr-20
  */
+//Attendance Business Logic Interface
 public interface AttendanceBO extends SuperBO {
+    //Get Today attendance
     List<AttendanceDTO> findTodayAttendance();
 
+    //Get top attendance id
     AttendanceDTO getEmployeeAttCount();
 
+    //Save Or Update Attendance
     void save(AttendanceDTO attendance);
 
-    AttendanceDTO updateUser(String user) ;
-
+    //Delete
     void deleteUser(String id) ;
 
-    List<AttendanceDTO> findAllEmployees() ;
-
-    AttendanceDTO findUser(String userCode) ;
-
-
+    //Get All Attendance
     List<AttendanceDTO> findAllAtendance();
 }

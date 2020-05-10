@@ -19,14 +19,16 @@ import java.util.List;
  * Date: 15-Apr-20
  */
 @Service
-@Transactional
+@Transactional//Project BusinessLogic / Service Implementation Class
 public class ProjectBOImpl implements ProjectBO {
+    //Automate Object Creation
     @Autowired
     ProjectDAO projectDAO;
     @Autowired
     ProjectActivityDAO projectActivityDAO;
 
-    @Override
+    @Override// Find All
+    @Transactional(readOnly = true)
     public List <ProjectDTO> findAllProjects() {
         Iterable <Project> allItems = projectDAO.findAll ( );
         List <ProjectDTO> dtos = new ArrayList <> ( );
@@ -44,10 +46,11 @@ public class ProjectBOImpl implements ProjectBO {
                     project.getClientMobile ( )
             ) );
         }
-        return dtos;
-    }
+        return dtos;//Return Find All
+    } //End Find All
 
-    @Override
+    @Override // Find Project By Id
+    @Transactional(readOnly = true)
     public ProjectDTO findProject(String projectId) {
         Project project = projectDAO.findOne ( projectId );
         return new ProjectDTO (
@@ -62,10 +65,10 @@ public class ProjectBOImpl implements ProjectBO {
                 project.getClient ( ),
                 project.getClientMobile ( )
         );
+    }//End Find Project By Id
 
-    }
-
-    @Override
+    @Override //Get Top Project ID To Automatically Generate Project ID
+    @Transactional(readOnly = true)
     public ProjectDTO getProjectAttCount() {
         Project project = projectDAO.findTopByOrderByProjectIdDesc ();
         return new ProjectDTO (
@@ -73,7 +76,7 @@ public class ProjectBOImpl implements ProjectBO {
         );
     }
 
-    @Override
+    @Override//Save OR UPDATE Project
     public void saveProject(ProjectDTO project) {
         projectDAO.save(new Project (
                 project.getProjectId ( ),
@@ -85,14 +88,12 @@ public class ProjectBOImpl implements ProjectBO {
                 project.getDuration ( ),
                 project.getDate ( ),
                 project.getClient ( ),
-                project.getClientMobile ( )
+                project.getClientMobile ( )));
+    }//End Save OR Update
 
-        ));
-    }
-
-    @Override
+    @Override//Delete Project
     public void deleteProject(String pid) {
         projectDAO.delete ( pid );
     }
 
-}
+}//End Class

@@ -51,7 +51,7 @@ public class IndexController { //index.jsp Page Controller
     @PostMapping("Dashboard") // Load dashboard.jsp Page If Id And password is mach
     public String registerUser(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
         //True If Id and password is match
-        if (employeeBO.findByIdNoAndPassword ( employee.getIdNo ( ), employee.getPassword ( ) ) != null) {
+        if (dashboardBO.findByIdNoAndPassword ( employee.getIdNo ( ), employee.getPassword ( ) ) != null) {
             //Get Male Count
             long maleCount = (dashboardBO.getMaleCount ( ));
             //Get All employee Count
@@ -68,7 +68,7 @@ public class IndexController { //index.jsp Page Controller
             model.addAttribute ( "todayAttendance",attendanceDTOS );
             //Get Upcoming Birth days(1 Month ahead )
             model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
-            List<NoticeDTO> p =  noticeBO.findAllNoticeDesc();
+            List<NoticeDTO> p =  dashboardBO.findAllNoticeDesc();
             model.addAttribute ( "findAllNoticea", p );
 
             model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));

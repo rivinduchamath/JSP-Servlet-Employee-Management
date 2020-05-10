@@ -30,6 +30,7 @@ public class AttendanceBOImpl implements AttendanceBO {
 
     //Find Today attendance To load Today Attendance Table
     @Override
+    @Transactional(readOnly = true)
     public List<AttendanceDTO> findTodayAttendance() {
         DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
         Date date = new Date();
@@ -53,6 +54,7 @@ public class AttendanceBOImpl implements AttendanceBO {
     }
     //Get Top Attendance ID (IF Delete SomeOne)
     @Override
+    @Transactional(readOnly = true)
     public AttendanceDTO getEmployeeAttCount() {
         Attendance employee = attendanceDAO.findTopByOrderByAttendanceIdDesc ();
         return new AttendanceDTO (
@@ -75,27 +77,17 @@ public class AttendanceBOImpl implements AttendanceBO {
     }
 
 
-    @Override
-    public AttendanceDTO updateUser(String user) {
-        return null;
-    }
+
 
     @Override
     public void deleteUser(String id) {
         attendanceDAO.delete (id);
     }
 
-    @Override
-    public List <AttendanceDTO> findAllEmployees() {
-        return null;
-    }
+
 
     @Override
-    public AttendanceDTO findUser(String userCode) {
-        return null;
-    }
-
-    @Override
+    @Transactional(readOnly = true)
     public List <AttendanceDTO> findAllAtendance() {
         Iterable <Attendance> allItems = attendanceDAO.findAll();
         List <AttendanceDTO> dtos = new ArrayList <> ();
@@ -115,4 +107,4 @@ public class AttendanceBOImpl implements AttendanceBO {
         }
         return dtos;
     }
-}
+}//End Class

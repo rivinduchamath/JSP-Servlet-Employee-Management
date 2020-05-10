@@ -23,13 +23,16 @@ import java.util.List;
 @EnableJpaRepositories
 @ServletComponentScan
 public class AppInitializer {
+    //Main Method
     public static void main(String[] args) {
         SpringApplication.run ( AppInitializer.class, args );
     }
 
-    String str="2020-05-11";
+    //Add Values
+    String str="2020-05-17";
     Date date= Date.valueOf(str);
 
+    //Add Admin Employee To the System When Server Start
     @Bean
     CommandLineRunner init2(EmployeeDAO employeeDAO) {
         return args -> {

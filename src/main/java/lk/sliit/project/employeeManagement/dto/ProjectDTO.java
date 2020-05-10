@@ -39,7 +39,7 @@ public class ProjectDTO {
     //Project DTO Default Constructor
     public ProjectDTO() { }
 
-    public ProjectDTO(String projectId) {
+    public ProjectDTO(String projectId) { //Constructor to find Top Project Id
         this.projectId = projectId;
     }
 

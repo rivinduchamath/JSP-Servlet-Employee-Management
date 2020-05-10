@@ -18,21 +18,16 @@ import java.util.List;
  * Date: 13-Apr-20
  */
 @Service
-@Transactional
+@Transactional //Salary BusinessLogic / Service Implementation Class
 public class SalaryBOImpl implements SalaryBO {
-
+    //Automate Object Creation
     @Autowired
     private SalaryDAO salaryDAO;
     @Autowired
-    private EmployeeDAO employeeDAO;
-    @Autowired
-    private QueryDAO queryDAO;
-    @Autowired
     AttendanceDAO attendanceDAO;
-    @Override
 
+    @Override //SAVE OR Update Salary
     public void updateSalary(SalaryDTO employee) {
-
         salaryDAO.save(new Salary (
               employee.getSalaryId (),
                 employee.getBasicSalary (),
@@ -42,17 +37,18 @@ public class SalaryBOImpl implements SalaryBO {
                 employee.getIncomeTax (),
                 employee.getEmployeeID ())
             );
-    }
+    }//End Update OR Save
 
-    @Override
-    public List <SalaryDTO> getSalaryData(String source) {
+    @Override//Get Salary Data When Clicked Check Box
+    @Transactional(readOnly = true)
+    public List <SalaryDTO> getSalaryData(String source) { //Get All Salaries Ex: S001 S002
        List<String> list=new ArrayList<String>();
-        String[] sourceAry = source.split(" ");
+        String[] sourceAry = source.split(" "); //Split that String source
 
-        for(String value : sourceAry) {
+        for(String value : sourceAry) { //Add String Array to List
             list.add (value );
         }
-        Iterable <Salary> all = salaryDAO.findAll (list);
+        Iterable <Salary> all = salaryDAO.findAll (list); //Find All Salary In the List
         List <SalaryDTO> dtos = new ArrayList<> ();
         for (Salary salary : all) {
             dtos.add(new SalaryDTO (
@@ -64,18 +60,17 @@ public class SalaryBOImpl implements SalaryBO {
                     salary.getIncomeTax (),
                     salary.getEmployeeID ()));
         }
-        return dtos;
-    }
+        return dtos;//Return Clicked Salaries Only
+    }//End Get Salary Data When Clicked Check Box
 
-    @Override
+    @Override//Delete
     public void deleteSalary(String idNo) {
         salaryDAO.delete (idNo);
     }
 
 
-
-
-    @Override
+    @Override //Find all Salary in the Salary Table
+    @Transactional(readOnly = true)
     public List<SalaryDTO> findAllSalary() {
         Iterable <Salary> all = salaryDAO.findAll ( );
         List <SalaryDTO> dtos = new ArrayList<> ();
@@ -90,6 +85,5 @@ public class SalaryBOImpl implements SalaryBO {
                     salary.getEmployeeID ()));
         }
         return dtos;
-    }
-
-}
+    }//End Find all Salary in the Salary Table
+}//End Class

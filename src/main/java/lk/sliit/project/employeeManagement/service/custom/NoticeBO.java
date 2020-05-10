@@ -9,14 +9,19 @@ import java.util.List;
  * @author: Rivindu-Wijayarathna
  * Date: 03-May-20
  */
+//Notice Business Logic Interface
 public interface NoticeBO extends SuperBO {
+
+    //Generate top Notice Id
     NoticeDTO getNoticeId();
 
+    ////Save OR Update Notice
     void addNotice(NoticeDTO noticeDTO);
 
+    //Get All Notice
     List<NoticeDTO> findAllNotice();
 
+    //Delete
     void deleteNotice(String noticeId);
 
-    List<NoticeDTO> findAllNoticeDesc();
 }
