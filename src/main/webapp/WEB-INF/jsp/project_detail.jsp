@@ -1,9 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
   User: KV
-  Date: 03-Mar-20
-  Time: 1:22 AM
-  To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html >
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -346,7 +343,7 @@
                 <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
+                    Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Kavindra  Ariyaratne</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>

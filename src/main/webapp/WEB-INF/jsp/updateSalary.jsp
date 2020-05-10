@@ -1,10 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: Chanuka
-  Date: 13-Apr-20
-  Time: 6:36 PM
-  To change this template use File | Settings | File Templates.
---%>
+  --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -328,8 +325,8 @@
 <!-- footer content -->
 <footer>
     <div class="pull-right">
-        Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
-        Wijayarathna</a>
+        Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Chanuka
+        Mullevidana</a>
     </div>
     <div class="clearfix"></div>
 </footer>

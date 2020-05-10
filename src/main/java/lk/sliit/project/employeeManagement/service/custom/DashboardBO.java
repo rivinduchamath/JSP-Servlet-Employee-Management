@@ -29,7 +29,7 @@ public interface DashboardBO extends SuperBO {
     double getTotalProjects();
 
     //Check Logging User name and password is match
-    Employee findByIdNoAndPassword(String idNo, String password);
+    EmployeeDTO findByIdNoAndPassword(String idNo, String password);
 
     //Find All Notice Between Today and Before 1 month
     List<NoticeDTO> findAllNoticeDesc();

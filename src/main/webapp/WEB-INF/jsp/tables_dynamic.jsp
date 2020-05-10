@@ -1,10 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: Minula
-  Date: 03-Mar-20
-  Time: 7:43 AM
-  To change this template use File | Settings | File Templates.
---%>
+  --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import = "java.util.Date" %>
@@ -344,7 +341,7 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu Wijayarathna</a>
+                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Minula Miyanadeniya</a>
             </div>
             <div class="clearfix"></div>
         </footer>

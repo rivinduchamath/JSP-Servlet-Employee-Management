@@ -1,10 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: KV
-  Date: 04-Mar-20
-  Time: 6:41 AM
-  To change this template use File | Settings | File Templates.
---%>
+  --%>
 <!DOCTYPE html >
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -368,7 +365,7 @@
 
 
 <div class="pull-right" style="color: white">
-    Copyright © Employee Management 2020. Created by Rivindu Wijayarathna &nbsp; &nbsp;    &nbsp;    &nbsp;
+    Copyright © Employee Management 2020. Created by Kavindra  Ariyaratne   &nbsp;    &nbsp;
 </div>
 <div class="clearfix"></div>
 

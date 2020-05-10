@@ -90,10 +90,13 @@ public class DashboardBOImpl implements DashboardBO {
         return count;
     }
     @Override//Check logged id and Password is match
-    public Employee findByIdNoAndPassword(String idNo, String password) {
-        return employeeDAO.findByIdNoAndPassword(idNo, password);
-
+    public EmployeeDTO findByIdNoAndPassword(String idNo, String password) {
+        Employee employee = employeeDAO.findByIdNoAndPassword(idNo, password);
+        return new EmployeeDTO (
+                employee.getIdNo (),
+                employee.getPassword ());
     }
+
     @Override//Get Total No Of Project
     public double getTotalProjects() {
         return projectDAO.count ();

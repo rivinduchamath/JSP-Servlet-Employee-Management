@@ -54,6 +54,11 @@ public class EmployeeDTO {
         this.occupation = occupation;
         this.dateOfBirth = dateOfBirth;
     }
+    //Constructor For Login Employee
+    public EmployeeDTO(String idNo, String password) {
+        this.idNo = idNo;
+        this.password = password;
+    }
 
 
     //Getters And Setters

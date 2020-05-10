@@ -1,9 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
   User: Minula
-  Date: 04-Mar-20
-  Time: 6:41 AM
-  To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html >
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -465,7 +462,7 @@
 
 
 <div class="pull-right" style="color: white;bottom: 0;right:0;position: absolute">
-    Copyright © Employee Management 2020. Created by Rivindu Wijayarathna &nbsp; &nbsp;    &nbsp;    &nbsp;
+    Copyright © Employee Management 2020. Created by Minula Miyanadeniya&nbsp; &nbsp;    &nbsp;    &nbsp;
 <br>
 <br>
 </div>
