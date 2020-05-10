@@ -4,7 +4,7 @@ import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;
 import java.util.List;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: KV
  * Date: 17-Apr-20
  */
 public interface ProjectActivityBO {

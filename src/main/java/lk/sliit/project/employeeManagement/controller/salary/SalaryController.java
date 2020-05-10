@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Chanuka
  * Date: 13-Apr-20
  */
 @Controller

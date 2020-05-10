@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Chanuka
  * Date: 14-Apr-20
  */
 //Interface SalaryDAO Extend From CrudRepository InterFace

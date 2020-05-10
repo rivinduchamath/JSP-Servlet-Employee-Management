@@ -3,7 +3,7 @@ package lk.sliit.project.employeeManagement.dto;
 import java.sql.Date;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: KV
  * Date: 15-Apr-20
  */
 

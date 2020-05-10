@@ -4,7 +4,7 @@ import lk.sliit.project.employeeManagement.entity.Project;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: KV
  * Date: 15-Apr-20
  */
 //Interface ProjectDAO Extend From CrudRepository InterFace

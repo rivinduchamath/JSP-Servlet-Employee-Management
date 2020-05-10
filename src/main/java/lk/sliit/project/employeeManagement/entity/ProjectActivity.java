@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: KV
  * Date: 16-Apr-20
  */
 @Entity

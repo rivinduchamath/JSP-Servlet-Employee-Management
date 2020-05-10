@@ -6,7 +6,7 @@ import lk.sliit.project.employeeManagement.entity.Employee;
 import javax.persistence.*;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Chanuka
  * Date: 14-Apr-20
  */
 //Class SalaryDTO

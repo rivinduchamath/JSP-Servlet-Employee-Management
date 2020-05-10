@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: KV
  * Date: 23-Mar-20
  */
 @Entity

@@ -3,7 +3,7 @@ package lk.sliit.project.employeeManagement.entity;
 import javax.persistence.*;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Chanuka
  * Date: 19-Mar-20
  */
 @Entity

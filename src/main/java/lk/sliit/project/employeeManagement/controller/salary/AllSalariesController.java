@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Chanuka
  * Date: 20-Apr-20
  */
 @Controller

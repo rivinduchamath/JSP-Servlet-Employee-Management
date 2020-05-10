@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: KV
  * Date: 17-Apr-20
  */
 public interface ProjectActivityDAO extends CrudRepository<ProjectActivity, String> {

@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Date;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Minula
  * Date: 08-Mar-20
  */
 //Interface EmployeeDAO Extend From CrudRepository InterFace

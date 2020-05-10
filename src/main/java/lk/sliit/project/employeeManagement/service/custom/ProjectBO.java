@@ -5,7 +5,7 @@ import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import java.util.List;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: KV
  * Date: 15-Apr-20
  */
 public interface ProjectBO extends SuperBO {

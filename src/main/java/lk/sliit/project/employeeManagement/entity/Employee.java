@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Minula
  * Date: 08-Mar-20
  */
 @Entity

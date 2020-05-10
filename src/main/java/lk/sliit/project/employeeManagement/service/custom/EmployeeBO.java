@@ -6,7 +6,7 @@ import lk.sliit.project.employeeManagement.entity.Employee;
 import java.util.List;
 
 /**
- * @author: Rivindu-Wijayarathna
+ * @author: Minula
  * Date: 08-Mar-20
  */
 public interface EmployeeBO extends SuperBO {
