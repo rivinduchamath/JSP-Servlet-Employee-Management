@@ -4,7 +4,6 @@ import lk.sliit.project.employeeManagement.dto.NoticeDTO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.service.SuperBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
-import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import java.util.List;
 
 /**

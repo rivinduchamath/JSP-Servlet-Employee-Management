@@ -1,8 +1,5 @@
 package lk.sliit.project.employeeManagement.service.custom.impl;
 
-import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;
-import lk.sliit.project.employeeManagement.entity.Employee;
-import lk.sliit.project.employeeManagement.entity.ProjectActivity;
 import lk.sliit.project.employeeManagement.service.custom.ProjectBO;
 import lk.sliit.project.employeeManagement.dao.ProjectActivityDAO;
 import lk.sliit.project.employeeManagement.dao.ProjectDAO;
