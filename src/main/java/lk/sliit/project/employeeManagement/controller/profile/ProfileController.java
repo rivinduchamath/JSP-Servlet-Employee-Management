@@ -23,10 +23,10 @@ public class ProfileController {//profile.jsp Page Controller
     @Autowired
     EmployeeBO employeeBO;
     @RequestMapping("/profile")//If SomeOne Click Profile Load Loggers Profile
-    public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
+    public ModelAndView loadProfile(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "profile" );
         //Get Logger Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo( SuperController.idNo) );
         return mav;
     }
-}
+}//End Class

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
 
 /**
@@ -25,7 +24,7 @@ public class SalaryController { //salary.jsp to Manage Salary
     private EmployeeBO employeeBO;
 
     @GetMapping("salary")//Load Salary JSP Page
-    public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee) throws IllegalStateException {
+    public ModelAndView loadSalaryJSP(Model model, @ModelAttribute EmployeeDTO employee) throws IllegalStateException {
 
         ModelAndView mav = new ModelAndView ( "salary" );
         //Load All employee to a Table With their Total Salary
@@ -48,7 +47,7 @@ public class SalaryController { //salary.jsp to Manage Salary
     }
 
     @PostMapping("salarySave")//Save Or Update Salary
-    public String registerUser(@ModelAttribute SalaryDTO salaryDTO) {
+    public String saveOrUpdateSalary(@ModelAttribute SalaryDTO salaryDTO) {
         //Take Salary Id As EmployeeId + S
         salaryDTO.setSalaryId ( "S" + salaryDTO.getEmployeeID ( ).getIdNo ( ) );
         //Calling Update Method
@@ -58,9 +57,9 @@ public class SalaryController { //salary.jsp to Manage Salary
 
     //Delete employee in the Table When Click Delete Icon
     @RequestMapping("deleteSalary")
-    public String deleteUser(@RequestParam String idNo) {
+    public String deleteSalary(@RequestParam String idNo) {
         salaryBO.deleteSalary ( idNo );
         return "redirect:/salary";
     }
 
-}
+}//End Class

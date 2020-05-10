@@ -1,8 +1,5 @@
 package lk.sliit.project.employeeManagement.controller.projects;
 
-import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
-import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
-import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;
 import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.service.custom.ProjectBO;
 import lk.sliit.project.employeeManagement.controller.SuperController;
@@ -14,10 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.List;
 
 /**
  * @author: KV
@@ -39,7 +33,7 @@ public class ProjectsManageController {//projectController.jsp Controller
 
 
     @RequestMapping("edit-project") // If Some One Click Edit Button Go To "MODE_UP"
-    public String editUser(@RequestParam String projectId, Model model, HttpServletRequest request) {
+    public String editProject(@RequestParam String projectId, Model model, HttpServletRequest request) {
        //Get add Clicked Project Data
         request.setAttribute ( "project", projectBO.findProject ( projectId ) );
         request.setAttribute ( "mode", "MODE_UP" );
@@ -49,7 +43,7 @@ public class ProjectsManageController {//projectController.jsp Controller
     }
 
     @PostMapping("projectSave")//Save project
-    public String updateProject(@ModelAttribute ProjectDTO projectDTO,Model model) {
+    public String saveProject(@ModelAttribute ProjectDTO projectDTO,Model model) {
 
         try {
             //Get Project Id
@@ -66,19 +60,18 @@ public class ProjectsManageController {//projectController.jsp Controller
         return "redirect:/projects";
     }
     @PostMapping("projectUpdate")//Update project
-    public String saveProject(@ModelAttribute ProjectDTO projectDTO) {
+    public String updateProject(@ModelAttribute ProjectDTO projectDTO) {
         projectBO.saveProject ( projectDTO );
         return "redirect:/projects";
     }
 
 
     @RequestMapping("deleteProject")
-    public String deleteProect(@RequestParam String pid, HttpServletRequest request) {
+    public String deleteProject(@RequestParam String pid, HttpServletRequest request) {
         projectBO.deleteProject ( pid );
         //Get All Employees After Delete
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         return "redirect:/projects";
     }
 
-
-    }
+}//End Class

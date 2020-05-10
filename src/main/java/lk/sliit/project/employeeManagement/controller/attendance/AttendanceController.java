@@ -35,15 +35,14 @@ public class AttendanceController { //attendance.jsp Page For Attendance Manage
     @Autowired
     AttendanceBO attendanceBO;
 
-    @RequestMapping("attendance")
-    public ModelAndView index(Model model, @ModelAttribute AttendanceDTO attendance) {
+    @RequestMapping("attendance")//Load attendance.jsp Page
+    public ModelAndView loadAttendance(Model model, @ModelAttribute AttendanceDTO attendance) {
 
         ModelAndView mav = new ModelAndView ( "attendance" );
         //Get All In Attendance
         mav.addObject ( "listAttendance", attendanceBO.findTodayAttendance ( ) );
         //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
-
 
         try {
             AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
@@ -55,42 +54,42 @@ public class AttendanceController { //attendance.jsp Page For Attendance Manage
         //For get Logger Name and Picture
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
-    }
+    }//End loadAttendance Method
 
+    //Add Only Today Attendance
+    // (One Employee Can add attendance One time Per Day, If SomeOne Going to add Again It will Be Update)
     @RequestMapping(value = "tablesAdd", method = RequestMethod.POST)
-    public String index2(@ModelAttribute AttendanceDTO attendance, Model model) {
+    public String addTodayAttendance(@ModelAttribute AttendanceDTO attendance, Model model) {
         DateFormat dateFormat = new SimpleDateFormat ( "yyyy/MM/dd" );
-        Date date = new Date ( );
-        attendance.setDate ( date );
+        Date date = new Date ( ); //Get Date
+        attendance.setDate ( date ); //set today Date
         List <AttendanceDTO> todayAttendance = null;
-        String dtId = "";
-        String dtAId = "";
-        String aId = "";
-        String id = "";
-        todayAttendance = attendanceBO.findTodayAttendance ( );
-        try {
-            dtId = attendance.getEmployeeID ( );
-            dtAId = attendance.getAttendanceId ( );
-        } catch (NullPointerException e) {
+        String eId = "";
+        String attendanceID = "";
+        String employeeID = "";
+        todayAttendance = attendanceBO.findTodayAttendance ( );//Get All Today Attendance
 
-            return "redirect:/attendance";
+        try {
+            eId = attendance.getEmployeeID ( );//add EmployeeID From JSP
+        } catch (NullPointerException e) {
+            return "redirect:/attendance";//If NullPointerException, Reload Attendance.jsp
         }
         for (AttendanceDTO a : todayAttendance) {
-            id = a.getEmployeeID ( );
-            aId = a.getAttendanceId ();
-            if (id.equals ( dtId )) {
-                attendance.setAttendanceId ( aId );
+            employeeID = a.getEmployeeID ( );//add EmployeeID From Attendance
+            attendanceID = a.getAttendanceId ();//add AttendanceId From Attendance
+            if (employeeID.equals ( eId )) {//Check JSP Employee ID Already in today attendance
+                attendance.setAttendanceId ( attendanceID ); //IF true Set Attendance Id and save
                 attendanceBO.save ( attendance );
                 return "redirect:/attendance";
             }
         }
-        attendanceBO.save ( attendance );
+        attendanceBO.save ( attendance );//Else Attendance Save Under Previous Attendance ID
         return "redirect:/attendance";
-    }
+    }//End addTodayAttendance Method
 
     //Delete Attendance in the Table Attendance
     @RequestMapping("deleteAttendance")
-    public String deleteUser(@RequestParam String pid, HttpServletRequest request) {
+    public String deleteUserAttendance(@RequestParam String pid, HttpServletRequest request) {
         attendanceBO.deleteUser ( pid );
         //Get All Employees After Delete
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
@@ -98,4 +97,4 @@ public class AttendanceController { //attendance.jsp Page For Attendance Manage
     }
 
 
-}
+}//End Class

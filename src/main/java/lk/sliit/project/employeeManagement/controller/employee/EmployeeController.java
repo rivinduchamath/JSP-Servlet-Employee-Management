@@ -25,7 +25,7 @@ public class EmployeeController {//table_dynamic.jsp Page Controller
 
     //Load All Employees to the Table In the tables_dynamic.jsp
     @RequestMapping("tables_dynamic")
-    public ModelAndView index(Model model,@ModelAttribute EmployeeDTO employee) {
+    public ModelAndView loadTables_dynamicJSP(Model model,@ModelAttribute EmployeeDTO employee) {
         ModelAndView mav = new ModelAndView ( "tables_dynamic" );
         //Get All Employees
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
@@ -36,12 +36,10 @@ public class EmployeeController {//table_dynamic.jsp Page Controller
 
     //Delete employee in the Table tables_dynamic.jsp
     @RequestMapping("delete")
-    public String deleteUser(@RequestParam String idNo, HttpServletRequest request) {
+    public String deleteEmployee(@RequestParam String idNo, HttpServletRequest request) {
         employeeBO.deleteUser ( idNo );
         //Get All Employees After Delete
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         return "redirect:/tables_dynamic";
     }
-
-
-}
+}//End Class

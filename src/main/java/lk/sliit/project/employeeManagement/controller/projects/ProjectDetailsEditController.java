@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import java.io.IOException;
@@ -28,7 +27,7 @@ public class ProjectDetailsEditController {//project_detail_Edit.jsp Controller
     EmployeeBO employeeBO;
 
     @RequestMapping("/project_detail_Edit")
-    public ModelAndView index(Model model )  {
+    public ModelAndView projectDetailEdit(Model model )  {
         ModelAndView mav = new ModelAndView ( "project_detail_Edit" );
         //Get Data From Stored Project Id
         model.addAttribute ( "projectData", projectBO.findProject (  SuperController.projectId  ) );
@@ -45,7 +44,7 @@ public class ProjectDetailsEditController {//project_detail_Edit.jsp Controller
 
     //Add New Activities
     @RequestMapping("saveActivities")
-    public String registerUser(@ModelAttribute ProjectActivityDTO projectActivity) throws IOException {
+    public String saveActivities(@ModelAttribute ProjectActivityDTO projectActivity) throws IOException {
 
         try {
             //Get Activity Id
@@ -65,4 +64,4 @@ public class ProjectDetailsEditController {//project_detail_Edit.jsp Controller
         return "redirect:/project_detail?projectId="+SuperController.projectId;
     }
 
-}
+}//End Class

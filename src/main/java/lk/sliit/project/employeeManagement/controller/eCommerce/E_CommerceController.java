@@ -12,11 +12,11 @@ import java.io.IOException;
  * Date: 08-May-20
  */
 @Controller
-public class pricingTablesController {
-    @GetMapping("/e_commerce")
-    public ModelAndView index( ) throws ServletException,IllegalStateException, IOException {
+public class E_CommerceController {//pricing_tables Page Controller
+    @GetMapping("/e_commerce")//Load E Com JSP Page
+    public ModelAndView load_eCommerce( ) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "e_commerce" );
         return mav;
     }
-}
+}//End Class
 

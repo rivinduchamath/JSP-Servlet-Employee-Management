@@ -10,11 +10,4 @@ import org.springframework.data.repository.CrudRepository;
  */
 //Interface SalaryDAO Extend From CrudRepository InterFace
 public interface SalaryDAO  extends CrudRepository<Salary, String> {
-
-//    // Select Name From Id
-//    @Query(value = "SELECT name FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
-//    String getEmployeeName(String idNo);
-//    @Query(value = "SELECT salary FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
-//    double getEmployeeSalary(String idNo);
-
 }

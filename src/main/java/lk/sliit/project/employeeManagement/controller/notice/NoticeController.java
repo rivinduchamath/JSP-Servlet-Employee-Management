@@ -28,7 +28,7 @@ public class NoticeController { //notice.jsp For All Notice
     @Autowired
     NoticeBO noticeBO;
     @GetMapping("/notice")
-    public ModelAndView LoadNoticePage(Model model, @ModelAttribute SalaryDTO salaryDTO, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
+    public ModelAndView loadNoticePage(Model model, @ModelAttribute SalaryDTO salaryDTO, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         ModelAndView mav = new ModelAndView ( "notice" );
         try {
@@ -55,10 +55,10 @@ public class NoticeController { //notice.jsp For All Notice
     }
 
     @RequestMapping("noticeSave")//Save Or Update notice
-    public String addNotice(@ModelAttribute NoticeDTO noticeDTO,Model model) {
+    public String noticeSaveOrUpdate(@ModelAttribute NoticeDTO noticeDTO,Model model) {
         //Calling Update|Save Method
         noticeBO.addNotice ( noticeDTO );
         return "redirect:/notice";
     }
 
-}
+}//End Class

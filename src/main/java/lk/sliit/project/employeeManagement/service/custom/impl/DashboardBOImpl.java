@@ -60,8 +60,8 @@ public class DashboardBOImpl implements DashboardBO {
         Date todaydate = new Date();
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, 1);
-        java.util.Date dt = cal.getTime();
-        Iterable <Employee> employees = employeeDAO.findEmployeesByDateOfBirthBetween (todaydate ,dt);
+        java.util.Date afterOneMonth = cal.getTime();
+        Iterable <Employee> employees = employeeDAO.findEmployeesByDateOfBirthBetween (todaydate ,afterOneMonth);
         List <EmployeeDTO> dtos = new ArrayList<> ( );
         for (Employee employeee : employees) {
             dtos.add ( new EmployeeDTO (

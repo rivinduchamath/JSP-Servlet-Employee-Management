@@ -37,35 +37,45 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
     //Find Total employee Count For DashBoard
     @RequestMapping("/Dashboard")  //Control dashboard.jsp Page
     public void dashboard(Model model, @ModelAttribute EmployeeDTO employee) {
-        DashBoardLoad ( model, employee );
+        dashBoardLoad ( model, employee );
     }
 
 
-    String DashBoardLoad(Model model, EmployeeDTO employee) {
+    String dashBoardLoad(Model model, EmployeeDTO employee) {
         //Get Male Count in Dashboard
         long maleCount = (dashboardBO.getMaleCount ( ));
+
         //Get AllEmployeeCount  in Dashboard
         long totalCount = dashboardBO.getAllEmployeeCount ( );
+
         //Get FemaleCount in Dashboard
         long femaleCount = dashboardBO.getFemaleCount ( );
+
         //Get All Employees in Dashboard
         model.addAttribute ( "empData", employeeBO.findAllEmployees ( ) );
+
         //Show Today attendance in Dashboard
         List<AttendanceDTO> attendanceDTOS =attendanceBO.findTodayAttendance ( );
         int count =0;
-        for (AttendanceDTO attendanceDTO: attendanceDTOS) {
-            count++;
-        }
-
+        for (AttendanceDTO attendanceDTO: attendanceDTOS) { count++; }
         model.addAttribute ( "todayAttendance", attendanceDTOS );
+
         //Show Upcoming BirthDays in Dashboard
         model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
+
+       //Show Notice
         List<NoticeDTO> p =  dashboardBO.findAllNoticeDesc();
         model.addAttribute ( "findAllNoticea", p );
 
+        //Show Total Hours
         model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));
+
+        //Show Total Projects
         model.addAttribute ( "totalProjects", (dashboardBO.getTotalProjects ( )));
+
+        //Show Today Attendance Count
         model.addAttribute ( "todayAttendanceCount", count);
+
         //Set A Value If Male, Female, employee Count = null (Gender Is Varchar)
         if (maleCount > 0) model.addAttribute ( "maleCountDashBoard", maleCount );
         else model.addAttribute ( "maleCountDashBoard", 0 );
@@ -79,5 +89,6 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         //get Logged employee
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return "Dashboard";
-    }
-}
+    }//End dashBoarLoad Method
+
+}//End Class

@@ -36,20 +36,20 @@ public class IndexController { //index.jsp Page Controller
     //Initial Load Page http://localhost:8091/login
     @Scope(scopeName = "")
     @GetMapping("/login")
-    public String index(HttpServletRequest request) {
+    public String index_Login(HttpServletRequest request) {
         request.setAttribute ( "mode", "MODE_LOGIN" );
         return "index";
     }
 
     //Initial Load Page http://localhost:8091
     @GetMapping("/")
-    public String indexa(HttpServletRequest request) {
+    public String index(HttpServletRequest request) {
         request.setAttribute ( "mode", "MODE_LOGIN" );
         return "index";
     }
 
     @PostMapping("Dashboard") // Load dashboard.jsp Page If Id And password is mach
-    public String registerUser(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
+    public String loadDashBoard(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
         //True If Id and password is match
         if (dashboardBO.findByIdNoAndPassword ( employee.getIdNo ( ), employee.getPassword ( ) ) != null) {
             //Get Male Count

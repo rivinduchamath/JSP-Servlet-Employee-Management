@@ -25,7 +25,7 @@ public class ContactsController {//contacts.jsp Controller
     EmployeeBO employeeBO;
 
     @RequestMapping("/contacts")//When Click contacts.jsp Page
-    public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
+    public ModelAndView loadContactsJSP(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "contacts" );
         //Get All employee Count
         mav.addObject ( "countEmployee", employeeBO.findAllEmployees ( ) );
@@ -39,7 +39,7 @@ public class ContactsController {//contacts.jsp Controller
     }
 
     @RequestMapping("profiles")// if Click View profile in Contact Jsp
-    public String editUser(@RequestParam String idNo, Model model, HttpServletRequest request) {
+    public String getClickedUserData(@RequestParam String idNo, Model model, HttpServletRequest request) {
          request.setAttribute ( "mode", "MODE_UPDATE" );
         //Get Logger Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo(SuperController.idNo) );
@@ -48,4 +48,4 @@ public class ContactsController {//contacts.jsp Controller
         return "profiles";
     }
 
-}
+}//End Class

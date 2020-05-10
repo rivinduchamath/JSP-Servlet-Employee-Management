@@ -28,10 +28,10 @@ public class AllSalariesController {//allSalary.jsp Controller
 
     //Load All Salaries To a Table
     @GetMapping("/allSalary")
-    public ModelAndView indexa(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
+    public ModelAndView loadAllSalary(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "allSalary" );
         mav.addObject ( "listEmployeesTableSalarya", salaryBO.findAllSalary ( ) );
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
     }
-}
+}//End Class

@@ -19,13 +19,15 @@ import java.io.IOException;
  * Date: 22-Mar-20
  */
 @Controller
-public class CalenderController {
+public class CalenderController { //calender.jsp Page Controller
     @Autowired
     EmployeeBO employeeBO;
-    @RequestMapping("/calendar")
-    public ModelAndView index(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
+    @RequestMapping("/calendar")//Load Calender JSP Page
+    public ModelAndView loadCalender(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException,IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "calendar" );
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo( SuperController.idNo) );
         return mav;
     }
-}
+
+}//End Class
+

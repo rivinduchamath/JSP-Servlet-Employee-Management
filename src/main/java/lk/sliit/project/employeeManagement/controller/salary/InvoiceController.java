@@ -25,9 +25,8 @@ public class InvoiceController { //invoice.jsp Page Controller
     private EmployeeBO employeeBO;
 
     @RequestMapping("invoice")//Goto Invoice Page From salary.jsp Page When Click Pay Button
-    public ModelAndView index2(@ModelAttribute SalaryDTO salaryDTO, Model model) {
+    public ModelAndView loadInvoicePage(@ModelAttribute SalaryDTO salaryDTO, Model model) {
         ModelAndView mav = new ModelAndView ( "invoice" );
-
         //Get Logged Customer Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         //Get Only Check Box Clicked Data
@@ -37,13 +36,13 @@ public class InvoiceController { //invoice.jsp Page Controller
 
     //If Someone Refresh URL Top Again Load Invoice Page Without any Data
     @GetMapping("invoice")
-    public String indexa2() {
+    public String getInvoiceEmpty() {
         return "invoice";
     }
 
 
     @PostMapping("deleteInvoiceSalary")//When Payment Is Complete Delete Salary Data Which Clicked
-    public String deleteIN(@ModelAttribute SalaryDTO salaryDTO, Model model) {
+    public String deleteSalary(@ModelAttribute SalaryDTO salaryDTO, Model model) {
         //Pass All Data as a String And Add Only Salary Id To a String array
         String[] sourceAry = salaryDTO.getSalaryId ( ).split ( " " );
 
@@ -52,5 +51,5 @@ public class InvoiceController { //invoice.jsp Page Controller
             salaryBO.deleteSalary ( s );
         }
         return "redirect:/salary";
-    }
-}
+    }//End Delete Method
+}//End Class

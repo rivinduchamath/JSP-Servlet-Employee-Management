@@ -7,11 +7,9 @@ import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
 
 /**
@@ -26,7 +24,7 @@ public class ProjectsController {//projects.jsp Controller
     EmployeeBO employeeBO;
 
     @RequestMapping("/projects") // Load All Projects
-    public ModelAndView projects(Model model, @ModelAttribute ProjectDTO projectDTO) {
+    public ModelAndView loadProjects(Model model, @ModelAttribute ProjectDTO projectDTO) {
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo( SuperController.idNo) );
         ModelAndView mav = new ModelAndView ( "projects" );
         List<ProjectDTO> p = projectBO.findAllProjects ( );
@@ -35,4 +33,4 @@ public class ProjectsController {//projects.jsp Controller
         mav.addObject ( "lias", p );
         return mav;
     }
-}
+}//End Class

@@ -27,7 +27,7 @@ public class UpdateSalaryController { //updateSalary.JSP Page Controller
     private SalaryBO salaryBO;
 
     @GetMapping("/updateSalary")//Update Salary
-    public ModelAndView indexa(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
+    public ModelAndView updateSalary(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "updateSalary" );
        //load All Salry
         mav.addObject ( "listEmployeesTableSalarya", salaryBO.findAllSalary ( ) );
@@ -35,4 +35,4 @@ public class UpdateSalaryController { //updateSalary.JSP Page Controller
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         return mav;
     }
-}
+}//End Class

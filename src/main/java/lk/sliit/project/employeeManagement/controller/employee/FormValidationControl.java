@@ -36,7 +36,7 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
 
     //Update employee in the Table tables_dynamic.jsp + form_validation
     @RequestMapping("edit-employee")
-    public String editUser(@RequestParam String idNo, Model model, HttpServletRequest request) {
+    public String loadForm_validationUpdateMode(@RequestParam String idNo, Model model, HttpServletRequest request) {
         //Go To Mode Update In form_validation.jsp to Update Selected employee
         request.setAttribute ( "employee", employeeBO.updateUser ( idNo ) );
         request.setAttribute ( "mode", "MODE_UPDATE" );
@@ -47,14 +47,14 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
 
     //Load employee add form from form_validation.jsp Mode = "MODE_REGISTER"
     @RequestMapping("/form_validation")
-    public String registration(HttpServletRequest request) {
+    public String loadForm_validationSaveMode(HttpServletRequest request) {
         request.setAttribute ( "mode", "MODE_REGISTER" );
         return "form_validation";
     }
 
     //After Save Return to Dashboard
     @PostMapping("Dashboards")
-    public String registerUser(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
+    public String loadDashboard(@ModelAttribute EmployeeDTO employee, HttpServletRequest request, Model model) throws IOException {
 
         //If Some One Not Click In Gender Or Pic
         if (employee.getPic ( ).equals ( "" ) & employee.getGender ( ) == null) {
@@ -99,6 +99,4 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
         ImageIO.write ( cImg, "png", saveImage );
         return cImg;
     }
-
-
-}
+}//End Class
