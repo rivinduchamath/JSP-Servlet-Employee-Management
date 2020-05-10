@@ -112,7 +112,7 @@
                             <li><a><i class="fa fa-bug"></i> Additional Pages <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="#">E-commerce</a></li>
+                                    <li><a href="e_commerce">E-commerce</a></li>
                                     <li><a href="projects">Projects</a></li>
                                     <li><a href="contacts">Contacts</a></li>
                                     <li><a href="profile">Profile</a></li>
@@ -290,7 +290,7 @@
                                     </div>
                                     <div class="col-md-2 col-sm-4 tile_stats_count">
                                         <span class="count_top"><i class="fa fa-clock-o"></i> Total Time</span>
-                                        <div class="count">${totalTime}</div>
+                                        <div class="count">${totalTime} hrs</div>
                                         <span class="count_bottom"><i class="green"><i
                                                 class="fa fa-sort-asc"></i>3% </i> From Attendance</span>
                                     </div>

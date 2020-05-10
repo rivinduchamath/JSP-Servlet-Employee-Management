@@ -99,7 +99,7 @@
                                 <li><a><i class="fa fa-bug"></i> Additional Pages <span
                                         class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="#">E-commerce</a></li>
+                                        <li><a href="/e_commerce">E-commerce</a></li>
                                         <li><a href="projects">Projects</a></li>
                                         <li><a href="contacts">Contacts</a></li>
                                         <li><a href="profile">Profile</a></li>
@@ -325,7 +325,7 @@
 
                                                         <a href="/project_detail_Edit" class="btn btn-sm btn-primary">Add Activity</a>
 
-                                                        <a href="#" class="btn btn-sm btn-warning">Report contact</a>
+                                                        <a href="/projects" class="btn btn-sm btn-warning"><i class="fa fa-backward"></i> Back</a>
                                                     </div>
                                                 </div>
 

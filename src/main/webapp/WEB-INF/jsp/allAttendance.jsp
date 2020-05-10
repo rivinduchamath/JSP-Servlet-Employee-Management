@@ -149,7 +149,7 @@
                             <li><a><i class="fa fa-bug"></i> Additional Pages <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="#">E-commerce</a></li>
+                                    <li><a href="/e_commerce">E-commerce</a></li>
                                     <li><a href="projects">Projects</a></li>
                                     <li><a href="contacts">Contacts</a></li>
                                     <li><a href="profile">Profile</a></li>

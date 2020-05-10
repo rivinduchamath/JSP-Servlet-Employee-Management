@@ -22,15 +22,15 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
      Employee getEmployeeByIdNo(String idNo);
 
      //Get Name For Attendance Load today Table
-     @Query(value = "SELECT name FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
+     @Query(value = "SELECT occupation FROM emp1.Employee WHERE idNo=?1", nativeQuery = true)
      String findName(String idNo);
 
      //Get findPos For Attendance Load today Table
-     @Query(value = "SELECT occupation FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
+     @Query(value = "SELECT occupation FROM emp1.Employee WHERE idNo=?1", nativeQuery = true)
      String findPos(String idNo);
 
      //findPic For Attendance Load today Table
-     @Query(value = "SELECT Pic FROM emp1.employee WHERE idNo=?1", nativeQuery = true)
+     @Query(value = "SELECT Pic FROM emp1.Employee WHERE idNo=?1", nativeQuery = true)
      String findPic(String idNo);
 
      Iterable<Employee> findEmployeesByDateOfBirthBetween(Date date,Date date1);

@@ -10,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface ProjectActivityDAO extends CrudRepository<ProjectActivity, String> {
 
-    @Query(value = "SELECT * FROM projectactivity WHERE projectsID=?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM ProjectActivity WHERE projectsID=?1", nativeQuery = true)
     Iterable<ProjectActivity> findProjectActivitiesByProjectsIDEquals(String projectId);
 
     ProjectActivity findTopByOrderByActivityIdDesc();
