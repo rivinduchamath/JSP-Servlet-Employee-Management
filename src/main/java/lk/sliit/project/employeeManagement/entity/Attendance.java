@@ -7,7 +7,7 @@ import java.util.Date;
  * @author: Rivindu-Wijayarathna
  * Date: 19-Mar-20
  */
-@Entity
+@Entity//Entity Class Attendance
 public class Attendance implements SuperEntity {
 
     @Id
@@ -27,6 +27,7 @@ public class Attendance implements SuperEntity {
     //No arg constructor
     public Attendance() {}
 
+    //Add Full Arg Constructor
     public Attendance(String attendanceId, double salary, Date date,
                        String inTime, String outTime, double overtimeHours,
                        Employee employeeID) {
@@ -40,7 +41,7 @@ public class Attendance implements SuperEntity {
     }
 
 
-
+//Getters And Setters
     public double getSalary() {
         return salary;
     }
@@ -103,7 +104,7 @@ public class Attendance implements SuperEntity {
         this.employeeID = employeeID;
     }
 
-    @Override
+    @Override//Override toString
     public String toString() {
         return "Attendance{" +
                 "attendanceId=" + attendanceId +
@@ -114,5 +115,5 @@ public class Attendance implements SuperEntity {
                 ", overtimeHours=" + overtimeHours +
                 ", employeeID=" + employeeID +
                 '}';
-    }
-}
+    }//End toString Method
+}//End Class

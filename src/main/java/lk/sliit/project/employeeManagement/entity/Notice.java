@@ -9,7 +9,7 @@ import java.sql.Date;
  * @author: Rivindu-Wijayarathna
  * Date: 03-May-20
  */
-@Entity
+@Entity//Entity Class Notice
 public class Notice implements  SuperEntity{
     @Id
     private  String noticeId;
@@ -18,6 +18,7 @@ public class Notice implements  SuperEntity{
     private  String description;
     private Date date;
 
+    //Add Full Arg Constructor
     public Notice(String noticeId, String title, String description, Date date) {
         this.noticeId = noticeId;
         this.title = title;
@@ -28,7 +29,7 @@ public class Notice implements  SuperEntity{
     //No arg constructor
     public Notice() {
     }
-
+    //Getters And Setters
     public String getNoticeId() {
         return noticeId;
     }
@@ -61,7 +62,7 @@ public class Notice implements  SuperEntity{
         this.date = date;
     }
 
-    @Override
+    @Override//Override toString
     public String toString() {
         return "Notice{" +
                 "noticeId='" + noticeId + '\'' +
@@ -69,5 +70,5 @@ public class Notice implements  SuperEntity{
                 ", description='" + description + '\'' +
                 ", date='" + date + '\'' +
                 '}';
-    }
-}
+    }//End toString Method
+}//End Class

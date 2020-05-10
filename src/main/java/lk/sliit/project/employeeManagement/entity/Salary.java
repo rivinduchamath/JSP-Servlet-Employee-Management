@@ -28,6 +28,7 @@ public class Salary implements SuperEntity {
     //No arg constructor
     public Salary() {}
 
+    //Add Full Arg Constructor
     public Salary(String salaryId, double basicSalary, double otHours, double otRate, double bonus, double incomeTax, Employee employeeID) {
         SalaryId = salaryId;
         this.basicSalary = basicSalary;
@@ -38,6 +39,7 @@ public class Salary implements SuperEntity {
         this.employeeID = employeeID;
     }
 
+    //Getters And Setters
     public String getSalaryId() {
         return SalaryId;
     }
@@ -95,6 +97,7 @@ public class Salary implements SuperEntity {
         this.employeeID = employeeID;
     }
 
+    //Override toString
     @Override
     public String toString() {
         return "Salary{" +
@@ -106,5 +109,5 @@ public class Salary implements SuperEntity {
                 ", incomeTax=" + incomeTax +
                 ", employeeID=" + employeeID +
                 '}';
-    }
-}
+    }//End toString Method
+}//End Class

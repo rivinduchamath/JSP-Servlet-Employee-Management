@@ -34,6 +34,7 @@ public class Project implements SuperEntity {
     //No arg constructor
     public Project(){}
 
+    //Add Full Arg Constructor
     public Project(String projectId, String projectName, String teamMembers, double progress, double estBudget, double spentBudget, Date duration, Date date, String client, String clientMobile) {
         this.projectId = projectId;
         this.projectName = projectName;
@@ -46,7 +47,7 @@ public class Project implements SuperEntity {
         this.client = client;
         this.clientMobile = clientMobile;
     }
-
+    //Getters And Setters
     public String getProjectId() {
         return projectId;
     }
@@ -135,7 +136,7 @@ public class Project implements SuperEntity {
         return projects;
     }
 
-    @Override
+    @Override//Override toString
     public String toString() {
         return "Project{" +
                 "projectId='" + projectId + '\'' +
@@ -150,5 +151,5 @@ public class Project implements SuperEntity {
                 ", clientMobile='" + clientMobile + '\'' +
                 ", projects=" + projects +
                 '}';
-    }
-}
+    }//End toString Method
+}//End Class

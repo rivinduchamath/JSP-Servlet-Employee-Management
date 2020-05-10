@@ -9,7 +9,7 @@ import java.util.List;
  * @author: Minula
  * Date: 08-Mar-20
  */
-@Entity
+@Entity//Entity Class Employee
 public class Employee implements SuperEntity {
     @Id
     private String idNo;
@@ -34,6 +34,7 @@ public class Employee implements SuperEntity {
     public Employee() {
     }
 
+    //Add Full Arg Constructor
     public Employee(String idNo, String name, int mobileNumber, String email,
                     String address, String occupation, String password,
                     Date dateOfBirth, String gender, Date date, String pic,
@@ -54,9 +55,7 @@ public class Employee implements SuperEntity {
 
     }
 
-
-
-
+//Getters And Setters
     public String getIdNo() {
         return idNo;
     }
@@ -96,8 +95,6 @@ public class Employee implements SuperEntity {
     public void setAddress(String address) {
         this.address = address;
     }
-
-
 
     public String getOccupation() {
         return occupation;
@@ -155,16 +152,11 @@ public class Employee implements SuperEntity {
         this.admin = admin;
     }
 
-
     ////////////////////////////////////////////////////////////
     public List<Attendance> getOrders() {
         return attendance;
     }
 
-
     /////////////////////////////////////////////////////////
 
-
-
-
-}
+}//End Class

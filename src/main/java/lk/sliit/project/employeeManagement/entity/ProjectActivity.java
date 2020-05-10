@@ -7,7 +7,7 @@ import java.sql.Date;
  * @author: KV
  * Date: 16-Apr-20
  */
-@Entity//Employee Activity
+@Entity//Employee Activity class
 public class ProjectActivity implements SuperEntity {
     @Id
     private String activityId;
@@ -18,6 +18,8 @@ public class ProjectActivity implements SuperEntity {
     @JoinColumn(name = "projectsID", referencedColumnName = "projectId", nullable = true)
     private Project projectsID;
 
+
+    //Add Full Arg Constructor
     public ProjectActivity(String activityId, String activity, String description, Date date, Project projectsID) {
         this.activityId = activityId;
         this.activity = activity;
@@ -28,7 +30,7 @@ public class ProjectActivity implements SuperEntity {
     //No arg constructor
     public ProjectActivity() {
     }
-
+    //Getters And Setters
     public String getActivityId() {
         return activityId;
     }
@@ -69,7 +71,7 @@ public class ProjectActivity implements SuperEntity {
         this.description = description;
     }
 
-    @Override
+    @Override//Override toString
     public String toString() {
         return "ProjectActivity{" +
                 "activityId='" + activityId + '\'' +
@@ -78,5 +80,5 @@ public class ProjectActivity implements SuperEntity {
                 ", date=" + date +
                 ", projectsID=" + projectsID +
                 '}';
-    }
-}
+    }//End toString Method
+}//End Class
