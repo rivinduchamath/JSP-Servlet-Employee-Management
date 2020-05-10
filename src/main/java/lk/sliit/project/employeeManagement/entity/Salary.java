@@ -6,7 +6,7 @@ import javax.persistence.*;
  * @author: Chanuka
  * Date: 19-Mar-20
  */
-@Entity
+@Entity//Emplyee Salary Table
 public class Salary implements SuperEntity {
 
     @Id
@@ -25,6 +25,7 @@ public class Salary implements SuperEntity {
     @JoinColumn(name = "employeeID", referencedColumnName = "idNo", nullable = true)
     private Employee employeeID;
 
+    //No arg constructor
     public Salary() {}
 
     public Salary(String salaryId, double basicSalary, double otHours, double otRate, double bonus, double incomeTax, Employee employeeID) {

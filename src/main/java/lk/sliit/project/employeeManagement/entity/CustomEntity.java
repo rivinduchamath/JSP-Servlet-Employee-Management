@@ -15,7 +15,7 @@ public class CustomEntity implements SuperEntity {
         this.name = name;
         this.overtimeHours = overtimeHours;
     }
-
+    //No arg constructor
     public CustomEntity() {
     }
 

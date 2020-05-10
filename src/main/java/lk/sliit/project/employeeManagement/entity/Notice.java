@@ -25,6 +25,7 @@ public class Notice implements  SuperEntity{
         this.date = date;
     }
 
+    //No arg constructor
     public Notice() {
     }
 

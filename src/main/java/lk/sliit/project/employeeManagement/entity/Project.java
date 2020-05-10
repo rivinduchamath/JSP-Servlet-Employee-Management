@@ -10,7 +10,7 @@ import java.util.List;
  * @author: KV
  * Date: 23-Mar-20
  */
-@Entity
+@Entity//Project Table
 public class Project implements SuperEntity {
     @Id
     private String projectId;
@@ -31,6 +31,7 @@ public class Project implements SuperEntity {
     @OneToMany(mappedBy = "projectsID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List<ProjectActivity> projects = new ArrayList<> ( );
 
+    //No arg constructor
     public Project(){}
 
     public Project(String projectId, String projectName, String teamMembers, double progress, double estBudget, double spentBudget, Date duration, Date date, String client, String clientMobile) {

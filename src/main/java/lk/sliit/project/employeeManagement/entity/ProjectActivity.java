@@ -7,7 +7,7 @@ import java.sql.Date;
  * @author: KV
  * Date: 16-Apr-20
  */
-@Entity
+@Entity//Employee Activity
 public class ProjectActivity implements SuperEntity {
     @Id
     private String activityId;
@@ -25,7 +25,7 @@ public class ProjectActivity implements SuperEntity {
         this.date = date;
         this.projectsID = projectsID;
     }
-
+    //No arg constructor
     public ProjectActivity() {
     }
 

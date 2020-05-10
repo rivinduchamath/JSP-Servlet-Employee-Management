@@ -30,7 +30,7 @@ public class Employee implements SuperEntity {
     @OneToMany(mappedBy = "employeeID", cascade = {CascadeType.REMOVE,CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List <Salary> salaries = new ArrayList <> ( );
 
-
+    //No arg constructor
     public Employee() {
     }
 

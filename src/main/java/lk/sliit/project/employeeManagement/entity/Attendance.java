@@ -24,7 +24,7 @@ public class Attendance implements SuperEntity {
     @JoinColumn(name = "employeeId", referencedColumnName = "idNo", nullable = true)
     private Employee employeeID;
 
-
+    //No arg constructor
     public Attendance() {}
 
     public Attendance(String attendanceId, double salary, Date date,
