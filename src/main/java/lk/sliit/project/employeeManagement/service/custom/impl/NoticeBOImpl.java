@@ -28,6 +28,7 @@ public class NoticeBOImpl implements NoticeBO {
     NoticeDAO noticeDAO;
 
     @Override//Get Highest Notice Id
+    @Transactional(readOnly = true)
     public NoticeDTO getNoticeId() {
         Notice notice = noticeDAO.findTopByOrderByNoticeIdDesc ();
         return new NoticeDTO (
@@ -46,6 +47,7 @@ public class NoticeBOImpl implements NoticeBO {
     }
 
     @Override//Get All Notice
+    @Transactional(readOnly = true)
     public List<NoticeDTO> findAllNotice() {
         Iterable <Notice> allItems = noticeDAO.findAll();
     List <NoticeDTO> dtos = new ArrayList<> ();

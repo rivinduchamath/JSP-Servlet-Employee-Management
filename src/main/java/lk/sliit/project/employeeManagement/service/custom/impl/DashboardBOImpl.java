@@ -55,8 +55,7 @@ public class DashboardBOImpl implements DashboardBO {
         return employeeDAO.countByGender("female");
     }
 
-    //
-
+    //UpComing Birthdays Up to 1 month
     @Override
     public List <EmployeeDTO> upcomingBirthDays() {
         DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
@@ -78,10 +77,7 @@ public class DashboardBOImpl implements DashboardBO {
         return dtos;
     }
 
-
-
-
-    @Override
+    @Override//Get Total Worked time According to Attendance
     public double getTotalTime() {
         Iterable <Attendance> allItems = attendanceDAO.findAll ();
     double tot =0;
@@ -95,12 +91,12 @@ public class DashboardBOImpl implements DashboardBO {
         count += (t *8);
         return count;
     }
-    @Override
+    @Override//Check logged id and Password is match
     public Employee findByIdNoAndPassword(String idNo, String password) {
         return employeeDAO.findByIdNoAndPassword(idNo, password);
 
     }
-    @Override
+    @Override//Get Total No Of Project
     public double getTotalProjects() {
         return projectDAO.count ();
     }

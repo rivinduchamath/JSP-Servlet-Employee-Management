@@ -73,8 +73,8 @@ public class EmployeeBOImpl implements EmployeeBO {
     public void deleteUser(String userCode) { employeeDAO.delete (userCode); }
 
     //Search All Employees Method
-    @Transactional(readOnly = true)
     @Override
+    @Transactional(readOnly = true)
     public List<EmployeeDTO> findAllEmployees() {
         Iterable <Employee> allItems = employeeDAO.findAll();
         List <EmployeeDTO> dtos = new ArrayList <> ();

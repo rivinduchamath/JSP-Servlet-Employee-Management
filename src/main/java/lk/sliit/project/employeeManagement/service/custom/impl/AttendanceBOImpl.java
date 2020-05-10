@@ -28,7 +28,7 @@ public class AttendanceBOImpl implements AttendanceBO {
     @Autowired
     EmployeeDAO employeeDAO;
 
-    //Find Today attendance To load Today Attendance Table
+    //Find Only Today attendance To load Today Attendance Table
     @Override
     @Transactional(readOnly = true)
     public List<AttendanceDTO> findTodayAttendance() {
@@ -51,7 +51,8 @@ public class AttendanceBOImpl implements AttendanceBO {
             ) );
         }
         return dtos;
-    }
+    }//End findTodayAttendance Method
+
     //Get Top Attendance ID (IF Delete SomeOne)
     @Override
     @Transactional(readOnly = true)
@@ -60,7 +61,7 @@ public class AttendanceBOImpl implements AttendanceBO {
         return new AttendanceDTO (
                 employee.getAttendanceId ()
         );
-    }
+    }//End Get Total Emp
 
     //Save Attendance If Not Already Add Today
     @Override
@@ -73,20 +74,14 @@ public class AttendanceBOImpl implements AttendanceBO {
                 attendanceDTO.getOutTime (),
                 attendanceDTO.getOvertimeHours (),
                 employeeDAO.findOne (attendanceDTO.getEmployeeID ())));
+    }//End attendance save method
 
-    }
-
-
-
-
-    @Override
+    @Override//Delete Attendance
     public void deleteUser(String id) {
         attendanceDAO.delete (id);
     }
 
-
-
-    @Override
+    @Override//Get All Attendance in the attendance table
     @Transactional(readOnly = true)
     public List <AttendanceDTO> findAllAtendance() {
         Iterable <Attendance> allItems = attendanceDAO.findAll();
@@ -106,5 +101,6 @@ public class AttendanceBOImpl implements AttendanceBO {
             ));
         }
         return dtos;
-    }
+    }////End Get All Attendance  Method
+
 }//End Class

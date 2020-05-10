@@ -7,7 +7,7 @@ import lk.sliit.project.employeeManagement.dto.ProjectActivityDTO;
 import lk.sliit.project.employeeManagement.entity.ProjectActivity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +26,7 @@ public class ProjectActivityBOImpl implements ProjectActivityBO {
 
     //Get All Project Activities According To the Selected Project
     @Override
+    @Transactional(readOnly = true)
     public List<ProjectActivityDTO> loadProjectActivity(String projectId) {
         Iterable <ProjectActivity> projectActivities = projectActivityDAO.findProjectActivitiesByProjectsIDEquals ( projectId );
         List <ProjectActivityDTO> dtos = new ArrayList<> ( );
@@ -42,6 +43,7 @@ public class ProjectActivityBOImpl implements ProjectActivityBO {
     }//Get All Project Activities Method
 
     @Override//Get Top Project Activity ID to gen Activity Id
+    @Transactional(readOnly = true)
     public ProjectActivityDTO getgenActivityIdCount() {
         ProjectActivity projectActivity = projectActivityDAO.findTopByOrderByActivityIdDesc ();
         return new ProjectActivityDTO (
