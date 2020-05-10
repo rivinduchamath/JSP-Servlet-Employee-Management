@@ -1,9 +1,7 @@
 package lk.sliit.project.employeeManagement;
 
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
-import lk.sliit.project.employeeManagement.dao.SalaryDAO;
 import lk.sliit.project.employeeManagement.entity.Employee;
-import lk.sliit.project.employeeManagement.entity.Salary;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,7 +35,7 @@ public class AppInitializer {
     CommandLineRunner init2(EmployeeDAO employeeDAO) {
         return args -> {
             List <String> names = Arrays.asList ( "1");
-            names.forEach ( name -> employeeDAO.save ( new Employee (
+            names.forEach ( name -> employeeDAO.save ( new Employee (//Add New Employee
 
                             "1",
                             "Rivindu Wijayarathna",
@@ -54,4 +52,5 @@ public class AppInitializer {
                     )
             );
         };
-}}
+}//End init2
+}//End Class
