@@ -6,6 +6,7 @@ import java.sql.Date;
  * @author: KV
  * Date: 17-Apr-20
  */
+//Class ProjectActivityDTO
 public class ProjectActivityDTO {
     private String activityId;
     private String activity;
@@ -13,6 +14,7 @@ public class ProjectActivityDTO {
     private Date date;
     private String projectsID;
 
+    //Full Arg Constructor
     public ProjectActivityDTO(String activityId, String activity, String description, Date date, String projectsID) {
         this.activityId = activityId;
         this.activity = activity;
@@ -20,10 +22,10 @@ public class ProjectActivityDTO {
         this.date = date;
         this.projectsID = projectsID;
     }
-
+    //No Arg Constructor
     public ProjectActivityDTO() {
     }
-
+    //Getters And Setters
     public ProjectActivityDTO(String activityId) {
         this.activityId = activityId;
     }
@@ -69,7 +71,7 @@ public class ProjectActivityDTO {
         this.activityId = activityId;
     }
 
-    @Override
+    @Override  // Override to-String Method
     public String toString() {
         return "ProjectActivityDTO{" +
                 "activityId='" + activityId + '\'' +
@@ -78,6 +80,5 @@ public class ProjectActivityDTO {
                 ", date=" + date +
                 ", projectsID='" + projectsID + '\'' +
                 '}';
-    }
-}
-
+    }//End to-String
+}//End DTO

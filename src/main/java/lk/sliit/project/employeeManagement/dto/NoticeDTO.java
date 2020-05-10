@@ -6,6 +6,8 @@ import java.sql.Date;
  * @author: Rivindu-Wijayarathna
  * Date: 03-May-20
  */
+
+//Class NoticeDTO
 public class NoticeDTO {
 
     private  String noticeId;
@@ -13,16 +15,17 @@ public class NoticeDTO {
     private  String description;
     private Date date;
 
+    //Full Arg Constructor
     public NoticeDTO(String noticeId, String title, String description, Date date) {
         this.noticeId = noticeId;
         this.title = title;
         this.description = description;
         this.date = date;
     }
-
+    //No Arg Constructor
     public NoticeDTO() {
     }
-
+    //Getters And Setters
     public NoticeDTO(String noticeId) {
         this.noticeId = noticeId;
     }
@@ -59,7 +62,7 @@ public class NoticeDTO {
         this.date = date;
     }
 
-    @Override
+    @Override  // Override to-String Method
     public String toString() {
         return "NoticeDTO{" +
                 "noticeId='" + noticeId + '\'' +
@@ -67,5 +70,5 @@ public class NoticeDTO {
                 ", description='" + description + '\'' +
                 ", date=" + date +
                 '}';
-    }
-}
+    }//End to-String
+}//End DTO

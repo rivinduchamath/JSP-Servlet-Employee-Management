@@ -1,14 +1,12 @@
 package lk.sliit.project.employeeManagement.dto;
 
-
 import lk.sliit.project.employeeManagement.entity.Employee;
-
-import javax.persistence.*;
 
 /**
  * @author: Chanuka
  * Date: 14-Apr-20
  */
+
 //Class SalaryDTO
 public class SalaryDTO {
 
@@ -20,8 +18,10 @@ public class SalaryDTO {
     private double incomeTax;
     private Employee employeeID;
 
+    //No Arg Constructor
     public SalaryDTO() {}
 
+    //Full Arg Constructor
     public SalaryDTO(String salaryId, double basicSalary, double otHours, double otRate, double bonus, double incomeTax, Employee employeeID) {
         SalaryId = salaryId;
         this.basicSalary = basicSalary;
@@ -30,8 +30,9 @@ public class SalaryDTO {
         this.bonus = bonus;
         this.incomeTax = incomeTax;
         this.employeeID = employeeID;
-    }
+    }//End Full Arg
 
+    //Getters And Setters
     public String getSalaryId() {
         return SalaryId;
     }
@@ -88,7 +89,7 @@ public class SalaryDTO {
         this.employeeID = employeeID;
     }
 
-    @Override
+    @Override  // Override to-String Method
     public String toString() {
         return "Salary{" +
                 "SalaryId='" + SalaryId + '\'' +
@@ -99,5 +100,5 @@ public class SalaryDTO {
                 ", incomeTax=" + incomeTax +
                 ", employeeID=" + employeeID +
                 '}';
-    }
-}
+    }//End to-String
+}//End DTO

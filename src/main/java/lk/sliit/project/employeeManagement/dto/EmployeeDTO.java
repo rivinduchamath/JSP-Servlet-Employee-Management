@@ -37,7 +37,6 @@ public class EmployeeDTO {
         this.mobileNumber = mobileNumber;
         this.email = email;
         this.address = address;
-
         this.occupation = occupation;
         this.password = password;
         this.dateOfBirth = dateOfBirth;
@@ -47,6 +46,7 @@ public class EmployeeDTO {
         this.admin = admin;
     }
 
+    //Constructor
     public EmployeeDTO(String idNo, String name, String pic, String occupation, Date dateOfBirth) {
         this.idNo = idNo;
         this.name = name;
