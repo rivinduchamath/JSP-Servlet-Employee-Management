@@ -31,7 +31,6 @@
   </head>
 
   <body class="nav-md">
-
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
@@ -75,12 +74,10 @@
                     <li><a href="salary">Salary Manage</a></li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-desktop"></i> Other Information <span
+                <li><a><i class="fa fa-desktop"></i>Project<span
                         class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="sa">General Elements</a></li>
-                    <li><a href="media_gallery">View Images</a></li>
-                    <li><a href="calendar">Calendar</a></li>
+                    <li><a href="projects">Projects</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-table"></i> Notice <span class="fa fa-chevron-down"></span></a>
@@ -93,19 +90,20 @@
             <div class="menu_section">
               <h3>Live On</h3>
               <ul class="nav side-menu">
-                <li><a><i class="fa fa-bug"></i> Additional Pages <span
+                <li><a><i class="fa fa-user"></i> Employee Data <span
                         class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="e_commerce">E-commerce</a></li>
-                    <li><a href="projects">Projects</a></li>
                     <li><a href="contacts">Contacts</a></li>
                     <li><a href="profile">Profile</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="login">Login Page</a></li>
+                    <li><a href="media_gallery">View Images</a></li>
+                    <li><a href="calendar">Calendar</a></li>
+                    <li><a href="e_commerce">E-commerce</a></li>
                     <li><a href="pricing_tables.jsp">Pricing Tables</a></li>
+                    <li><a href="login">Login Page</a></li>
                   </ul>
                 </li>
               </ul>
@@ -158,7 +156,6 @@
         </div>
       </div>
       <!-- /top navigation -->
-
 
       <!-- page content -->
         <div class="right_col" role="main">
@@ -342,12 +339,13 @@
         <!-- /page content -->
 
         <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
+      <footer>
+        <div class="pull-right">
+          Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Rivindu
+          Wijayarathna</a>
+        </div>
+
+      </footer>
         <!-- /footer content -->
       </div>
     </div>

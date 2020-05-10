@@ -104,8 +104,8 @@
     <c:when test="${mode=='MODE_REGISTER' }">
         <!-- page content -->
 
-        <div class="">
-            <div class="">
+        <div class="container body">
+            <div class="main_container">
 
                 <div class="x_panel">
                     <div class="x_title">
@@ -157,7 +157,6 @@
                                            value="${employee.idNo }"/></div>
                             </div>
 
-                                <%--<input type="hidden" name="id" value="${employee.id }" />--%>
                                 <%--Email--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">email<span
@@ -218,7 +217,6 @@
                             </div>
 
                                 <%--Date--%>
-                                <%--Registered Date--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Date Of Birth<span
                                         class="required">*</span></label>
@@ -260,8 +258,8 @@
                                            data-target="#pictureBtn"
                                            data-edit="insertImage"/></div>
                             </div>
+
                                 <%--Address--%>
-                                <%--Registered Date--%>
                             <div class="field item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3  label-align">Address<span
                                         class="required">*</span></label>
@@ -466,14 +464,13 @@
 <%--<!-- footer content -->--%>
 
 
-<div class="pull-right" style="color: white">
+<div class="pull-right" style="color: white;bottom: 0;right:0;position: absolute">
     Copyright © Employee Management 2020. Created by Rivindu Wijayarathna &nbsp; &nbsp;    &nbsp;    &nbsp;
+<br>
+<br>
 </div>
-<div class="clearfix"></div>
 
-<!-- /footer content -->
-</div>
-</div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
