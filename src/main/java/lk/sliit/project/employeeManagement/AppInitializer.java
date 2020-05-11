@@ -21,7 +21,7 @@ import java.util.List;
 @EnableJpaRepositories
 @ServletComponentScan
 public class AppInitializer {
-    //Main Method
+    //Main Methodas
     public static void main(String[] args) {
         SpringApplication.run ( AppInitializer.class, args );
     }

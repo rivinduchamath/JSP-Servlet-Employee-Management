@@ -74,7 +74,7 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
         //To Get All EmployeeCount Call Existing Method instead of Count Method
 
            //Get Img And Copy to Application
-        path = "C:/Users/User/Desktop/e/" + employee.getPic ( );
+        path = "/home/rivindu/Desktop/e/" + employee.getPic ( );
         file = new File ( path );
         BufferedImage cp, img;
         img = ImageIO.read ( file );
@@ -94,7 +94,7 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
         boolean isAlphaPremultiplied = cm.isAlphaPremultiplied ( );
         WritableRaster raster = bi.copyData ( null );
         BufferedImage cImg = new BufferedImage ( cm, raster, isAlphaPremultiplied, null );
-        File saveImage = new File ( "D:\\JSP SERVlet\\artiyaCopy\\artiya\\src\\main\\webapp\\images\\icons", saveAs );
+        File saveImage = new File ( "/media/rivindu/1.0 TB Hard Disk/IdeaProjects/ds/Hello-Servlet/src/main/webapp/images", saveAs );
         ImageIO.write ( cImg, "jpg", saveImage );
         ImageIO.write ( cImg, "png", saveImage );
         return cImg;

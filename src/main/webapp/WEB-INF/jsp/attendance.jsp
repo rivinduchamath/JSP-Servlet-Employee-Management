@@ -332,7 +332,7 @@
                             <div class="form-group">
                                 <label for="itemCode">Employee Id</label>
                                 <input type="text" class="form-control"
-                                       required="required" name="employeeID"
+                                       required name="employeeID"
                                        id="itemCode" placeholder="ID" readonly/>
                             </div>
 
@@ -351,7 +351,7 @@
                                        IN
                                 </span>
                                     </div>
-                                    <input type="text" class="form-control"
+                                    <input type="text" class="form-control" required
                                            name="inTime" id="itemTime"
                                            aria-label="Dollar amount (with dot and two decimal places)">
 
@@ -365,7 +365,7 @@
                                        OUT
                                 </span>
                                     </div>
-                                    <input type="text" class="form-control"
+                                    <input type="text" class="form-control" required
                                            id="itemTime2"  name="outTime" value="${attendance.outTime }"
                                            aria-label="Dollar amount (with dot and two decimal places)"/>
 
@@ -381,8 +381,8 @@
                                        OT
                                 </span>
                                     </div>
-                                    <input type="text" class="form-control"
-                                           name="overtimeHours"  value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
+                                    <input type="number" class="form-control"
+                                           name="overtimeHours" required value= "0" id="itemTime3" aria-label="Dollar amount (with dot and two decimal places)">
 
                                 </div>
                             </div>
@@ -394,9 +394,6 @@
                                     <button type='reset' class="btn btn-outline-primary" value="">Reset</button>
 
                                 </div>
-
-
-
                             </div>
                         </div>
 

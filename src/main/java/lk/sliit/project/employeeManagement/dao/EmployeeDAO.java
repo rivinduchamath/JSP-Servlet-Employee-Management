@@ -22,7 +22,7 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
      Employee getEmployeeByIdNo(String idNo);
 
      //Get Name For Attendance Load today Table
-     @Query(value = "SELECT occupation FROM emp1.Employee WHERE idNo=?1", nativeQuery = true)
+     @Query(value = "SELECT name FROM emp1.Employee WHERE idNo=?1", nativeQuery = true)
      String findName(String idNo);
 
      //Get findPos For Attendance Load today Table

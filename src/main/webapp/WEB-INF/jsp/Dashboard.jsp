@@ -458,8 +458,8 @@
                         Notice ID :  ${q.noticeId}
                         </span><br>
                         <span>
-                            <span>Title : ${q.title}</span><br>
-                             <span class="message">Description :  ${q.description}</span>
+                            <span style="font-size: 16px;font-weight: bold">Title : ${q.title}</span><br>
+                             <span style="font-size: 14px;font-weight: bold" class="message">Description :  ${q.description}</span>
                        </span>
                         <span class="">Date : ${q.date}</span>
                                         </a>

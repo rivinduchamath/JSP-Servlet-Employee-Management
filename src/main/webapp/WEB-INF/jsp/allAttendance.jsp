@@ -355,7 +355,6 @@
                                                         <th>Out Time</th>
                                                         <th>OT Hours</th>
                                                         <th>Delete</th>
-                                                        <th>Edit</th>
                                                     </tr>
 
                                                     </thead>
@@ -380,8 +379,6 @@
                                                         <td>${e.overtimeHours}</td>
                                                         <td><a href="/deleteAttendance?pid=${e.attendanceId}"><span
                                                                 class="glyphicon glyphicon-trash"></span></a></td>
-                                                        <td><a href="/edit-employee?idNo=${e.attendanceId }"><span
-                                                                class="glyphicon glyphicon-pencil"></span></a></td>
 
                                                         </tr>
                                                     </c:forEach>
