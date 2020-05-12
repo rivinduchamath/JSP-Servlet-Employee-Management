@@ -45,9 +45,7 @@ public class AttendanceBOImpl implements AttendanceBO {
                     attendance.getOutTime (),
                     attendance.getOvertimeHours (),
                     attendance.getEmployee ().getIdNo (),
-                    employeeDAO.findName ( attendance.getEmployee ().getIdNo () ),
-                    employeeDAO.findPos ( attendance.getEmployee ().getIdNo ()),
-                    employeeDAO.findPic ( attendance.getEmployee ().getIdNo () )
+                    employeeDAO.findOne ( attendance.getEmployee ().getIdNo () )
             ) );
         }
         return dtos;
@@ -95,9 +93,7 @@ public class AttendanceBOImpl implements AttendanceBO {
                     attendance.getOutTime (),
                     attendance.getOvertimeHours (),
                     attendance.getEmployee ().getIdNo (),
-                    employeeDAO.findName ( attendance.getEmployee ().getIdNo () ),
-                    employeeDAO.findPos ( attendance.getEmployee ().getIdNo ()),
-                    employeeDAO.findPic ( attendance.getEmployee ().getIdNo () )
+                    employeeDAO.findOne ( attendance.getEmployee ().getIdNo () )
             ));
         }
         return dtos;

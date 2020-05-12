@@ -123,6 +123,6 @@ public class DashboardBOImpl implements DashboardBO {
 
     @Override
     public boolean isAdmin(String idNo) {
-        return employeeDAO.is(idNo);
+        return employeeDAO.isAdmin(idNo);
     }
 }//End Class
