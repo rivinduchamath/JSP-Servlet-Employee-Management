@@ -215,8 +215,8 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Tables
-                            <small>Some examples to get you started</small>
+                        <h3>Attendance
+                            <small>Manage Attendance</small>
                         </h3>
                         <a style=" float: left" href="allAttendance">
                             <button   type='submit' class="btn btn-secondary" style="width: 100%;" value="Register" >
