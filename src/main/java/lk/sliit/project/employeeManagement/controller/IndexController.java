@@ -90,15 +90,15 @@ public class IndexController { //index.jsp Page Controller
                 //Get Logger Data
                 model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
                employee.setAdmin( dashboardBO.isAdmin(employee.getIdNo ( )));
-             if (employee.isAdmin()){
-                return "/Dashboard";}
-                return "redirect:/userDashboard";
+             if (employee.isAdmin())//Check is Admin
+                return "/Dashboard";//True >> Admin Dashboard
+                return "redirect:/userDashboard";//Else >> Normal User Dashboard
             } else {//If User name And Password is not match
                 return "redirect:/login";
             }
-        }catch (NullPointerException e) {
+        }catch (NullPointerException e) {//Any null point Exception occur
             return "redirect:/login";
-        }
+        }//End catch
 
     }//End method
 }//End class
