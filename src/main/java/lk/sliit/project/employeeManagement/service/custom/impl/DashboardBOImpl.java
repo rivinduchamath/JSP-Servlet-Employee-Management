@@ -120,4 +120,9 @@ public class DashboardBOImpl implements DashboardBO {
         }
         return dtos;
     }
+
+    @Override
+    public boolean isAdmin(String idNo) {
+        return employeeDAO.is(idNo);
+    }
 }//End Class

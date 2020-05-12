@@ -33,4 +33,6 @@ public interface DashboardBO extends SuperBO {
 
     //Find All Notice Between Today and Before 1 month
     List<NoticeDTO> findAllNoticeDesc();
+
+    boolean isAdmin(String idNo);
 }

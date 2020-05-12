@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Rivindu Chamath
-  Date: 03-Mar-20
-  Time: 7:43 AM
+  Date: 06-Mar-20
+  Time: 9:43 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -47,13 +47,12 @@
 </head>
 
 <body class="nav-md" style="cursor: pointer">
-
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="Dashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px"
+                    <a href="userDashboard" class="site_title"> <img style="margin-top: -0px; width: 40px;height: 40px"
                                                                  src="../../images/favicon.ico"><span
                             style="margin-top: 20px;">&nbsp;Four Seasons!</span></a>
                 </div>
@@ -77,54 +76,9 @@
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>General</h3>
-                        <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="Dashboard">Dashboard</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-edit"></i> Employee <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="tables_dynamic">Employee Manage</a></li>
-                                    <li><a href="attendance">Attendance</a></li>
-                                    <li><a href="salary">Salary Manage</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-desktop"></i>Project<span
-                                    class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="projects">Projects</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-table"></i> Notice <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="notice">View All</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+
                     </div>
-                    <div class="menu_section">
-                        <h3>Live On</h3>
-                        <ul class="nav side-menu">
-                            <li><a><i class="fa fa-user"></i> Employee Data <span
-                                    class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="contacts">Contacts</a></li>
-                                    <li><a href="profile">Profile</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="media_gallery">View Images</a></li>
-                                    <li><a href="calendar">Calendar</a></li>
-                                    <li><a href="e_commerce">E-commerce</a></li>
-                                    <li><a href="pricing_tables.jsp">Pricing Tables</a></li>
-                                    <li><a href="login">Login Page</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
                 <div class="sidebar-footer hidden-small">
                     <a data-toggle="tooltip" data-placement="top" title="Settings">
@@ -315,7 +269,7 @@
                                         <span class="count_top"><i class="fa fa-user"></i> Today Attendance</span>
                                         <div class="count">${todayAttendanceCount}</div>
                                         <span class="count_bottom"><i class="green"><i
-                                        class="fa fa-sort-asc"></i>22%</i> Attendance</span>
+                                                class="fa fa-sort-asc"></i>22%</i> Attendance</span>
                                     </div>
                                 </div>
                             </div>
@@ -379,12 +333,8 @@
                 <div class="col-md-6">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="cursor: auto">Upcoming Birthdays >>
-                                <small>
-                                    <a href="calendar" style="color:#007bff;cursor: pointer"
-                                       onMouseOver="this.style.color='red'; this.style.fontWeight='bold'"
-                                       onMouseOut="this.style.color='#007bff'; this.style.fontWeight='normal'"
-                                    > Watch Calendar</a></small>
+                            <h2 style="cursor: auto">Upcoming Birthdays
+                                <small></small>
                             </h2>
                             <ul class="nav navbar-right panel_toolbox">
 
@@ -458,11 +408,11 @@
                         <span class="image">
                         Notice ID :  ${q.noticeId}
                         </span><br>
-                        <span>
-                            <span>Title : ${q.title}</span><br>
-                             <span class="message">Description :  ${q.description}</span>
+                                            <span>
+                            <span style="font-size: 16px;font-weight: bold">Title : ${q.title}</span><br>
+                             <span style="font-size: 14px;font-weight: bold" class="message">Description :  ${q.description}</span>
                        </span>
-                        <span class="">Date : ${q.date}</span>
+                                            <span class="">Date : ${q.date}</span>
                                         </a>
                                     </li>
                                 </c:forEach>
@@ -497,7 +447,7 @@
 
                     </div>
                 </div>
-                      <!--////////////////////////////////////////////////////-->
+                <!--////////////////////////////////////////////////////-->
 
                 <!--///////////////////////////////////////////////////-->
             </div>

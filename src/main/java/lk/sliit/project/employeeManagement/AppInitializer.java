@@ -48,7 +48,7 @@ public class AppInitializer {
                             "Male",
                             date,
                             "img.jpg",
-                            false)
+                            true)
                     )
             );
         };

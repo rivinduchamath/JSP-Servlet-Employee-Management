@@ -89,8 +89,10 @@ public class IndexController { //index.jsp Page Controller
                 SuperController.idNo = employee.getIdNo ( );
                 //Get Logger Data
                 model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
-
-                return "/Dashboard";
+               employee.setAdmin( dashboardBO.isAdmin(employee.getIdNo ( )));
+             if (employee.isAdmin()){
+                return "/Dashboard";}
+                return "redirect:/userDashboard";
             } else {//If User name And Password is not match
                 return "redirect:/login";
             }

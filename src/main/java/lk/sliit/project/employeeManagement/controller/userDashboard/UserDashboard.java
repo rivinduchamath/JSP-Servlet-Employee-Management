@@ -1,46 +1,35 @@
-package lk.sliit.project.employeeManagement.controller.dashboard;
+package lk.sliit.project.employeeManagement.controller.userDashboard;
 
+import lk.sliit.project.employeeManagement.controller.SuperController;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
+import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.dto.NoticeDTO;
 import lk.sliit.project.employeeManagement.service.custom.AttendanceBO;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
-import lk.sliit.project.employeeManagement.controller.SuperController;
-import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
-import lk.sliit.project.employeeManagement.service.custom.NoticeBO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import javax.servlet.http.HttpServlet;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.ServletException;
+import java.io.IOException;
 import java.util.List;
 
-/**
- * @author: Rivindu-Wijayarathna
- * Date: 08-Mar-20
- */
 @Controller
-public class DashboardController extends HttpServlet { //dashboard.jsp Page Controller
+public class UserDashboard {
 
-    private static final long serialVersionUID = 1L;
-    @Autowired
-    AttendanceBO attendanceBO;
-    //Automate Object Creation
     @Autowired
     private DashboardBO dashboardBO;
     @Autowired
+    AttendanceBO attendanceBO;
+    @Autowired
     private EmployeeBO employeeBO;
 
-
-    //Find Total employee Count For DashBoard
-    @RequestMapping("/Dashboard")  //Control dashboard.jsp Page
-    public void dashboard(Model model, @ModelAttribute EmployeeDTO employee) {
-        dashBoardLoad ( model, employee );
-    }
-
-
-    String dashBoardLoad(Model model, EmployeeDTO employee) {
+    @GetMapping("/userDashboard")
+    public ModelAndView loadMedia_galleryJSP(Model model ,@ModelAttribute EmployeeDTO employee) throws ServletException,IllegalStateException, IOException {
         //Get Male Count in Dashboard
         long maleCount = (dashboardBO.getMaleCount ( ));
 
@@ -62,7 +51,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         //Show Upcoming BirthDays in Dashboard
         model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
 
-       //Show Notice
+        //Show Notice
         List<NoticeDTO> p =  dashboardBO.findAllNoticeDesc();
         model.addAttribute ( "findAllNoticea", p );
 
@@ -87,7 +76,7 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
 
         //get Logged employee
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
-        return "Dashboard";
-    }//End dashBoarLoad Method
-
-}//End Class
+        ModelAndView mav = new ModelAndView ("userDashboard");
+        return mav;
+    }
+}
