@@ -43,6 +43,14 @@ public class ProjectDTO {
         this.projectId = projectId;
     }
 
+    public ProjectDTO(String projectId, String projectName, double progress, Date expDate, String client) {
+        this.projectId = projectId;
+        this.projectName = projectName;
+        this.progress = progress;
+        this.expDate = expDate;
+        this.client = client;
+    }
+
     //Getters And Setters
     public String getProjectId() {
         return projectId;

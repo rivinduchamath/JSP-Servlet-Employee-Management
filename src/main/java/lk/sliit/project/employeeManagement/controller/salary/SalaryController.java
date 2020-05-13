@@ -51,7 +51,7 @@ public class SalaryController { //salary.jsp to Manage Salary
         //Take Salary Id As EmployeeId + S
         salaryDTO.setSalaryId ( "S" + salaryDTO.getEmployeeID ( ).getIdNo ( ) );
         //Calling Update Method
-        salaryBO.updateSalary ( salaryDTO );
+        salaryBO.saveOrUpdateSalary ( salaryDTO );
         return "redirect:/salary";
     }
 

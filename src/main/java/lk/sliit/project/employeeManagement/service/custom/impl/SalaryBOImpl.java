@@ -25,15 +25,15 @@ public class SalaryBOImpl implements SalaryBO {
     AttendanceDAO attendanceDAO;
 
     @Override //SAVE OR Update Salary
-    public void updateSalary(SalaryDTO employee) {
+    public void saveOrUpdateSalary(SalaryDTO salaryDTO) {
         salaryDAO.save(new Salary (
-              employee.getSalaryId (),
-                employee.getBasicSalary (),
-                employee.getOtHours (),
-                employee.getOtRate (),
-                employee.getBonus (),
-                employee.getIncomeTax (),
-                employee.getEmployeeID ())
+                salaryDTO.getSalaryId (),
+                salaryDTO.getBasicSalary (),
+                salaryDTO.getOtHours (),
+                salaryDTO.getOtRate (),
+                salaryDTO.getBonus (),
+                salaryDTO.getIncomeTax (),
+                salaryDTO.getEmployeeID ())
             );
     }//End Update OR Save
 

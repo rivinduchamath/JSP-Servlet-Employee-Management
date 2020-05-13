@@ -32,7 +32,7 @@ public class NoticeController { //notice.jsp For All Notice
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         ModelAndView mav = new ModelAndView ( "notice" );
         try {
-            NoticeDTO totalCount = noticeBO.getNoticeId ( );
+            NoticeDTO totalCount = noticeBO.findTopByOrderByNoticeIdDesc ( );
             int x = Integer.parseInt ( totalCount.getNoticeId ( ) )+ 1;
             model.addAttribute ( "genNoticeId", x);
         } catch (NullPointerException e) {

@@ -14,13 +14,13 @@ public interface AttendanceBO extends SuperBO {
     List<AttendanceDTO> findTodayAttendance();
 
     //Get top attendance id
-    AttendanceDTO getEmployeeAttCount();
+    AttendanceDTO findTopByOrderByAttendanceIdDesc();
 
     //Save Or Update Attendance
-    void save(AttendanceDTO attendance);
+    void saveOrUpdate(AttendanceDTO attendance);
 
     //Delete
-    void deleteUser(String id) ;
+    void deleteAttendance(String id) ;
 
     //Get All Attendance
     List<AttendanceDTO> findAllAtendance();

@@ -12,7 +12,7 @@ import java.util.List;
 public interface NoticeBO extends SuperBO {
 
     //Generate top Notice Id
-    NoticeDTO getNoticeId();
+    NoticeDTO findTopByOrderByNoticeIdDesc();
 
     ////Save OR Update Notice
     void addNotice(NoticeDTO noticeDTO);

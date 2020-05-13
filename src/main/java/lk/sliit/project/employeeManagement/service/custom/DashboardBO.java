@@ -1,6 +1,7 @@
 package lk.sliit.project.employeeManagement.service.custom;
 
 import lk.sliit.project.employeeManagement.dto.NoticeDTO;
+import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.service.SuperBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
@@ -21,8 +22,8 @@ public interface DashboardBO extends SuperBO {
     //Get Female Count
     long getFemaleCount();
 
-    //Upcoming birthdays 1 month
-    List<EmployeeDTO> upcomingBirthDays();
+    //Exp  projects 1 month
+    List<ProjectDTO> projectsExp();
     //Working Total Time From Attendance
     double getTotalTime();
 //Total Projects Count
@@ -32,7 +33,7 @@ public interface DashboardBO extends SuperBO {
     EmployeeDTO findByIdNoAndPassword(String idNo, String password);
 
     //Find All Notice Between Today and Before 1 month
-    List<NoticeDTO> findAllNoticeDesc();
+    List<NoticeDTO> findResentNoticeDesc();
 
     boolean isAdmin(String idNo);
 }

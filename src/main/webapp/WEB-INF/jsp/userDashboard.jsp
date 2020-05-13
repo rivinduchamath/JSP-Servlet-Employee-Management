@@ -355,20 +355,19 @@
                         </div>
                         <div class="x_content">
                             <ul class="list-unstyled msg_list">
-                                <c:forEach items="${upcomingBitrhDays}" var="q">
+                                <c:forEach items="${closingProjects}" var="q">
                                     <li>
                                         <a>
-                        <span class="image">
-                          <img style="border-radius: 100%" src="../../images/icons/${q.pic}" alt="img"/>
-                        </span>
+                        <span>
+                       Project Name : ${q.projectName}
+                        </span> <br>
                                             <span>
-                            <span>${q.name}</span>
-                            <span class="time">Date Of Birth : ${q.dateOfBirth}</span>
+                            <span>Pogress : ${q.progress} %</span>
+                            <span class="time">Closing Date : ${q.duration}</span>
                        </span>
                                             <span class="message">
-                                            Hope your special day brings you all that your heart desires! Here’s wishing you a day full of pleasant surprises! Happy birthday!
-                                            to Our
-                                            ${q.occupation}
+
+                                          Client Name:   ${q.client}
                         </span>
                                         </a>
                                     </li>
@@ -377,6 +376,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <div class="col-md-12">
                     <div class="x_panel">

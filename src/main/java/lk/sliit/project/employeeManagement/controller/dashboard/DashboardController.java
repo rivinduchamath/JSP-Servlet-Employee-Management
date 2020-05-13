@@ -59,11 +59,11 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         for (AttendanceDTO attendanceDTO: attendanceDTOS) { count++; }
         model.addAttribute ( "todayAttendance", attendanceDTOS );
 
-        //Show Upcoming BirthDays in Dashboard
-        model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
+        //Get Closing Projects (1 Month ahead )
+        model.addAttribute ( "closingProjects", dashboardBO.projectsExp ( ) );
 
        //Show Notice
-        List<NoticeDTO> p =  dashboardBO.findAllNoticeDesc();
+        List<NoticeDTO> p =  dashboardBO.findResentNoticeDesc();
         model.addAttribute ( "findAllNoticea", p );
 
         //Show Total Hours

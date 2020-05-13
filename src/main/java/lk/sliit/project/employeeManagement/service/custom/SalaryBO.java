@@ -15,7 +15,7 @@ public interface SalaryBO extends SuperBO {
     List <SalaryDTO> findAllSalary();
 
     //Update OR SAVE Employee Salary
-    void updateSalary(SalaryDTO employee);
+    void saveOrUpdateSalary(SalaryDTO employee);
 
     //Find Salary By ID(Clicked Check Box) This String Has List Of Salary IDs Ex: "S001 S002"
     List <SalaryDTO> getSalaryData(String idNo);

@@ -49,10 +49,10 @@ public class UserDashboard {
         model.addAttribute ( "todayAttendance", attendanceDTOS );
 
         //Show Upcoming BirthDays in Dashboard
-        model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
+        model.addAttribute ( "closingProjects", dashboardBO.projectsExp ( ) );
 
         //Show Notice
-        List<NoticeDTO> p =  dashboardBO.findAllNoticeDesc();
+        List<NoticeDTO> p =  dashboardBO.findResentNoticeDesc();
         model.addAttribute ( "findAllNoticea", p );
 
         //Show Total Hours

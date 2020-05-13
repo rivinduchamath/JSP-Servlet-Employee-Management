@@ -21,8 +21,6 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
      //Get All Emplyee By Id No
      Employee getEmployeeByIdNo(String idNo);
 
-     //Get Employee Birthdays 1 month ahead
-     Iterable<Employee> findEmployeesByDateOfBirthBetween(Date date,Date afterOneMonth);
 
      //Check Is Admin when logging
      @Query( value = "SELECT admin FROM emp1.Employee WHERE idNo=?1",nativeQuery = true)

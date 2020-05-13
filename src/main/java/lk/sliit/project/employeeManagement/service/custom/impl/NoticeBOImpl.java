@@ -23,7 +23,7 @@ public class NoticeBOImpl implements NoticeBO {
 
     @Override//Get Highest Notice Id
     @Transactional(readOnly = true)
-    public NoticeDTO getNoticeId() {
+    public NoticeDTO findTopByOrderByNoticeIdDesc() {
         Notice notice = noticeDAO.findTopByOrderByNoticeIdDesc ();
         return new NoticeDTO (
                 notice.getNoticeId ()

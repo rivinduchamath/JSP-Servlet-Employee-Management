@@ -3,8 +3,10 @@ package lk.sliit.project.employeeManagement.service.custom.impl;
 import lk.sliit.project.employeeManagement.dao.NoticeDAO;
 import lk.sliit.project.employeeManagement.dao.ProjectDAO;
 import lk.sliit.project.employeeManagement.dto.NoticeDTO;
+import lk.sliit.project.employeeManagement.dto.ProjectDTO;
 import lk.sliit.project.employeeManagement.entity.Employee;
 import lk.sliit.project.employeeManagement.entity.Notice;
+import lk.sliit.project.employeeManagement.entity.Project;
 import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.dao.AttendanceDAO;
 import lk.sliit.project.employeeManagement.dao.EmployeeDAO;
@@ -55,21 +57,21 @@ public class DashboardBOImpl implements DashboardBO {
 
     //UpComing Birthdays Up to 1 month
     @Override
-    public List <EmployeeDTO> upcomingBirthDays() {
+    public List <ProjectDTO> projectsExp() {
         DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
         Date todaydate = new Date();
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, 1);
         java.util.Date afterOneMonth = cal.getTime();
-        Iterable <Employee> employees = employeeDAO.findEmployeesByDateOfBirthBetween (todaydate ,afterOneMonth);
-        List <EmployeeDTO> dtos = new ArrayList<> ( );
-        for (Employee employeee : employees) {
-            dtos.add ( new EmployeeDTO (
-                    employeee.getIdNo (),
-                    employeee.getName (),
-                    employeee.getPic (),
-                    employeee.getOccupation (),
-                    employeee.getDateOfBirth ()
+        Iterable <Project> projects = projectDAO.findProjectsByExpDateBetween (todaydate ,afterOneMonth);
+        List <ProjectDTO> dtos = new ArrayList<> ( );
+        for (Project project : projects) {
+            dtos.add ( new ProjectDTO (
+                    project.getProjectId (),
+                    project.getProjectName (),
+                    project.getProgress (),
+                    project.getExpDate (),
+                    project.getClient ()
             ) );
         }
         return dtos;
@@ -103,7 +105,7 @@ public class DashboardBOImpl implements DashboardBO {
     }
 
     @Override//Get All Notice Between Today And Before 1 month
-    public List <NoticeDTO> findAllNoticeDesc() {
+    public List <NoticeDTO> findResentNoticeDesc() { //
         Date todaydate = new Date();
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, -1);

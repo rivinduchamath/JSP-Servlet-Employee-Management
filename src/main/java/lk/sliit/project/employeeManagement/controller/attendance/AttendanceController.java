@@ -45,7 +45,7 @@ public class AttendanceController { //attendance.jsp Page For Attendance Manage
         mav.addObject ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
 
         try {
-            AttendanceDTO totalCount = attendanceBO.getEmployeeAttCount ( );
+            AttendanceDTO totalCount = attendanceBO.findTopByOrderByAttendanceIdDesc ( );
             int x = Integer.parseInt ( totalCount.getAttendanceId ( ) )+ 1;
             model.addAttribute ( "genAttendanceId", x);
         } catch (NullPointerException e) {
@@ -79,22 +79,20 @@ public class AttendanceController { //attendance.jsp Page For Attendance Manage
             attendanceID = a.getAttendanceId ();//add AttendanceId From Attendance
             if (employeeID.equals ( eId )) {//Check JSP Employee ID Already in today attendance
                 attendance.setAttendanceId ( attendanceID ); //IF true Set Attendance Id and save
-                attendanceBO.save ( attendance );
+                attendanceBO.saveOrUpdate ( attendance );
                 return "redirect:/attendance";
             }
         }
-        attendanceBO.save ( attendance );//Else Attendance Save Under Previous Attendance ID
+        attendanceBO.saveOrUpdate ( attendance );//Else Attendance Save Under Previous Attendance ID
         return "redirect:/attendance";
     }//End addTodayAttendance Method
 
     //Delete Attendance in the Table Attendance
     @RequestMapping("deleteAttendance")
     public String deleteUserAttendance(@RequestParam String pid, HttpServletRequest request) {
-        attendanceBO.deleteUser ( pid );
+        attendanceBO.deleteAttendance ( pid );
         //Get All Employees After Delete
         request.setAttribute ( "listEmployeesTable", employeeBO.findAllEmployees ( ) );
         return "redirect:/attendance";
     }
-
-
 }//End Class

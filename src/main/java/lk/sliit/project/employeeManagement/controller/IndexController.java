@@ -24,7 +24,7 @@ import java.util.List;
  * Date: 08-Mar-20
  */
 @Controller
-public class IndexController { //index.jsp Page Controller
+public class  IndexController { //index.jsp Page Controller
     @Autowired
     EmployeeBO employeeBO;
     @Autowired
@@ -67,9 +67,9 @@ public class IndexController { //index.jsp Page Controller
                     count++;
                 }
                 model.addAttribute ( "todayAttendance",attendanceDTOS );
-                //Get Upcoming Birth days(1 Month ahead )
-                model.addAttribute ( "upcomingBitrhDays", dashboardBO.upcomingBirthDays ( ) );
-                List<NoticeDTO> p =  dashboardBO.findAllNoticeDesc();
+                //Get Closing Projects (1 Month ahead )
+                model.addAttribute ( "closingProjects", dashboardBO.projectsExp ( ) );
+                List<NoticeDTO> p =  dashboardBO.findResentNoticeDesc();
                 model.addAttribute ( "findAllNoticea", p );
 
                 model.addAttribute ( "totalTime", (dashboardBO.getTotalTime ( )));

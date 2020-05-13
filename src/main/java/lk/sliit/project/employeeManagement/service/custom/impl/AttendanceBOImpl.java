@@ -54,16 +54,16 @@ public class AttendanceBOImpl implements AttendanceBO {
     //Get Top Attendance ID (IF Delete SomeOne)
     @Override
     @Transactional(readOnly = true)
-    public AttendanceDTO getEmployeeAttCount() {
-        Attendance employee = attendanceDAO.findTopByOrderByAttendanceIdDesc ();
+    public AttendanceDTO findTopByOrderByAttendanceIdDesc() {
+        Attendance attendance = attendanceDAO.findTopByOrderByAttendanceIdDesc ();
         return new AttendanceDTO (
-                employee.getAttendanceId ()
+                attendance.getAttendanceId ()
         );
     }//End Get Total Emp
 
     //Save Attendance If Not Already Add Today
     @Override
-    public void save(AttendanceDTO attendanceDTO) {
+    public void saveOrUpdate(AttendanceDTO attendanceDTO) {
         attendanceDAO.save(new Attendance (
                 attendanceDTO.getAttendanceId (),
                 attendanceDTO.getSalary (),
@@ -75,7 +75,7 @@ public class AttendanceBOImpl implements AttendanceBO {
     }//End attendance save method
 
     @Override//Delete Attendance
-    public void deleteUser(String id) {
+    public void deleteAttendance(String id) {
         attendanceDAO.delete (id);
     }
 

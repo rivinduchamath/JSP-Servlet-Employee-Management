@@ -26,7 +26,7 @@ public class UpdateSalaryController { //updateSalary.JSP Page Controller
     @Autowired
     private SalaryBO salaryBO;
 
-    @GetMapping("/updateSalary")//Update Salary
+    @GetMapping("/updateSalary")//Load Update Salary
     public ModelAndView updateSalary(Model model, @ModelAttribute EmployeeDTO employee, HttpServletRequest request, HttpServletResponse response) throws ServletException, IllegalStateException, IOException {
         ModelAndView mav = new ModelAndView ( "updateSalary" );
        //load All Salry

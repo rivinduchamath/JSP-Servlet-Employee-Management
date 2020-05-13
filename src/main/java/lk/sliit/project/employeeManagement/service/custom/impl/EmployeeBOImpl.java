@@ -41,28 +41,6 @@ public class EmployeeBOImpl implements EmployeeBO {
         ));
     }//End Save
 
-    //Update Method
-    @Override
-    public EmployeeDTO updateUser(String id) {
-        Employee employee = employeeDAO.findOne (id);
-        return new EmployeeDTO (
-                employee.getIdNo (),
-                employee.getName (),
-                employee.getMobileNumber (),
-                employee.getEmail (),
-                employee.getAddress (),
-                employee.getOccupation (),
-                employee.getPassword (),
-                employee.getDateOfBirth (),
-                employee.getGender (),
-                employee.getDate () ,
-                employee.getPic (),
-                employee.isAdmin ()
-
-        );
-    }//End Update
-
-
 
     //Delete Method
     @Override

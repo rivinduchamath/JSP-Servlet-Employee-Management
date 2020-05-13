@@ -38,7 +38,7 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
     @RequestMapping("edit-employee")
     public String loadForm_validationUpdateMode(@RequestParam String idNo, Model model, HttpServletRequest request) {
         //Go To Mode Update In form_validation.jsp to Update Selected employee
-        request.setAttribute ( "employee", employeeBO.updateUser ( idNo ) );
+        request.setAttribute ( "employee", employeeBO.getEmployeeByIdNo ( idNo ) );
         request.setAttribute ( "mode", "MODE_UPDATE" );
         //Get Logger User Data
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
@@ -79,8 +79,6 @@ public class FormValidationControl {//form_validation.jsp Controller 2 Mods >> "
         BufferedImage cp, img;
         img = ImageIO.read ( file );
         deepCopy ( img, employee );
-        //In Dashboard employee Count
-        model.addAttribute ( "employeeCountDashBoard", dashboardBO.getAllEmployeeCount ( ) );
         //In Dashboard employee Id No
         model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
         //In Dashboard all employee

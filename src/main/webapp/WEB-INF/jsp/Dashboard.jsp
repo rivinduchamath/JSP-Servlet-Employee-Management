@@ -40,8 +40,8 @@
     <link href="../../build/css/custom.min.css" rel="stylesheet">
 
     <%
-        SimpleDateFormat sdf = new SimpleDateFormat ( "dd-MM-yyyy" );
-        String date = sdf.format ( new Date ( ) );
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String date = sdf.format(new Date());
     %>
 
 </head>
@@ -314,7 +314,7 @@
                                         <span class="count_top"><i class="fa fa-user"></i> Today Attendance</span>
                                         <div class="count">${todayAttendanceCount}</div>
                                         <span class="count_bottom"><i class="green"><i
-                                        class="fa fa-sort-asc"></i>22%</i> Attendance</span>
+                                                class="fa fa-sort-asc"></i>22%</i> Attendance</span>
                                     </div>
                                 </div>
                             </div>
@@ -378,7 +378,7 @@
                 <div class="col-md-6">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2 style="cursor: auto">Upcoming Birthdays >>
+                            <h2 style="cursor: auto">Closing Projects >>
                                 <small>
                                     <a href="calendar" style="color:#007bff;cursor: pointer"
                                        onMouseOver="this.style.color='red'; this.style.fontWeight='bold'"
@@ -404,20 +404,19 @@
                         </div>
                         <div class="x_content">
                             <ul class="list-unstyled msg_list">
-                                <c:forEach items="${upcomingBitrhDays}" var="q">
+                                <c:forEach items="${closingProjects}" var="q">
                                     <li>
                                         <a>
-                        <span class="image">
-                          <img style="border-radius: 100%" src="../../images/icons/${q.pic}" alt="img"/>
-                        </span>
+                        <span>
+                       Project Name : ${q.projectName}
+                        </span> <br>
                                             <span>
-                            <span>${q.name}</span>
-                            <span class="time">Date Of Birth : ${q.dateOfBirth}</span>
+                            <span>Pogress : ${q.progress} %</span>
+                            <span class="time">Closing Date : ${q.duration}</span>
                        </span>
                                             <span class="message">
-                                            Hope your special day brings you all that your heart desires! Here’s wishing you a day full of pleasant surprises! Happy birthday!
-                                            to Our
-                                            ${q.occupation}
+
+                                          Client Name:   ${q.client}
                         </span>
                                         </a>
                                     </li>
@@ -457,11 +456,12 @@
                         <span class="image">
                         Notice ID :  ${q.noticeId}
                         </span><br>
-                        <span>
+                                            <span>
                             <span style="font-size: 16px;font-weight: bold">Title : ${q.title}</span><br>
-                             <span style="font-size: 14px;font-weight: bold" class="message">Description :  ${q.description}</span>
+                             <span style="font-size: 14px;font-weight: bold"
+                                   class="message">Description : ${q.description}</span>
                        </span>
-                        <span class="">Date : ${q.date}</span>
+                                            <span class="">Date : ${q.date}</span>
                                         </a>
                                     </li>
                                 </c:forEach>
@@ -477,7 +477,8 @@
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="#">Settings 1</a>
                                         <a class="dropdown-item" href="#">Settings 2</a>
@@ -496,7 +497,7 @@
 
                     </div>
                 </div>
-                      <!--////////////////////////////////////////////////////-->
+                <!--////////////////////////////////////////////////////-->
 
                 <!--///////////////////////////////////////////////////-->
             </div>
@@ -514,7 +515,6 @@
         <!-- /footer content -->
     </div>
 </div>
-
 
 
 <!-- jQuery -->

@@ -20,9 +20,6 @@ public interface EmployeeBO extends SuperBO {
     //SAve Employee
     void save(EmployeeDTO employee);
 
-    //Update Employee
-    EmployeeDTO updateUser(String user) ;
-
     //Delete
     void deleteUser(String id) ;
 
