@@ -14,6 +14,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -34,7 +36,12 @@ public class AttendanceBOImpl implements AttendanceBO {
     public List<AttendanceDTO> findTodayAttendance() {
         DateFormat dateFormat = new SimpleDateFormat ("yyyy/MM/dd");
         Date date = new Date();
-        Iterable <Attendance> attendances = attendanceDAO.findAttendanceByDateEquals (date );
+        Iterable <Attendance> attendances = null;
+        try {
+               attendances = attendanceDAO.findAttendanceByDateEquals (date );
+        }catch (Exception e){
+            Logger.getLogger("lk.sliit.project.employeeManagement.service.custom.impl").log(Level.SEVERE, null,e); //Add Logger To Catch Exception
+        }
         List <AttendanceDTO> dtos = new ArrayList <> ( );
         for (Attendance attendance : attendances) {
             dtos.add ( new AttendanceDTO (
@@ -55,7 +62,12 @@ public class AttendanceBOImpl implements AttendanceBO {
     @Override
     @Transactional(readOnly = true)
     public AttendanceDTO findTopByOrderByAttendanceIdDesc() {
-        Attendance attendance = attendanceDAO.findTopByOrderByAttendanceIdDesc ();
+        Attendance attendance = null;
+        try {
+         attendance = attendanceDAO.findTopByOrderByAttendanceIdDesc ();
+    }catch (Exception e){
+        Logger.getLogger("lk.sliit.project.employeeManagement.service.custom.impl").log(Level.SEVERE, null,e); //Add Logger To Catch Exception
+    }
         return new AttendanceDTO (
                 attendance.getAttendanceId ()
         );

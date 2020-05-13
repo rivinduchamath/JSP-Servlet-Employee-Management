@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author: KV
@@ -33,6 +35,7 @@ public class ProjectDetailsController {//project_detail.jsp Page Controller
             //Load All Activity
             model.addAttribute ( "loadActivity", projectActivityBO.loadProjectActivity(SuperController.projectId) );
         }catch (NullPointerException e){
+            Logger.getLogger("lk.sliit.project.employeeManagement").log(Level.SEVERE, null,e); //Add Logger To Catch NullPointerException
             System.out.println ("No Project activities Found" );
         }
         return "project_detail";

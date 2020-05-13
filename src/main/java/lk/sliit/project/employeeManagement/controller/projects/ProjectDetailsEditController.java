@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author: KV
@@ -53,7 +55,7 @@ public class ProjectDetailsEditController {//project_detail_Edit.jsp Controller
             int c= q+ 1 ;
             projectActivity.setActivityId ( String.valueOf ( c ) );
         } catch (NullPointerException e) {
-            //Activity Count = 0 then assign 1
+              //Activity Count = 0 then assign 1
             projectActivity.setActivityId ( "1"  );
         }
         //Get Clicked Project Id To save

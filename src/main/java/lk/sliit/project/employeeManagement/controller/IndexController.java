@@ -1,5 +1,6 @@
 package lk.sliit.project.employeeManagement.controller;
 
+import javafx.scene.control.Alert;
 import lk.sliit.project.employeeManagement.dto.AttendanceDTO;
 import lk.sliit.project.employeeManagement.dto.NoticeDTO;
 import lk.sliit.project.employeeManagement.service.custom.AttendanceBO;
@@ -7,6 +8,7 @@ import lk.sliit.project.employeeManagement.service.custom.DashboardBO;
 import lk.sliit.project.employeeManagement.service.custom.EmployeeBO;
 import lk.sliit.project.employeeManagement.dto.EmployeeDTO;
 import lk.sliit.project.employeeManagement.service.custom.NoticeBO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -14,10 +16,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -31,9 +34,8 @@ public class  IndexController { //index.jsp Page Controller
     DashboardBO dashboardBO;
     @Autowired
     AttendanceBO attendanceBO;
-    @Autowired
-    private NoticeBO noticeBO;
-    //Initial Load Page http://localhost:8091/login
+
+    //Initial Load Page http://localhost:8022/login
     @Scope(scopeName = "")
     @GetMapping("/login")
     public String index_Login(HttpServletRequest request) {
@@ -97,6 +99,7 @@ public class  IndexController { //index.jsp Page Controller
                 return "redirect:/login";
             }
         }catch (NullPointerException e) {//Any null point Exception occur
+            Logger.getLogger("lk.sliit.project.employeeManagement").log(Level.SEVERE, null,e); //Add Logger To Catch NullPointerException
             return "redirect:/login";
         }//End catch
 

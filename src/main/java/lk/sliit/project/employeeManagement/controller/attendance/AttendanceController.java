@@ -18,6 +18,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -72,6 +74,7 @@ public class AttendanceController { //attendance.jsp Page For Attendance Manage
         try {
             eId = attendance.getEmployeeID ( );//add EmployeeID From JSP
         } catch (NullPointerException e) {
+            Logger.getLogger("lk.sliit.project.employeeManagement").log(Level.SEVERE, null,e); //Add Logger To Catch NullPointerException
             return "redirect:/attendance";//If NullPointerException, Reload Attendance.jsp
         }
         for (AttendanceDTO a : todayAttendance) {

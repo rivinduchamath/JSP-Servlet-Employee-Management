@@ -8,9 +8,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import java.io.IOException;
 import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,8 +28,13 @@ import java.util.List;
 @ServletComponentScan
 public class AppInitializer {
     //Main Methodas
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run ( AppInitializer.class, args );
+        Logger logger = Logger.getLogger("lk.sliit.project.employeeManagement");
+        FileHandler fileHandler = new FileHandler("error.log",true);
+        fileHandler.setFormatter(new SimpleFormatter());
+        fileHandler.setLevel(Level.INFO);
+        logger.addHandler(fileHandler);
     }
 
     //Add Values

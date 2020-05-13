@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author: Chanuka
@@ -63,7 +65,11 @@ public class SalaryBOImpl implements SalaryBO {
 
     @Override//Delete
     public void deleteSalary(String idNo) {
+     try {
         salaryDAO.delete (idNo);
+    }catch (Exception e){
+        Logger.getLogger("lk.sliit.project.employeeManagement.service.custom.impl").log(Level.SEVERE, null,e); //Add Logger To Catch Exception
+    }
     }
 
 
