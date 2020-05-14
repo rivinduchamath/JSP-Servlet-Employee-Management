@@ -29,12 +29,12 @@ import java.util.logging.SimpleFormatter;
 public class AppInitializer {
     //Main Methodas
     public static void main(String[] args) throws IOException {
-        SpringApplication.run ( AppInitializer.class, args );
         Logger logger = Logger.getLogger("lk.sliit.project.employeeManagement");
         FileHandler fileHandler = new FileHandler("error.log",true);
         fileHandler.setFormatter(new SimpleFormatter());
         fileHandler.setLevel(Level.INFO);
         logger.addHandler(fileHandler);
+        SpringApplication.run ( AppInitializer.class, args );
     }
 
     //Add Values
