@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServlet;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author: Rivindu-Wijayarathna
@@ -86,7 +88,11 @@ public class DashboardController extends HttpServlet { //dashboard.jsp Page Cont
         else model.addAttribute ( "femaleCountDashBoard", 0 );
 
         //get Logged employee
-        model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
+        try {
+            model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
+        }catch (Exception e){
+            Logger.getLogger("lk.sliit.project.employeeManagement.controller.dashboard").log(Level.SEVERE, "Server Is Restarted Please LogIn Again",e); //Add Logger To Catch NullPointerException
+        }
         return "Dashboard";
     }//End dashBoarLoad Method
 

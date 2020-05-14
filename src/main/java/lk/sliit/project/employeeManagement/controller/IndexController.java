@@ -89,8 +89,12 @@ public class  IndexController { //index.jsp Page Controller
 
                 //Add Logger Id To the static variable idNo
                 SuperController.idNo = employee.getIdNo ( );
-                //Get Logger Data
-                model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
+                //get Logged employee
+                try {
+                    model.addAttribute ( "loggerName", employeeBO.getEmployeeByIdNo ( SuperController.idNo ) );
+                }catch (Exception e){
+                    Logger.getLogger("lk.sliit.project.employeeManagement.controller").log(Level.SEVERE, "Server Is Restarted Please Log Again",e); //Add Logger To Catch NullPointerException
+                }
                employee.setAdmin( dashboardBO.isAdmin(employee.getIdNo ( )));
              if (employee.isAdmin())//Check is Admin
                 return "/Dashboard";//True >> Admin Dashboard
@@ -99,7 +103,7 @@ public class  IndexController { //index.jsp Page Controller
                 return "redirect:/login";
             }
         }catch (NullPointerException e) {//Any null point Exception occur
-            Logger.getLogger("lk.sliit.project.employeeManagement").log(Level.SEVERE, null,e); //Add Logger To Catch NullPointerException
+            Logger.getLogger("lk.sliit.project.employeeManagement.controller").log(Level.SEVERE, null,e); //Add Logger To Catch NullPointerException
             return "redirect:/login";
         }//End catch
 
