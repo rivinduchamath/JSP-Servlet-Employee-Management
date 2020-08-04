@@ -17,4 +17,5 @@ public interface NoticeDAO extends CrudRepository<Notice, String> {
 
     //Get All Notice Between today and Before 1 month to show in DashBoard
     Iterable<Notice> findAllByDateBetweenOrderByDateDesc(Date ds, Date d);
+
 }

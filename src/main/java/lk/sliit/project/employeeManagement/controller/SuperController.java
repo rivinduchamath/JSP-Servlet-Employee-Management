@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class SuperController {  //Super Controller For Store Common Things
    public static String idNo = ""; //Store Logger User ID
-   public static String projectId = ""; //Store Clicked Project Id
+   public static String projectId = "1"; //Store Clicked Project Id
     List <EmployeeDTO> dtos = new ArrayList <> ( );
 
 

@@ -23,6 +23,6 @@ public interface EmployeeDAO extends CrudRepository<Employee, String> {
 
 
      //Check Is Admin when logging
-     @Query( value = "SELECT admin FROM emp1.Employee WHERE idNo=?1",nativeQuery = true)
+     @Query( value = "SELECT admin FROM emp2.Employee WHERE idNo=?1",nativeQuery = true)
      boolean isAdmin(String idNo);
 }

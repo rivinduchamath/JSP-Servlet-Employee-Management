@@ -49,7 +49,7 @@ public class Employee implements SuperEntity {
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.date = date;
-        Pic = pic;
+        this.Pic = pic;
         this.admin = admin;
 
 

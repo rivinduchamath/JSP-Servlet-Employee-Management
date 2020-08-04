@@ -1,6 +1,6 @@
 package lk.sliit.project.employeeManagement.dao;
 
-import lk.sliit.project.employeeManagement.entity.Employee;
+
 import lk.sliit.project.employeeManagement.entity.Project;
 import org.springframework.data.repository.CrudRepository;
 

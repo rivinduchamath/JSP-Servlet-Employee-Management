@@ -369,11 +369,11 @@
                                                 class="btn btn-success "> Pay <i class="fa fa-file-image-o"></i>
                                         </button>
                                     </ul>
-
                                 </form>
 
                                 <button onclick="getValue();return false" ; style="float: right; font-weight: bold;color: white" ;
-                                        id="btn_enable"    class="btn btn-success ">Add Payment <i class="fa fa-plus-circle"></i></button>
+                                id="btn_enable" class="btn btn-success ">Add Payment
+                                    <i class="fa fa-plus-circle"></i></button>
 
                                 <!--href="/invoice"-->
                                 <div class="clearfix"></div>

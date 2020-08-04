@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
-/**
- * @author: KV
- * Date: 23-Mar-20
- */
+
 @Controller
 public class ProjectsController {//projects.jsp Controller
     @Autowired
