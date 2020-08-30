@@ -10,5 +10,8 @@
 
 🖍️  Design Patterns                            👉️                       Singleton,Facade, Factory,Strategy,DAO,DTO,Flyweight
 
-🖍️  Architectur                                👉️                      Spring MVC
+🖍️  Architectur                                👉️                      Spring MVC 
+
+
+
                                           
